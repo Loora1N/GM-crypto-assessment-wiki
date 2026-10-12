@@ -1,0 +1,31 @@
+site_name: 密评标准知识库
+
+theme:
+  name: material
+  language: zh
+  font: false
+  features:
+    - navigation.tabs
+    - navigation.indexes
+    - search.highlight
+    - search.suggest
+
+plugins:
+  - search:
+      lang:
+        - zh
+        - en
+  - offline:
+      enabled: !ENV [OFFLINE, false]
+
+markdown_extensions:
+  - admonition
+  - tables
+  - toc:
+      permalink: true
+
+nav:
+  - 首页: index.md
+  - 标准库:
+      - 示例标准:
+          - 第7章 应用和数据安全: standards/example/chapter-7.md
