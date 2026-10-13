@@ -62,12 +62,24 @@ markdown_extensions:
       generic: true
   - pymdownx.mark
   - pymdownx.tilde
+  - pymdownx.tasklist:
+      custom_checkbox: true
   - toc:
       permalink: true
 
 nav:
-  - 首页: index.md
+  - 首页:
+      - 快速开始: index.md
+      - 维护参考: maintenance/维护参考/维护参考.md
+  - 密码算法:
+      - 章节概览: algorithm/index.md
+  - 密码协议:
+      - 章节概览: protocol/index.md
   - 密码产品:
+      - 章节概览: product/index.md
       - 智能密码钥匙:
           - APDU解析: product/智能密码钥匙/APDU解析/APDU解析.md
-          - GMT0027-2014技术规范: test/test.md
+  - 密码测评:
+      - 章节概览: assessment/index.md
+      - 测评基础:
+          - 文章编写示例: assessment/测评基础/文章编写示例/文章编写示例.md
