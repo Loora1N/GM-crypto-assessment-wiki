@@ -6,11 +6,39 @@ theme:
   name: material
   language: zh
   font: false
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: 切换到深色主题
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: 切换到浅色主题
   features:
     - navigation.tabs
     - navigation.indexes
     - search.highlight
     - search.suggest
+    - content.code.copy
+
+extra:
+  polyfills:
+    - assets/vendor/iframe-worker/shim.js
+
+extra_css:
+  - assets/vendor/katex/katex.min.css
+  - assets/stylesheets/blue-topaz-maple.css
+
+extra_javascript:
+  - assets/vendor/katex/katex.min.js
+  - assets/javascripts/blue-topaz-maple.js
 
 plugins:
   - search:
@@ -23,6 +51,17 @@ plugins:
 markdown_extensions:
   - admonition
   - tables
+  - attr_list
+  - md_in_html
+  - footnotes
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.mark
+  - pymdownx.tilde
   - toc:
       permalink: true
 
