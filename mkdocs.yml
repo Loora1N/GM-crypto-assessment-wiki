@@ -1,5 +1,7 @@
 site_name: 密评标准知识库
 
+site_url: https://loora1n.github.io/GM-crypto-assessment-wiki/
+
 theme:
   name: material
   language: zh
