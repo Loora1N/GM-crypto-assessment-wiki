@@ -28,6 +28,7 @@ markdown_extensions:
 
 nav:
   - 首页: index.md
-  - 标准库:
-      - 示例标准:
-          - 第7章 应用和数据安全: standards/example/chapter-7.md
+  - 密码产品:
+      - 智能密码钥匙:
+          - APDU解析: product/智能密码钥匙/APDU解析/APDU解析.md
+          - GMT0027-2014技术规范: test/test.md
