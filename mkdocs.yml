@@ -68,11 +68,17 @@ markdown_extensions:
       permalink: true
 
 nav:
-  - 首页:
+  - 使用手册:
       - 快速开始: index.md
       - 维护参考: maintenance/维护参考/维护参考.md
   - 密码算法:
       - 章节概览: algorithm/index.md
+      - 数论补充: algorithm/数论补充/数论.md
+      - 消息鉴别码:
+          - 常见消息鉴别码攻击: algorithm/MAC/消息鉴别码攻击/attackMAC.md
+      - 公钥密码算法:
+          - SM2算法: algorithm/公钥密码算法/SM2/SM2.md
+          - RSA算法: algorithm/公钥密码算法/RSA/RSA.md
   - 密码协议:
       - 章节概览: protocol/index.md
   - 密码产品:
