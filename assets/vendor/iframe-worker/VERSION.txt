@@ -1,0 +1,2 @@
+iframe-worker 1.0.4
+sha512-roeaaI+Lg1LJNfgpCjoRe/+WzEjy9+Z08LoEvu85MCPbBjwm+qXz8Ag5U05lHa6V1CysZyGzE0SOkAtSUA5q7Q==
