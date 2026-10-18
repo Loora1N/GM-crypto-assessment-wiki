@@ -91,3 +91,5 @@ nav:
       - 章节概览: assessment/index.md
       - 测评基础:
           - 文章编写示例: assessment/测评基础/文章编写示例/文章编写示例.md
+  - 个人笔记:
+      - 笔记-王彦: docs/notes/笔记-王彦.md
