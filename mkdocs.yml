@@ -103,6 +103,8 @@ nav:
       - 章节概览: product/index.md
       - 智能密码钥匙:
           - APDU解析: product/智能密码钥匙/APDU解析/APDU解析.md
+          - GMT0016-2023智能密码钥匙应用接口规范: product/智能密码钥匙/GMT0016-2023/GMT0016-2023智能密码钥匙密码应用接口规范.md
+      - GMT0018-2023密码设备应用接口规范: product/GMT0018-2023/GMT0018-2023密码设备应用接口规范.md
   - 密码测评:
       - 章节概览: assessment/index.md
       - 测评基础:
