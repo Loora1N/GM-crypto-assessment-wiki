@@ -91,5 +91,7 @@ nav:
       - 章节概览: assessment/index.md
       - 测评基础:
           - 文章编写示例: assessment/测评基础/文章编写示例/文章编写示例.md
+  - 国标与行标:
+      - GMT0006-2023密码应用标识规范: standard/GMT0006-2023/GMT0006-2023密码应用标识规范.md
   - 个人笔记:
       - 笔记-王彦: notes/笔记-王彦.md
