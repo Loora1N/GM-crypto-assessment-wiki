@@ -39,12 +39,25 @@ extra_css:
 extra_javascript:
   - assets/vendor/katex/katex.min.js
   - assets/javascripts/blue-topaz-maple.js
+  - assets/javascripts/search-tables.js
+  - assets/javascripts/search-notice.js
+
+hooks:
+  - hooks/search_tables.py
+  - hooks/search_fuzzy.py
 
 plugins:
   - search:
       lang:
         - zh
         - en
+      # Preserve technical English words: prefix queries must match their original spelling.
+      pipeline: []
+      # Keep Chinese word boundaries; split identifier parts and punctuation.
+      # Normalize hex prefixes/padding in both documents and queries (401 = 0x00000401).
+      # Split GMT/GBT from their number without splitting algorithm names like SM4.
+      # Preserve dots within OIDs and version numbers.
+      separator: '[\s\u200b\u3000\-—_、。，．？！；,;:!?=\[\](){}"/\\]+|\.(?!\d)|\b0[xX]0*(?=[0-9A-Fa-f])|(?<=\b[Gg][MmBb][Tt])(?=\d)'
   - offline:
       enabled: !ENV [OFFLINE, false]
 

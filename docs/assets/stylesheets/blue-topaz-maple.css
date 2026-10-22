@@ -189,8 +189,43 @@ body, input, button, select, textarea {
 [data-md-toggle="search"]:checked ~ .md-header .md-search__form { background: var(--bt-bg); }
 .md-search__output { background: var(--bt-bg); border-radius: 0 0 8px 8px; }
 .md-search-result__meta { background: var(--bt-panel); color: var(--bt-muted); }
+.search-match-notice { display: block; margin-top: .3em; color: var(--bt-link); font-size: .65rem; line-height: 1.5; }
 .md-search-result__link:hover { background: var(--bt-hover); }
 .md-search-result mark, .md-typeset mark[data-md-highlight] { background: var(--bt-search-bg); color: var(--bt-search-ink); }
+/* Preserve Markdown tables in search excerpts without expanding the result list. */
+.md-search-result__article .search-table-preview {
+  max-height: 15rem;
+  max-width: 100%;
+  overflow: auto;
+  overscroll-behavior: contain;
+  margin: .6em 0;
+  border: 1px solid var(--bt-border);
+  border-radius: 6px;
+}
+.md-search-result__article .search-table-preview table:not([class]) {
+  margin: 0;
+  overflow: visible;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  font-size: .65rem;
+  line-height: 1.55;
+}
+.md-search-result__article .search-table-preview table:not([class]) :is(th, td) {
+  min-width: 6em;
+  padding: .45em .6em;
+  overflow-wrap: normal;
+}
+.md-search-result__article .search-table-preview table:not([class]) th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+.md-search-result__article .search-table-preview table:not([class]) tr.search-table-preview__match {
+  background: var(--bt-active);
+}
+.md-search-result__article .search-table-preview mark { padding: 0; }
+.md-search-result__article .search-table-preview .search-table-preview__identifier { white-space: nowrap; }
 .md-footer-meta { border-top: 1px solid var(--bt-border); }
 .md-copyright { color: var(--bt-muted); }
 .md-copyright__highlight, .md-footer-meta a { color: var(--bt-text); }

@@ -20,16 +20,29 @@ jobs:
         with:
           python-version: "3.12"
 
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
       - name: 安装依赖
         run: pip install -r requirements.txt
 
+      - name: 检查搜索表格索引
+        run: python -m unittest discover -s tests -p test_search_tables.py -v
+
       - name: 检查在线版
         run: mkdocs build --strict
+
+      - name: 检查在线版搜索
+        run: node tests/search.test.cjs site
 
       - name: 构建离线版
         env:
           OFFLINE: "true"
         run: mkdocs build --strict --site-dir site-offline
+
+      - name: 检查离线版搜索
+        run: node tests/search.test.cjs site-offline --offline
 
       - name: 保存离线包
         if: github.event_name != 'pull_request'
