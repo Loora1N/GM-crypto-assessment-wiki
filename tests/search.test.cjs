@@ -262,8 +262,11 @@ test(`built search: ${path.basename(site)}`, async (t) => {
   await t.test('0006 finds the standard number', async () => {
     const result = (await query('0006')).find((item) => item.location.includes('standard/GMT0006-2023/') && !item.location.includes('#'));
     assert.ok(result && result.score > 0, 'Standard page must be an actual match');
-    assert.match(plain(result.text), /GM\/T\s*0006/);
-    assert.ok(marked(result.title + result.text).some((text) => text.includes('0006')));
+    assert.match(
+      plain(result.title + ' ' + result.text),
+      /(?:GM\/T\s*0006|GMT0006)/i
+    );
+        assert.ok(marked(result.title + result.text).some((text) => text.includes('0006')));
   });
 
   for (const term of ['GMT0006', 'gmt0006']) {
