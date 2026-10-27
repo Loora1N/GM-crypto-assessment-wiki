@@ -1,11 +1,23 @@
   self.addEventListener = listen;
 
+  // Lunr concatenates edge labels and numeric node IDs without delimiters.
+  // Numeric tokens can then collide during automaton minimization, producing
+  // words absent from the inverted index and crashing a prefix query such as
+  // "4*". Keep the same automaton with unambiguous node signatures.
+  self.lunr.TokenSet.prototype.toString = function () {
+    return this._str || JSON.stringify([
+      this.final,
+      Object.keys(this.edges).sort().map(label => [label, this.edges[label].id])
+    ]);
+  };
+
   // Lunr's match metadata contains the actual indexed words. Use those for
   // result links so a corrected query highlights real words on the target page.
   const search = self.lunr.Index.prototype.search;
   let capture = false;
   let matches = new Map();
   let sourceDocs = new Map();
+  let literalFields = new Map();
   self.lunr.Index.prototype.search = function (query) {
     const results = search.call(this, query);
     if (capture) {
@@ -43,6 +55,13 @@
       .replace(/[\u200b-\u200d\ufeff]/g, "");
   }
 
+  function splitScriptBoundaries(query) {
+    // The build-time Chinese segmenter inserts boundaries on both sides of a
+    // Han run. Material's query segmenter does not, so adjacent Latin names
+    // otherwise become impossible tokens such as "gcm模式" or "ctr计数器".
+    return query.replace(/(\p{sc=Han})(?=[a-z0-9])|([a-z0-9])(?=\p{sc=Han})/giu, "$1$2 ");
+  }
+
   function hasAlias(document, term) {
     if (!document) return false;
     const fields = [document.title, document.text, ...(document.tags || [])];
@@ -71,33 +90,63 @@
   async function respond(message) {
     if (message.type === 0) {
       sourceDocs = new Map(message.data.docs.map(document => [document.location, { ...document }]));
+      literalFields = new Map();
     }
-    const ordinary = await run(message);
-    if (message.type !== 2 || ordinary.data.items.length) {
-      send(ordinary);
+    if (message.type !== 2) {
+      send(await run(message));
       return;
     }
 
+    // Exact passage lookup is independent of token lookup. A complete source
+    // fragment must survive even when the tokenizer cannot retrieve it.
+    const combined = new Map(exactSearch(message.data).map(item => [item.location, item]));
+    const ordinary = await run({ ...message, data: splitScriptBoundaries(message.data) }, true);
+    const append = (groups, reason) => {
+      for (const item of groups.flat()) {
+        if (item.score <= 0 || combined.get(item.location)?.matchKind === "exact") continue;
+        const previous = combined.get(item.location);
+        if (previous && (reason === "partial" || previous.matchReason !== "partial")) continue;
+        const words = matches.get(item.location);
+        combined.set(item.location, { ...item, matchKind: "fuzzy", matchReason: reason,
+          ...(reason === "fuzzy" && words ? { terms: Object.fromEntries(words.map(word => [word, true])) } : {})
+        });
+      }
+    };
+    append(ordinary.data.items, "partial");
+    let fallbackMode;
     for (const candidate of self.wikiSearchFallbacks(message.data)) {
-      const fallback = await run({ ...message, data: candidate.query }, candidate.mode === "fuzzy");
+      const fallback = await run({ ...message, data: candidate.query }, true);
       if (candidate.mode === "alias") {
         fallback.data.items = filterAliasGroups(fallback.data.items, candidate.term);
       }
       if (!fallback.data.items.length) continue;
-      if (candidate.mode === "fuzzy") {
-        for (const group of fallback.data.items) {
-          for (const item of group) {
-            const words = matches.get(item.location);
-            if (item.score > 0 && words) {
-              item.terms = Object.fromEntries(words.map(word => [word, true]));
-            }
-          }
+      fallbackMode ||= candidate.mode;
+      append(fallback.data.items, candidate.mode);
+    }
+
+    const exact = [...combined.values()].filter(item => item.matchKind === "exact");
+    const fuzzy = [...combined.values()].filter(item => item.matchKind === "fuzzy")
+      .sort((a, b) => b.score - a.score);
+    const group = items => {
+      const pages = new Map();
+      for (const item of items) {
+        const page = item.location.split("#")[0];
+        if (!pages.has(page)) pages.set(page, []);
+        pages.get(page).push(item);
+      }
+      for (const [page, items] of pages) {
+        if (!items.some(item => item.location === page)) {
+          const parent = sourceDocs.get(page);
+          if (parent) items.push({ ...parent, score: 0, terms: {} });
         }
       }
-      fallback.data.match = { mode: candidate.mode, query: message.data };
-      fallback.data.suggest = [];
-      send(fallback);
-      return;
+      return [...pages.values()];
+    };
+    ordinary.data.items = [...group(exact), ...group(fuzzy)];
+    ordinary.data.matchCounts = { exact: exact.length, fuzzy: fuzzy.length };
+    if (!exact.length && fallbackMode && !ordinary.data.items.some(items => items.some(item => item.matchReason === "partial"))) {
+      ordinary.data.match = { mode: fallbackMode, query: message.data };
+      ordinary.data.suggest = [];
     }
     send(ordinary);
   }

@@ -1,4 +1,4 @@
-"""Build a local search worker with conservative automatic fallback matching."""
+"""Build a local search worker combining exact passages and related matches."""
 
 import hashlib
 import json
@@ -21,6 +21,7 @@ def on_config(config):
     _workers.clear()
     _sources = tuple(path.read_text(encoding="utf-8") for path in (
         ROOT / "hooks/search/worker-prefix.js",
+        ROOT / "hooks/search/worker-literal.js",
         ROOT / "docs/assets/javascripts/search-policy.js",
         ROOT / "hooks/search/worker-suffix.js",
     ))
@@ -61,7 +62,7 @@ def on_post_template(output, *, template_name, config):
 
 @event_priority(-50)
 def on_post_build(*, config):
-    prefix, policy, suffix = _sources
+    prefix, literal, policy, suffix = _sources
     directory = Path(config.site_dir) / WORKERS
     for generated, original in _workers.items():
         source = directory / original
@@ -69,5 +70,5 @@ def on_post_build(*, config):
             raise PluginError(f"Material search worker is missing: {original}")
         # Keep the original implementation and its license. Combining it at
         # build time avoids an extra bootstrap import in offline iframe workers.
-        content = "\n".join((prefix, source.read_text(encoding="utf-8"), policy, suffix))
+        content = "\n".join((prefix, source.read_text(encoding="utf-8"), literal, policy, suffix))
         (directory / generated).write_text(content, encoding="utf-8")

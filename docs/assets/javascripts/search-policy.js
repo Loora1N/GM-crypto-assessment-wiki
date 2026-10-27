@@ -1,4 +1,4 @@
-/* Build conservative fallback queries only after ordinary search has no hits. */
+/* Build conservative related queries to merge after exact passage matches. */
 (() => {
   const aliasGroups = [
     ["消息鉴别码", "消息认证码", "MAC"],

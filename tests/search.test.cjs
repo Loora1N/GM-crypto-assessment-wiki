@@ -279,6 +279,152 @@ test(`built search: ${path.basename(site)}`, async (t) => {
     });
   }
 
+  await t.test('copied mixed Chinese and Latin passage finds the original notes first', async () => {
+    const phrase = 'gcm模式下ctr计数器';
+    const note = index.docs.find(doc => decodeURIComponent(doc.location).startsWith('notes/笔记-王彦') &&
+      plain(doc.text).includes(phrase));
+    assert.ok(note, 'The copied passage must exist in the real notes index');
+    for (const term of [phrase, 'GCM模式下CTR计数器', 'gcm 模式下 ctr 计数器', '后续gcm模式下ctr计数器的前4个字节']) {
+      const response = await query.response(term);
+      assert.equal(response.match, undefined, 'A literal passage is not an approximate match');
+      const first = response.items[0]?.[0];
+      assert.equal(first?.location, note.location, `${term} must put the actual passage before partial heading matches`);
+      assert.ok(first.score > 0);
+      assert.equal(first.matchKind, 'exact');
+      assert.equal(response.matchCounts.exact, 1);
+      assert.ok(response.matchCounts.fuzzy > 0, 'Keep related matches after the exact passage');
+      assert.ok(plain(first.text).includes(phrase), 'Preview must include the original passage');
+      assert.ok(marked(first.text).some(word => word.includes(phrase)), 'Exact preview must highlight the continuous passage, not scattered words');
+      assert.ok(marked(first.text).some(word => /gcm/i.test(word)));
+      assert.ok(marked(first.text).some(word => /ctr/i.test(word)));
+      assert.equal(first.terms[term], true, 'Navigation highlight must include the original passage');
+      assert.ok(Object.values(first.terms).every(Boolean), 'Literal results must not claim missing query terms');
+    }
+  });
+
+  await t.test('copied passage with a plus sign finds and highlights the original SSH note first', async () => {
+    const phrase = '对c+s随机数';
+    const note = index.docs.find(doc => decodeURIComponent(doc.location).startsWith('notes/笔记-王彦') &&
+      plain(doc.text).includes(phrase));
+    assert.ok(note, 'The copied passage must exist in the real notes index');
+    assert.ok(note.location.endsWith('#ssh'));
+    for (const term of [phrase, '对C+S随机数', 'c+s', 'ssh签名内容：签名是对c+s随机数']) {
+      const response = await query.response(term);
+      const hits = response.items.flat().filter(item => item.score > 0);
+      const first = hits[0];
+      assert.equal(first?.location, note.location, `${term} must put the original SSH passage first`);
+      assert.equal(first.matchKind, 'exact');
+      assert.equal(response.matchCounts.exact, 1);
+      assert.ok(marked(first.text).some(text => text.toLowerCase().includes(term.toLowerCase())), 'Highlight the literal plus sign with the complete passage');
+      assert.equal(first.terms[term], true, 'Navigation must preserve the plus sign');
+      assert.equal(hits.filter(item => item.location === note.location).length, 1, 'The exact section must not repeat among fuzzy matches');
+      assert.equal(hits.length, new Set(hits.map(item => item.location)).size);
+    }
+  });
+
+  await t.test('literal search treats query operators as source punctuation', async () => {
+    const phrases = ['c+s', 'a*b', 'a~1', 'x^2', 'name:value', String.raw`dir\file`, '-word', '"quoted"'];
+    const literalQuery = await loadWorker(config, {
+      config: index.config,
+      docs: phrases.map((phrase, i) => ({ location: `symbol-${i}.html`, title: 'Punctuation', text: `<p>${phrase}</p>` })),
+    });
+    for (const [i, phrase] of phrases.entries()) {
+      const response = await literalQuery.response(phrase);
+      const hits = response.items.flat().filter(item => item.score > 0);
+      assert.equal(hits[0]?.location, `symbol-${i}.html`, `${phrase} must retrieve its literal occurrence`);
+      assert.equal(hits[0].matchKind, 'exact');
+      assert.deepEqual(Array.from(marked(hits[0].text)), [phrase]);
+      assert.equal(response.matchCounts.exact, 1);
+    }
+  });
+
+  await t.test('exact scan retrieves a Chinese substring absent from token lookup', async () => {
+    const literalQuery = await loadWorker(config, {
+      config: index.config,
+      docs: [{ location: 'literal.html', title: 'Unsegmented passage', text: '<p>前缀超级计数器后缀</p>' }],
+    });
+    const response = await literalQuery.response('计数器');
+    assert.equal(response.items[0][0].location, 'literal.html');
+    assert.equal(response.items[0][0].matchKind, 'exact');
+    assert.deepEqual(Array.from(marked(response.items[0][0].text)), ['计数器']);
+    assert.equal(response.matchCounts.exact, 1);
+    assert.equal(response.matchCounts.fuzzy, 0);
+  });
+
+  await t.test('exact, prefix and spelling matches form a deduplicated exact-first union', async () => {
+    const unionQuery = await loadWorker(config, {
+      config: index.config,
+      docs: [
+        { location: 'shared.html', title: 'Overview', text: '' },
+        { location: 'shared.html#exact', title: 'Original', text: '<p>Cryptographic</p>' },
+        { location: 'shared.html#typo', title: 'Misspelled', text: '<p>Cryptograhpic</p>' },
+        { location: 'both.html', title: 'Both spellings', text: '<p>Cryptographic Cryptograhpic</p>' },
+        { location: 'prefix.html', title: 'Longer word', text: '<p>Cryptographical</p>' },
+      ],
+    });
+    const response = await unionQuery.response('cryptographic');
+    const hits = response.items.flat().filter(item => item.score > 0);
+    assert.equal(response.matchCounts.exact, 2);
+    assert.equal(response.matchCounts.fuzzy, 2);
+    assert.equal(hits.length, new Set(hits.map(item => item.location)).size, 'Deduplicate by document and section anchor across all search phases');
+    assert.deepEqual(Array.from(hits, item => item.matchKind), ['exact', 'exact', 'fuzzy', 'fuzzy']);
+    assert.equal(hits.find(item => item.location === 'both.html').matchKind, 'exact');
+    assert.equal(hits.find(item => item.location === 'shared.html#typo').terms.cryptograhpic, true);
+    assert.ok(hits.find(item => item.location === 'prefix.html'));
+  });
+
+  await t.test('all aliases supplement an existing exact match without duplicates', async () => {
+    const unionQuery = await loadWorker(config, {
+      config: index.config,
+      docs: [
+        { location: 'mac.html', title: 'Original', text: '<p>MAC</p>' },
+        { location: 'auth.html', title: 'First alias', text: '<p>消息\u200b认证码</p>' },
+        { location: 'verify.html', title: 'Second alias', text: '<p>消息\u200b鉴别码</p>' },
+      ],
+    });
+    const response = await unionQuery.response('MAC');
+    const hits = response.items.flat().filter(item => item.score > 0);
+    assert.equal(response.matchCounts.exact, 1);
+    assert.equal(response.matchCounts.fuzzy, 2);
+    assert.equal(hits[0].location, 'mac.html');
+    assert.deepEqual(new Set(hits.map(item => item.location)), new Set(['mac.html', 'auth.html', 'verify.html']));
+  });
+
+  await t.test('literal highlighting preserves escaped text, inline tags and English word boundaries', async () => {
+    const literalQuery = await loadWorker(config, {
+      config: index.config,
+      docs: [
+        { location: 'inline.html', title: 'Comparison', text: '<p>a &lt; <code>b</code></p><p>some thing</p>' },
+        { location: 'joined.html', title: 'Other words', text: '<p>something</p>' },
+      ],
+    });
+    const response = await literalQuery.response('a < b');
+    assert.equal(response.items[0][0].matchKind, 'exact');
+    assert.equal(response.items[0][0].text, '<p><mark>a &lt; </mark><code><mark>b</mark></code></p>');
+    const words = await literalQuery.response('some thing');
+    assert.deepEqual(Array.from(words.items.flat().filter(item => item.matchKind === 'exact'), item => item.location), ['inline.html']);
+  });
+
+  await t.test('literal passage priority respects paragraph and cell boundaries', async () => {
+    const phrase = 'gcm模式下ctr计数器';
+    const mixedQuery = await loadWorker(config, {
+      config: index.config,
+      docs: [
+        { location: 'heading.html', title: 'GCM CTR 模式 计数器', text: '<p>gcm\u200b模式\u200b下</p><p>ctr\u200b计数器</p>' },
+        { location: 'cells.html', title: 'Other reference', text: '<table><tbody><tr><td>gcm\u200b模式\u200b下</td><td>ctr\u200b计数器</td></tr></tbody></table>' },
+        { location: 'passage.html', title: 'Notes', text: '<p>后续gcm\u200b模式\u200b下<code>ctr</code>\u200b计数器\u200b的前4\u200b个字节</p>' },
+      ],
+    });
+    for (const term of [phrase, 'GCM 模式下 CTR 计数器']) {
+      const response = await mixedQuery.response(term);
+      assert.equal(response.match, undefined);
+      assert.equal(response.items[0][0].location, 'passage.html');
+      const exact = response.items.flat().filter(item => item.terms[term] === true);
+      assert.deepEqual(Array.from(exact, item => item.location), ['passage.html'], 'Separate blocks must not receive literal passage priority');
+      assert.match(response.items[0][0].text, /<code><mark>ctr<\/mark><\/code>/i, 'Inline code formatting must survive');
+    }
+  });
+
   await t.test('Chinese phrase finds and highlights the correct section', async () => {
     const result = standardResult(await query('分组密码算法标识'), '621', '分组密码算法标识');
     assert.equal(plain(result.title).replace(/\s/g, ''), '6.2.1分组密码算法标识');
@@ -312,7 +458,7 @@ test(`built search: ${path.basename(site)}`, async (t) => {
     }
   });
 
-  await t.test('whole-query Chinese aliases fall back to MAC only when needed', async () => {
+  await t.test('whole-query Chinese aliases find MAC and retain exact-query precedence', async () => {
     const aliasQuery = await loadWorker(config, {
       config: index.config,
       docs: [{ location: 'mac.html', title: 'Integrity notes', text: '<p>MAC</p>' }],
