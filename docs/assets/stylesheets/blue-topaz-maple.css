@@ -189,7 +189,9 @@ body, input, button, select, textarea {
 [data-md-toggle="search"]:checked ~ .md-header .md-search__form { background: var(--bt-bg); }
 .md-search__output { background: var(--bt-bg); border-radius: 0 0 8px 8px; }
 .md-search-result__meta { background: var(--bt-panel); color: var(--bt-muted); }
-.search-match-notice { display: block; margin-top: .3em; color: var(--bt-link); font-size: .65rem; line-height: 1.5; }
+.search-match-heading { padding: .55rem .8rem; background: var(--bt-panel); color: var(--bt-link); font-weight: 700; border-bottom: 1px solid var(--bt-border); }
+.search-match-badge { display: inline-block; margin-right: .45rem; padding: .1rem .3rem; border: 1px solid var(--bt-border); border-radius: .2rem; color: var(--bt-muted); font-size: .6rem; font-weight: 400; vertical-align: middle; }
+.search-match-badge[data-match-kind="exact"] { color: var(--bt-link); border-color: var(--bt-link); }
 .md-search-result__link:hover { background: var(--bt-hover); }
 .md-search-result mark, .md-typeset mark[data-md-highlight] { background: var(--bt-search-bg); color: var(--bt-search-ink); }
 /* Preserve Markdown tables in search excerpts without expanding the result list. */

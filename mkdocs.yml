@@ -46,6 +46,10 @@ hooks:
   - hooks/search_tables.py
   - hooks/search_fuzzy.py
 
+# Rebuild the preview when search worker sources outside docs/ change.
+watch:
+  - hooks/search
+
 plugins:
   - search:
       lang:
