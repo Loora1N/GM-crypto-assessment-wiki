@@ -32,6 +32,15 @@
 
 修改文档或搜索配置后须重新构建；离线使用时也要更新整个离线包，旧包不会自动更新索引。
 
+## 在文章内搜索
+
+先用页眉的全站搜索找到标准，再使用文章标题下方独立的「本文搜索」查找当前文章中的关键词、条款号或算法名称。搜索条滚动时保持可用，正文、标题、表格和代码中的命中会高亮，并显示当前序号和总数。
+
+- 点击「上一处／下一处」，或在输入框中按 `Enter`／`Shift+Enter`，循环切换命中位置。
+- 点击「清除」或按 `Esc` 清除本文搜索；全站搜索及其结果保持独立。
+- 支持中文、英文大小写及全半角匹配；符号按原文查找，不使用正则或全站搜索的模糊匹配语法。短语不会跨段落或表格单元格拼接。
+- 折叠说明中的命中会自动展开。在线版与离线版均可使用。
+
 ## 本地运行
 
 准备 **Git、Python 3.12** 和 Markdown 编辑器。以下命令用于 Windows PowerShell；已克隆仓库的同事进入现有项目目录，跳过克隆步骤。
@@ -128,6 +137,7 @@ Remove-Item Env:OFFLINE -ErrorAction SilentlyContinue
 ```powershell
 node tests/search.test.cjs site
 node tests/search.test.cjs site-offline --offline
+node --test tests/page-search.test.cjs
 .\.venv\Scripts\python.exe -m unittest discover -s tests -p test_search_tables.py -v
 ```
 

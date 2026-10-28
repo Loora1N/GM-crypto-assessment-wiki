@@ -35,11 +35,13 @@ extra:
 extra_css:
   - assets/vendor/katex/katex.min.css
   - assets/stylesheets/blue-topaz-maple.css
+  - assets/stylesheets/page-search.css
 
 extra_javascript:
   - assets/vendor/katex/katex.min.js
   - assets/javascripts/blue-topaz-maple.js
   - assets/javascripts/page-navigation.js
+  - assets/javascripts/page-search.js
   - assets/javascripts/search-tables.js
   - assets/javascripts/search-notice.js
 
@@ -124,5 +126,6 @@ nav:
       - GMT0014-2023数字证书认证系统密码协议规范: standard/GMT0014-2023/GMT0014-2023.md
       - GMT0015-2023数字证书格式: standard/GMT0015/GMT0015-2023数字证书格式.md
       - FAQ第四版: standard/faq4/faq4.md
+      - 高风险判定指引: standard/高风险判定指引/信息系统密码应用高风险判定指引.md
   - 个人笔记:
       - 笔记-王彦: notes/笔记-王彦.md

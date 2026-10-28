@@ -970,10 +970,10 @@ GB/T 39786-2021《信息安全技术 信息系统密码应用基本要求》在 
 
 **表 37-2 被部分评估的支撑能力说明示例**
 
-<table>
-<thead>
+<table markdown="1">
+<thead markdown="1">
 <tr><th rowspan="2">序号</th><th rowspan="2">支撑能力名称</th><th colspan="4">量化评估和适用条件</th><th colspan="2">风险分析情况和适用条件</th></tr>
-<tr><th>$A$</th><th>适用条件</th><th>$K$</th><th>适用条件</th><th>风险等级</th><th>适用情况</th></tr>
+<tr markdown="1"><th markdown="1">$A$</th><th>适用条件</th><th markdown="1">$K$</th><th>适用条件</th><th>风险等级</th><th>适用情况</th></tr>
 </thead>
 <tbody>
 <tr><td rowspan="2">1</td><td rowspan="2">电子签章服务</td><td>√</td><td>当使用 SM3 和 SM2 算法进行电子签章时</td><td>√</td><td>（可以为“无”）</td><td>中、低</td><td>……</td></tr>
