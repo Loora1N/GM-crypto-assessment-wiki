@@ -115,6 +115,7 @@ nav:
       - 智能密码钥匙:
           - APDU解析: product/智能密码钥匙/APDU解析/APDU解析.md
           - GMT0016-2023智能密码钥匙应用接口规范: product/智能密码钥匙/GMT0016-2023/GMT0016-2023智能密码钥匙密码应用接口规范.md
+          - GMT0017-2023智能密码钥匙应用接口数据规范: product/智能密码钥匙/GMT0017-2023/GMT0017-2023.md
       - GMT0018-2023密码设备应用接口规范: product/GMT0018-2023/GMT0018-2023密码设备应用接口规范.md
   - 密码测评:
       - 章节概览: assessment/index.md
@@ -125,6 +126,7 @@ nav:
       - GBT17964-2021分组密码算法工作模式: standard/GBT17964/GBT17964-2021分组密码算法的工作模式.md
       - GMT0014-2023数字证书认证系统密码协议规范: standard/GMT0014-2023/GMT0014-2023.md
       - GMT0015-2023数字证书格式: standard/GMT0015/GMT0015-2023数字证书格式.md
+      - GMT0010-2023SM2密码算法加密签名规范: standard/GMT0010-2023/GMT0010-2023.md
       - FAQ第四版: standard/faq4/faq4.md
       - 高风险判定指引: standard/高风险判定指引/信息系统密码应用高风险判定指引.md
   - 个人笔记:
