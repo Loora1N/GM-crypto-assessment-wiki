@@ -5,6 +5,7 @@
 - 浅色：冷白页面、蓝色标题、淡蓝侧栏。
 - 深色：蓝黑页面、天蓝／淡紫／青绿／粉色／琥珀／薄荷色标题层级。
 - 页眉右侧可以切换主题，首次访问跟随系统偏好。
+- 文章标题下方提供独立的「本文搜索」：随正文滚动固定，支持高亮、计数、上一处／下一处及清除，保留页眉全站搜索；浅深色、窄屏和离线版均可用，打印时隐藏搜索条和临时高亮。
 - 右下角的“页顶／页底”按钮可平滑跳转到页面两端，支持键盘操作并跟随浅深色主题；开启系统减少动态效果时直接跳转。无需滚动的短页面和打印时隐藏。
 - 正文、导航和代码优先使用本机安装的 Maple Mono NF CN，缺失时使用字体栈中的后备字体。主题包未提供字体文件，网站也没有外部字体请求。
 - `ASN.1` 代码围栏映射到 Pygments 的 ASN.1 lexer，支持文档中使用 `ASN.1` 作为语言标记。
@@ -18,6 +19,7 @@
 - `docs/assets/stylesheets/blue-topaz-maple.css`：配色变量、页面和文章样式。
 - `docs/assets/javascripts/blue-topaz-maple.js`：提示块和公式显示。
 - `docs/assets/javascripts/page-navigation.js`：页顶／页底辅助按钮与滚动状态。
+- `docs/assets/javascripts/page-search.js` 与 `docs/assets/stylesheets/page-search.css`：文章内搜索、独立高亮及响应式搜索条。
 - `docs/assets/vendor/katex/`：KaTeX 资源与许可证；版本记录在 `VERSION.txt`。
 - `docs/assets/vendor/iframe-worker/`：离线搜索兼容脚本与许可证。
 
