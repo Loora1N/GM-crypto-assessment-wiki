@@ -1,314 +1,34 @@
-# 从 0 开始：上传你的第一篇笔记
+# 国标与行标文章目录
 
-打开 **Windows PowerShell**，按下面的步骤逐个操作。第一次从第 1 步开始；已配置好环境的同事从第 4 步开始。每一步成功后再继续，出现报错先停下来处理。
+按标准类别和编号整理项目已收录的文章，点击标题即可阅读。
 
-下面以“密码产品 → 智能密码钥匙 → GBT35291-2017 标准笔记”为例。正式上传时，把示例文章名和路径换成自己的，保持各处一致。
+## 国家标准（3 篇）
 
-## 1. 安装 Git 和 Python
+- [GBT17964-2021 分组密码算法的工作模式](standard/GBT17964/GBT17964-2021分组密码算法的工作模式.md)
+- [GBT36968-2018 信息安全技术 IPSec VPN 技术规范](protocol/IPSEC/GBT36968-2018/GBT36968-2018.md)
+- [GBT38636-2020 信息安全技术 传输层密码协议（TLCP）](protocol/传输层密码协议/GBT38636-2020/GBT38636-2020.md)
 
-在 PowerShell 中执行，已安装的工具可以跳过：
+## 密码行业标准（9 篇）
 
-```powershell
-winget install --id Git.Git --exact --source winget
-winget install --id Python.Python.3.12 --exact --source winget
-```
+- [GMT0006-2023 密码应用标识规范](standard/GMT0006-2023/GMT0006-2023密码应用标识规范.md)
+- [GMT0010-2023 SM2 密码算法加密签名消息语法规范](standard/GMT0010-2023/GMT0010-2023.md)
+- [GMT0014-2023 数字证书认证系统密码协议规范](standard/GMT0014-2023/GMT0014-2023.md)
+- [GMT0015-2023 数字证书格式](standard/GMT0015/GMT0015-2023数字证书格式.md)
+- [GMT0016-2023 智能密码钥匙密码应用接口规范](product/智能密码钥匙/GMT0016-2023/GMT0016-2023智能密码钥匙密码应用接口规范.md)
+- [GMT0017-2023 智能密码钥匙密码应用接口数据格式规范](product/智能密码钥匙/GMT0017-2023/GMT0017-2023.md)
+- [GMT0018-2023 密码设备应用接口规范](product/GMT0018-2023/GMT0018-2023密码设备应用接口规范.md)
+- [GMT0128-2023 数据报传输层密码协议规范（DTLCP）](protocol/传输层密码协议/GMT0128-2023/GMT0128-2023.md)
+- [GMT0129-2023 国密 SSH 密码协议规范](protocol/CSSH/GMT0129-2023/GMT0129-2023.md)
 
-安装完成后，**关闭并重新打开 PowerShell**，检查：
+## 相关学习笔记（5 篇）
 
-```powershell
-git --version
-py -3.12 --version
-```
+- [SM2 算法笔记](algorithm/公钥密码算法/SM2/SM2.md)
+- [SM3 密码杂凑算法](algorithm/密码杂凑算法/SM3/SM3密码杂凑算法.md)
+- [IPSEC 协议详解](protocol/IPSEC/IPSEC协议详解.md)
+- [TLCP 协议详解](protocol/传输层密码协议/TLCP协议详解.md)
+- [APDU 报文结构解析（基于 GMT0017-2023）](product/智能密码钥匙/APDU解析/APDU解析.md)
 
-看到 Git 和 Python 3.12 的版本号就可以继续。若找不到 `winget`，从 [Git for Windows 官网](https://gitforwindows.org/) 和 [Python Windows 下载页](https://www.python.org/downloads/windows/) 安装相应工具。
+## 测评参考（2 篇）
 
-正文可用 Typora 或其他 Markdown 编辑器编写；后面也提供记事本的打开命令。
-
-## 2. 下载项目，设置自己的姓名
-
-请维护者为你的 GitHub 账号开通仓库写入权限，再执行：
-
-```powershell
-New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\Documents\GMwiki-work"
-Set-Location "$env:USERPROFILE\Documents\GMwiki-work"
-git clone https://github.com/Loora1N/GM-crypto-assessment-wiki.git
-Set-Location .\GM-crypto-assessment-wiki
-```
-
-把下面的**姓名和邮箱换成自己的**：
-
-```powershell
-git config --global user.name "张三"
-git config --global user.email "zhangsan@example.com"
-git config --global core.quotepath false
-git status
-```
-
-看到当前分支为 `main`，工作区没有未提交改动，就可以继续。
-
-**后面的命令都在项目根目录执行。** 重新打开终端后先进入它：
-
-```powershell
-Set-Location "$env:USERPROFILE\Documents\GMwiki-work\GM-crypto-assessment-wiki"
-```
-
-已克隆过项目的同事进入原目录即可，不重复 `clone`，也不重新 `git init`。
-
-## 3. 安装依赖，先把网站跑起来
-
-```powershell
-py -3.12 -m venv .venv
-.\.venv\Scripts\python.exe -m pip install -r requirements.txt
-.\.venv\Scripts\python.exe -m mkdocs serve
-```
-
-看到终端打印 `Serving on ...` 后，用浏览器打开它给出的完整地址。本项目默认是：
-
-[http://127.0.0.1:8000/GM-crypto-assessment-wiki/](http://127.0.0.1:8000/GM-crypto-assessment-wiki/)
-
-**看到知识库首页，说明环境配置完成。** 回到 PowerShell，按 **Ctrl+C** 停止服务，继续下一步。
-
-本手册直接使用 `.venv` 中的 Python，不需要激活虚拟环境。以后不必重新创建 `.venv`；依赖更新时重新运行安装依赖的命令即可。
-
-## 4. 同步项目，建立自己的分支
-
-先用 `git status` 确认没有上一项任务的未提交改动，再逐行执行：
-
-```powershell
-git status
-git switch main
-git pull --ff-only origin main
-git switch -c "docs/${env:USERNAME}-$(Get-Date -Format 'yyyyMMdd-HHmmss')"
-git branch --show-current
-```
-
-最后会显示一个 `docs/用户名-时间` 形式的分支名。**后面一直在这个分支编写和上传。** 下次修改其他文章时，从本步骤重新建立新分支。
-
-如果同步失败或有未提交改动，不继续切换分支；处理方法见[维护参考](maintenance/维护参考/维护参考.md)。
-
-## 5. 建立文章目录，写好 Markdown
-
-先选文章分类。最外层固定为四个章节，章节内再按二级主题分类：
-
-| 章节 | 目录 | 二级主题示例 |
-| --- | --- | --- |
-| 密码算法 | `docs/algorithm/` | 对称密码算法、非对称密码算法、杂凑算法 |
-| 密码协议 | `docs/protocol/` | 安全传输协议、认证协议、密钥交换协议 |
-| 密码产品 | `docs/product/` | 智能密码钥匙、服务器密码机、密钥管理设备 |
-| 密码测评 | `docs/assessment/` | 测评基础、测评实施、案例与学习笔记 |
-
-本例放在“密码产品 / 智能密码钥匙”。建立**文章自己的目录**、图片目录和 `.md` 文件：
-
-```powershell
-New-Item -ItemType Directory -Force -Path "docs\product\智能密码钥匙\GBT35291-2017信息安全技术智能密码钥匙应用接口规范\assets"
-New-Item -ItemType File -Path "docs\product\智能密码钥匙\GBT35291-2017信息安全技术智能密码钥匙应用接口规范\GBT35291-2017信息安全技术智能密码钥匙应用接口规范.md"
-```
-
-同名文章已存在时，按维护参考更新原文章，不重复新建或覆盖它。
-
-用 Typora 打开新文件，也可以用记事本：
-
-```powershell
-notepad "docs\product\智能密码钥匙\GBT35291-2017信息安全技术智能密码钥匙应用接口规范\GBT35291-2017信息安全技术智能密码钥匙应用接口规范.md"
-```
-
-复制下面的结构，填写自己的信息和实际笔记，保存为 **UTF-8、`.md` 文件**：
-
-```markdown
-# GBT35291-2017 信息安全技术 智能密码钥匙应用接口规范
-
-- 作者：填写姓名
-- 更新日期：填写 YYYY-MM-DD
-- 正式标准编号：GB/T 35291-2017
-- 标准名称：信息安全技术 智能密码钥匙应用接口规范
-- 资料来源：填写标准来源和版本信息
-
-## 笔记范围
-
-填写本篇整理的章节、条款或接口。
-
-## 原文与出处
-
-填写经过核对的引用，并注明条款号和页码。
-
-## 学习笔记
-
-填写自己的理解、示例和检查方法，与原文分开。
-```
-
-**标准类文章标题必须同时包含编号和完整名称**：国标用 `GBT12345-2017` 形式，行标用 `GMT12345-2026` 形式；保留真实编号的前导零，例如 `GMT0017-2023`。目录名、文件名、正文标题和导航中的编号保持一致。普通笔记可以直接使用“APDU解析”等名称。
-
-模板只提供结构，填写完整内容后再提交。[本例标准的编号和名称可在官方页面核对](https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=F969F4765DFEE1CD475201A2D55B10ED)。
-
-## 6. 有配图时，把图片放进文章目录
-
-把配图放入刚建的 `assets` 文件夹。例如文件名为 `interface-example.png`，正文写：
-
-```markdown
-![接口示意图](assets/interface-example.png)
-```
-
-文章目录应是这样：
-
-```text
-GBT35291-2017信息安全技术智能密码钥匙应用接口规范/
-├── GBT35291-2017信息安全技术智能密码钥匙应用接口规范.md
-└── assets/
-    └── interface-example.png
-```
-
-没有配图就跳过，不添加指向不存在图片的链接。
-
-**Windows 特别注意：命令中的文件路径可用 `\`，Markdown 图片链接和 YAML 导航路径必须用 `/`。** 不写 `C:\Users\...`、`file:///...` 或 `.\assets\image.png`。Typora 插入图片后，确认实际图片已复制到文章目录，链接使用相对路径和 `/`。
-
-每篇文章的 `.md`、配图和附件都放在自己的目录里，不把图片放到网站公共的 `docs/assets/`。
-
-## 7. 修改 mkdocs.yml，加入文章导航
-
-在项目根目录执行：
-
-```powershell
-notepad mkdocs.yml
-```
-
-找到 `nav:` 下的“密码产品 → 智能密码钥匙”，在 APDU 条目下面增加自己的文章。保存后，这部分应如下：
-
-```yaml
-  - 密码产品:
-      - 章节概览: product/index.md
-      - 智能密码钥匙:
-          - APDU解析: product/智能密码钥匙/APDU解析/APDU解析.md
-          - "GBT35291-2017 信息安全技术 智能密码钥匙应用接口规范": product/智能密码钥匙/GBT35291-2017信息安全技术智能密码钥匙应用接口规范/GBT35291-2017信息安全技术智能密码钥匙应用接口规范.md
-```
-
-这里只展示需要修改的局部。**保留其他章节和同事的条目，不另建一个 `nav:`。** 检查：
-
-- 缩进用空格，不用 Tab，同级条目对齐。
-- 路径从 `docs/` 内部开始，不加 `docs/` 前缀。
-- 路径用 `/`，目录、文件名、年份和大小写与实际文件一致。
-
-其他章节的方法相同：先建文件，再加入对应二级分类。新建分类和更新章节概览的写法见[维护参考](maintenance/维护参考/维护参考.md)。
-
-## 8. 检查构建，再打开网页检查文章
-
-保存所有文件，执行在线版构建：
-
-```powershell
-Remove-Item Env:OFFLINE -ErrorAction SilentlyContinue
-.\.venv\Scripts\python.exe -m mkdocs build --strict
-```
-
-成功后检查离线版，再恢复在线模式：
-
-```powershell
-$env:OFFLINE = "true"
-.\.venv\Scripts\python.exe -m mkdocs build --strict --site-dir site-offline
-Remove-Item Env:OFFLINE -ErrorAction SilentlyContinue
-```
-
-两次构建都应完成。报错先处理再继续；最后一条命令只清除终端中的离线模式变量，不删除文件。
-
-然后启动服务，打开终端打印的地址：
-
-```powershell
-.\.venv\Scripts\python.exe -m mkdocs serve
-```
-
-在浏览器中实际检查：
-
-- [ ] 能从正确章节的导航打开自己的文章。
-- [ ] 标准编号、完整名称、正文和来源正确，没有空白占位内容。
-- [ ] 图片全部显示，表格、代码和公式排版正常。
-- [ ] 搜索文章标题或标准编号能找到页面。
-- [ ] 终端没有需要处理的构建报错。
-
-**必须实际打开网页，Typora 预览不能代替 `serve`。** 检查完成后回到终端按 **Ctrl+C** 停止服务。
-
-## 9. Git 提交，再推送自己的分支
-
-确认仍在第 4 步创建的 `docs/...` 分支；如果显示 `main`，先停下来确认分支，不直接推送：
-
-```powershell
-git branch --show-current
-git status
-```
-
-暂存整篇文章目录和配置，图片会一起保存：
-
-```powershell
-git add -- "docs/product/智能密码钥匙/GBT35291-2017信息安全技术智能密码钥匙应用接口规范" "mkdocs.yml"
-git diff --staged --stat
-git diff --staged
-```
-
-确认只包含本次文章、图片和导航改动。若还修改了章节概览，用 `git add -- "docs/product/index.md"` 一并加入。不要上传 `.venv/`、`site/` 或 `site-offline/`。
-
-创建本地提交，再同步同事更新：
-
-```powershell
-git commit -m "docs: 添加 GBT35291-2017 智能密码钥匙接口规范笔记"
-git fetch origin
-git merge --no-edit origin/main
-git status
-```
-
-若返回 `Already up to date` 且内容未变，继续；合并引入了改动则**重新完成第 8 步**。出现冲突先按维护参考处理，处理后同样重新检查。
-
-最后推送当前分支：
-
-```powershell
-git push -u origin HEAD
-```
-
-`HEAD` 会将当前分支推送到远端同名分支，不必重新输入生成的分支名，见 [Git 官方说明](https://git-scm.com/docs/git-push#_examples)。首次推送按凭据管理器提示登录有权限的 GitHub 账号。
-
-**push 失败：先在协作群同步，再检查网络、权限和远端分支更新。** 保留本地文件和提交，不强推。可填写下面的消息：
-
-```text
-【文档上传失败】
-文章：填写编号和名称
-分支：填写 git branch --show-current 的结果
-本地提交：填写 git log -1 --oneline 的结果
-检查结果：在线／离线构建、serve 检查是否通过
-报错：粘贴关键错误信息，不附带密码或令牌
-当前状态：本地提交已保留，正在排查，请维护者协助确认
-```
-
-## 10. 发起合并请求，确认网站更新
-
-打开[项目仓库](https://github.com/Loora1N/GM-crypto-assessment-wiki)：
-
-1. 点击 `Compare & pull request`，或进入 `Pull requests → New pull request`。
-2. `base` 选 `main`，`compare` 选刚推送的 `docs/...` 分支。
-3. 写明文章、分类和更新内容，注明在线／离线构建和 `serve` 已检查。
-4. 创建 PR，把链接提供给维护者审核，等待检查通过并合入。
-5. 合入后，在 `Actions` 确认“文档检查与发布”成功，再到[在线知识库](https://loora1n.github.io/GM-crypto-assessment-wiki/)检查文章。
-
-**能在在线知识库打开文章，这次上传才算完成。** 个人分支 push 成功后，需要合入 `main` 才会触发发布。发布失败时也在群里同步任务链接和报错。
-
-完成后，工作区干净时更新本机主分支：
-
-```powershell
-git switch main
-git pull --ff-only origin main
-```
-
-下次上传从第 4 步开始。
-
-## 遇到问题时再看这里
-
-| 问题 | 先做什么 |
-| --- | --- |
-| 找不到命令或 `mkdocs.yml` | 确认工具已安装、终端已重开，当前目录是项目根目录。 |
-| 导航找不到文件或页面 404 | 核对 YAML 路径、大小写和 `/`，不加 `docs/` 前缀。 |
-| Typora 有图，网页没图 | 核对实际图片、Git 暂存文件和相对链接。 |
-| 8000 端口已占用 | 用下面的 8001 命令启动，打开终端打印的新地址。 |
-| push 失败、冲突或不清楚报错原因 | 先在群里同步，按维护参考处理，不强推或删除文件。 |
-
-```powershell
-.\.venv\Scripts\python.exe -m mkdocs serve --dev-addr 127.0.0.1:8001
-```
-
-完整目录规范、标准命名、Git 命令说明、冲突处理和验收要求见[项目维护参考](maintenance/维护参考/维护参考.md)。
-
-章节入口：[密码算法](algorithm/index.md) · [密码协议](protocol/index.md) · [密码产品](product/index.md) · [密码测评](assessment/index.md)。
+- [商用密码应用安全性评估 FAQ（第四版）](standard/faq4/faq4.md)
+- [信息系统密码应用高风险判定指引（2021）](standard/高风险判定指引/信息系统密码应用高风险判定指引.md)

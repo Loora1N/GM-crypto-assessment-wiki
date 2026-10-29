@@ -91,8 +91,9 @@ markdown_extensions:
       permalink: true
 
 nav:
+  - 首页: index.md
   - 使用手册:
-      - 快速开始: index.md
+      - 快速开始: maintenance/快速开始/快速开始.md
       - 维护参考: maintenance/维护参考/维护参考.md
   - 密码算法:
       - 章节概览: algorithm/index.md
