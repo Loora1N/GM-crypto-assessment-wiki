@@ -21,8 +21,9 @@
   self.lunr.Index.prototype.search = function (query) {
     const results = search.call(this, query);
     if (capture) {
+      const links = queryTermLinks(this, query);
       for (const result of results) {
-        matches.set(result.ref, Object.keys(result.matchData.metadata));
+        matches.set(result.ref, { metadata: result.matchData.metadata, links });
       }
     }
     return results;
@@ -105,11 +106,12 @@
       for (const item of groups.flat()) {
         if (item.score <= 0 || combined.get(item.location)?.matchKind === "exact") continue;
         const previous = combined.get(item.location);
-        if (previous && (reason === "partial" || previous.matchReason !== "partial")) continue;
-        const words = matches.get(item.location);
-        combined.set(item.location, { ...item, matchKind: "fuzzy", matchReason: reason,
+        const evidence = matches.get(item.location);
+        const words = evidence && Object.keys(evidence.metadata);
+        const ranked = rankFuzzy({ ...item, matchKind: "fuzzy", matchReason: reason,
           ...(reason === "fuzzy" && words ? { terms: Object.fromEntries(words.map(word => [word, true])) } : {})
-        });
+        }, evidence);
+        if (!previous || compareFuzzy(ranked, previous) < 0) combined.set(item.location, ranked);
       }
     };
     append(ordinary.data.items, "partial");
@@ -126,7 +128,7 @@
 
     const exact = [...combined.values()].filter(item => item.matchKind === "exact");
     const fuzzy = [...combined.values()].filter(item => item.matchKind === "fuzzy")
-      .sort((a, b) => b.score - a.score);
+      .sort(compareFuzzy);
     const group = items => {
       const pages = new Map();
       for (const item of items) {
@@ -142,8 +144,10 @@
       }
       return [...pages.values()];
     };
-    ordinary.data.items = [...group(exact), ...group(fuzzy)];
+    const visibleFuzzy = fuzzy.slice(0, fuzzyLimit);
+    ordinary.data.items = [...group(exact), ...rankedGroups(visibleFuzzy)];
     ordinary.data.matchCounts = { exact: exact.length, fuzzy: fuzzy.length };
+    ordinary.data.fuzzyShown = visibleFuzzy.length;
     if (!exact.length && fallbackMode && !ordinary.data.items.some(items => items.some(item => item.matchReason === "partial"))) {
       ordinary.data.match = { mode: fallbackMode, query: message.data };
       ordinary.data.suggest = [];

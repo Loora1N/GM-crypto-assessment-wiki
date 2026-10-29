@@ -44,6 +44,39 @@ def index_page(content, **meta):
 
 
 class SearchTableTests(unittest.TestCase):
+    def test_ranking_metadata_distinguishes_paragraphs_tables_and_formulas(self):
+        entry = index_page(
+            '<h1 id="page">Page</h1><p>alpha <code>beta</code></p><p>gamma</p>'
+            '<table><tr><td>tableword</td></tr></table>'
+            '<div class="arithmatex">\\[formula\\]</div>'
+            '<p>before <span class="arithmatex">\\(inlineformula\\)</span> after</p>'
+        ).entries[0]
+        meta = entry["searchMeta"]
+        self.assertEqual(meta["headingLevel"], 1)
+        self.assertFalse(meta["appendix"])
+        self.assertEqual([(block["kind"], block["text"]) for block in meta["blocks"]], [
+            ("body", "alpha beta"), ("body", "gamma"), ("table", "tableword"),
+            ("formula", "\\[formula\\]"), ("body", "before   after"),
+            ("formula", "\\(inlineformula\\)"),
+        ])
+
+    def test_appendix_applies_to_descendants_but_not_later_sibling_sections(self):
+        entries = index_page(
+            '<h1 id="page">Page</h1><h2 id="appendix">附录 A</h2>'
+            '<h3 id="child">A.1 Nested</h3><p>inside</p>'
+            '<h4 id="grandchild">Details</h4><p>inside too</p>'
+            '<h2 id="normal">Normal</h2><p>outside</p>'
+            '<h2 id="english">Annex B</h2><h3 id="english-child">B.1 Example</h3>'
+        ).entries
+        self.assertEqual([entry["searchMeta"]["appendix"] for entry in entries],
+                         [False, True, True, True, False, True, True])
+
+    def test_many_paragraphs_keep_separate_identities(self):
+        paragraphs = [f"passage-{i}" for i in range(128)]
+        entry = index_page('<h1 id="page">Page</h1>' +
+                           "".join(f"<p>{text}</p>" for text in paragraphs)).entries[0]
+        self.assertEqual([block["text"] for block in entry["searchMeta"]["blocks"]], paragraphs)
+
     def test_table_structure_and_section_destination(self):
         index = index_page(
             '<h1 id="page">Page</h1><h2 id="identifiers">Identifiers</h2>'
@@ -79,6 +112,7 @@ class SearchTableTests(unittest.TestCase):
         self.assertIn("<td>visible</td>", text)
         self.assertIn("next visible", text)
         self.assertFalse(any(entry["location"].endswith("#hidden") for entry in index.entries))
+        self.assertNotIn("HIDDEN", json.dumps([entry["searchMeta"] for entry in index.entries]))
 
     def test_page_exclusion(self):
         index = index_page('<table><tr><td>hidden</td></tr></table>', search={"exclude": True})
@@ -95,6 +129,7 @@ class SearchTableTests(unittest.TestCase):
         self.assertNotIn("<img", text)
         self.assertNotIn("HIDDEN", text)
         self.assertNotIn("onerror=\"", text)
+        self.assertNotIn("HIDDEN", json.dumps(index.entries[0]["searchMeta"]))
 
     def test_metadata_uses_material_entry_creation(self):
         index = index_page(

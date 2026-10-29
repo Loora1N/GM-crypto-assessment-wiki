@@ -351,6 +351,99 @@ test(`built search: ${path.basename(site)}`, async (t) => {
     assert.equal(response.matchCounts.fuzzy, 0);
   });
 
+  // The Python hook tests verify extraction; these fixtures exercise ranking
+  // against the real worker and real token metadata, with deliberately high
+  // boosts on low-priority content to expose accidental BM25-first ordering.
+  const rankedDoc = (location, title, blocks, extra = {}) => ({
+    location, title,
+    text: blocks.map(block => block.kind === 'table'
+      ? `<table><tbody><tr><td>${block.text}</td></tr></tbody></table>` : `<p>${block.text}</p>`).join(''),
+    searchMeta: { headingLevel: location.includes('#') ? 2 : 1, appendix: false, blocks, ...extra },
+    boost: extra.boost || 1,
+  });
+
+  await t.test('fuzzy rank uses content type then distinct terms in the best paragraph', async () => {
+    const body = text => ({ kind: 'body', text });
+    const rankingQuery = await loadWorker(config, { config: index.config, docs: [
+      rankedDoc('article.html', 'alpha topic', []),
+      rankedDoc('heading.html', 'Overview', []),
+      rankedDoc('heading.html#child', 'alpha topic beta topic gamma', [], { headingLevel: 3 }),
+      rankedDoc('three.html', 'Notes', [body('alpha'), body('beta'), body('gamma'), body('alpha together beta together gamma')]),
+      rankedDoc('two.html', 'Notes', [body('alpha together beta')]),
+      rankedDoc('repeat.html', 'Notes', [body('alpha '.repeat(60))], { boost: 1000 }),
+      rankedDoc('split.html', 'Notes', [body('alpha'), body('beta'), body('gamma')], { boost: 1000 }),
+      rankedDoc('mixed.html', 'Notes', [body('alpha'), { kind: 'table', text: 'beta gamma' }], { boost: 1000 }),
+      rankedDoc('table.html', 'Notes', [{ kind: 'table', text: 'alpha topic beta topic gamma' }], { boost: 1000 }),
+      rankedDoc('formula.html', 'Notes', [{ kind: 'formula', text: 'alpha topic beta topic gamma' }], { boost: 1000 }),
+      rankedDoc('appendix.html', 'Overview', []),
+      rankedDoc('appendix.html#child', 'alpha topic beta topic gamma', [body('alpha topic beta topic gamma')], { appendix: true, boost: 1000 }),
+    ] });
+    for (const term of ['alpha beta gamma', 'alpha alpha beta gamma']) {
+      const response = await rankingQuery.response(term);
+      const hits = response.items.flat().filter(item => item.score > 0);
+      assert.equal(response.matchCounts.exact, 0);
+      assert.deepEqual(Array.from(hits.slice(0, 4), item => item.location),
+        ['article.html', 'heading.html#child', 'three.html', 'two.html']);
+      assert.deepEqual(Array.from(hits.slice(4, 7), item => item.matchRank.coverage), [1, 1, 1], 'Do not add repetitions, other paragraphs or table terms to body coverage');
+      assert.ok(hits.slice(7).every(item => item.matchRank.tier === 3), 'Tables, formulas and appendix headings all follow body hits');
+      assert.equal(hits.find(item => item.location === 'three.html').matchRank.coverage, 3);
+      const snippet = hits.find(item => item.location === 'three.html').text;
+      assert.ok(plain(snippet).includes('alpha together beta together gamma'), 'Preview the strongest paragraph even when it occurs after the first two hits');
+      assert.deepEqual(new Set(marked(snippet)), new Set(['alpha', 'beta', 'gamma']));
+    }
+  });
+
+  await t.test('prefix variants do not inflate fuzzy query-term coverage', async () => {
+    const rankingQuery = await loadWorker(config, { config: index.config, docs: [
+      rankedDoc('variants.html', 'Notes', [{ kind: 'body', text: 'alpha alphabet alphabetic' }], { boost: 1000 }),
+      rankedDoc('both.html', 'Notes', [{ kind: 'body', text: 'alphabet betamax' }]),
+    ] });
+    const hits = (await rankingQuery('alpha beta')).filter(item => item.score > 0);
+    assert.deepEqual(Array.from(hits, item => [item.location, item.matchRank.coverage]),
+      [['both.html', 2], ['variants.html', 1]]);
+  });
+
+  await t.test('page grouping must not move a low-ranked sibling before another page body hit', async () => {
+    const rankingQuery = await loadWorker(config, { config: index.config, docs: [
+      rankedDoc('shared.html', 'Overview', []),
+      rankedDoc('shared.html#heading', 'alpha topic', []),
+      rankedDoc('shared.html#table', 'Values', [{ kind: 'table', text: 'alpha example beta' }]),
+      rankedDoc('other.html', 'Notes', [{ kind: 'body', text: 'alpha example beta' }]),
+    ] });
+    const hits = (await rankingQuery('alpha beta')).filter(item => item.score > 0);
+    assert.deepEqual(Array.from(hits, item => item.location),
+      ['shared.html#heading', 'other.html', 'shared.html#table']);
+  });
+
+  await t.test('cap fuzzy sections after deduplication while keeping all exact hits and total counts', async () => {
+    const limitQuery = await loadWorker(config, { config: index.config, docs: [
+      rankedDoc('many.html', 'Overview', []),
+      ...Array.from({ length: 25 }, (_, i) => rankedDoc(`exact-${i}.html`, 'Original', [{ kind: 'body', text: 'alpha beta' }])),
+      ...Array.from({ length: 25 }, (_, i) => rankedDoc(`many.html#hit-${i}`, 'Related', [{ kind: 'body', text: 'alpha other beta' }])),
+    ] });
+    const response = await limitQuery.response('alpha beta');
+    const hits = response.items.flat().filter(item => item.score > 0);
+    assert.equal(response.matchCounts.exact, 25);
+    assert.equal(response.matchCounts.fuzzy, 25);
+    assert.equal(response.fuzzyShown, 20);
+    assert.equal(hits.length, 45, 'Count scored sections, not article context headers');
+    assert.equal(new Set(hits.map(item => item.location)).size, 45);
+    assert.ok(hits.slice(0, 25).every(item => item.matchKind === 'exact'));
+    assert.ok(hits.slice(25).every(item => item.matchKind === 'fuzzy'));
+    const empty = await limitQuery.response('zzznomatch');
+    assert.equal(empty.matchCounts.fuzzy, 0);
+    assert.equal(empty.fuzzyShown, 0);
+    for (const total of [20, 21]) {
+      const boundaryQuery = await loadWorker(config, { config: index.config,
+        docs: Array.from({ length: total }, (_, i) => rankedDoc(`boundary-${i}.html`, 'Related', [{ kind: 'body', text: 'alpha other beta' }])),
+      });
+      const boundary = await boundaryQuery.response('alpha beta');
+      assert.equal(boundary.matchCounts.fuzzy, total);
+      assert.equal(boundary.fuzzyShown, 20);
+      assert.equal(boundary.items.flat().filter(item => item.score > 0).length, 20);
+    }
+  });
+
   await t.test('exact, prefix and spelling matches form a deduplicated exact-first union', async () => {
     const unionQuery = await loadWorker(config, {
       config: index.config,
