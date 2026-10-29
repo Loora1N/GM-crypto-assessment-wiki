@@ -5,13 +5,15 @@
   let observer;
   let pending = false;
   const labels = { exact: "精准匹配", partial: "关键词匹配", fuzzy: "拼写相近", alias: "同义术语" };
+  const fields = { title: "文章标题", heading: "小标题", body: "正文", table: "表格", formula: "公式", appendix: "附录", other: "其他" };
 
   function decorate() {
     pending = false;
     if (!state?.matchCounts) return;
     const { exact, fuzzy } = state.matchCounts;
+    const shown = state.fuzzyShown ?? fuzzy;
     const meta = state.ref.querySelector(".md-search-result__meta");
-    const summary = `精准匹配 ${exact} 处 · 模糊匹配 ${fuzzy} 处（已去重）`;
+    const summary = `精准匹配 ${exact} 处 · 模糊匹配 ${fuzzy} 处${fuzzy > shown ? `（展示前 ${shown} 处，已去重）` : "（已去重）"}`;
     if (meta && exact + fuzzy && meta.textContent !== summary) meta.textContent = summary;
     const rendered = state.ref.querySelectorAll(".md-search-result__item");
     rendered.forEach((element, index) => {
@@ -38,9 +40,26 @@
         badge.className = "search-match-badge";
         badge.dataset.matchKind = item.matchKind;
         badge.textContent = labels[item.matchKind === "exact" ? "exact" : item.matchReason];
+        if (item.matchKind === "fuzzy" && item.matchRank) {
+          badge.textContent += ` · ${fields[item.matchRank.field]} · 命中 ${item.matchRank.coverage} 词`;
+        }
         link.querySelector("h1, h2")?.prepend(badge);
       });
     });
+    const list = state.ref.querySelector(".md-search-result__list");
+    let notice = state.ref.querySelector(".search-match-limit");
+    if (fuzzy > shown && rendered.length === state.items.length && list) {
+      if (!notice) {
+        notice = document.createElement("li");
+        notice.className = "search-match-limit";
+        notice.setAttribute("role", "status");
+      }
+      const text = `模糊匹配结果总数${fuzzy}，数量较多只展示了${shown}`;
+      if (notice.textContent !== text) notice.textContent = text;
+      if (list.lastElementChild !== notice) list.append(notice);
+    } else {
+      notice?.remove();
+    }
   }
 
   function schedule() {
