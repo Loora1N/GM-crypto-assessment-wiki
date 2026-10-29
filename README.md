@@ -2,7 +2,7 @@
 
 基于 **MkDocs + Material for MkDocs** 搭建的密码学习与测评文档站点，用于整理标准条款、算法与协议笔记、密码产品资料和测评经验。
 
-[在线知识库](https://loora1n.github.io/GM-crypto-assessment-wiki/) · [从 0 开始上传笔记](docs/index.md) · [项目维护参考](docs/maintenance/维护参考/维护参考.md)
+[在线知识库](https://loora1n.github.io/GM-crypto-assessment-wiki/) · [标准文章目录](docs/index.md) · [从 0 开始上传笔记](docs/maintenance/快速开始/快速开始.md) · [项目维护参考](docs/maintenance/维护参考/维护参考.md)
 
 ## 内容分类
 
@@ -60,7 +60,7 @@ py -3.12 -m venv .venv
 
 保存文档后，服务会自动重新构建。按 `Ctrl+C` 停止服务。命令直接使用 `.venv` 的 Python，不需要激活虚拟环境；之后再次启动只需运行最后一条命令。
 
-第一次安装工具、配置 Git 或上传笔记，请按[首页快速开始](docs/index.md)逐步操作。
+第一次安装工具、配置 Git 或上传笔记，请按[快速开始](docs/maintenance/快速开始/快速开始.md)逐步操作。
 
 ## 项目结构
 
@@ -71,7 +71,7 @@ GM-crypto-assessment-wiki/
 ├── requirements.txt             # Python 依赖
 ├── THEME.md                     # Blue Topaz Maple 主题说明
 ├── docs/
-│   ├── index.md                 # 从零快速开始：首页
+│   ├── index.md                 # 国标与行标文章目录：首页
 │   ├── maintenance/             # 完整维护参考
 │   ├── algorithm/               # 密码算法
 │   ├── protocol/                # 密码协议
@@ -111,7 +111,7 @@ Markdown 图片引用：
 
 **每次 push 前必须实际完成 `serve` 检查。** 合并或冲突处理改变了内容时，重新检查最终版本。push 或发布失败时，先在协作群同步报错，保留本地文件与提交，再排查网络、权限和分支更新，不强制覆盖远端历史。
 
-详细操作命令、文章模板和失败消息模板见[快速开始](docs/index.md)与[维护参考](docs/maintenance/维护参考/维护参考.md)。
+详细操作命令、文章模板和失败消息模板见[快速开始](docs/maintenance/快速开始/快速开始.md)与[维护参考](docs/maintenance/维护参考/维护参考.md)。
 
 ## 构建与发布
 
