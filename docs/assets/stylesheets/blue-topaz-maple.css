@@ -365,6 +365,13 @@ body, input, button, select, textarea {
 .md-typeset table:not([class]) tbody tr:hover { background: var(--bt-hover); }
 .md-typeset .md-typeset__table { display: block; }
 
+/* Bound painting and hit testing on long standards pages to each table's
+ * existing scroll container. Keep its real height for TOC and search offsets.
+ * Containing the inner table would clip wide columns before they can scroll. */
+@media screen {
+  .md-content__inner .md-typeset__scrollwrap { contain: paint; }
+}
+
 .md-typeset code, .md-typeset pre, .md-typeset kbd { font-family: var(--maple-font); }
 .md-typeset :not(pre) > code { color: var(--bt-code); background: var(--bt-code-bg); border: 1px solid var(--bt-border); padding: .12em .38em; border-radius: 4px; font-size: .86em; }
 .md-typeset pre { margin: 1em 0 1.4em; font-size: .86em; line-height: 1.62; }
