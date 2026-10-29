@@ -97,6 +97,8 @@ nav:
   - 密码算法:
       - 章节概览: algorithm/index.md
       - 数论补充: algorithm/数论补充/数论.md
+      - 密码杂凑算法:
+          - SM3算法: algorithm/密码杂凑算法/SM3/SM3密码杂凑算法.md
       - 消息鉴别码:
           - 常见消息鉴别码攻击: algorithm/MAC/消息鉴别码攻击/attackMAC.md
       - 公钥密码算法:
