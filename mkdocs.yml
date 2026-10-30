@@ -108,11 +108,8 @@ nav:
   - 密码协议:
       - 章节概览: protocol/index.md
       - CSSH协议: protocol/CSSH/GMT0129-2023/GMT0129-2023.md
-      - IPSEC协议:
-          - IPSEC协议个人解析: protocol/IPSEC/IPSEC协议详解.md
-          - IPSEC国标GB36968: protocol/IPSEC/GBT36968-2018/GBT36968-2018.md
+      - IPSEC协议: protocol/IPSEC/GBT36968-2018/GBT36968-2018.md
       - 传输层密码协议: 
-        - TLCP协议个人解析: protocol/传输层密码协议/TLCP协议详解.md
         - TLCP国标GBT38636: protocol/传输层密码协议/GBT38636-2020/GBT38636-2020.md
         - DTLCP协议行标: protocol/传输层密码协议/GMT0128-2023/GMT0128-2023.md
   - 密码产品:
@@ -121,18 +118,21 @@ nav:
           - APDU解析: product/智能密码钥匙/APDU解析/APDU解析.md
           - GMT0016-2023智能密码钥匙应用接口规范: product/智能密码钥匙/GMT0016-2023/GMT0016-2023智能密码钥匙密码应用接口规范.md
           - GMT0017-2023智能密码钥匙应用接口数据规范: product/智能密码钥匙/GMT0017-2023/GMT0017-2023.md
+      - SSLVPN网关: product/SSLVPN/GMT0024-2023/GMT0024-2023.md
       - GMT0018-2023密码设备应用接口规范: product/GMT0018-2023/GMT0018-2023密码设备应用接口规范.md
   - 密码测评:
       - 章节概览: assessment/index.md
-      - 测评基础:
-          - 文章编写示例: assessment/测评基础/文章编写示例/文章编写示例.md
+      - 高风险判定指引: assessment/高风险判定指引/信息系统密码应用高风险判定指引.md
+      - 测评实施指引: assessment/商用密码应用安全性评估测评实施指引/商用密码应用安全性评估测评实施指引.md
+      - FAQ第四版: assessment/faq4/faq4.md
   - 国标与行标:
       - GMT0006-2023密码应用标识规范: standard/GMT0006-2023/GMT0006-2023密码应用标识规范.md
       - GBT17964-2021分组密码算法工作模式: standard/GBT17964/GBT17964-2021分组密码算法的工作模式.md
       - GMT0014-2023数字证书认证系统密码协议规范: standard/GMT0014-2023/GMT0014-2023.md
       - GMT0015-2023数字证书格式: standard/GMT0015/GMT0015-2023数字证书格式.md
       - GMT0010-2023SM2密码算法加密签名规范: standard/GMT0010-2023/GMT0010-2023.md
-      - FAQ第四版: standard/faq4/faq4.md
-      - 高风险判定指引: standard/高风险判定指引/信息系统密码应用高风险判定指引.md
   - 个人笔记:
-      - 笔记-王彦: notes/笔记-王彦.md
+      - 笔记-王彦: notes/王彦/笔记-王彦.md
+      - 笔记-陈博麟:
+          - TLCP协议个人解析: notes/陈博麟/TLCP/TLCP协议详解.md
+          - IPSEC协议个人解析: notes/陈博麟/IPSEC/IPSEC协议详解.md
