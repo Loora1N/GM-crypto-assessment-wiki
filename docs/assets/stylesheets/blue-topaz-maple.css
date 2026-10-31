@@ -402,7 +402,17 @@ body, input, button, select, textarea {
 ::-webkit-scrollbar-thumb { background: var(--bt-border); border: 2px solid transparent; background-clip: padding-box; border-radius: 9px; }
 ::-webkit-scrollbar-thumb:hover { background-color: var(--bt-primary); }
 
-@media (min-width: 76.25em) {
+/* Put the article TOC on the left whenever it has its own sidebar. */
+@media screen and (min-width: 60em) {
+  .md-sidebar--secondary { order: -1; }
+  .md-sidebar--secondary .md-nav { border-left: 0; border-right: 1px solid var(--bt-border); padding-left: 0; padding-right: .4rem; }
+  [dir="ltr"] .md-sidebar--secondary:not([hidden]) ~ .md-content > .md-content__inner { margin-left: 1.2rem; margin-right: .8rem; }
+}
+
+@media screen and (min-width: 76.25em) {
+  .md-sidebar--primary { order: 1; }
+  [dir="ltr"] .md-sidebar--primary:not([hidden]) ~ .md-content > .md-content__inner { margin-left: .8rem; margin-right: 1.2rem; }
+  [dir="ltr"] .md-sidebar--secondary:not([hidden]) ~ .md-content > .md-content__inner { margin-left: 1.2rem; }
   .md-sidebar--primary .md-sidebar__scrollwrap { background: var(--bt-sidebar); border: 1px solid var(--bt-border); border-radius: 8px; padding: .7rem .3rem; }
   .md-nav--primary .md-nav__title { background: transparent; box-shadow: none; }
 }

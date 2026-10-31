@@ -45,6 +45,24 @@
 
 ## 本地运行
 
+### Windows / macOS 一键启动
+
+安装 **Python 3.12**，完整下载并解压项目后，按系统双击根目录的启动脚本即可。无需手动输入启动命令。
+
+| 系统 | 启动脚本 | 准备工作 |
+| --- | --- | --- |
+| Windows | [`run-windows.bat`](run-windows.bat) | 安装 Python 时勾选 **Add python.exe to PATH** |
+| macOS | [`run-macos.command`](run-macos.command) | 安装 macOS 版 Python；脚本支持查找 Python.org 和 Homebrew 的常见安装位置 |
+
+- 首次启动会自动创建 `.venv` 并安装依赖，需要联网；以后会复用环境，只补装缺失或不满足版本要求的依赖。
+- 页面生成后会自动打开默认浏览器。请保留启动窗口，关闭窗口即可停止服务；保存文章后页面会自动更新。
+- 启动失败时窗口会保留错误信息。如果提示端口 `8000` 被占用，请关闭之前打开的启动窗口后重试。
+- Windows 和 macOS 的 `.venv` 不能共用。跨系统复制项目时不要携带 `.venv`，让脚本在当前系统重新创建环境。
+
+macOS 脚本在 Git 中保留执行权限。如果复制或解压后提示没有执行权限，可在终端输入 `chmod +x `（末尾留一个空格），将 `run-macos.command` 拖入终端并按回车，再重新双击脚本。
+
+### 使用命令启动
+
 准备 **Git、Python 3.12** 和 Markdown 编辑器。以下命令用于 Windows PowerShell；已克隆仓库的同事进入现有项目目录，跳过克隆步骤。
 
 ```powershell
@@ -69,6 +87,8 @@ py -3.12 -m venv .venv
 ```text
 GM-crypto-assessment-wiki/
 ├── README.md                    # 仓库介绍与启动入口
+├── run-windows.bat              # Windows 双击启动本地预览
+├── run-macos.command            # macOS 双击启动本地预览
 ├── mkdocs.yml                   # 网站配置、导航和 Markdown 扩展
 ├── requirements.txt             # Python 依赖
 ├── THEME.md                     # Blue Topaz Maple 主题说明
