@@ -158,7 +158,7 @@ body, input, button, select, textarea {
 }
 
 /* Material uses a 20px rem for its layout; keep that scale and size text here. */
-.md-grid { max-width: 72rem; }
+.md-grid { max-width: 68rem; }
 .md-typeset { font-size: .8rem; line-height: 1.72; }
 .md-content__inner { padding: 1rem .8rem 2.5rem; }
 .md-typeset p, .md-typeset li, .md-typeset td { overflow-wrap: anywhere; }
@@ -182,7 +182,11 @@ body, input, button, select, textarea {
 .md-nav__link { margin-top: .2rem; padding: .2rem .4rem; border-radius: 4px; }
 .md-nav__link:hover { background: var(--bt-hover); color: var(--bt-link); }
 .md-nav__link--active { background: var(--bt-active); color: var(--bt-link); box-shadow: inset 3px 0 var(--bt-primary); }
-.md-sidebar--secondary .md-nav { border-left: 1px solid var(--bt-border); padding-left: .4rem; }
+.topaz-toc .md-nav { border-right: 1px solid var(--bt-border); padding-right: .5rem; }
+.topaz-toc .md-sidebar__inner { padding: 0 .3rem; }
+.topaz-toc__title { display: flex; align-items: center; justify-content: space-between; }
+.topaz-toc__close { display: none; }
+.topaz-toc__empty { padding: .6rem; color: var(--bt-muted); font-size: .7rem; }
 .md-search__form { background: var(--bt-active); color: var(--bt-text); border: 1px solid var(--bt-border); border-radius: 6px; }
 .md-search__input::placeholder { color: var(--bt-muted); }
 .md-search__icon { color: var(--bt-muted); }
@@ -402,25 +406,44 @@ body, input, button, select, textarea {
 ::-webkit-scrollbar-thumb { background: var(--bt-border); border: 2px solid transparent; background-clip: padding-box; border-radius: 9px; }
 ::-webkit-scrollbar-thumb:hover { background-color: var(--bt-primary); }
 
-/* Put the article TOC on the left whenever it has its own sidebar. */
+/* Keep category tabs in the sticky header, including on narrow screens. */
+@media screen {
+  .md-tabs { display: block; }
+}
+
+/* A single, wider TOC on the left leaves a balanced reading column. */
 @media screen and (min-width: 60em) {
-  .md-sidebar--secondary { order: -1; }
-  .md-sidebar--secondary .md-nav { border-left: 0; border-right: 1px solid var(--bt-border); padding-left: 0; padding-right: .4rem; }
-  [dir="ltr"] .md-sidebar--secondary:not([hidden]) ~ .md-content > .md-content__inner { margin-left: 1.2rem; margin-right: .8rem; }
+  .md-main__inner { gap: 1rem; }
+  .topaz-toc { order: -1; width: clamp(13rem, 22vw, 15rem); }
+  [dir="ltr"] .topaz-toc ~ .md-content > .md-content__inner { margin-left: 0; margin-right: .8rem; }
+  .md-header__button[for="__drawer"] { display: none; }
 }
 
-@media screen and (min-width: 76.25em) {
-  .md-sidebar--primary { order: 1; }
-  [dir="ltr"] .md-sidebar--primary:not([hidden]) ~ .md-content > .md-content__inner { margin-left: .8rem; margin-right: 1.2rem; }
-  [dir="ltr"] .md-sidebar--secondary:not([hidden]) ~ .md-content > .md-content__inner { margin-left: 1.2rem; }
-  .md-sidebar--primary .md-sidebar__scrollwrap { background: var(--bt-sidebar); border: 1px solid var(--bt-border); border-radius: 8px; padding: .7rem .3rem; }
-  .md-nav--primary .md-nav__title { background: transparent; box-shadow: none; }
-}
-
-@media (max-width: 76.234375em) {
+@media screen and (max-width: 59.984375em) {
+  .md-tabs__item { padding-left: .55rem; padding-right: .55rem; }
+  .md-header--lifted ~ .md-container .topaz-toc {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: min(18rem, 86vw);
+    height: 100%;
+    padding: .8rem .5rem;
+    background: var(--bt-bg);
+    z-index: 6;
+    visibility: hidden;
+    transform: translateX(-100%);
+    transition: transform .2s ease, visibility .2s;
+  }
+  [data-md-toggle="drawer"]:checked ~ .md-container .topaz-toc { visibility: visible; transform: translateX(0); }
+  .topaz-toc .md-sidebar__scrollwrap { height: 100%; max-height: 100% !important; margin: 0; }
+  .topaz-toc .md-nav { border: 0; padding: 0; }
+  .topaz-toc__close { display: inline-flex; align-items: center; min-height: 44px; padding: 0 .5rem; color: var(--bt-link); cursor: pointer; }
   [data-md-toggle="drawer"]:checked ~ .topaz-page-nav { display: none; }
-  .md-nav--primary { background: var(--bt-sidebar); }
-  .md-nav--primary .md-nav__title, .md-nav--primary .md-nav__source { color: var(--bt-text); background: var(--bt-panel); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .topaz-toc { transition: none !important; }
 }
 
 @media (max-width: 44.984375em) {
