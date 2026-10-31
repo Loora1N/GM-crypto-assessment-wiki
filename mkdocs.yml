@@ -122,6 +122,7 @@ nav:
       - GMT0018-2023密码设备应用接口规范: product/GMT0018-2023/GMT0018-2023密码设备应用接口规范.md
   - 密码测评:
       - 章节概览: assessment/index.md
+      - 信息系统密码应用测评要求: assessment/GBT43206-2023/GBT43206-2023.md
       - 高风险判定指引: assessment/高风险判定指引/信息系统密码应用高风险判定指引.md
       - 测评实施指引: assessment/商用密码应用安全性评估测评实施指引/商用密码应用安全性评估测评实施指引.md
       - FAQ第四版: assessment/faq4/faq4.md
