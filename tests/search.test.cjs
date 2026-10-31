@@ -197,6 +197,15 @@ function standardResult(results, anchor, query) {
   return result;
 }
 
+function noteWithPassage(index, phrase) {
+  // Notes can move into author folders. Locate the original section by its
+  // unique passage while still requiring it to exist in the real built index.
+  const notes = index.docs.filter(doc => decodeURIComponent(doc.location).startsWith('notes/') &&
+    plain(doc.text).includes(phrase));
+  assert.equal(notes.length, 1, `Expected one notes section containing ${JSON.stringify(phrase)}; found ${notes.length}`);
+  return notes[0];
+}
+
 test(`built search: ${path.basename(site)}`, async (t) => {
   const html = fs.readFileSync(path.join(site, 'index.html'), 'utf8');
   const config = pageConfig(html);
@@ -281,9 +290,7 @@ test(`built search: ${path.basename(site)}`, async (t) => {
 
   await t.test('copied mixed Chinese and Latin passage finds the original notes first', async () => {
     const phrase = 'gcm模式下ctr计数器';
-    const note = index.docs.find(doc => decodeURIComponent(doc.location).startsWith('notes/笔记-王彦') &&
-      plain(doc.text).includes(phrase));
-    assert.ok(note, 'The copied passage must exist in the real notes index');
+    const note = noteWithPassage(index, phrase);
     for (const term of [phrase, 'GCM模式下CTR计数器', 'gcm 模式下 ctr 计数器', '后续gcm模式下ctr计数器的前4个字节']) {
       const response = await query.response(term);
       assert.equal(response.match, undefined, 'A literal passage is not an approximate match');
@@ -304,9 +311,7 @@ test(`built search: ${path.basename(site)}`, async (t) => {
 
   await t.test('copied passage with a plus sign finds and highlights the original SSH note first', async () => {
     const phrase = '对c+s随机数';
-    const note = index.docs.find(doc => decodeURIComponent(doc.location).startsWith('notes/笔记-王彦') &&
-      plain(doc.text).includes(phrase));
-    assert.ok(note, 'The copied passage must exist in the real notes index');
+    const note = noteWithPassage(index, phrase);
     assert.ok(note.location.endsWith('#ssh'));
     for (const term of [phrase, '对C+S随机数', 'c+s', 'ssh签名内容：签名是对c+s随机数']) {
       const response = await query.response(term);
