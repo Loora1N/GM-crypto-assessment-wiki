@@ -1,0 +1,3638 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://loora1n.github.io/GM-crypto-assessment-wiki/standard/GBT17964/GBT17964-2021%E5%88%86%E7%BB%84%E5%AF%86%E7%A0%81%E7%AE%97%E6%B3%95%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%A8%A1%E5%BC%8F/">
+      
+      
+        <link rel="prev" href="../../GMT0006-2023/GMT0006-2023%E5%AF%86%E7%A0%81%E5%BA%94%E7%94%A8%E6%A0%87%E8%AF%86%E8%A7%84%E8%8C%83/">
+      
+      
+        <link rel="next" href="../../GMT0014-2023/GMT0014-2023/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+    
+    
+      
+        <title>GBT17964-2021分组密码算法工作模式 - 密评标准知识库</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+        <script src="../../../assets/vendor/iframe-worker/shim.js"></script>
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/vendor/katex/katex.min.css">
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/blue-topaz-maple.css">
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/page-search.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="密评标准知识库" class="md-header__button md-logo" aria-label="密评标准知识库" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            密评标准知识库
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              GBT17964-2021分组密码算法工作模式
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="切换到深色主题"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换到深色主题" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="切换到浅色主题"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换到浅色主题" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../maintenance/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  使用手册
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../algorithm/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  密码算法
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../protocol/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  密码协议
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../product/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  密码产品
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../assessment/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  密码测评
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  国标与行标
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../notes/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  个人笔记
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+  
+  
+  
+  <aside class="md-sidebar md-sidebar--secondary topaz-toc" data-md-component="sidebar" data-md-type="toc" aria-label="文章目录">
+    <div class="md-sidebar__scrollwrap">
+      <div class="md-sidebar__inner">
+        <nav class="md-nav md-nav--secondary" aria-label="文章标题目录">
+          <div class="md-nav__title topaz-toc__title">
+            文章目录
+            <label class="topaz-toc__close" for="__drawer" title="收起文章目录">收起 ×</label>
+          </div>
+          
+            <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+              
+                <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 范围
+      
+    </span>
+  </a>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 规范性引用文件
+      
+    </span>
+  </a>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 术语和定义
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 术语和定义">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-block-cipher-operation-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 分组密码算法工作模式 block cipher operation mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-electronic-codebook-ecb-operation-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 电码本工作模式 electronic codebook (ECB) operation mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-cipher-block-chaining-cbc-operation-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 密文分组链接工作模式 cipher block chaining (CBC) operation mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-cipher-feedback-cfb-operation-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 密文反馈工作模式 cipher feedback (CFB) operation mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-output-feedback-ofb-operation-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5 输出反馈工作模式 output feedback (OFB) operation mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36-counter-ctr-operation-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.6 计数器工作模式 counter (CTR) operation mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#37-xex-xor-encryption-xor-xex-construction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.7 XEX结构 Xor-Encryption-Xor (XEX) construction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#38-xex-xex-tweakable-block-cipher-with-ciphertext-stealing-xts-operation-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.8 带密文挪用的XEX可调分组密码工作模式 XEX tweakable block cipher with ciphertext stealing (XTS) operation mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#39-universal-hash-function-based-ctr-hctr-operation-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.9 带泛杂凑函数的计数器工作模式 universal hash function based CTR (HCTR) operation mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#310-block-chaining-bc-operation-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.10 分组链接工作模式 block chaining (BC) operation mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#311-output-feedback-with-a-nonlinear-function-ofbnlf-operation-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.11 带非线性函数的输出反馈工作模式 output feedback with a nonlinear function (OFBNLF) operation mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#312-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.12 密钥 key
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#313-initialization-vector-iv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.13 初始向量 initialization vector IV
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#314-counter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.14 计数器 counter
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#315-tweak-tw" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.15 调柄 tweak TW
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#316-padding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.16 填充 padding
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#317-feedback-buffer-fb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.17 反馈缓存 feedback buffer; FB
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4 符号和缩略语
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4 符号和缩略语">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 符号
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 缩略语
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5 电码本工作模式
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5 电码本工作模式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 变量定义
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-ecb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 ECB的加密方式描述
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-ecb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 ECB的解密方式描述
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6 密文分组链接工作模式
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6 密文分组链接工作模式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 变量定义
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-cbc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 CBC的加密方式描述
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-cbc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 CBC的解密方式描述
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7 密文反馈工作模式
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7 密文反馈工作模式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 变量定义
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-cfb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 CFB的加密方式描述
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-cfb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 CFB的解密方式描述
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8 输出反馈工作模式
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8 输出反馈工作模式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 变量定义
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-ofb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 OFB的加密方式描述
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-ofb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3 OFB的解密方式描述
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9 计数器工作模式
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9 计数器工作模式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 变量定义
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-ctr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 CTR的加密方式描述
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93-ctr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3 CTR的解密方式描述
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#10-xex" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10 带密文挪用的XEX可调分组密码工作模式
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10 带密文挪用的XEX可调分组密码工作模式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1 变量定义
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102-xts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2 XTS的加密方式描述
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10.2 XTS的加密方式描述">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1021" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2.1 明文长度满足整数倍分组长度
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1022" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2.2 明文长度不满足整数倍分组长度
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#103-xts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3 XTS的解密方式描述
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10.3 XTS的解密方式描述">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1031" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3.1 密文长度满足整数倍分组长度
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1032" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3.2 密文长度不满足整数倍分组长度
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11 带泛杂凑函数的计数器工作模式
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11 带泛杂凑函数的计数器工作模式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.1 变量定义
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112-hctr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.2 HCTR的加密方式描述
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#113-hctr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.3 HCTR的解密方式描述
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12 分组链接工作模式
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12 分组链接工作模式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#121" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.1 变量定义
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#122-bc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.2 BC的加密方式描述
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#123-bc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.3 BC的解密方式描述
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13 带非线性函数的输出反馈工作模式
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13 带非线性函数的输出反馈工作模式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#131" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.1 变量定义
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#132-ofbnlf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.2 OFBNLF的加密方式描述
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#133-ofbnlf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.3 OFBNLF的解密方式描述
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#a" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        附录A
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="附录A">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A.1 电码本工作模式的性质
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A.1 电码本工作模式的性质">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A.1.1 场景
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A.1.2 性质
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A.1.3 填充明文
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A.1.4 差错扩散
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A.1.5 同步
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A.2 密文分组链接工作模式的性质
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A.2 密文分组链接工作模式的性质">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A.2.1 场景
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A.2.2 性质
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A.2.3 填充明文
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A.2.4 差错扩散
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A.2.5 同步
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A.3 密文反馈工作模式的性质
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A.3 密文反馈工作模式的性质">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A.3.1 场景
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A.3.2 性质
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A.3.3 填充明文
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a34" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A.3.4 差错扩散
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a35" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A.3.5 同步
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A.4 输出反馈工作模式的性质
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A.4 输出反馈工作模式的性质">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A.4.1 场景
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A.4.2 性质
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a43" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A.4.3 填充明文
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a44" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A.4.4 差错控制
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a45" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A.4.5 同步
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A.5 计数器工作模式的性质
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A.5 计数器工作模式的性质">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a51" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A.5.1 场景
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a52" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A.5.2 性质
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a53" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A.5.3 填充明文
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a54" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A.5.4 差错扩散
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a55" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A.5.5 同步
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a6-xex" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A.6 带密文挪用的XEX可调分组密码工作模式的性质
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A.6 带密文挪用的XEX可调分组密码工作模式的性质">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a61" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A.6.1 场景
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a62" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A.6.2 性质
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a63" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A.6.3 填充明文
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a64" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A.6.4 差错控制
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a65" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A.6.5 同步
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A.7 带泛杂凑函数的计数器工作模式的性质
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A.7 带泛杂凑函数的计数器工作模式的性质">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a71" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A.7.1 场景
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a72" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A.7.2 性质
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a73" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A.7.3 填充明文
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a74" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A.7.4 差错扩散
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a75" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A.7.5 同步
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A.8 分组链接工作模式的性质
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A.8 分组链接工作模式的性质">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a81" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A.8.1 场景
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a82" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A.8.2 性质
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a83" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A.8.3 填充明文
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a84" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A.8.4 差错扩散
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a85" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A.8.5 同步
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A.9 带非线性函数的输出反馈工作模式的性质
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A.9 带非线性函数的输出反馈工作模式的性质">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a91" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A.9.1 场景
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a92" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A.9.2 性质
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a93" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A.9.3 填充明文
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a94" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A.9.4 差错扩散
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a95" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A.9.5 同步
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#b" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        附录B
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="附录B">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#b1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B.1 概述
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b2-ecb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B.2 ECB工作模式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b3-cbc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B.3 CBC工作模式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b4-cfb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B.4 CFB工作模式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b5-ofb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B.5 OFB工作模式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b6-ctr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B.6 CTR工作模式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b7-xts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B.7 XTS工作模式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b8-hctr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B.8 HCTR工作模式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b9-bc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B.9 BC工作模式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b10-ofbnlf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B.10 OFBNLF工作模式
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        附录C
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="附录C">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#c1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C.1 概述
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c2-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C.2 填充方法1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c3-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C.3 填充方法2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c4-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C.4 填充方法3
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        参考文献
+      
+    </span>
+  </a>
+  
+</li>
+              
+            </ul>
+          
+        </nav>
+      </div>
+    </div>
+  </aside>
+
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>GBT17964-2021分组密码算法工作模式</h1>
+
+<h2 id="1">1 范围<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<p>本文件描述了九种分组密码算法的工作模式,给出了参数和方法。</p>
+<p>本文件适用于指导分组密码算法在加解密数据时的使用。</p>
+<p>本文件描述的工作模式仅适用于保护数据的机密性,不适用于保护数据的完整性。</p>
+<h2 id="2">2 规范性引用文件<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<p>下列文件中的内容通过文中的规范性引用而构成本文件必不可少的条款。其中,注日期的引用文件,仅该日期对应的版本适用于本文件;不注日期的引用文件,其最新版本(包括所有的修改单)适用于本文件。</p>
+<p>GB/T25069—2010 信息安全技术术语</p>
+<p>GM/Z4001—2013 密码术语</p>
+<h2 id="3">3 术语和定义<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<p>GB/T25069—2010和GM/Z4001—2013界定的以及下列术语和定义适用于本文件。</p>
+<h3 id="31-block-cipher-operation-mode">3.1 分组密码算法工作模式 block cipher operation mode<a class="headerlink" href="#31-block-cipher-operation-mode" title="Permanent link">&para;</a></h3>
+<p>分组密码算法的使用方式,主要包括电码本工作模式、密文分组链接工作模式、密文反馈工作模式、输出反馈工作模式、计数器工作模式、带密文挪用的XEX 可调分组密码工作模式、带泛杂凑函数的计数器工作模式、分组链接工作模式、带非线性函数的输出反馈工作模式等。</p>
+<p>[来源:GM/Z4001—2013,2.26,有修改]</p>
+<h3 id="32-electronic-codebook-ecb-operation-mode">3.2 电码本工作模式 electronic codebook (ECB) operation mode<a class="headerlink" href="#32-electronic-codebook-ecb-operation-mode" title="Permanent link">&para;</a></h3>
+<p>分组密码算法的一种工作模式,其特征是将明文分组直接作为算法的输入,对应的输出作为密文分组。</p>
+<p>[来源:GM/Z4001—2013,2.10]</p>
+<h3 id="33-cipher-block-chaining-cbc-operation-mode">3.3 密文分组链接工作模式 cipher block chaining (CBC) operation mode<a class="headerlink" href="#33-cipher-block-chaining-cbc-operation-mode" title="Permanent link">&para;</a></h3>
+<p>分组密码算法的一种工作模式,其特征是将当前的明文分组与前一密文分组进行异或运算后再进行加密得到当前的密文分组。</p>
+<p>[来源:GM/Z4001—2013,2.62]</p>
+<h3 id="34-cipher-feedback-cfb-operation-mode">3.4 密文反馈工作模式 cipher feedback (CFB) operation mode<a class="headerlink" href="#34-cipher-feedback-cfb-operation-mode" title="Permanent link">&para;</a></h3>
+<p>用分组密码算法构造序列密码的一种工作模式。其特征是,使用分组算法当前输出的若干比特,与明文逐比特异或得到密文,该密文同时更新算法下一时刻的输入序列。</p>
+<p>[来源:GM/Z4001—2013,2.61]</p>
+<h3 id="35-output-feedback-ofb-operation-mode">3.5 输出反馈工作模式 output feedback (OFB) operation mode<a class="headerlink" href="#35-output-feedback-ofb-operation-mode" title="Permanent link">&para;</a></h3>
+<p>用分组密码算法构造序列密码的一种工作模式,其特征是,将算法当前时刻输出的若干比特与明文逐比特异或得到密文,同时算法当前时刻的输出作为算法下一时刻的输入。</p>
+<p>[来源:GM/Z4001—2013,2.108]</p>
+<h3 id="36-counter-ctr-operation-mode">3.6 计数器工作模式 counter (CTR) operation mode<a class="headerlink" href="#36-counter-ctr-operation-mode" title="Permanent link">&para;</a></h3>
+<p>用分组密码算法构造序列密码的一种工作模式。其特征是,使用计数器的值作为算法的输入序列进行分组运算,将运算输出的若干比特与明文逐比特异或得到密文,然后对计数器作增量或者减量运算作为算法下一时刻的输入序列。</p>
+<p>[来源:GM/Z4001—2013,2.37]</p>
+<h3 id="37-xex-xor-encryption-xor-xex-construction">3.7 XEX结构 Xor-Encryption-Xor (XEX) construction<a class="headerlink" href="#37-xex-xor-encryption-xor-xex-construction" title="Permanent link">&para;</a></h3>
+<p>构造可调分组密码的一种结构,明文分组与掩码相异或后,使用分组密码算法加密,再将密文分组与掩码相异或。</p>
+<h3 id="38-xex-xex-tweakable-block-cipher-with-ciphertext-stealing-xts-operation-mode">3.8 带密文挪用的XEX可调分组密码工作模式 XEX tweakable block cipher with ciphertext stealing (XTS) operation mode<a class="headerlink" href="#38-xex-xex-tweakable-block-cipher-with-ciphertext-stealing-xts-operation-mode" title="Permanent link">&para;</a></h3>
+<p>分组密码算法的一种工作模式,利用XEX 结构完成数据的加密和解密。</p>
+<h3 id="39-universal-hash-function-based-ctr-hctr-operation-mode">3.9 带泛杂凑函数的计数器工作模式 universal hash function based CTR (HCTR) operation mode<a class="headerlink" href="#39-universal-hash-function-based-ctr-hctr-operation-mode" title="Permanent link">&para;</a></h3>
+<p>分组密码算法的一种工作模式,是计数器模式的变体,它使用一个泛杂凑函数生成一个秘密掩码,作为计数器模式的初始向量。</p>
+<h3 id="310-block-chaining-bc-operation-mode">3.10 分组链接工作模式 block chaining (BC) operation mode<a class="headerlink" href="#310-block-chaining-bc-operation-mode" title="Permanent link">&para;</a></h3>
+<p>分组密码算法的一种工作模式,当前的明文分组与所有前面密文分组异或,再加密得到当前的密文分组。</p>
+<h3 id="311-output-feedback-with-a-nonlinear-function-ofbnlf-operation-mode">3.11 带非线性函数的输出反馈工作模式 output feedback with a nonlinear function (OFBNLF) operation mode<a class="headerlink" href="#311-output-feedback-with-a-nonlinear-function-ofbnlf-operation-mode" title="Permanent link">&para;</a></h3>
+<p>分组密码算法的一种工作模式,是OFB和ECB的变体,它的密钥随着每一个分组而改变。</p>
+<h3 id="312-key">3.12 密钥 key<a class="headerlink" href="#312-key" title="Permanent link">&para;</a></h3>
+<p>控制密码算法运算的关键信息或参数。</p>
+<p>[来源:GM/Z4001—2013,2.63]</p>
+<h3 id="313-initialization-vector-iv">3.13 初始向量 initialization vector IV<a class="headerlink" href="#313-initialization-vector-iv" title="Permanent link">&para;</a></h3>
+<p>在密码变换中,为增加安全性或使密码设备同步而引入的用于数据变换的起始数据。</p>
+<h3 id="314-counter">3.14 计数器 counter<a class="headerlink" href="#314-counter" title="Permanent link">&para;</a></h3>
+<p>长度为<span class="arithmatex">\(n\)</span> 比特的比特序列,用于计数器模式。</p>
+<p>注:<span class="arithmatex">\(n\)</span> 是分组密码的分组长度。</p>
+<h3 id="315-tweak-tw">3.15 调柄 tweak TW<a class="headerlink" href="#315-tweak-tw" title="Permanent link">&para;</a></h3>
+<p>某些模式中使用的一个参数,以增加加密过程的变化量;当使用同一个密钥时,不同加密过程应采用各不相同的调柄。</p>
+<h3 id="316-padding">3.16 填充 padding<a class="headerlink" href="#316-padding" title="Permanent link">&para;</a></h3>
+<p>给一个数据串附加额外比特的操作。</p>
+<p>[来源:GB/T25069—2010,2.2.187]</p>
+<h3 id="317-feedback-buffer-fb">3.17 反馈缓存 feedback buffer; FB<a class="headerlink" href="#317-feedback-buffer-fb" title="Permanent link">&para;</a></h3>
+<p>用于为加密过程存储输入数据的变量。</p>
+<p>注:在启动点,<span class="arithmatex">\(FB\)</span>的值为<span class="arithmatex">\(IV\)</span>。</p>
+<h2 id="4">4 符号和缩略语<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<h3 id="41">4.1 符号<a class="headerlink" href="#41" title="Permanent link">&para;</a></h3>
+<p>下列符号适用于本文件。</p>
+<p><span class="arithmatex">\(\operatorname{bit}(S,i)\)</span>:比特串<span class="arithmatex">\(S\)</span>左起第<span class="arithmatex">\(i\)</span>个比特,以1为起始值。</p>
+<p><span class="arithmatex">\(C\)</span>:密文(比特串)。</p>
+<p><span class="arithmatex">\(D_K\)</span>:使用密钥<span class="arithmatex">\(K\)</span>的分组密码<span class="arithmatex">\(E\)</span>的解密运算。</p>
+<p><span class="arithmatex">\(E\)</span>:一个分组密码算法。</p>
+<p><span class="arithmatex">\(E_K\)</span>:使用密钥<span class="arithmatex">\(K\)</span>的分组密码<span class="arithmatex">\(E\)</span>的加密运算。</p>
+<p><span class="arithmatex">\(F_i\)</span>:第<span class="arithmatex">\(i\)</span>个反馈变量。</p>
+<p><span class="arithmatex">\(FB_i\)</span>:第<span class="arithmatex">\(i\)</span>个反馈缓存。</p>
+<p><span class="arithmatex">\(H\)</span>:一个泛杂凑函数。</p>
+<p><span class="arithmatex">\(i\)</span>:迭代值。</p>
+<p><span class="arithmatex">\(j\)</span>:明文/密文分组的大小,<span class="arithmatex">\(1\le j\le k\)</span>。</p>
+<p><span class="arithmatex">\(k\)</span>:反馈变量的比特长度,<span class="arithmatex">\(1\le k\le n\)</span>。</p>
+<p><span class="arithmatex">\(K\)</span>:密钥。</p>
+<p><span class="arithmatex">\(K^i\)</span>:密钥<span class="arithmatex">\(K\)</span>的<span class="arithmatex">\(i\)</span>次幂。</p>
+<p><span class="arithmatex">\(K_i\)</span>:第<span class="arithmatex">\(i\)</span>个密钥变量。</p>
+<p><span class="arithmatex">\(|M|\)</span>:比特串<span class="arithmatex">\(M\)</span>的比特长度。</p>
+<p><span class="arithmatex">\(n\)</span>:分组密码算法的分组长度。</p>
+<p><span class="arithmatex">\(\operatorname{One}(m)\)</span>:连续<span class="arithmatex">\(m\)</span>个比特“1”构成的比特串。</p>
+<p><span class="arithmatex">\(P\)</span>:明文(比特串)。</p>
+<p><span class="arithmatex">\(q\)</span>:明文/密文分组的个数。</p>
+<p><span class="arithmatex">\(r\)</span>:反馈缓存的比特长度,<span class="arithmatex">\(n\le r\le 2n\)</span>。</p>
+<p><span class="arithmatex">\(T_i\)</span>:第<span class="arithmatex">\(i\)</span>个计数值。</p>
+<p><span class="arithmatex">\(X_i\)</span>:分组密码的第<span class="arithmatex">\(i\)</span>个输入变量。</p>
+<p><span class="arithmatex">\(Y_i\)</span>:分组密码的第<span class="arithmatex">\(i\)</span>个输出变量。</p>
+<p><span class="arithmatex">\(\operatorname{Zero}(m)\)</span>:连续<span class="arithmatex">\(m\)</span>个比特“0”构成的比特串。</p>
+<p><span class="arithmatex">\(\parallel\)</span>:比特串的连接。</p>
+<p><span class="arithmatex">\(Z\gg 1\)</span>:比特串<span class="arithmatex">\(Z\)</span>向右移动一位,左侧补0。</p>
+<p><span class="arithmatex">\((i)_2\)</span>:数字<span class="arithmatex">\(i\)</span>的二进制表示。</p>
+<p><span class="arithmatex">\(j\sim A\)</span>:比特串<span class="arithmatex">\(A\)</span>的左截取,要求<span class="arithmatex">\(A\)</span>的比特长度大于或等于<span class="arithmatex">\(j\)</span>,则<span class="arithmatex">\(j\sim A\)</span>是由<span class="arithmatex">\(A\)</span>最左侧的<span class="arithmatex">\(j\)</span>个比特组成的长度为<span class="arithmatex">\(j\)</span>比特的比特串。</p>
+<p><span class="arithmatex">\(A\sim j\)</span>:比特串<span class="arithmatex">\(A\)</span>的右截取,要求<span class="arithmatex">\(A\)</span>的比特长度大于或等于<span class="arithmatex">\(j\)</span>,则<span class="arithmatex">\(A\sim j\)</span>是由<span class="arithmatex">\(A\)</span>最右侧的<span class="arithmatex">\(j\)</span>个比特组成的长度为<span class="arithmatex">\(j\)</span>比特的比特串。</p>
+<p><span class="arithmatex">\(\oplus\)</span>:比特串的比特级逻辑异或运算,要求<span class="arithmatex">\(A\)</span>、<span class="arithmatex">\(B\)</span>是长度相等的比特串,则<span class="arithmatex">\(A\oplus B\)</span>表示<span class="arithmatex">\(A\)</span>和<span class="arithmatex">\(B\)</span>的比特级逻辑异或所形成的比特串。</p>
+<p><span class="arithmatex">\(\otimes\)</span>:有限域<span class="arithmatex">\(\operatorname{GF}(2^n)\)</span>上的乘法。当<span class="arithmatex">\(n=128\)</span>时,本文件使用本原多项式<span class="arithmatex">\(1+\alpha+\alpha^2+\alpha^7+\alpha^{128}\)</span>定义<span class="arithmatex">\(\operatorname{GF}(2^{128})\)</span>上的乘法运算,其中<span class="arithmatex">\(\alpha\)</span>是<span class="arithmatex">\(\operatorname{GF}(2^{128})\)</span>上的本原元。</p>
+<p><span class="arithmatex">\(\alpha^i\)</span>:<span class="arithmatex">\(\operatorname{GF}(2^{128})\)</span>上的本原元<span class="arithmatex">\(\alpha\)</span>的<span class="arithmatex">\(i\)</span>次幂。</p>
+<p>注:令<span class="arithmatex">\(U\)</span>和<span class="arithmatex">\(V\)</span>是两个128位的比特串,则128位的比特串<span class="arithmatex">\(W=U\otimes V\)</span>可以如下计算,其中比特串<span class="arithmatex">\(U\)</span>和<span class="arithmatex">\(V\)</span>看作有限域<span class="arithmatex">\(\operatorname{GF}(2^{128})\)</span>上的元素,选取的本原多项式为<span class="arithmatex">\(1+\alpha+\alpha^2+\alpha^7+\alpha^{128}\)</span>。</p>
+<p>a)令<span class="arithmatex">\(W=\operatorname{Zero}(128)\)</span>,<span class="arithmatex">\(Z=U\)</span>。</p>
+<p>b)对于<span class="arithmatex">\(i=1,2,\ldots,128\)</span>,执行以下两个步骤:</p>
+<p>1)若<span class="arithmatex">\(\operatorname{bit}(V,i)=1\)</span>,则令<span class="arithmatex">\(W=W\oplus Z\)</span>;</p>
+<p>2)若<span class="arithmatex">\(\operatorname{bit}(Z,128)=0\)</span>,则令<span class="arithmatex">\(Z=Z\gg 1\)</span>;否则令<span class="arithmatex">\(Z=(Z\gg 1)\oplus(11100001\parallel\operatorname{Zero}(120))\)</span>。</p>
+<h3 id="42">4.2 缩略语<a class="headerlink" href="#42" title="Permanent link">&para;</a></h3>
+<p>下列缩略语适用于本文件。</p>
+<p>BC:分组链接(BlockChaining)</p>
+<p>CBC:密文分组链接(CipherBlockChaining)</p>
+<p>CFB:密文反馈(CipherFeedback)</p>
+<p>CTR:计数器(Counter)</p>
+<p>ECB:电码本(ElectronicCodebook)</p>
+<p>FB:反馈缓存(FeedbackBuffer)</p>
+<p>HCTR:带泛杂凑函数的计数器(universalHashfunctionbasedCTR)</p>
+<p>OFB:输出反馈(OutputFeedback)</p>
+<p>OFBNLF:带非线性函数的输出反馈(OutputFeedbackwithaNonlinearFunction)</p>
+<p>XEX:先异或再加密再异或的结构(Xor-Encryption-Xor)</p>
+<p>XTS:带密文挪用的XEX可调分组密码(XEXTweakableblockcipherwithciphertextStealing)</p>
+<h2 id="5">5 电码本工作模式<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
+<h3 id="51">5.1 变量定义<a class="headerlink" href="#51" title="Permanent link">&para;</a></h3>
+<p>ECB工作模式采用以下变量。</p>
+<p>a)输入变量:</p>
+<p>1)<span class="arithmatex">\(q\)</span>个明文分组<span class="arithmatex">\(P_1\)</span>,<span class="arithmatex">\(P_2\)</span>,…,<span class="arithmatex">\(P_q\)</span>所组成的序列,每个分组都为<span class="arithmatex">\(n\)</span>比特;</p>
+<p>2)密钥<span class="arithmatex">\(K\)</span>,需要加解密操作方约定一致,长度由分组密码算法<span class="arithmatex">\(E\)</span>决定。</p>
+<p>b)输出变量:</p>
+<p><span class="arithmatex">\(q\)</span>个密文分组<span class="arithmatex">\(C_1\)</span>,<span class="arithmatex">\(C_2\)</span>,…,<span class="arithmatex">\(C_q\)</span>所组成的序列,每个分组都为<span class="arithmatex">\(n\)</span>比特。</p>
+<h3 id="52-ecb">5.2 ECB的加密方式描述<a class="headerlink" href="#52-ecb" title="Permanent link">&para;</a></h3>
+<p>逐个加密明文分组:<span class="arithmatex">\(C_i=E_K(P_i)\quad i=1,2,\ldots,q\)</span>。</p>
+<p>此过程如图1所示。</p>
+<p><img alt="" src="../figures/figure_p11_01.png" /></p>
+<p><strong>图 1 电码本工作模式加密算法</strong></p>
+<h3 id="53-ecb">5.3 ECB的解密方式描述<a class="headerlink" href="#53-ecb" title="Permanent link">&para;</a></h3>
+<p>逐个解密密文分组:<span class="arithmatex">\(P_i=D_K(C_i)\quad i=1,2,\ldots,q\)</span>。</p>
+<p>此过程如图2所示。</p>
+<p><img alt="" src="../figures/figure_p11_02.png" /></p>
+<p><strong>图 2 电码本工作模式解密算法</strong></p>
+<p>注1:ECB 模式的工作性质见附录A 的A.1,ECB模式的示例见附录B的B.2。</p>
+<p>注2:如果明文长度不满足分组长度的整数倍,则需要填充明文,见A.1.3,常见的填充方法见附录C。</p>
+<h2 id="6">6 密文分组链接工作模式<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
+<h3 id="61">6.1 变量定义<a class="headerlink" href="#61" title="Permanent link">&para;</a></h3>
+<p>CBC工作模式采用以下变量。</p>
+<p>a)输入变量:</p>
+<p>1)<span class="arithmatex">\(q\)</span>个明文分组<span class="arithmatex">\(P_1\)</span>,<span class="arithmatex">\(P_2\)</span>,…,<span class="arithmatex">\(P_q\)</span>所组成的序列,分组长度由分组算法<span class="arithmatex">\(E\)</span>决定;</p>
+<p>2)密钥<span class="arithmatex">\(K\)</span>,需要加解密操作方约定一致,长度由分组密码算法<span class="arithmatex">\(E\)</span>决定;</p>
+<p>3)初始向量<span class="arithmatex">\(IV\)</span>,需要加解密操作方约定一致,长度为<span class="arithmatex">\(n\)</span>比特。</p>
+<p>b)输出变量:</p>
+<p><span class="arithmatex">\(q\)</span>个密文分组<span class="arithmatex">\(C_1\)</span>,<span class="arithmatex">\(C_2\)</span>,…,<span class="arithmatex">\(C_q\)</span>所组成的序列,每个分组都为<span class="arithmatex">\(n\)</span>比特。</p>
+<h3 id="62-cbc">6.2 CBC的加密方式描述<a class="headerlink" href="#62-cbc" title="Permanent link">&para;</a></h3>
+<p>对第一个明文分组进行加密:<span class="arithmatex">\(C_1=E_K(P_1\oplus IV)\)</span>。</p>
+<p>随后:<span class="arithmatex">\(C_i=E_K(P_i\oplus C_{i-1})\quad i=2,3,\ldots,q\)</span>。</p>
+<p>此过程如图3所示。初始向量<span class="arithmatex">\(IV\)</span> 用于生成第一个密文输出。之后的加密过程中,每个明文分组与前一个密文分组进行异或运算后再加密。</p>
+<p><img alt="" src="../figures/figure_p12_03.png" /></p>
+<p><strong>图 3 密文分组链接工作模式加密算法</strong></p>
+<h3 id="63-cbc">6.3 CBC的解密方式描述<a class="headerlink" href="#63-cbc" title="Permanent link">&para;</a></h3>
+<p>对第一个密文分组进行解密:<span class="arithmatex">\(P_1=D_K(C_1)\oplus IV\)</span>。</p>
+<p>随后:<span class="arithmatex">\(P_i=D_K(C_i)\oplus C_{i-1}\quad i=2,3,\ldots,q\)</span>。</p>
+<p>此过程如图4所示。</p>
+<p><img alt="" src="../figures/figure_p12_04.png" /></p>
+<p><strong>图 4 密文分组链接工作模式解密算法</strong></p>
+<p>注1:CBC 模式的工作性质见A.2,CBC模式的示例见B.3。</p>
+<p>注2:如果明文长度不满足分组长度的整数倍,则需要填充明文,见A.2.3,常见的填充方法见附录C。</p>
+<h2 id="7">7 密文反馈工作模式<a class="headerlink" href="#7" title="Permanent link">&para;</a></h2>
+<h3 id="71">7.1 变量定义<a class="headerlink" href="#71" title="Permanent link">&para;</a></h3>
+<p>CFB工作模式采用以下变量。</p>
+<p>a)输入变量:</p>
+<p>1)<span class="arithmatex">\(q\)</span>个明文分组<span class="arithmatex">\(P_1\)</span>,<span class="arithmatex">\(P_2\)</span>,…,<span class="arithmatex">\(P_q\)</span>所组成的序列,每个分组都为<span class="arithmatex">\(j\)</span>比特;</p>
+<p>2)密钥<span class="arithmatex">\(K\)</span>,需要加解密操作方约定一致,长度由分组密码算法<span class="arithmatex">\(E\)</span>决定;</p>
+<p>3)初始向量<span class="arithmatex">\(IV\)</span>,需要加解密操作方约定一致,长度为<span class="arithmatex">\(r\)</span>比特。</p>
+<p>b)中间变量:</p>
+<p>1)<span class="arithmatex">\(q\)</span>个密码输入变量<span class="arithmatex">\(X_1\)</span>,<span class="arithmatex">\(X_2\)</span>,…,<span class="arithmatex">\(X_q\)</span>所组成的序列,每个变量都为<span class="arithmatex">\(n\)</span>比特;</p>
+<p>2)<span class="arithmatex">\(q\)</span>个密码输出变量<span class="arithmatex">\(Y_1\)</span>,<span class="arithmatex">\(Y_2\)</span>,…,<span class="arithmatex">\(Y_q\)</span>所组成的序列,每个变量都为<span class="arithmatex">\(n\)</span>比特;</p>
+<p>3)<span class="arithmatex">\(q\)</span>个临时变量<span class="arithmatex">\(Z_1\)</span>,<span class="arithmatex">\(Z_2\)</span>,…,<span class="arithmatex">\(Z_q\)</span>所组成的序列,每个变量都为<span class="arithmatex">\(j\)</span>比特;</p>
+<p>4)<span class="arithmatex">\(q-1\)</span>个反馈变量<span class="arithmatex">\(F_1\)</span>,<span class="arithmatex">\(F_2\)</span>,…,<span class="arithmatex">\(F_{q-1}\)</span>所组成的序列,每个变量都为<span class="arithmatex">\(k\)</span>比特;</p>
+<p>5)<span class="arithmatex">\(q\)</span>个反馈缓存<span class="arithmatex">\(FB_1\)</span>,<span class="arithmatex">\(FB_2\)</span>,…,<span class="arithmatex">\(FB_q\)</span>所组成的序列,每个分组都为<span class="arithmatex">\(r\)</span>比特。</p>
+<p>c)输出变量:</p>
+<p><span class="arithmatex">\(q\)</span>个密文分组<span class="arithmatex">\(C_1\)</span>,<span class="arithmatex">\(C_2\)</span>,…,<span class="arithmatex">\(C_q\)</span>所组成的序列,每个分组都为<span class="arithmatex">\(j\)</span>比特。</p>
+<h3 id="72-cfb">7.2 CFB的加密方式描述<a class="headerlink" href="#72-cfb" title="Permanent link">&para;</a></h3>
+<p>设置反馈缓存<span class="arithmatex">\(FB\)</span>的初始向量:<span class="arithmatex">\(FB_1=IV\)</span>。</p>
+<p>加密运算按照如下六个步骤进行:</p>
+<p>a)生成密码输入变量:<span class="arithmatex">\(X_i=n\sim FB_i\)</span>;</p>
+<p>b)使用分组密码:<span class="arithmatex">\(Y_i=E_K(X_i)\)</span>;</p>
+<p>c)选择左侧的<span class="arithmatex">\(j\)</span>比特:<span class="arithmatex">\(Z_i=j\sim Y_i\)</span>;</p>
+<p>d)生成密文分组:<span class="arithmatex">\(C_i=P_i\oplus Z_i\)</span>;</p>
+<p>e)生成反馈变量:<span class="arithmatex">\(F_i=\operatorname{One}(k-j)\parallel C_i\)</span>;</p>
+<p>f)更新反馈缓存:<span class="arithmatex">\(FB_{i+1}=(FB_i\parallel F_i)\sim r\)</span>。</p>
+<p>对<span class="arithmatex">\(i=1,2,\ldots,q\)</span>,重复上述步骤,最后一个循环结束于d)。此过程如图5所示。分组密码输出变量<span class="arithmatex">\(Y\)</span>的左侧<span class="arithmatex">\(j\)</span>比特用来加密明文分组,<span class="arithmatex">\(Y\)</span>的其他比特被舍弃。</p>
+<p><img alt="" src="../figures/figure_p13_05.png" /></p>
+<p><strong>图 5 密文反馈工作模式加密算法</strong></p>
+<p>生成新的反馈缓存<span class="arithmatex">\(FB_{i+1}\)</span>的方法是,把长度为<span class="arithmatex">\(k-j\)</span>的全“1”比特串填充到密文分组<span class="arithmatex">\(C_i\)</span>的左侧,得</p>
+<p>到<span class="arithmatex">\(k\)</span> 比特反馈变量<span class="arithmatex">\(F_i\)</span>;然后舍弃当前反馈缓存<span class="arithmatex">\(FB_i\)</span> 左侧的<span class="arithmatex">\(k\)</span> 比特,并将<span class="arithmatex">\(F_i\)</span> 填充到其右侧。此后,<span class="arithmatex">\(FB_{i+1}\)</span>左侧的<span class="arithmatex">\(n\)</span>比特将用于加密下一个输入<span class="arithmatex">\(X\)</span>。</p>
+<h3 id="73-cfb">7.3 CFB的解密方式描述<a class="headerlink" href="#73-cfb" title="Permanent link">&para;</a></h3>
+<p>设置反馈缓存<span class="arithmatex">\(FB\)</span>的初始向量:<span class="arithmatex">\(FB_1=IV\)</span>。</p>
+<p>解密运算按照如下六个步骤进行:</p>
+<p>a)生成密码输入变量:<span class="arithmatex">\(X_i=n\sim FB_i\)</span>;</p>
+<p>b)使用分组密码:<span class="arithmatex">\(Y_i=E_K(X_i)\)</span>;</p>
+<p>c)选择左侧的<span class="arithmatex">\(j\)</span>比特:<span class="arithmatex">\(Z_i=j\sim Y_i\)</span>;</p>
+<p>d)生成明文分组:<span class="arithmatex">\(P_i=C_i\oplus Z_i\)</span>;</p>
+<p>e)生成反馈变量:<span class="arithmatex">\(F_i=\operatorname{One}(k-j)\parallel C_i\)</span>;</p>
+<p>f)更新反馈缓存:<span class="arithmatex">\(FB_{i+1}=(FB_i\parallel F_i)\sim r\)</span>。</p>
+<p>对<span class="arithmatex">\(i=1,2,\ldots,q\)</span>,重复上述步骤,最后一个循环结束于d)。此过程如图6所示。</p>
+<p><img alt="" src="../figures/figure_p14_06.png" /></p>
+<p><strong>图 6 密文反馈工作模式解密算法</strong></p>
+<p>注1:建议使用<span class="arithmatex">\(j\)</span>和<span class="arithmatex">\(k\)</span>的值相等的CFB模式。按照这种建议(<span class="arithmatex">\(j=k\)</span>),加密操作和解密操作的e)可以写成<span class="arithmatex">\(F_i=C_i\)</span>(<span class="arithmatex">\(j=k\)</span>)。</p>
+<p>注2:CFB 模式的工作性质见A.3,CFB模式的示例见B.4。</p>
+<p>注3:如果明文长度不满足分组长度的整数倍,则可能需要填充明文,见A.3,常见的填充方法见附录C。</p>
+<h2 id="8">8 输出反馈工作模式<a class="headerlink" href="#8" title="Permanent link">&para;</a></h2>
+<h3 id="81">8.1 变量定义<a class="headerlink" href="#81" title="Permanent link">&para;</a></h3>
+<p>OFB工作模式采用以下变量。</p>
+<p>a)输入变量:</p>
+<p>1)<span class="arithmatex">\(q\)</span>个明文分组<span class="arithmatex">\(P_1\)</span>,<span class="arithmatex">\(P_2\)</span>,…,<span class="arithmatex">\(P_q\)</span>所组成的序列,每个分组都为<span class="arithmatex">\(j\)</span>比特;</p>
+<p>2)密钥<span class="arithmatex">\(K\)</span>,需要加解密操作方约定一致,长度由分组密码算法<span class="arithmatex">\(E\)</span>决定;</p>
+<p>3)初始向量<span class="arithmatex">\(IV\)</span>,需要加解密操作方约定一致,长度为<span class="arithmatex">\(n\)</span>比特。</p>
+<p>b)中间变量:</p>
+<p>1)<span class="arithmatex">\(q\)</span>个密码输入变量<span class="arithmatex">\(X_1\)</span>,<span class="arithmatex">\(X_2\)</span>,…,<span class="arithmatex">\(X_q\)</span>所组成的序列,每个变量都为<span class="arithmatex">\(n\)</span>比特;</p>
+<p>2)<span class="arithmatex">\(q\)</span>个密码输出变量<span class="arithmatex">\(Y_1\)</span>,<span class="arithmatex">\(Y_2\)</span>,…,<span class="arithmatex">\(Y_q\)</span>所组成的序列,每个变量都为<span class="arithmatex">\(n\)</span>比特;</p>
+<p>3)<span class="arithmatex">\(q\)</span>个临时变量<span class="arithmatex">\(Z_1\)</span>,<span class="arithmatex">\(Z_2\)</span>,…,<span class="arithmatex">\(Z_q\)</span>所组成的序列,每个变量都为<span class="arithmatex">\(j\)</span>比特。</p>
+<p>c)输出变量:</p>
+<p><span class="arithmatex">\(q\)</span>个密文分组<span class="arithmatex">\(C_1\)</span>,<span class="arithmatex">\(C_2\)</span>,…,<span class="arithmatex">\(C_q\)</span>所组成的序列,每个分组都为<span class="arithmatex">\(j\)</span>比特。</p>
+<h3 id="82-ofb">8.2 OFB的加密方式描述<a class="headerlink" href="#82-ofb" title="Permanent link">&para;</a></h3>
+<p>设置密码输入变量<span class="arithmatex">\(X\)</span>的初始向量:<span class="arithmatex">\(X_1=IV\)</span>。</p>
+<p>加密运算按照如下四个步骤进行:</p>
+<p>a)使用分组密码:<span class="arithmatex">\(Y_i=E_K(X_i)\)</span>;</p>
+<p>b)选择左侧的<span class="arithmatex">\(j\)</span>比特:<span class="arithmatex">\(Z_i=j\sim Y_i\)</span>;</p>
+<p>c)生成密文分组:<span class="arithmatex">\(C_i=P_i\oplus Z_i\)</span>;</p>
+<p>d)反馈操作:<span class="arithmatex">\(X_{i+1}=Y_i\)</span>。</p>
+<p>对<span class="arithmatex">\(i=1,2,\ldots,q\)</span>,重复上述步骤,最后一个循环结束于c)。此过程如图7所示。每次使用分组密码所生成的结果<span class="arithmatex">\(Y_i\)</span>被用来反馈并成为<span class="arithmatex">\(X\)</span>的下一个值,即<span class="arithmatex">\(X_{i+1}\)</span>。<span class="arithmatex">\(Y_i\)</span>的左侧<span class="arithmatex">\(j\)</span>比特用来加密明文分组。</p>
+<p><img alt="" src="../figures/figure_p15_07.png" /></p>
+<p><strong>图 7 输出反馈工作模式加密算法</strong></p>
+<h3 id="83-ofb">8.3 OFB的解密方式描述<a class="headerlink" href="#83-ofb" title="Permanent link">&para;</a></h3>
+<p>设置密码输入变量<span class="arithmatex">\(X\)</span>的初始向量:<span class="arithmatex">\(X_1=IV\)</span>。</p>
+<p>解密运算按照如下四个步骤进行:</p>
+<p>a)使用分组密码:<span class="arithmatex">\(Y_i=E_K(X_i)\)</span>;</p>
+<p>b)选择左侧的<span class="arithmatex">\(j\)</span>比特:<span class="arithmatex">\(Z_i=j\sim Y_i\)</span>;</p>
+<p>c)生成明文分组:<span class="arithmatex">\(P_i=C_i\oplus Z_i\)</span>;</p>
+<p>d)反馈操作:<span class="arithmatex">\(X_{i+1}=Y_i\)</span>。</p>
+<p>对<span class="arithmatex">\(i=1,2,\ldots,q\)</span>,重复上述步骤,最后一个循环结束于c)。此过程如图8所示。解密过程与加密过程仅在步骤c)有不同,相应的变量值<span class="arithmatex">\(X_i\)</span>和<span class="arithmatex">\(Y_i\)</span>是相同的。</p>
+<p><img alt="" src="../figures/figure_p16_08.png" /></p>
+<p><strong>图 8 输出反馈工作模式解密算法</strong></p>
+<p>注1:OFB 模式的工作性质见A.4,OFB模式的示例见B.5。</p>
+<p>注2:如果明文长度不满足分组长度的整数倍,则可能需要填充明文,见A.3,常见的填充方法见附录C。</p>
+<h2 id="9">9 计数器工作模式<a class="headerlink" href="#9" title="Permanent link">&para;</a></h2>
+<h3 id="91">9.1 变量定义<a class="headerlink" href="#91" title="Permanent link">&para;</a></h3>
+<p>CTR工作模式采用以下变量。</p>
+<p>a)输入变量:</p>
+<p>1)<span class="arithmatex">\(q\)</span>个明文分组<span class="arithmatex">\(P_1\)</span>,<span class="arithmatex">\(P_2\)</span>,…,<span class="arithmatex">\(P_q\)</span>所组成的序列(其中<span class="arithmatex">\(P_1\)</span>,<span class="arithmatex">\(P_2\)</span>,…,<span class="arithmatex">\(P_{q-1}\)</span>都为<span class="arithmatex">\(n\)</span>比特,<span class="arithmatex">\(P_q\)</span>为<span class="arithmatex">\(d\)</span></p>
+<p>比特且<span class="arithmatex">\(0&lt;d\le n\)</span>);</p>
+<p>2)密钥<span class="arithmatex">\(K\)</span>,需要加解密操作方约定一致,长度由分组密码算法<span class="arithmatex">\(E\)</span>决定;</p>
+<p>3)<span class="arithmatex">\(q\)</span>个计数序列<span class="arithmatex">\(T_1\)</span>,<span class="arithmatex">\(T_2\)</span>…,<span class="arithmatex">\(T_q\)</span>,需要加解密操作方约定一致,每个都为<span class="arithmatex">\(n\)</span>比特。</p>
+<p>b)中间变量:</p>
+<p>1)<span class="arithmatex">\(q\)</span>个密码输出变量<span class="arithmatex">\(Y_1\)</span>,<span class="arithmatex">\(Y_2\)</span>,…,<span class="arithmatex">\(Y_q\)</span>所组成的序列,每个变量都为<span class="arithmatex">\(n\)</span>比特;</p>
+<p>2)临时变量<span class="arithmatex">\(Z\)</span>,长度为<span class="arithmatex">\(d\)</span>比特。</p>
+<p>c)输出变量:</p>
+<p><span class="arithmatex">\(q\)</span>个密文分组<span class="arithmatex">\(C_1\)</span>,<span class="arithmatex">\(C_2\)</span>,…,<span class="arithmatex">\(C_q\)</span>所组成的序列(其中<span class="arithmatex">\(C_1\)</span>,<span class="arithmatex">\(C_2\)</span>,…,<span class="arithmatex">\(C_{q-1}\)</span>都为<span class="arithmatex">\(n\)</span>比特,<span class="arithmatex">\(C_q\)</span>为<span class="arithmatex">\(d\)</span>比特且<span class="arithmatex">\(0&lt;d\le n\)</span>)。</p>
+<h3 id="92-ctr">9.2 CTR的加密方式描述<a class="headerlink" href="#92-ctr" title="Permanent link">&para;</a></h3>
+<p>加密运算按照四个步骤进行:</p>
+<p>a)加密计数序列:<span class="arithmatex">\(Y_i=E_K(T_i)\quad i=1,2,\ldots,q\)</span>;</p>
+<p>b)加密前<span class="arithmatex">\(q-1\)</span>个明文分组:<span class="arithmatex">\(C_i=P_i\oplus Y_i\quad i=1,2,\ldots,q-1\)</span>;</p>
+<p>c)选择<span class="arithmatex">\(Y_q\)</span>左侧的<span class="arithmatex">\(d\)</span>比特:<span class="arithmatex">\(Z=d\sim Y_q\)</span>;</p>
+<p>d)加密最后一个明文分组:<span class="arithmatex">\(C_q=P_q\oplus Z\)</span>。</p>
+<p>此过程如图9所示。</p>
+<p><img alt="" src="../figures/figure_p17_09.png" /></p>
+<p><strong>图 9 计数器工作模式加密算法</strong></p>
+<h3 id="93-ctr">9.3 CTR的解密方式描述<a class="headerlink" href="#93-ctr" title="Permanent link">&para;</a></h3>
+<p>解密运算按照以下四个步骤进行:</p>
+<p>a)加密计数序列:<span class="arithmatex">\(Y_i=E_K(T_i)\quad i=1,2,\ldots,q\)</span>;</p>
+<p>b)解密前<span class="arithmatex">\(q-1\)</span>个密文分组:<span class="arithmatex">\(P_i=C_i\oplus Y_i\quad i=1,2,\ldots,q-1\)</span>;</p>
+<p>c)选择<span class="arithmatex">\(Y_q\)</span>左侧的<span class="arithmatex">\(d\)</span>比特:<span class="arithmatex">\(Z=d\sim Y_q\)</span>;</p>
+<p>d)解密最后一个密文分组:<span class="arithmatex">\(P_q=C_q\oplus Z\)</span>。</p>
+<p>此过程如图10所示。</p>
+<p><img alt="" src="../figures/figure_p17_10.png" /></p>
+<p><strong>图 10 计数器工作模式解密算法</strong></p>
+<p>注:CTR 模式的工作性质见A.5,CTR模式的示例见B.6。</p>
+<h2 id="10-xex">10 带密文挪用的XEX可调分组密码工作模式<a class="headerlink" href="#10-xex" title="Permanent link">&para;</a></h2>
+<h3 id="101">10.1 变量定义<a class="headerlink" href="#101" title="Permanent link">&para;</a></h3>
+<p>XTS工作模式采用以下变量:</p>
+<p>a)输入变量:</p>
+<p>1)<span class="arithmatex">\(q\)</span>个明文分组<span class="arithmatex">\(P_1\)</span>,<span class="arithmatex">\(P_2\)</span>,…,<span class="arithmatex">\(P_q\)</span>所组成的序列[其中<span class="arithmatex">\(P_1\)</span>,<span class="arithmatex">\(P_2\)</span>,…,<span class="arithmatex">\(P_{q-1}\)</span>都为<span class="arithmatex">\(n\)</span>比特,<span class="arithmatex">\(P_q\)</span>为<span class="arithmatex">\(d\)</span></p>
+<p>比特,满足<span class="arithmatex">\(0&lt;d\le n\)</span>且<span class="arithmatex">\((q-1)n+d\ge n\)</span>];</p>
+<p>2)密钥<span class="arithmatex">\(K_1\)</span>和<span class="arithmatex">\(K_2\)</span>,需要加解密操作方约定一致,长度均由分组密码算法<span class="arithmatex">\(E\)</span>决定;</p>
+<p>3)调柄<span class="arithmatex">\(TW\)</span>,需要加解密操作方约定一致,长度为<span class="arithmatex">\(n\)</span>比特。</p>
+<p>b)中间变量:</p>
+<p>1)<span class="arithmatex">\(q\)</span>个密码输入变量<span class="arithmatex">\(X_1\)</span>,<span class="arithmatex">\(X_2\)</span>,…,<span class="arithmatex">\(X_q\)</span>所组成的序列,每个变量均为<span class="arithmatex">\(n\)</span>比特;</p>
+<p>2)临时变量<span class="arithmatex">\(Z\)</span>,长度为<span class="arithmatex">\(n\)</span>比特。</p>
+<p>c)输出变量:</p>
+<p><span class="arithmatex">\(q\)</span>个密文分组<span class="arithmatex">\(C_1,C_2,\ldots,C_q\)</span>所组成的序列[其中<span class="arithmatex">\(C_1,C_2,\ldots,C_{q-1}\)</span>都为<span class="arithmatex">\(n\)</span>比特,<span class="arithmatex">\(C_q\)</span>为<span class="arithmatex">\(d\)</span>比特,满足<span class="arithmatex">\(0&lt;d\le n\)</span>且<span class="arithmatex">\((q-1)n+d\ge n\)</span>]。</p>
+<p>根据4.1中关于有限域乘法<span class="arithmatex">\(\otimes\)</span>的定义,本章中所有有限域乘法运算<span class="arithmatex">\(\otimes\)</span>按照“左低右高”的方式处理变量,即变量最左侧为其最低位。</p>
+<h3 id="102-xts">10.2 XTS的加密方式描述<a class="headerlink" href="#102-xts" title="Permanent link">&para;</a></h3>
+<h4 id="1021">10.2.1 明文长度满足整数倍分组长度<a class="headerlink" href="#1021" title="Permanent link">&para;</a></h4>
+<p>此种情况下,<span class="arithmatex">\(d=n\)</span>且<span class="arithmatex">\(q\ge1\)</span>。</p>
+<p>对<span class="arithmatex">\(q\)</span> 个明文分组<span class="arithmatex">\(P_1\)</span>,<span class="arithmatex">\(P_2\)</span>,…,<span class="arithmatex">\(P_q\)</span> 进行加密运算按照如下四个步骤进行:</p>
+<p>a)计算掩码:<span class="arithmatex">\(T_i=E_{K_2}(TW)\otimes\alpha^{i-1}\)</span>;</p>
+<p>b)计算密码输入变量:<span class="arithmatex">\(X_i=P_i\oplus T_i\)</span>;</p>
+<p>c)使用分组密码:<span class="arithmatex">\(Y_i=E_{K_1}(X_i)\)</span>;</p>
+<p>d)生成密文分组:<span class="arithmatex">\(C_i=Y_i\oplus T_i\)</span>。</p>
+<h4 id="1022">10.2.2 明文长度不满足整数倍分组长度<a class="headerlink" href="#1022" title="Permanent link">&para;</a></h4>
+<p>此种情况下,<span class="arithmatex">\(0&lt;d&lt;n\)</span>且<span class="arithmatex">\(q\ge2\)</span>。</p>
+<p>对前<span class="arithmatex">\(q-1\)</span>个明文分组<span class="arithmatex">\(P_1\)</span>,<span class="arithmatex">\(P_2\)</span>,…,<span class="arithmatex">\(P_{q-1}\)</span>进行加密运算按照如下四个步骤进行:</p>
+<p>a)计算掩码:<span class="arithmatex">\(T_i=E_{K_2}(TW)\otimes\alpha^{i-1}\)</span>;</p>
+<p>b)计算密码输入变量:<span class="arithmatex">\(X_i=P_i\oplus T_i\)</span>;</p>
+<p>c)使用分组密码:<span class="arithmatex">\(Y_i=E_{K_1}(X_i)\)</span>;</p>
+<p>d)生成密文分组:<span class="arithmatex">\(C_i=Y_i\oplus T_i\)</span>。</p>
+<p>对最后一个明文分组<span class="arithmatex">\(P_q\)</span> 进行加密运算按照如下五个步骤进行:</p>
+<p>a)通过密文挪用设置临时变量:<span class="arithmatex">\(Z=P_q\parallel(C_{q-1}\sim(n-d))\)</span>;</p>
+<p>b)计算掩码:<span class="arithmatex">\(T_q=E_{K_2}(TW)\otimes\alpha^{q-1}\)</span>;</p>
+<p>c)计算密码输入变量:<span class="arithmatex">\(X_q=Z\oplus T_q\)</span>;</p>
+<p>d)使用分组密码:<span class="arithmatex">\(Y_q=E_{K_1}(X_q)\)</span>;</p>
+<p>e)生成密文分组:<span class="arithmatex">\(C_q=Y_q\oplus T_q\)</span>。</p>
+<p>密文重排按照如下三个步骤进行:</p>
+<p>a)设置临时变量:<span class="arithmatex">\(Z=C_{q-1}\)</span>;</p>
+<p>b)生成第<span class="arithmatex">\(q-1\)</span>个密文分组:<span class="arithmatex">\(C_{q-1}=C_q\)</span>;</p>
+<p>c)生成第<span class="arithmatex">\(q\)</span>个密文分组:<span class="arithmatex">\(C_q=d\sim Z\)</span>。</p>
+<p>此过程如图11所示。</p>
+<p><img alt="" src="../figures/figure_p19_11.png" /></p>
+<p><strong>图 11 带密文挪用的XEX可调分组密码工作模式加密算法</strong></p>
+<h3 id="103-xts">10.3 XTS的解密方式描述<a class="headerlink" href="#103-xts" title="Permanent link">&para;</a></h3>
+<h4 id="1031">10.3.1 密文长度满足整数倍分组长度<a class="headerlink" href="#1031" title="Permanent link">&para;</a></h4>
+<p>此种情况下,<span class="arithmatex">\(d=n\)</span>且<span class="arithmatex">\(q\ge1\)</span>。</p>
+<p>对<span class="arithmatex">\(q\)</span> 个密文分组<span class="arithmatex">\(C_1\)</span>,<span class="arithmatex">\(C_2\)</span>,…,<span class="arithmatex">\(C_q\)</span> 进行解密运算按照如下四个步骤进行:</p>
+<p>a)计算掩码:<span class="arithmatex">\(T_i=E_{K_2}(TW)\otimes\alpha^{i-1}\)</span>;</p>
+<p>b)计算密码输入变量:<span class="arithmatex">\(X_i=C_i\oplus T_i\)</span>;</p>
+<p>c)使用分组密码:<span class="arithmatex">\(Y_i=D_{K_1}(X_i)\)</span>;</p>
+<p>d)生成明文分组:<span class="arithmatex">\(P_i=Y_i\oplus T_i\)</span>。</p>
+<h4 id="1032">10.3.2 密文长度不满足整数倍分组长度<a class="headerlink" href="#1032" title="Permanent link">&para;</a></h4>
+<p>此种情况下,<span class="arithmatex">\(d&lt;n\)</span>且<span class="arithmatex">\(q\ge2\)</span>。</p>
+<p>对前<span class="arithmatex">\(q-2\)</span>个密文分组<span class="arithmatex">\(C_1\)</span>,<span class="arithmatex">\(C_2\)</span>,…,<span class="arithmatex">\(C_{q-2}\)</span>进行解密运算按照如下四个步骤进行:</p>
+<p>a)计算掩码:<span class="arithmatex">\(T_i=E_{K_2}(TW)\otimes\alpha^{i-1}\)</span>;</p>
+<p>b)计算密码输入变量:<span class="arithmatex">\(X_i=C_i\oplus T_i\)</span>;</p>
+<p>c)使用分组密码:<span class="arithmatex">\(Y_i=D_{K_1}(X_i)\)</span>;</p>
+<p>d)生成明文分组:<span class="arithmatex">\(P_i=Y_i\oplus T_i\)</span>。</p>
+<p>对最后两个密文分组<span class="arithmatex">\(C_{q-1}\)</span>和<span class="arithmatex">\(C_q\)</span> 进行解密运算按照如下九个步骤进行:</p>
+<p>a)计算掩码:<span class="arithmatex">\(T_q=E_{K_2}(TW)\otimes\alpha^{q-1}\)</span>;</p>
+<p>b)计算密码输入变量:<span class="arithmatex">\(X_q=C_{q-1}\oplus T_q\)</span>;</p>
+<p>c)使用分组密码:<span class="arithmatex">\(Y_q=D_{K_1}(X_q)\)</span>;</p>
+<p>d)生成临时变量:<span class="arithmatex">\(Z=Y_q\oplus T_q\)</span>;</p>
+<p>e)生成明文分组:<span class="arithmatex">\(P_q=d\sim Z\)</span>;</p>
+<p>f)计算掩码:<span class="arithmatex">\(T_{q-1}=E_{K_2}(TW)\otimes\alpha^{q-2}\)</span>;</p>
+<p>g)计算密码输入变量:<span class="arithmatex">\(X_{q-1}=(C_q\parallel(Z\sim(n-d)))\oplus T_{q-1}\)</span>;</p>
+<p>h)使用分组密码:<span class="arithmatex">\(Y_{q-1}=D_{K_1}(X_{q-1})\)</span>;</p>
+<p>i)生成明文分组:<span class="arithmatex">\(P_{q-1}=Y_{q-1}\oplus T_{q-1}\)</span>。</p>
+<p>此过程如图12所示。</p>
+<p><img alt="" src="../figures/figure_p20_12.png" /></p>
+<p><strong>图 12 带密文挪用的XEX可调分组密码工作模式解密算法</strong></p>
+<p>注:XTS 模式的工作性质见A.6,XTS模式的示例见B.7。</p>
+<h2 id="11">11 带泛杂凑函数的计数器工作模式<a class="headerlink" href="#11" title="Permanent link">&para;</a></h2>
+<h3 id="111">11.1 变量定义<a class="headerlink" href="#111" title="Permanent link">&para;</a></h3>
+<p>HCTR工作模式采用以下变量。</p>
+<p>a)输入变量:</p>
+<p>1)<span class="arithmatex">\(q\)</span>个明文分组<span class="arithmatex">\(P_1\)</span>,<span class="arithmatex">\(P_2\)</span>,…,<span class="arithmatex">\(P_q\)</span>所组成的序列[其中<span class="arithmatex">\(P_1\)</span>,<span class="arithmatex">\(P_2\)</span>,…,<span class="arithmatex">\(P_{q-1}\)</span>都为<span class="arithmatex">\(n\)</span>比特,<span class="arithmatex">\(P_q\)</span>为<span class="arithmatex">\(d\)</span></p>
+<p>比特,满足<span class="arithmatex">\(0&lt;d\le n\)</span>且<span class="arithmatex">\((q-1)n+d\ge n\)</span>];</p>
+<p>2)两个密钥<span class="arithmatex">\(K_1\)</span>和<span class="arithmatex">\(K_2\)</span>,需要加解密操作方约定一致,其中<span class="arithmatex">\(K_1\)</span>的长度由分组密码算法<span class="arithmatex">\(E\)</span>决</p>
+<p>定,<span class="arithmatex">\(K_2\)</span> 的长度为<span class="arithmatex">\(n\)</span> 比特;</p>
+<p>3)调柄<span class="arithmatex">\(TW\)</span>,需要加解密操作方约定一致,长度为<span class="arithmatex">\(n\)</span>比特。</p>
+<p>b)中间变量:</p>
+<p>两个临时变量<span class="arithmatex">\(Z_1\)</span> 和<span class="arithmatex">\(Z_2\)</span>,每个变量都为<span class="arithmatex">\(n\)</span> 比特。</p>
+<p>c)输出变量:</p>
+<p><span class="arithmatex">\(q\)</span>个密文分组<span class="arithmatex">\(C_1,C_2,\ldots,C_q\)</span>所组成的序列[其中<span class="arithmatex">\(C_1,C_2,\ldots,C_{q-1}\)</span>都为<span class="arithmatex">\(n\)</span>比特,<span class="arithmatex">\(C_q\)</span>为<span class="arithmatex">\(d\)</span>比特,满足<span class="arithmatex">\(0&lt;d\le n\)</span>且<span class="arithmatex">\((q-1)n+d\ge n\)</span>]。</p>
+<p>HCTR工作模式使用一个泛杂凑函数<span class="arithmatex">\(H\)</span>。<span class="arithmatex">\(H\)</span>使用密钥<span class="arithmatex">\(K\)</span>压缩一个比特串<span class="arithmatex">\(M\)</span>,记作:</p>
+<div class="arithmatex">\[H_K(M)=M_1\otimes K^{m+1}\oplus\cdots\oplus(M_m\parallel\operatorname{Zero}(n-d))\otimes K^2\oplus(|M|)_2\otimes K\]</div>
+<p>其中<span class="arithmatex">\(M=M_1\parallel\cdots\parallel M_m\)</span>,<span class="arithmatex">\(M_1,\ldots,M_{m-1}\)</span>和<span class="arithmatex">\(K\)</span>长度都是<span class="arithmatex">\(n\)</span>比特,<span class="arithmatex">\(M_m\)</span>长度是<span class="arithmatex">\(d\)</span>比特,<span class="arithmatex">\(1\le d\le n\)</span>。</p>
+<p>根据4.1中关于有限域乘法<span class="arithmatex">\(\otimes\)</span>的定义,泛杂凑函数<span class="arithmatex">\(H\)</span>使用的有限域乘法运算<span class="arithmatex">\(\otimes\)</span>按照“左低右高”的方式处理变量,即变量最左侧为其最低位;采用的CTR 工作模式按照“左高右低”的方式处理变量,即变量最左侧为其最高位。</p>
+<h3 id="112-hctr">11.2 HCTR的加密方式描述<a class="headerlink" href="#112-hctr" title="Permanent link">&para;</a></h3>
+<p>对<span class="arithmatex">\(q\)</span> 个明文分组<span class="arithmatex">\(P_1\)</span>,<span class="arithmatex">\(P_2\)</span>,…,<span class="arithmatex">\(P_q\)</span> 进行加密运算按照如下四个步骤进行:</p>
+<p>a)生成临时变量<span class="arithmatex">\(Z_1\)</span>:<span class="arithmatex">\(Z_1=P_1\oplus H_{K_2}(P_2\parallel\cdots\parallel P_q\parallel TW)\)</span>;</p>
+<p>b)生成临时变量<span class="arithmatex">\(Z_2\)</span>:<span class="arithmatex">\(Z_2=E_{K_1}(Z_1)\)</span>;</p>
+<p>c)生成第一个分组之外的密文分组:<span class="arithmatex">\((C_2,\ldots,C_q)=\operatorname{CTR}_{K_1}(P_2,\ldots,P_q)\)</span>;</p>
+<p>其中CTR模式用到的计数器序列是<span class="arithmatex">\(T_i=Z_1\oplus Z_2\oplus(i)_2\)</span>,<span class="arithmatex">\(i=1,\ldots,q-1\)</span>;</p>
+<p>d)生成第一个密文分组<span class="arithmatex">\(C_1\)</span>:<span class="arithmatex">\(C_1=Z_2\oplus H_{K_2}(C_2\parallel\cdots\parallel C_q\parallel TW)\)</span>。</p>
+<p>此过程如图13所示。</p>
+<p><img alt="" src="../figures/figure_p21_13.png" /></p>
+<p><strong>图 13 带泛杂凑函数的计数器工作模式加密算法</strong></p>
+<h3 id="113-hctr">11.3 HCTR的解密方式描述<a class="headerlink" href="#113-hctr" title="Permanent link">&para;</a></h3>
+<p>对<span class="arithmatex">\(q\)</span> 个密文分组<span class="arithmatex">\(C_1\)</span>,<span class="arithmatex">\(C_2\)</span>,…,<span class="arithmatex">\(C_q\)</span> 进行解密运算按照如下四个步骤进行:</p>
+<p>a)生成临时变量<span class="arithmatex">\(Z_2\)</span>:<span class="arithmatex">\(Z_2=C_1\oplus H_{K_2}(C_2\parallel\cdots\parallel C_q\parallel TW)\)</span>;</p>
+<p>b)生成临时变量<span class="arithmatex">\(Z_1\)</span>:<span class="arithmatex">\(Z_1=D_{K_1}(Z_2)\)</span>;</p>
+<p>c)生成第一个分组之外的明文分组:<span class="arithmatex">\((P_2,\ldots,P_q)=\operatorname{CTR}_{K_1}(C_2,\ldots,C_q)\)</span>;</p>
+<p>其中CTR模式用到的计数器序列是<span class="arithmatex">\(T_i=Z_1\oplus Z_2\oplus(i)_2\)</span>,<span class="arithmatex">\(i=1,\ldots,q-1\)</span>;</p>
+<p>d)生成第一个明文分组<span class="arithmatex">\(P_1\)</span>:<span class="arithmatex">\(P_1=Z_1\oplus H_{K_2}(P_2\parallel\cdots\parallel P_q\parallel TW)\)</span>。</p>
+<p>此过程如图14所示。</p>
+<p><img alt="" src="../figures/figure_p22_14.png" /></p>
+<p><strong>图 14 带泛杂凑函数的计数器工作模式解密算法</strong></p>
+<p>注1:HCTR 模式的工作性质见A.7,HTCR模式的示例见B.8。</p>
+<p>注2:泛杂凑函数是一类使用密钥的高效率压缩函数,见参考文献[1]。在有限域GF(2128)上,<span class="arithmatex">\(\otimes\)</span>的优先级高于<span class="arithmatex">\(\oplus\)</span>。</p>
+<h2 id="12">12 分组链接工作模式<a class="headerlink" href="#12" title="Permanent link">&para;</a></h2>
+<h3 id="121">12.1 变量定义<a class="headerlink" href="#121" title="Permanent link">&para;</a></h3>
+<p>BC工作模式采用以下变量。</p>
+<p>a)输入变量:</p>
+<p>1)<span class="arithmatex">\(q\)</span>个明文分组<span class="arithmatex">\(P_1\)</span>,<span class="arithmatex">\(P_2\)</span>,…,<span class="arithmatex">\(P_q\)</span>所组成的序列,每个分组都为<span class="arithmatex">\(n\)</span>比特;</p>
+<p>2)密钥<span class="arithmatex">\(K\)</span>,需要加解密操作方约定一致,长度由分组密码算法<span class="arithmatex">\(E\)</span>决定;</p>
+<p>3)初始向量<span class="arithmatex">\(IV\)</span>,需要加解密操作方约定一致,长度为<span class="arithmatex">\(n\)</span>比特。</p>
+<p>b)中间变量:</p>
+<p><span class="arithmatex">\(q\)</span>个反馈变量<span class="arithmatex">\(F_1\)</span>,<span class="arithmatex">\(F_2\)</span>,…,<span class="arithmatex">\(F_q\)</span>所组成的序列,每个变量都为<span class="arithmatex">\(n\)</span>比特。</p>
+<p>c)输出变量:</p>
+<p><span class="arithmatex">\(q\)</span>个密文分组<span class="arithmatex">\(C_1\)</span>,<span class="arithmatex">\(C_2\)</span>,…,<span class="arithmatex">\(C_q\)</span>所组成的序列,每个分组都为<span class="arithmatex">\(n\)</span>比特。</p>
+<h3 id="122-bc">12.2 BC的加密方式描述<a class="headerlink" href="#122-bc" title="Permanent link">&para;</a></h3>
+<p>设置反馈变量初始向量:<span class="arithmatex">\(F_1=IV\)</span>。</p>
+<p>加密运算按照如下两个步骤进行:</p>
+<p>a)生成密文分组:<span class="arithmatex">\(C_i=E_K(P_i\oplus F_i)\)</span>;</p>
+<p>b)生成反馈变量:<span class="arithmatex">\(F_{i+1}=F_i\oplus C_i\)</span>。</p>
+<p>对<span class="arithmatex">\(i=1,2,\ldots,q\)</span>,重复上述步骤,最后一个循环结束于a)。此过程如图15所示。初始向量<span class="arithmatex">\(IV\)</span> 用于生成第一个密文输出。之后的加密过程中,每个密文与当时反馈变量进行异或运算,生成下一个反馈变量。</p>
+<p><img alt="" src="../figures/figure_p23_15.png" /></p>
+<p><strong>图 15 分组链接工作模式加密算法</strong></p>
+<h3 id="123-bc">12.3 BC的解密方式描述<a class="headerlink" href="#123-bc" title="Permanent link">&para;</a></h3>
+<p>设置反馈变量初始向量:<span class="arithmatex">\(F_1=IV\)</span>。</p>
+<p>解密运算按照如下两个步骤进行:</p>
+<p>a)生成明文分组:<span class="arithmatex">\(P_i=F_i\oplus D_K(C_i)\)</span>;</p>
+<p>b)生成反馈变量:<span class="arithmatex">\(F_{i+1}=F_i\oplus C_i\)</span>。</p>
+<p>对<span class="arithmatex">\(i=1,2,\ldots,q\)</span>,重复上述步骤,最后一个循环结束于a)。此过程如图16所示。</p>
+<p><img alt="" src="../figures/figure_p23_16.png" /></p>
+<p><strong>图 16 分组链接工作模式解密算法</strong></p>
+<p>注1:BC 模式的工作性质见A.8,BC模式的示例见B.9。</p>
+<p>注2:如果明文长度不满足分组长度的整数倍,则需要填充明文,见A.3,常见的填充方法见附录C。</p>
+<h2 id="13">13 带非线性函数的输出反馈工作模式<a class="headerlink" href="#13" title="Permanent link">&para;</a></h2>
+<h3 id="131">13.1 变量定义<a class="headerlink" href="#131" title="Permanent link">&para;</a></h3>
+<p>OFBNLF工作模式采用以下变量。</p>
+<p>a)输入变量:</p>
+<p>1)<span class="arithmatex">\(q\)</span>个明文分组<span class="arithmatex">\(P_1\)</span>,<span class="arithmatex">\(P_2\)</span>,…,<span class="arithmatex">\(P_q\)</span>所组成的序列,每个分组都为<span class="arithmatex">\(n\)</span>比特;</p>
+<p>2)密钥<span class="arithmatex">\(K\)</span>,需要加解密操作方约定一致,长度由分组密码算法<span class="arithmatex">\(E\)</span>决定;</p>
+<p>3)初始向量<span class="arithmatex">\(IV\)</span>,需要加解密操作方约定一致,长度为<span class="arithmatex">\(n\)</span>比特。</p>
+<p>b)中间变量:</p>
+<p><span class="arithmatex">\(q+1\)</span>个密钥变量<span class="arithmatex">\(K_0,K_1,\ldots,K_q\)</span>所组成的序列,每个变量都为<span class="arithmatex">\(n\)</span>比特。</p>
+<p>c)输出变量:</p>
+<p><span class="arithmatex">\(q\)</span>个密文分组<span class="arithmatex">\(C_1\)</span>,<span class="arithmatex">\(C_2\)</span>,…,<span class="arithmatex">\(C_q\)</span>所组成的序列,每个分组都为<span class="arithmatex">\(n\)</span>比特。</p>
+<h3 id="132-ofbnlf">13.2 OFBNLF的加密方式描述<a class="headerlink" href="#132-ofbnlf" title="Permanent link">&para;</a></h3>
+<p>设置密钥变量初始向量:<span class="arithmatex">\(K_0=IV\)</span>。</p>
+<p>加密运算按照如下两个步骤进行:</p>
+<p>a)生成密钥变量:<span class="arithmatex">\(K_i=E_K(K_{i-1})\)</span>;</p>
+<p>b)生成密文分组:<span class="arithmatex">\(C_i=E_{K_i}(P_i)\)</span>。</p>
+<p>对<span class="arithmatex">\(i=1,2,\ldots,q\)</span>,重复上述步骤,最后一个循环结束于b)。此过程如图17所示。每次使用的密钥变量<span class="arithmatex">\(K_i\)</span> 被密钥<span class="arithmatex">\(K\)</span> 加密并成为下一个分组的密钥变量<span class="arithmatex">\(K_{i+1}\)</span>。</p>
+<p><img alt="" src="../figures/figure_p24_17.png" /></p>
+<p><strong>图 17 带非线性函数的输出反馈工作模式加密算法</strong></p>
+<h3 id="133-ofbnlf">13.3 OFBNLF的解密方式描述<a class="headerlink" href="#133-ofbnlf" title="Permanent link">&para;</a></h3>
+<p>设置密钥变量初始向量:<span class="arithmatex">\(K_0=IV\)</span>。</p>
+<p>解密运算按照如下两个步骤进行:</p>
+<p>a)生成密钥变量:<span class="arithmatex">\(K_i=E_K(K_{i-1})\)</span>;</p>
+<p>b)生成明文分组:<span class="arithmatex">\(P_i=D_{K_i}(C_i)\)</span>。</p>
+<p>对<span class="arithmatex">\(i=1,2,\ldots,q\)</span>,重复上述步骤,最后一个循环结束于b)。此过程如图18所示。<span class="arithmatex">\(K_i\)</span>与加密过程中相应的值是相同的。</p>
+<p><img alt="" src="../figures/figure_p24_18.png" /></p>
+<p><strong>图 18 带非线性函数的输出反馈工作模式解密算法</strong></p>
+<p>注1:OFBNLF 模式的工作性质见A.9,OFBNLF模式的示例见B.10。</p>
+<p>注2:如果明文长度不满足分组长度的整数倍,则需要填充明文,见A.3,常见的填充方法见附录C。</p>
+<h2 id="a">附录A<a class="headerlink" href="#a" title="Permanent link">&para;</a></h2>
+<p>(资料性)</p>
+<p><strong>工作模式的性质</strong></p>
+<h3 id="a1">A.1 电码本工作模式的性质<a class="headerlink" href="#a1" title="Permanent link">&para;</a></h3>
+<h4 id="a11">A.1.1 场景<a class="headerlink" href="#a11" title="Permanent link">&para;</a></h4>
+<p>在各计算机终端之间,或者多人共用一个计算机终端所交换的二进制数据可能会有重复或者共同使用的序列。在ECB工作模式中,相同的明文分组(使用相同的密钥)生成相同的密文分组。</p>
+<h4 id="a12">A.1.2 性质<a class="headerlink" href="#a12" title="Permanent link">&para;</a></h4>
+<p>ECB工作模式的性质有:</p>
+<p>a)对某一个分组的加密或解密可独立于其他分组进行;</p>
+<p>b)对密文分组的重排将导致相应明文分组的重排;</p>
+<p>c)相同的明文分组(使用相同的密钥)总是生成相同的密文分组,这使得它容易遭受“字典攻击”,</p>
+<p>这种字典是由对应的明文和密文分组构成的。</p>
+<p>对于超过一个分组长度的明文一般建议不使用ECB 工作模式。对于可接受重复性(例如,输入分组绝不重复),必须单独访问或随机访问各个分组的特殊使用情况,ECB 的用法可以在未来的标准中规定。</p>
+<h4 id="a13">A.1.3 填充明文<a class="headerlink" href="#a13" title="Permanent link">&para;</a></h4>
+<p>只有长度为分组长度的整数倍的明文才能被加密或解密。其他长度的明文需要被填充至分组长度的整数倍。</p>
+<h4 id="a14">A.1.4 差错扩散<a class="headerlink" href="#a14" title="Permanent link">&para;</a></h4>
+<p>在ECB工作模式中,如果一个密文分组中存在一个或多个比特的差错,则只会影响该密文分组的解密;该解密将导致得到的明文分组中每个明文比特以50%的概率出现差错。</p>
+<h4 id="a15">A.1.5 同步<a class="headerlink" href="#a15" title="Permanent link">&para;</a></h4>
+<p>如果加密或解密之间的分组边界丢失了(例如由于一个比特的滑动),则在重新建立正确的分组边界之前,加密与解密之间将失去同步。如果分组边界丢失,则所有解密操作的结果都不正确。</p>
+<h3 id="a2">A.2 密文分组链接工作模式的性质<a class="headerlink" href="#a2" title="Permanent link">&para;</a></h3>
+<h4 id="a21">A.2.1 场景<a class="headerlink" href="#a21" title="Permanent link">&para;</a></h4>
+<p>只要使用相同的密钥和初始向量对相同的明文进行加密,CBC 工作模式将生成相同的密文。介意这种性质的用户需要采用相应方法来改变明文的起始分组、密钥或初始向量。一种可能的方法是将一个唯一的标识符(例如一个递增计数器)加到每个CBC 消息的起始位置。在对长度不能增加的明文进行加密时可使用某种方法从明文中计算出一个值,例如明文的随机访问存储方式的地址。</p>
+<h4 id="a22">A.2.2 性质<a class="headerlink" href="#a22" title="Permanent link">&para;</a></h4>
+<p>CBC工作模式的性质有:</p>
+<p>a)链接操作使得密文分组依赖于当前的和以前的明文分组,因此调换密文分组的顺序不可能使</p>
+<p>得明文分组的顺序对应调换;</p>
+<p>b)使用不同的<span class="arithmatex">\(IV\)</span>以防止同一明文加密成同一密文;</p>
+<p>c) CBC模式的安全性证明见参考文献[2]。</p>
+<h4 id="a23">A.2.3 填充明文<a class="headerlink" href="#a23" title="Permanent link">&para;</a></h4>
+<p>只有长度为分组长度的整数倍的明文才能被加密或解密,其他长度的明文需要被填充。如果不能填充,则可以使用特殊方法处理最后一个分组,下面给出两个方法。</p>
+<p>第一种方法处理一个不完整的明文分组[即:一个<span class="arithmatex">\(j\)</span>(<span class="arithmatex">\(j&lt;n\)</span>)比特的明文分组<span class="arithmatex">\(P_q\)</span>,其中<span class="arithmatex">\(q\)</span>大于1],按照下面描述的OFB工作模式进行加密:</p>
+<p>a)加密:<span class="arithmatex">\(C_q=P_q\oplus(j\sim E_K(C_{q-1}))\)</span>;</p>
+<p>b)解密:<span class="arithmatex">\(P_q=C_q\oplus(j\sim E_K(C_{q-1}))\)</span>。</p>
+<p>如果<span class="arithmatex">\(IV\)</span> 不是秘密的或者与同一个密钥一起被多次使用(见A.4),那么最后的分组容易受到“选择明文攻击”。</p>
+<p>第二种方法称作“密文挪用”。如果最后两个明文分组为<span class="arithmatex">\(P_{q-1}\)</span>和<span class="arithmatex">\(P_q\)</span>,其中<span class="arithmatex">\(P_{q-1}\)</span>长度为<span class="arithmatex">\(n\)</span> 比特,<span class="arithmatex">\(P_q\)</span>长度为<span class="arithmatex">\(j\)</span>(<span class="arithmatex">\(j&lt;n\)</span>)比特,<span class="arithmatex">\(q\)</span>大于1。</p>
+<p>a)加密:</p>
+<p>设<span class="arithmatex">\(C_{q-1}\)</span>为使用6.2所描述的方法由<span class="arithmatex">\(P_{q-1}\)</span>导出的密文分组。令</p>
+<div class="arithmatex">\[C_q=E_K\bigl(C_{q-1}\oplus(P_q\parallel\operatorname{Zero}(n-j))\bigr),\qquad C_{q-1}^{*}=j\sim C_{q-1}\]</div>
+<p>因此最后两个密文分组是<span class="arithmatex">\(C_q\)</span>和<span class="arithmatex">\(C_{q-1}^{*}\)</span>。此过程如图A.1所示。</p>
+<p><img alt="" src="../figures/figure_p26_19.png" /></p>
+<p><strong>图 A.1 密文分组链接工作模式采用密文挪用的加密算法</strong></p>
+<p>b)解密:</p>
+<p>首先对<span class="arithmatex">\(C_q\)</span> 进行解密,对所得明文分组的左边<span class="arithmatex">\(j\)</span> 比特和右边<span class="arithmatex">\(n\)</span>-<span class="arithmatex">\(j\)</span> 比特分别如下处理:</p>
+<div class="arithmatex">\[P_q=(j\sim D_K(C_q))\oplus C_{q-1}^{*},\]</div>
+<div class="arithmatex">\[P_{q-1}=D_K\bigl(C_{q-1}^{*}\parallel(D_K(C_q)\sim(n-j))\bigr)\oplus C_{q-2}\]</div>
+<p>此过程如图A.2所示。</p>
+<p><img alt="" src="../figures/figure_p27_20.png" /></p>
+<p><strong>图 A.2 密文分组链接工作模式采用密文挪用的解密算法</strong></p>
+<h4 id="a24">A.2.4 差错扩散<a class="headerlink" href="#a24" title="Permanent link">&para;</a></h4>
+<p>在CBC工作模式中,一个密文分组中的一个或多个比特差错会影响两个分组(即发生差错的分组和随后的分组)的解密。第<span class="arithmatex">\(i\)</span>个密文分组中的差错对于所生成的明文有以下影响:第<span class="arithmatex">\(i\)</span> 个明文分组每比特以50%的概率出错,第<span class="arithmatex">\(i+1\)</span>个明文分组的差错模式与第<span class="arithmatex">\(i\)</span>个密文分组相同。如果在一个不到<span class="arithmatex">\(n\)</span> 比特的分组中出现差错,差错扩散取决于所选择的处理方法。若使用A.3第一个方法,在被解密的较短的2.分组中,与明文出错比特直接对应的那些比特也会出错。</p>
+<h4 id="a25">A.2.5 同步<a class="headerlink" href="#a25" title="Permanent link">&para;</a></h4>
+<p>如果解密或解密之间的分组边界丢失了(例如由于一个比特的滑动),则在重新建立正确的分组边界之前,加密与解密之间将失去同步。如果分组边界丢失,所有解密操作的结果都是不正确的。</p>
+<h3 id="a3">A.3 密文反馈工作模式的性质<a class="headerlink" href="#a3" title="Permanent link">&para;</a></h3>
+<h4 id="a31">A.3.1 场景<a class="headerlink" href="#a31" title="Permanent link">&para;</a></h4>
+<p>只要使用同样的密钥和初始向量对相同的明文进行加密,CFB工作模式将生成相同的密文。介意这种特性的用户需要采用某种办法来改变起始明文分组、密钥或初始向量。一种可能的办法是将一个唯一的标识符(例如一个递增计数器)加到每个CFB 消息的开始处。在对大小不能增加的记录进行加密时可采用另一种办法,它使用诸如初始向量的某个值,这个值能从记录中计算出来且不用知道其内容(例如它的按随机访问存储方式的地址)。</p>
+<h4 id="a32">A.3.2 性质<a class="headerlink" href="#a32" title="Permanent link">&para;</a></h4>
+<p>CFB模式的性质有:</p>
+<p>a)链接操作使得密文分组依赖于当前的和除确定数目以外的所有以前的明文分组,该数目取决</p>
+<p>于<span class="arithmatex">\(r\)</span>、<span class="arithmatex">\(k\)</span> 和<span class="arithmatex">\(j\)</span> 的选择(见图5、图6)。因此对<span class="arithmatex">\(j\)</span> 比特密文分组的重新排序不会导致对相应的<span class="arithmatex">\(j\)</span> 比特明文分组的重新排序;</p>
+<p>b)加解密操作方需要约定一致的参数<span class="arithmatex">\(r\)</span>、<span class="arithmatex">\(k\)</span>和<span class="arithmatex">\(j\)</span>,参数的取值可公开;</p>
+<p>c)使用不同的<span class="arithmatex">\(IV\)</span>值从而防止同一明文加密成同一密文;</p>
+<p>d) CFB模式的加密和解密过程都使用分组密码的加密操作;</p>
+<p>e) CFB模式的强度依赖于<span class="arithmatex">\(k\)</span>的大小(<span class="arithmatex">\(j=k\)</span>时最大)以及<span class="arithmatex">\(j\)</span>、<span class="arithmatex">\(k\)</span>、<span class="arithmatex">\(n\)</span>和<span class="arithmatex">\(r\)</span>的相对大小;</p>
+<p>注:<span class="arithmatex">\(j&lt;k\)</span>将导致输入分组的值重复出现的概率增加。这种重复出现将会泄露明文比特之间的线性关系。</p>
+<p>f)对于每个明文,选择一个较小的<span class="arithmatex">\(j\)</span>值将需要更多次的分组密码操作,从而引起更大的处理</p>
+<p>开销;</p>
+<p>g)选择<span class="arithmatex">\(r\ge n+k\)</span>使得能对分组密码进行流水线式连续操作;</p>
+<p>h) CFB模式的安全性证明见参考文献[3]。</p>
+<h4 id="a33">A.3.3 填充明文<a class="headerlink" href="#a33" title="Permanent link">&para;</a></h4>
+<p>只有长度为<span class="arithmatex">\(j\)</span> 比特倍数的明文才能被加密。其他长度的明文需要填充至<span class="arithmatex">\(j\)</span> 比特的整数倍。但是,经常选择<span class="arithmatex">\(j\)</span> 的大小使得明文无需进行填充,例如对于明文的最后部分可以修改<span class="arithmatex">\(j\)</span>。</p>
+<h4 id="a34">A.3.4 差错扩散<a class="headerlink" href="#a34" title="Permanent link">&para;</a></h4>
+<p>CFB模式中,任一<span class="arithmatex">\(j\)</span>比特密文的差错都将影响随后密文的解密,直到出错的比特移出CFB反馈缓存为止。第<span class="arithmatex">\(j\)</span> 个密文分组中的差错对生成的明文有下列影响:第<span class="arithmatex">\(i\)</span> 个明文分组与第<span class="arithmatex">\(i\)</span> 个密文分组有相同的差错模式。在所有未正确接收的比特被移出反馈缓存之前,随后的明文分组的每一比特出错的概率为50%。</p>
+<h4 id="a35">A.3.5 同步<a class="headerlink" href="#a35" title="Permanent link">&para;</a></h4>
+<p>如果加密和解密之间的分组边界丢失了(例如由于一个比特的滑动),则在<span class="arithmatex">\(j\)</span> 比特分组重新建立的<span class="arithmatex">\(r\)</span>比特之后,密码同步将被重新建立。如果丢失<span class="arithmatex">\(j\)</span>比特的倍数,则在<span class="arithmatex">\(r\)</span>比特之后将重新建立同步。</p>
+<h3 id="a4">A.4 输出反馈工作模式的性质<a class="headerlink" href="#a4" title="Permanent link">&para;</a></h3>
+<h4 id="a41">A.4.1 场景<a class="headerlink" href="#a41" title="Permanent link">&para;</a></h4>
+<p>只要使用同样的密钥和初始向量对相同的明文进行加密,OFB模式将生成相同的密文。此外,当使用相同的密钥和<span class="arithmatex">\(IV\)</span> 时,OFB模式中将会生成相同的密钥流,因此,为了保密起见,对于一个给定的密钥,一个特定的<span class="arithmatex">\(IV\)</span> 只能使用一次。</p>
+<h4 id="a42">A.4.2 性质<a class="headerlink" href="#a42" title="Permanent link">&para;</a></h4>
+<p>OFB模式的性质有:</p>
+<p>a)没有链接操作会使得OFB模式容易受到主动的攻击;</p>
+<p>b)使用不同的<span class="arithmatex">\(IV\)</span>值生成不同的密钥流,可防止同一明文加密成同一密文;</p>
+<p>c) OFB模式的加密和解密过程都使用分组密码的加密运算;</p>
+<p>d) OFB模式不依赖明文来生成用于对明文进行异或运算的密钥流;</p>
+<p>e)加解密操作方需要约定一致的参数<span class="arithmatex">\(j\)</span>,参数的取值可公开;</p>
+<p>f)对于每个明文,选择一个较小的<span class="arithmatex">\(j\)</span>值将需要更多次的分组密码操作,从而引起更大的处理</p>
+<p>开销。</p>
+<h4 id="a43">A.4.3 填充明文<a class="headerlink" href="#a43" title="Permanent link">&para;</a></h4>
+<p>只有长度为<span class="arithmatex">\(j\)</span> 比特倍数的明文才能被加密。其他长度的明文需要填充至<span class="arithmatex">\(j\)</span> 比特的整数倍。但是,经常选择<span class="arithmatex">\(j\)</span> 的大小使得明文无需进行填充,例如对于明文的最后部分可以修改<span class="arithmatex">\(j\)</span>。</p>
+<h4 id="a44">A.4.4 差错控制<a class="headerlink" href="#a44" title="Permanent link">&para;</a></h4>
+<p>OFB模式中,密文中每一差错比特只会引起明文中同一位置出现一个差错比特,不影响明文其他</p>
+<p>位置。</p>
+<h4 id="a45">A.4.5 同步<a class="headerlink" href="#a45" title="Permanent link">&para;</a></h4>
+<p>OFB模式不是自动同步的。如果加密和解密两个操作不同步,系统需要重新初始化。这种同步丢失可能由于插入或丢失任意数目的密文所引起。</p>
+<p>每次重新初始化应使用一个新的<span class="arithmatex">\(IV\)</span> 值,它不同于与同一个密钥一起使用的以前的<span class="arithmatex">\(IV\)</span> 值。其原因是对于相同的参数,每次会生成相同的比特流,这将易于受到“已知明文攻击”。</p>
+<h3 id="a5">A.5 计数器工作模式的性质<a class="headerlink" href="#a5" title="Permanent link">&para;</a></h3>
+<h4 id="a51">A.5.1 场景<a class="headerlink" href="#a51" title="Permanent link">&para;</a></h4>
+<p>计数器模式下的分组密码算法使用序列号作为算法的输入。不是用加密算法的输出填充寄存器,而是将一个计数器输入到寄存器中。每一个分组完成加密后,计数器都要增加某个常数,典型值是1。</p>
+<p>没有什么是专供计数器用的,它不必根据可能的输入计数。可以将随机序列发生器作为分组算法的输入,而不必考虑其密码上是否安全。</p>
+<h4 id="a52">A.5.2 性质<a class="headerlink" href="#a52" title="Permanent link">&para;</a></h4>
+<p>CTR的性质有:</p>
+<p>a)加密运算可并行处理,吞吐量仅受可使用并行数量的限制;</p>
+<p>b)使用不同的计数器生成不同的密钥流,可防止同一明文加密成同一密文;</p>
+<p>c) CTR工作模式的加密和解密过程都使用分组密码的加密运算;</p>
+<p>d) CTR工作模式不依赖明文生成用于对明文进行异或运算的密钥流。</p>
+<h4 id="a53">A.5.3 填充明文<a class="headerlink" href="#a53" title="Permanent link">&para;</a></h4>
+<p>计数器模式不需要填充明文,可以处理任意长度的明文。</p>
+<h4 id="a54">A.5.4 差错扩散<a class="headerlink" href="#a54" title="Permanent link">&para;</a></h4>
+<p>CTR模式不在生成的明文输出中扩散密文差错。密文中每一差错比特只会引起解密后的明文中出现一个差错比特。</p>
+<h4 id="a55">A.5.5 同步<a class="headerlink" href="#a55" title="Permanent link">&para;</a></h4>
+<p>CTR工作模式不是自动同步的。如果加密和解密两个操作不同步,系统需要重新初始化。这种同步丢失可能由于插入或丢失任意数目的密文所引起。</p>
+<p>每次重新初始化应使用一个新的计数器值,它不同于与同一个密钥一起使用的以前的计数器值。</p>
+<p>其原因是对于相同的参数,每次都要生成相同的密钥流。这将易于受到“已知明文攻击”。</p>
+<h3 id="a6-xex">A.6 带密文挪用的XEX可调分组密码工作模式的性质<a class="headerlink" href="#a6-xex" title="Permanent link">&para;</a></h3>
+<h4 id="a61">A.6.1 场景<a class="headerlink" href="#a61" title="Permanent link">&para;</a></h4>
+<p>XTS模式可以用于磁盘扇区加密等特殊的加密环境,其中调柄值用于表示扇区地址;只要使用同样的密钥和调柄对相同的明文进行加密,XTS模式将产生相同的密文。每个明文都应指定一个数值为非负整数的调柄。调柄数值应指定由一个任意的非负整数起始,并连续增长。该工作模式不适用于明文长度小于分组密码分组长度的情形。</p>
+<h4 id="a62">A.6.2 性质<a class="headerlink" href="#a62" title="Permanent link">&para;</a></h4>
+<p>XTS模式的性质有:</p>
+<p>a)加密运算可并行处理,吞吐量仅受可使用并行数量的限制;</p>
+<p>b)使用不同的调柄产生不同的掩码序列,可防止同一明文加密成同一密文;</p>
+<p>c)明文和对应的密文具有相同的长度;</p>
+<p>d) XTS模式不依赖明文产生用于对明文进行异或运算的密钥流;</p>
+<p>e) XTS模式具备可证明安全的理论保障。在底层分组密码算法具备超伪随机性质的的情况下,</p>
+<p>XTS模式被证明是超伪随机的,安全界是生日界。具体安全分析见参考文献[4]和参考文献[5]。</p>
+<h4 id="a63">A.6.3 填充明文<a class="headerlink" href="#a63" title="Permanent link">&para;</a></h4>
+<p>消息无须填充。消息长度应不少于一个分组。当消息长度不是分组长度的整数倍时,将在加密阶段的末尾进行密文挪用。</p>
+<h4 id="a64">A.6.4 差错控制<a class="headerlink" href="#a64" title="Permanent link">&para;</a></h4>
+<p>在XTS模式中,在一个密文分组中的一个或多个比特差错只会影响发生差错的那一个分组的解密。</p>
+<h4 id="a65">A.6.5 同步<a class="headerlink" href="#a65" title="Permanent link">&para;</a></h4>
+<p>XTS模式不是自动同步的。如果加密和解密两个操作不同步,系统需要重新初始化。这种同步丢失可能由于插入或丢失任意数目的密文所引起。</p>
+<p>每次重新初始化应使用一个新的调柄值,它不同于与同一个密钥一起使用的以前的调柄值。其原因是,相同的参数将产生相同的掩码序列,这将易于受到“已知明文攻击”。如果在密码实现中允许并行和流水线,XTS模式将易于受到“剪贴攻击”。</p>
+<h3 id="a7">A.7 带泛杂凑函数的计数器工作模式的性质<a class="headerlink" href="#a7" title="Permanent link">&para;</a></h3>
+<h4 id="a71">A.7.1 场景<a class="headerlink" href="#a71" title="Permanent link">&para;</a></h4>
+<p>HCTR模式可以用于磁盘扇区加密等特殊的加密环境,其中调柄值用于表示扇区地址;只要使用同样的密钥和调柄对相同的明文进行加密,HCTR 模式将产生相同的密文。HCTR 模式也可用于一般的加密。该工作模式不适用于明文长度小于分组密码分组长度的情形。</p>
+<h4 id="a72">A.7.2 性质<a class="headerlink" href="#a72" title="Permanent link">&para;</a></h4>
+<p>HCTR的性质有:</p>
+<p>a)除去第一个分组,HCTR支持并行加密和解密;</p>
+<p>b) HCTR模式对于不同的调柄值,得到在密钥控制下的不同置换;</p>
+<p>c) HCTR模式明文和密文长度相同,无论是加密和解密,任意输入数据的变化,都会带来所有输</p>
+<p>出比特的变化;</p>
+<p>d) HCTR模式具备可证明安全的理论保障。在底层分组密码算法具备超伪随机性质的的情况</p>
+<p>下,HCTR 模式被证明是超伪随机的,安全界是生日界。具体安全分析见参考文献[6]和参考文献[7]。</p>
+<h4 id="a73">A.7.3 填充明文<a class="headerlink" href="#a73" title="Permanent link">&para;</a></h4>
+<p>明文长度应不少于一个分组。数据经过泛杂凑函数处理时,需要填充。</p>
+<h4 id="a74">A.7.4 差错扩散<a class="headerlink" href="#a74" title="Permanent link">&para;</a></h4>
+<p>密文的任意比特的错误会导致明文每一个比特以50%概率出现错误。</p>
+<h4 id="a75">A.7.5 同步<a class="headerlink" href="#a75" title="Permanent link">&para;</a></h4>
+<p>HCTR模式不是自动同步的。无论是进行加密还是解密,都是在输入完所有数据后,才能计算出输出结果。</p>
+<h3 id="a8">A.8 分组链接工作模式的性质<a class="headerlink" href="#a8" title="Permanent link">&para;</a></h3>
+<h4 id="a81">A.8.1 场景<a class="headerlink" href="#a81" title="Permanent link">&para;</a></h4>
+<p>为了在分组链接模式中使用分组算法,可以简单地将分组密码算法的输入跟所有前面密文分组的异或值相异或。如CBC算法,过程要从一个初始向量<span class="arithmatex">\(IV\)</span> 开始。</p>
+<p>只要使用同样的密钥和初始向量对相同的明文进行加密,BC 工作模式将生成相同的密文。介意这种性质的用户需要采用某种方法来改变初始明文分组、密钥或初始向量。</p>
+<h4 id="a82">A.8.2 性质<a class="headerlink" href="#a82" title="Permanent link">&para;</a></h4>
+<p>BC工作模式的性质有:</p>
+<p>a)链接操作使得密文分组依赖于当前的和以前的明文分组,因此对密文分组的重新排序不会导</p>
+<p>致对相应明文分组的重新排序;</p>
+<p>b)使用不同的<span class="arithmatex">\(IV\)</span>从而防止同一明文加密成同一密文;</p>
+<p>c) BC模式的安全性证明见参考文献[8]。</p>
+<h4 id="a83">A.8.3 填充明文<a class="headerlink" href="#a83" title="Permanent link">&para;</a></h4>
+<p>只有长度为分组长度整数倍的明文才能被加密,其他长度的明文需要被填充至分组长度的整数倍。</p>
+<h4 id="a84">A.8.4 差错扩散<a class="headerlink" href="#a84" title="Permanent link">&para;</a></h4>
+<p>BC模式的反馈过程具有扩散明文错误的性质,这个问题是由于密文分组的解密依赖于所有前面的密文分组,密文中任一错误都将导致所有后续密文分组的解密出错。</p>
+<h4 id="a85">A.8.5 同步<a class="headerlink" href="#a85" title="Permanent link">&para;</a></h4>
+<p>如果解密或解密之间的分组边界丢失了(例如由于一个比特的滑动),则在重新建立正确的分组边界之前加密与解密之间将失去同步。如果分组边界丢失,所有解密操作的结果都是不正确的。</p>
+<h3 id="a9">A.9 带非线性函数的输出反馈工作模式的性质<a class="headerlink" href="#a9" title="Permanent link">&para;</a></h3>
+<h4 id="a91">A.9.1 场景<a class="headerlink" href="#a91" title="Permanent link">&para;</a></h4>
+<p>带非线性函数的输出反馈是OFB和ECB的一个变体,它的密钥随每一个分组而改变。只要使用同样的密钥和初始向量对相同的明文进行加密,OFBNLF工作模式应将生成相同的密文。此外,当使用相同的密钥和<span class="arithmatex">\(IV\)</span> 时,OFBNLF工作模式将会生成相同的密钥流,因此,为了保密起见,对于一个给定的密钥,一个特定的<span class="arithmatex">\(IV\)</span> 只能使用一次。</p>
+<h4 id="a92">A.9.2 性质<a class="headerlink" href="#a92" title="Permanent link">&para;</a></h4>
+<p>OFBNLF的性质有:</p>
+<p>a)使用不同的<span class="arithmatex">\(IV\)</span>值生成不同的密钥流,可防止同一明文加密成同一密文;</p>
+<p>b) OFBNLF模式的加密和解密过程都使用分组密码的加密运算;</p>
+<p>c) OFBNLF模式不依赖明文来生成用于对明文进行加密的密钥流;</p>
+<p>d) OFBNLF模式的安全性证明见参考文献[9]。</p>
+<h4 id="a93">A.9.3 填充明文<a class="headerlink" href="#a93" title="Permanent link">&para;</a></h4>
+<p>只有长度为分组长度整数倍的明文才能被加密,其他长度的明文需要被填充至分组长度的整数倍。</p>
+<h4 id="a94">A.9.4 差错扩散<a class="headerlink" href="#a94" title="Permanent link">&para;</a></h4>
+<p>密文的一个比特错误将扩散到一个明文分组。如果一比特丢失或增加,那就有无限的错误扩散。</p>
+<h4 id="a95">A.9.5 同步<a class="headerlink" href="#a95" title="Permanent link">&para;</a></h4>
+<p>OFBNLF模式不是自动同步的。如果加密和解密两个操作不同步,系统需要重新初始化。这种同步丢失可能由于插入或丢失任意数目的密文所引起。</p>
+<p>每次重新初始化应使用一个新的<span class="arithmatex">\(IV\)</span> 值,它不同于与同一个密钥一起使用的以前的<span class="arithmatex">\(IV\)</span> 值。其原因是对于相同的参数,每次都会生成相同的比特流,这将易于受到“已知明文攻击”。</p>
+<h2 id="b">附录B<a class="headerlink" href="#b" title="Permanent link">&para;</a></h2>
+<p>(资料性)</p>
+<p><strong>工作模式示例</strong></p>
+<h3 id="b1">B.1 概述<a class="headerlink" href="#b1" title="Permanent link">&para;</a></h3>
+<p>本附录举例说明使用本文件所规定的工作模式对消息的加密和解密,使用的分组密码是GB/T32907—2016中规定的SM4算法,见参考文献[10]。所有变量采用“左高右低”的方式标记,即变量最左侧为其最高位。</p>
+<p>除XTS和HCTR 之外,其他七种工作模式使用下列参数:密码密钥为(十六进制)2B7E151628AED2A6ABF7158809CF4F3C。</p>
+<p>初始向量为(十六进制)000102030405060708090A0B0C0D0E0F。</p>
+<p>明文是(十六进制)6BC1BEE22E409F96E93D7E117393172A</p>
+<p>AE2D8A571E03AC9C9EB76FAC45AF8E51 30C81C46A35CE411E5FBC1191A0A52EF F69F2445DF4F9B17AD2B417BE66C3710。</p>
+<p>B.7和B.8分别给出了XTS和HCTR所采用的参数。</p>
+<h3 id="b2-ecb">B.2 ECB工作模式<a class="headerlink" href="#b2-ecb" title="Permanent link">&para;</a></h3>
+<p>表B.1和表B.2分别给出ECB工作模式加密和解密的例子。</p>
+<p><strong>表 B.1 ECB工作模式加密</strong></p>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(i\)</span></th>
+<th>明文<span class="arithmatex">\(P_i\)</span></th>
+<th>分组密码输入分组</th>
+<th>分组密码输出分组</th>
+<th>密文<span class="arithmatex">\(C_i\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>6BC1BEE22E409F96<br>E93D7E117393172A</td>
+<td>6BC1BEE22E409F96<br>E93D7E117393172A</td>
+<td>A51411FF04A71144<br>3891FCE7AB842A29</td>
+<td>A51411FF04A71144<br>3891FCE7AB842A29</td>
+</tr>
+<tr>
+<td>2</td>
+<td>AE2D8A571E03AC9C<br>9EB76FAC45AF8E51</td>
+<td>AE2D8A571E03AC9C<br>9EB76FAC45AF8E51</td>
+<td>D5B50F46A9A730A0<br>F590FFA776D99855</td>
+<td>D5B50F46A9A730A0<br>F590FFA776D99855</td>
+</tr>
+<tr>
+<td>3</td>
+<td>30C81C46A35CE411<br>E5FBC1191A0A52EF</td>
+<td>30C81C46A35CE411<br>E5FBC1191A0A52EF</td>
+<td>C9A86A4D71447F4E<br>873ADA4F388AF9B9</td>
+<td>C9A86A4D71447F4E<br>873ADA4F388AF9B9</td>
+</tr>
+<tr>
+<td>4</td>
+<td>F69F2445DF4F9B17<br>AD2B417BE66C3710</td>
+<td>F69F2445DF4F9B17<br>AD2B417BE66C3710</td>
+<td>2B25557B50514D15<br>5939E6EC940AD90E</td>
+<td>2B25557B50514D15<br>5939E6EC940AD90E</td>
+</tr>
+</tbody>
+</table>
+<p><strong>表 B.2 ECB工作模式解密</strong></p>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(i\)</span></th>
+<th>密文<span class="arithmatex">\(C_i\)</span></th>
+<th>分组密码输入分组</th>
+<th>分组密码输出分组</th>
+<th>明文<span class="arithmatex">\(P_i\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>A51411FF04A71144<br>3891FCE7AB842A29</td>
+<td>A51411FF04A71144<br>3891FCE7AB842A29</td>
+<td>6BC1BEE22E409F96<br>E93D7E117393172A</td>
+<td>6BC1BEE22E409F96<br>E93D7E117393172A</td>
+</tr>
+<tr>
+<td>2</td>
+<td>D5B50F46A9A730A0<br>F590FFA776D99855</td>
+<td>D5B50F46A9A730A0<br>F590FFA776D99855</td>
+<td>AE2D8A571E03AC9C<br>9EB76FAC45AF8E51</td>
+<td>AE2D8A571E03AC9C<br>9EB76FAC45AF8E51</td>
+</tr>
+</tbody>
+</table>
+<p><strong>表 B.2 ECB工作模式解密(续)</strong></p>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(i\)</span></th>
+<th>密文<span class="arithmatex">\(C_i\)</span></th>
+<th>分组密码输入分组</th>
+<th>分组密码输出分组</th>
+<th>明文<span class="arithmatex">\(P_i\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3</td>
+<td>C9A86A4D71447F4E<br>873ADA4F388AF9B9</td>
+<td>C9A86A4D71447F4E<br>873ADA4F388AF9B9</td>
+<td>30C81C46A35CE411<br>E5FBC1191A0A52EF</td>
+<td>30C81C46A35CE411<br>E5FBC1191A0A52EF</td>
+</tr>
+<tr>
+<td>4</td>
+<td>2B25557B50514D15<br>5939E6EC940AD90E</td>
+<td>2B25557B50514D15<br>5939E6EC940AD90E</td>
+<td>F69F2445DF4F9B17<br>AD2B417BE66C3710</td>
+<td>F69F2445DF4F9B17<br>AD2B417BE66C3710</td>
+</tr>
+</tbody>
+</table>
+<h3 id="b3-cbc">B.3 CBC工作模式<a class="headerlink" href="#b3-cbc" title="Permanent link">&para;</a></h3>
+<p>表B.3和表B.4分别给出CBC工作模式加密和解密的例子。</p>
+<p><strong>表 B.3 CBC工作模式加密</strong></p>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(i\)</span></th>
+<th>明文<span class="arithmatex">\(P_i\)</span></th>
+<th>分组密码输入分组</th>
+<th>分组密码输出分组</th>
+<th>密文<span class="arithmatex">\(C_i\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>6BC1BEE22E409F96<br>E93D7E117393172A</td>
+<td>6BC0BCE12A459991<br>E134741A7F9E1925</td>
+<td>AC529AF989A62FCE<br>9CDDC5FFB84125CA</td>
+<td>AC529AF989A62FCE<br>9CDDC5FFB84125CA</td>
+</tr>
+<tr>
+<td>2</td>
+<td>AE2D8A571E03AC9C<br>9EB76FAC45AF8E51</td>
+<td>027F10AE97A58352<br>026AAA53FDEEAB9B</td>
+<td>B168DD69DB3C0EEA<br>1AB16DE6AEA43C59</td>
+<td>B168DD69DB3C0EEA<br>1AB16DE6AEA43C59</td>
+</tr>
+<tr>
+<td>3</td>
+<td>30C81C46A35CE411<br>E5FBC1191A0A52EF</td>
+<td>81A0C12F7860EAFB<br>FF4AACFFB4AE6EB6</td>
+<td>2C15567BFF8F7074<br>86C202C7BE59101F</td>
+<td>2C15567BFF8F7074<br>86C202C7BE59101F</td>
+</tr>
+<tr>
+<td>4</td>
+<td>F69F2445DF4F9B17<br>AD2B417BE66C3710</td>
+<td>DA8A723E20C0EB63<br>2BE943BC5835270F</td>
+<td>74A629B350CD7E11<br>BE99998AF5206D6C</td>
+<td>74A629B350CD7E11<br>BE99998AF5206D6C</td>
+</tr>
+</tbody>
+</table>
+<p><strong>表 B.4 CBC工作模式解密</strong></p>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(i\)</span></th>
+<th>密文<span class="arithmatex">\(C_i\)</span></th>
+<th>分组密码输入分组</th>
+<th>分组密码输出分组</th>
+<th>明文<span class="arithmatex">\(P_i\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>AC529AF989A62FCE<br>9CDDC5FFB84125CA</td>
+<td>AC529AF989A62FCE<br>9CDDC5FFB84125CA</td>
+<td>6BC0BCE12A459991<br>E134741A7F9E1925</td>
+<td>6BC1BEE22E409F96<br>E93D7E117393172A</td>
+</tr>
+<tr>
+<td>2</td>
+<td>B168DD69DB3C0EEA<br>1AB16DE6AEA43C59</td>
+<td>B168DD69DB3C0EEA<br>1AB16DE6AEA43C59</td>
+<td>027F10AE97A58352<br>026AAA53FDEEAB9B</td>
+<td>AE2D8A571E03AC9C<br>9EB76FAC45AF8E51</td>
+</tr>
+<tr>
+<td>3</td>
+<td>2C15567BFF8F7074<br>86C202C7BE59101F</td>
+<td>2C15567BFF8F7074<br>86C202C7BE59101F</td>
+<td>81A0C12F7860EAFB<br>FF4AACFFB4AE6EB6</td>
+<td>30C81C46A35CE411<br>E5FBC1191A0A52EF</td>
+</tr>
+<tr>
+<td>4</td>
+<td>74A629B350CD7E11<br>BE99998AF5206D6C</td>
+<td>74A629B350CD7E11<br>BE99998AF5206D6C</td>
+<td>DA8A723E20C0EB63<br>2BE943BC5835270F</td>
+<td>F69F2445DF4F9B17<br>AD2B417BE66C3710</td>
+</tr>
+</tbody>
+</table>
+<h3 id="b4-cfb">B.4 CFB工作模式<a class="headerlink" href="#b4-cfb" title="Permanent link">&para;</a></h3>
+<p>表B.5和表B.6分别给出CFB工作模式加密和解密的例子。此例所选的参数为:<span class="arithmatex">\(j=k=8\)</span>且<span class="arithmatex">\(r=n\)</span>。<span class="arithmatex">\(k\)</span>比特反馈以斜体形式给出。
+表B.5和表B.6分别给出CFB工作模式加密和解密的例子。此例所选的参数为:<span class="arithmatex">\(j=k=8\)</span>且<span class="arithmatex">\(r=n\)</span>。<span class="arithmatex">\(k\)</span>比特反馈以斜体形式给出。
+<strong>表 B.5 CFB工作模式加密</strong></p>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(i\)</span></th>
+<th>明文<span class="arithmatex">\(P_i\)</span></th>
+<th>分组密码输入分组</th>
+<th>分组密码输出分组</th>
+<th>密文<span class="arithmatex">\(C_i\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>6B</td>
+<td>0001020304050607<br>08090A0B0C0D0E0F</td>
+<td>D7B0B394034794B0<br>DF20D63A27C5496C</td>
+<td>BC</td>
+</tr>
+<tr>
+<td>2</td>
+<td>C1</td>
+<td>0102030405060708<br>090A0B0C0D0E0FBC</td>
+<td>590B8185E6B10E0D<br>71838FDCD0706FF5</td>
+<td>98</td>
+</tr>
+<tr>
+<td>3</td>
+<td>BE</td>
+<td>0203040506070809<br>0A0B0C0D0E0FBC98</td>
+<td>08DB5E724D537170<br>C6C53D22CF9C2AAE</td>
+<td>B6</td>
+</tr>
+<tr>
+<td>4</td>
+<td>E2</td>
+<td>030405060708090A<br>0B0C0D0E0FBC98B6</td>
+<td>7E5370A265433064<br>1081E3FEB85AC871</td>
+<td>9C</td>
+</tr>
+<tr>
+<td>5</td>
+<td>2E</td>
+<td>0405060708090A0B<br>0C0D0E0FBC98B69C</td>
+<td>25F88D7BA32C5A53<br>05E4F141B21BBFC6</td>
+<td>0B</td>
+</tr>
+<tr>
+<td>6</td>
+<td>40</td>
+<td>05060708090A0B0C<br>0D0E0FBC98B69C0B</td>
+<td>7A3705B7023A0A3B<br>5B628CA0DA6D6EE2</td>
+<td>3A</td>
+</tr>
+<tr>
+<td>7</td>
+<td>9F</td>
+<td>060708090A0B0C0D<br>0E0FBC98B69C0B3A</td>
+<td>572474E196F3C58B<br>6E8F8BE6B1712EBE</td>
+<td>C8</td>
+</tr>
+<tr>
+<td>8</td>
+<td>96</td>
+<td>0708090A0B0C0D0E<br>0FBC98B69C0B3AC8</td>
+<td>EDDCA0DE36FF1E63<br>55D0D67DA3B9C723</td>
+<td>7B</td>
+</tr>
+</tbody>
+</table>
+<p><strong>表 B.6 CFB工作模式解密</strong></p>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(i\)</span></th>
+<th>密文<span class="arithmatex">\(C_i\)</span></th>
+<th>分组密码输入分组</th>
+<th>分组密码输出分组</th>
+<th>明文<span class="arithmatex">\(P_i\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>BC</td>
+<td>0001020304050607<br>08090A0B0C0D0E0F</td>
+<td>D7B0B394034794B0<br>DF20D63A27C5496C</td>
+<td>6B</td>
+</tr>
+<tr>
+<td>2</td>
+<td>98</td>
+<td>0102030405060708<br>090A0B0C0D0E0FBC</td>
+<td>590B8185E6B10E0D<br>71838FDCD0706FF5</td>
+<td>C1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>B6</td>
+<td>0203040506070809<br>0A0B0C0D0E0FBC98</td>
+<td>08DB5E724D537170<br>C6C53D22CF9C2AAE</td>
+<td>BE</td>
+</tr>
+<tr>
+<td>4</td>
+<td>9C</td>
+<td>030405060708090A<br>0B0C0D0E0FBC98B6</td>
+<td>7E5370A265433064<br>1081E3FEB85AC871</td>
+<td>E2</td>
+</tr>
+<tr>
+<td>5</td>
+<td>0B</td>
+<td>0405060708090A0B<br>0C0D0E0FBC98B69C</td>
+<td>25F88D7BA32C5A53<br>05E4F141B21BBFC6</td>
+<td>2E</td>
+</tr>
+<tr>
+<td>6</td>
+<td>3A</td>
+<td>05060708090A0B0C<br>0D0E0FBC98B69C0B</td>
+<td>7A3705B7023A0A3B<br>5B628CA0DA6D6EE2</td>
+<td>40</td>
+</tr>
+<tr>
+<td>7</td>
+<td>C8</td>
+<td>060708090A0B0C0D<br>0E0FBC98B69C0B3A</td>
+<td>572474E196F3C58B<br>6E8F8BE6B1712EBE</td>
+<td>9F</td>
+</tr>
+<tr>
+<td>8</td>
+<td>7B</td>
+<td>0708090A0B0C0D0E<br>0FBC98B69C0B3AC8</td>
+<td>EDDCA0DE36FF1E63<br>55D0D67DA3B9C723</td>
+<td>96</td>
+</tr>
+</tbody>
+</table>
+<h3 id="b5-ofb">B.5 OFB工作模式<a class="headerlink" href="#b5-ofb" title="Permanent link">&para;</a></h3>
+<p>表B.7和表B.8分别给出OFB工作模式加密和解密的例子。此例所选的参数为:<span class="arithmatex">\(j=128\)</span>。</p>
+<p><strong>表 B.7 OFB工作模式加密</strong></p>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(i\)</span></th>
+<th>明文<span class="arithmatex">\(P_i\)</span></th>
+<th>分组密码输入分组</th>
+<th>分组密码输出分组</th>
+<th>密文<span class="arithmatex">\(C_i\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>6BC1BEE22E409F96<br>E93D7E117393172A</td>
+<td>0001020304050607<br>08090A0B0C0D0E0F</td>
+<td>D7B0B394034794B0<br>DF20D63A27C5496C</td>
+<td>BC710D762D070B26<br>361DA82B54565E46</td>
+</tr>
+<tr>
+<td>2</td>
+<td>AE2D8A571E03AC9C<br>9EB76FAC45AF8E51</td>
+<td>D7B0B394034794B0<br>DF20D63A27C5496C</td>
+<td>A98D4C7F2A77A64F<br>BABA4C3D604E9870</td>
+<td>07A0C62834740AD3<br>240D239125E11621</td>
+</tr>
+<tr>
+<td>3</td>
+<td>30C81C46A35CE411<br>E5FBC1191A0A52EF</td>
+<td>A98D4C7F2A77A64F<br>BABA4C3D604E9870</td>
+<td>E4BEAE5A6AACAD40<br>158FDC37E3EAC677</td>
+<td>D476B21CC9F04951<br>F0741D2EF9E09498</td>
+</tr>
+<tr>
+<td>4</td>
+<td>F69F2445DF4F9B17<br>AD2B417BE66C3710</td>
+<td>E4BEAE5A6AACAD40<br>158FDC37E3EAC677</td>
+<td>E31BD851F4BEA1B1<br>8B936EE69B6B5BDE</td>
+<td>1584FC142BF13AA6<br>26B82F9D7D076CCE</td>
+</tr>
+</tbody>
+</table>
+<p><strong>表 B.8 OFB工作模式解密</strong></p>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(i\)</span></th>
+<th>密文<span class="arithmatex">\(C_i\)</span></th>
+<th>分组密码输入分组</th>
+<th>分组密码输出分组</th>
+<th>明文<span class="arithmatex">\(P_i\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>BC710D762D070B26<br>361DA82B54565E46</td>
+<td>0001020304050607<br>08090A0B0C0D0E0F</td>
+<td>D7B0B394034794B0<br>DF20D63A27C5496C</td>
+<td>6BC1BEE22E409F96<br>E93D7E117393172A</td>
+</tr>
+<tr>
+<td>2</td>
+<td>07A0C62834740AD3<br>240D239125E11621</td>
+<td>D7B0B394034794B0<br>DF20D63A27C5496C</td>
+<td>A98D4C7F2A77A64F<br>BABA4C3D604E9870</td>
+<td>AE2D8A571E03AC9C<br>9EB76FAC45AF8E51</td>
+</tr>
+<tr>
+<td>3</td>
+<td>D476B21CC9F04951<br>F0741D2EF9E09498</td>
+<td>A98D4C7F2A77A64F<br>BABA4C3D604E9870</td>
+<td>E4BEAE5A6AACAD40<br>158FDC37E3EAC677</td>
+<td>30C81C46A35CE411<br>E5FBC1191A0A52EF</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1584FC142BF13AA6<br>26B82F9D7D076CCE</td>
+<td>E4BEAE5A6AACAD40<br>158FDC37E3EAC677</td>
+<td>E31BD851F4BEA1B1<br>8B936EE69B6B5BDE</td>
+<td>F69F2445DF4F9B17<br>AD2B417BE66C3710</td>
+</tr>
+</tbody>
+</table>
+<h3 id="b6-ctr">B.6 CTR工作模式<a class="headerlink" href="#b6-ctr" title="Permanent link">&para;</a></h3>
+<p>表B.9和表B.10分别给出CTR工作模式加密和解密的例子。此例所选的初始计数器为(十六进制)F0F1F2F3F4F5F6F7F8F9FAFBFCFDFEFF。</p>
+<p><strong>表 B.9 CTR工作模式加密</strong></p>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(i\)</span></th>
+<th>明文<span class="arithmatex">\(P_i\)</span></th>
+<th>分组密码输入分组</th>
+<th>分组密码输出分组</th>
+<th>密文<span class="arithmatex">\(C_i\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>6BC1BEE22E409F96<br>E93D7E117393172A</td>
+<td>F0F1F2F3F4F5F6F7<br>F8F9FAFBFCFDFEFF</td>
+<td>7F6FF490973A0C58<br>FB2BB2C8EB7066EB</td>
+<td>14AE4A72B97A93CE<br>1216CCD998E371C1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>AE2D8A571E03AC9C<br>9EB76FAC45AF8E51</td>
+<td>F0F1F2F3F4F5F6F7<br>F8F9FAFBFCFDFF00</td>
+<td>CEDA65DC7D4711F1<br>3F2E4AA9A053AFCA</td>
+<td>60F7EF8B6344BD6D<br>A1992505E5FC219B</td>
+</tr>
+<tr>
+<td>3</td>
+<td>30C81C46A35CE411<br>E5FBC1191A0A52EF</td>
+<td>F0F1F2F3F4F5F6F7<br>F8F9FAFBFCFDFF01</td>
+<td>3B384BBECF019101<br>D9F487488675E008</td>
+<td>0BF057F86C5D7510<br>3C0F46519C7FB2E7</td>
+</tr>
+<tr>
+<td>4</td>
+<td>F69F2445DF4F9B17<br>AD2B417BE66C3710</td>
+<td>F0F1F2F3F4F5F6F7<br>F8F9FAFBFCFDFF02</td>
+<td>DFB7214685940187<br>41C45528BFBBF81E</td>
+<td>292805035ADB9A90<br>ECEF145359D7CF0E</td>
+</tr>
+</tbody>
+</table>
+<p><strong>表 B.10 CTR工作模式解密</strong></p>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(i\)</span></th>
+<th>密文<span class="arithmatex">\(C_i\)</span></th>
+<th>分组密码输入分组</th>
+<th>分组密码输出分组</th>
+<th>明文<span class="arithmatex">\(P_i\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>14AE4A72B97A93CE<br>1216CCD998E371C1</td>
+<td>F0F1F2F3F4F5F6F7<br>F8F9FAFBFCFDFEFF</td>
+<td>7F6FF490973A0C58<br>FB2BB2C8EB7066EB</td>
+<td>6BC1BEE22E409F96<br>E93D7E117393172A</td>
+</tr>
+<tr>
+<td>2</td>
+<td>60F7EF8B6344BD6D<br>A1992505E5FC219B</td>
+<td>F0F1F2F3F4F5F6F7<br>F8F9FAFBFCFDFF00</td>
+<td>CEDA65DC7D4711F1<br>3F2E4AA9A053AFCA</td>
+<td>AE2D8A571E03AC9C<br>9EB76FAC45AF8E51</td>
+</tr>
+<tr>
+<td>3</td>
+<td>0BF057F86C5D7510<br>3C0F46519C7FB2E7</td>
+<td>F0F1F2F3F4F5F6F7<br>F8F9FAFBFCFDFF01</td>
+<td>3B384BBECF019101<br>D9F487488675E008</td>
+<td>30C81C46A35CE411<br>E5FBC1191A0A52EF</td>
+</tr>
+<tr>
+<td>4</td>
+<td>292805035ADB9A90<br>ECEF145359D7CF0E</td>
+<td>F0F1F2F3F4F5F6F7<br>F8F9FAFBFCFDFF02</td>
+<td>DFB7214685940187<br>41C45528BFBBF81E</td>
+<td>F69F2445DF4F9B17<br>AD2B417BE66C3710</td>
+</tr>
+</tbody>
+</table>
+<h3 id="b7-xts">B.7 XTS工作模式<a class="headerlink" href="#b7-xts" title="Permanent link">&para;</a></h3>
+<p>表B.11和表B.12分别给出XTS工作模式加密和解密的例子。此例所选的参数为:</p>
+<p>密码密钥<span class="arithmatex">\(K_1\)</span> 为(十六进制)2B7E151628AED2A6ABF7158809CF4F3C。</p>
+<p>密码密钥<span class="arithmatex">\(K_2\)</span> 为(十六进制)000102030405060708090A0B0C0D0E0F。</p>
+<p>调柄值<span class="arithmatex">\(TW\)</span> 为(十六进制)F0F1F2F3F4F5F6F7F8F9FAFBFCFDFEFF。</p>
+<p>明文是(十六进制)6BC1BEE22E409F96E93D7E117393172A</p>
+<p>AE2D8A571E03AC9C9EB76FAC45AF8E51 30C81C46A35CE411E5FBC1191A0A52EF F69F2445DF4F9B17。</p>
+<p><strong>表 B.11 XTS工作模式加密</strong></p>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(i\)</span></th>
+<th>明文<span class="arithmatex">\(P_i\)</span></th>
+<th>数据加密分组密码<br>输入分组</th>
+<th>数据加密分组密码<br>输出分组</th>
+<th>密文<span class="arithmatex">\(C_i\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>6BC1BEE22E409F96<br>E93D7E117393172A</td>
+<td>25BF97A0CF334C05<br>5FB2EEC510C64411</td>
+<td>A72DAB13266EA813<br>0D6BD8EB8C1C28EA</td>
+<td>E9538251C71D7B80<br>BBE4483FEF497BD1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>AE2D8A571E03AC9C<br>9EB76FAC45AF8E51</td>
+<td>68129EF66EBA4555<br>45F0A7C6740527CC</td>
+<td>EA634CBAA69DC60C<br>C54F5E25855CA646</td>
+<td>2C5C581BD6242FC5<br>1E08964FB4F60FDB</td>
+</tr>
+<tr>
+<td>3</td>
+<td>30C81C46A35CE411<br>E5FBC1191A0A52EF</td>
+<td>B2D796161B0010F5<br>0858252C02DF0621</td>
+<td>12246DA98247C09D<br>3DEC08FAA0F564E2</td>
+<td>0BA42F6349927921<br>3D318D2C11F6886E</td>
+</tr>
+<tr>
+<td>4</td>
+<td>F69F2445DF4F9B17</td>
+<td>B790E16D8361E165<br>A69E1ED5344A9A4B</td>
+<td>4AABEA4B15BC0353<br>4BE07F369D9C2209</td>
+<td>903BE7F93A1B3479</td>
+</tr>
+</tbody>
+</table>
+<p><strong>表 B.12 XTS工作模式解密</strong></p>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(i\)</span></th>
+<th>密文<span class="arithmatex">\(C_i\)</span></th>
+<th>数据解密分组密码<br>输入分组</th>
+<th>数据解密分组密码<br>输出分组</th>
+<th>明文<span class="arithmatex">\(P_i\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>E9538251C71D7B80<br>BBE4483FEF497BD1</td>
+<td>A72DAB13266EA813<br>0D6BD8EB8C1C28EA</td>
+<td>25BF97A0CF334C05<br>5FB2EEC510C64411</td>
+<td>6BC1BEE22E409F96<br>E93D7E117393172A</td>
+</tr>
+<tr>
+<td>2</td>
+<td>2C5C581BD6242FC5<br>1E08964FB4F60FDB</td>
+<td>EA634CBAA69DC60C<br>C54F5E25855CA646</td>
+<td>68129EF66EBA4555<br>45F0A7C6740527CC</td>
+<td>AE2D8A571E03AC9C<br>9EB76FAC45AF8E51</td>
+</tr>
+<tr>
+<td>3</td>
+<td>0BA42F6349927921<br>3D318D2C11F6886E</td>
+<td>4AABEA4B15BC0353<br>4BE07F369D9C2209</td>
+<td>B790E16D8361E165<br>A69E1ED5344A9A4B</td>
+<td>30C81C46A35CE411<br>E5FBC1191A0A52EF</td>
+</tr>
+<tr>
+<td>4</td>
+<td>903BE7F93A1B3479</td>
+<td>12246DA98247C09D<br>3DEC08FAA0F564E2</td>
+<td>B2D796161B0010F5<br>0858252C02DF0621</td>
+<td>F69F2445DF4F9B17</td>
+</tr>
+</tbody>
+</table>
+<h3 id="b8-hctr">B.8 HCTR工作模式<a class="headerlink" href="#b8-hctr" title="Permanent link">&para;</a></h3>
+<p>表B.13和表B.14分别给出HCTR工作模式加密和解密的例子。此例所选的参数为:</p>
+<p>密码密钥<span class="arithmatex">\(K_1\)</span> 为(十六进制)2B7E151628AED2A6ABF7158809CF4F3C。</p>
+<p>密码密钥<span class="arithmatex">\(K_2\)</span> 为(十六进制)000102030405060708090A0B0C0D0E0F。</p>
+<p>调柄值<span class="arithmatex">\(TW\)</span> 为(十六进制)F0F1F2F3F4F5F6F7F8F9FAFBFCFDFEFF。</p>
+<p>明文是(十六进制)6BC1BEE22E409F96E93D7E117393172A</p>
+<p>AE2D8A571E03AC9C9EB76FAC45AF8E51 30C81C46A35CE411E5FBC1191A0A52EF F69F2445DF4F9B17AD2B417BE66C3710。</p>
+<p><strong>表 B.13 HCTR工作模式加密</strong></p>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(i\)</span></th>
+<th>明文<span class="arithmatex">\(P_i\)</span></th>
+<th>数据加密分组密码<br>输入分组</th>
+<th>数据加密分组密码<br>输出分组</th>
+<th>密文<span class="arithmatex">\(C_i\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>6BC1BEE22E409F96<br>E93D7E117393172A</td>
+<td>5FDF02BAD01068B8<br>09CB8E34AFCF2D5C</td>
+<td>3D188488D62C2F1F<br>5605FB1E137C4270</td>
+<td>9CD7481D3B7CA904<br>B14B4084D9D4C83E</td>
+</tr>
+<tr>
+<td>2</td>
+<td>AE2D8A571E03AC9C<br>9EB76FAC45AF8E51</td>
+<td>62C78632063C47A7<br>5FCE752ABCB36F2D</td>
+<td>7DB326D90877D409<br>629D8E42888D8C27</td>
+<td>D39EAC8E16747895<br>FC2AE1EECD220276</td>
+</tr>
+<tr>
+<td>3</td>
+<td>30C81C46A35CE411<br>E5FBC1191A0A52EF</td>
+<td>62C78632063C47A7<br>5FCE752ABCB36F2E</td>
+<td>9FF511698297DC16<br>B3E886D100DB6AFE</td>
+<td>AF3D0D2F21CB3807<br>561347C81AD13811</td>
+</tr>
+<tr>
+<td>4</td>
+<td>F69F2445DF4F9B17<br>AD2B417BE66C3710</td>
+<td>62C78632063C47A7<br>5FCE752ABCB36F2F</td>
+<td>8B477820F5B18DB3<br>D0EDCFC3626ABDF3</td>
+<td>7DD85C652AFE16A4<br>7DC68EB884068AE3</td>
+</tr>
+</tbody>
+</table>
+<p><strong>表 B.14 HCTR工作模式解密</strong></p>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(i\)</span></th>
+<th>密文<span class="arithmatex">\(C_i\)</span></th>
+<th>数据解密分组密码<br>输入分组</th>
+<th>数据解密分组密码<br>输出分组</th>
+<th>明文<span class="arithmatex">\(P_i\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>9CD7481D3B7CA904<br>B14B4084D9D4C83E</td>
+<td>3D188488D62C2F1F<br>5605FB1E137C4270</td>
+<td>5FDF02BAD01068B8<br>09CB8E34AFCF2D5C</td>
+<td>6BC1BEE22E409F96<br>E93D7E117393172A</td>
+</tr>
+<tr>
+<td>2</td>
+<td>D39EAC8E16747895<br>FC2AE1EECD220276</td>
+<td>62C78632063C47A7<br>5FCE752ABCB36F2D</td>
+<td>7DB326D90877D409<br>629D8E42888D8C27</td>
+<td>AE2D8A571E03AC9C<br>9EB76FAC45AF8E51</td>
+</tr>
+<tr>
+<td>3</td>
+<td>AF3D0D2F21CB3807<br>561347C81AD13811</td>
+<td>62C78632063C47A7<br>5FCE752ABCB36F2E</td>
+<td>9FF511698297DC16<br>B3E886D100DB6AFE</td>
+<td>30C81C46A35CE411<br>E5FBC1191A0A52EF</td>
+</tr>
+<tr>
+<td>4</td>
+<td>7DD85C652AFE16A4<br>7DC68EB884068AE3</td>
+<td>62C78632063C47A7<br>5FCE752ABCB36F2F</td>
+<td>8B477820F5B18DB3<br>D0EDCFC3626ABDF3</td>
+<td>F69F2445DF4F9B17<br>AD2B417BE66C3710</td>
+</tr>
+</tbody>
+</table>
+<h3 id="b9-bc">B.9 BC工作模式<a class="headerlink" href="#b9-bc" title="Permanent link">&para;</a></h3>
+<p>表B.15和表B.16分别给出BC工作模式加密和解密的例子。</p>
+<p><strong>表 B.15 BC工作模式加密</strong></p>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(i\)</span></th>
+<th>明文<span class="arithmatex">\(P_i\)</span></th>
+<th>分组密码输入分组</th>
+<th>分组密码输出分组</th>
+<th>密文<span class="arithmatex">\(C_i\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>6BC1BEE22E409F96<br>E93D7E117393172A</td>
+<td>6BC0BCE12A459991<br>E134741A7F9E1925</td>
+<td>AC529AF989A62FCE<br>9CDDC5FFB84125CA</td>
+<td>AC529AF989A62FCE<br>9CDDC5FFB84125CA</td>
+</tr>
+<tr>
+<td>2</td>
+<td>AE2D8A571E03AC9C<br>9EB76FAC45AF8E51</td>
+<td>027E12AD93A08555<br>0A63A058F1E3A594</td>
+<td>FB8CDE77339FFE48<br>1D113C40BBD5B678</td>
+<td>FB8CDE77339FFE48<br>1D113C40BBD5B678</td>
+</tr>
+<tr>
+<td>3</td>
+<td>30C81C46A35CE411<br>E5FBC1191A0A52EF</td>
+<td>67175ACB1D603390<br>6C3E32AD1593CF52</td>
+<td>6FFC9916F98F94FF<br>12D78319707E2404</td>
+<td>6FFC9916F98F94FF<br>12D78319707E2404</td>
+</tr>
+<tr>
+<td>4</td>
+<td>F69F2445DF4F9B17<br>AD2B417BE66C3710</td>
+<td>CEBCFBDE98FCD869<br>363931D6998B8EA9</td>
+<td>28718707605BC1EA<br>C503153EBAA0FB1D</td>
+<td>28718707605BC1EA<br>C503153EBAA0FB1D</td>
+</tr>
+</tbody>
+</table>
+<p><strong>表 B.16 BC工作模式解密</strong></p>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(i\)</span></th>
+<th>密文<span class="arithmatex">\(C_i\)</span></th>
+<th>分组密码输入分组</th>
+<th>分组密码输出分组</th>
+<th>明文<span class="arithmatex">\(P_i\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>AC529AF989A62FCE<br>9CDDC5FFB84125CA</td>
+<td>AC529AF989A62FCE<br>9CDDC5FFB84125CA</td>
+<td>6BC0BCE12A459991<br>E134741A7F9E1925</td>
+<td>6BC1BEE22E409F96<br>E93D7E117393172A</td>
+</tr>
+<tr>
+<td>2</td>
+<td>FB8CDE77339FFE48<br>1D113C40BBD5B678</td>
+<td>FB8CDE77339FFE48<br>1D113C40BBD5B678</td>
+<td>027E12AD93A08555<br>0A63A058F1E3A594</td>
+<td>AE2D8A571E03AC9C<br>9EB76FAC45AF8E51</td>
+</tr>
+<tr>
+<td>3</td>
+<td>6FFC9916F98F94FF<br>12D78319707E2404</td>
+<td>6FFC9916F98F94FF<br>12D78319707E2404</td>
+<td>67175ACB1D603390<br>6C3E32AD1593CF52</td>
+<td>30C81C46A35CE411<br>E5FBC1191A0A52EF</td>
+</tr>
+<tr>
+<td>4</td>
+<td>28718707605BC1EA<br>C503153EBAA0FB1D</td>
+<td>28718707605BC1EA<br>C503153EBAA0FB1D</td>
+<td>CEBCFBDE98FCD869<br>363931D6998B8EA9</td>
+<td>F69F2445DF4F9B17<br>AD2B417BE66C3710</td>
+</tr>
+</tbody>
+</table>
+<h3 id="b10-ofbnlf">B.10 OFBNLF工作模式<a class="headerlink" href="#b10-ofbnlf" title="Permanent link">&para;</a></h3>
+<p>表B.17和表B.18分别给出OFBNLF工作模式加密和解密的例子。</p>
+<p><strong>表 B.17 OFBNLF工作模式加密</strong></p>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(i\)</span></th>
+<th>明文<span class="arithmatex">\(P_i\)</span></th>
+<th><span class="arithmatex">\(K_i\)</span></th>
+<th>分组密码输出分组</th>
+<th>密文<span class="arithmatex">\(C_i\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>6BC1BEE22E409F96<br>E93D7E117393172A</td>
+<td>D7B0B394034794B0<br>DF20D63A27C5496C</td>
+<td>00A5B5C9E645557C<br>20CE7F267736F308</td>
+<td>00A5B5C9E645557C<br>20CE7F267736F308</td>
+</tr>
+<tr>
+<td>2</td>
+<td>AE2D8A571E03AC9C<br>9EB76FAC45AF8E51</td>
+<td>A98D4C7F2A77A64F<br>BABA4C3D604E9870</td>
+<td>A18037828850B9D7<br>8883CA622851F86C</td>
+<td>A18037828850B9D7<br>8883CA622851F86C</td>
+</tr>
+<tr>
+<td>3</td>
+<td>30C81C46A35CE411<br>E5FBC1191A0A52EF</td>
+<td>E4BEAE5A6AACAD40<br>158FDC37E3EAC677</td>
+<td>B7CAEFDFB6D4CABA<br>6AE2D2FCE369CEB3</td>
+<td>B7CAEFDFB6D4CABA<br>6AE2D2FCE369CEB3</td>
+</tr>
+<tr>
+<td>4</td>
+<td>F69F2445DF4F9B17<br>AD2B417BE66C3710</td>
+<td>E31BD851F4BEA1B1<br>8B936EE69B6B5BDE</td>
+<td>1001DD71FDDA9341<br>F8D221CB720FF27B</td>
+<td>1001DD71FDDA9341<br>F8D221CB720FF27B</td>
+</tr>
+</tbody>
+</table>
+<p><strong>表 B.18 OFBNLF工作模式解密</strong></p>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(i\)</span></th>
+<th>密文<span class="arithmatex">\(C_i\)</span></th>
+<th><span class="arithmatex">\(K_i\)</span></th>
+<th>分组密码输出分组</th>
+<th>明文<span class="arithmatex">\(P_i\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>00A5B5C9E645557C<br>20CE7F267736F308</td>
+<td>D7B0B394034794B0<br>DF20D63A27C5496C</td>
+<td>6BC1BEE22E409F96<br>E93D7E117393172A</td>
+<td>6BC1BEE22E409F96<br>E93D7E117393172A</td>
+</tr>
+<tr>
+<td>2</td>
+<td>A18037828850B9D7<br>8883CA622851F86C</td>
+<td>A98D4C7F2A77A64F<br>BABA4C3D604E9870</td>
+<td>AE2D8A571E03AC9C<br>9EB76FAC45AF8E51</td>
+<td>AE2D8A571E03AC9C<br>9EB76FAC45AF8E51</td>
+</tr>
+<tr>
+<td>3</td>
+<td>B7CAEFDFB6D4CABA<br>6AE2D2FCE369CEB3</td>
+<td>E4BEAE5A6AACAD40<br>158FDC37E3EAC677</td>
+<td>30C81C46A35CE411<br>E5FBC1191A0A52EF</td>
+<td>30C81C46A35CE411<br>E5FBC1191A0A52EF</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1001DD71FDDA9341<br>F8D221CB720FF27B</td>
+<td>E31BD851F4BEA1B1<br>8B936EE69B6B5BDE</td>
+<td>F69F2445DF4F9B17<br>AD2B417BE66C3710</td>
+<td>F69F2445DF4F9B17<br>AD2B417BE66C3710</td>
+</tr>
+</tbody>
+</table>
+<h2 id="c">附录C<a class="headerlink" href="#c" title="Permanent link">&para;</a></h2>
+<p>(资料性)</p>
+<p><strong>填充方法示例</strong></p>
+<h3 id="c1">C.1 概述<a class="headerlink" href="#c1" title="Permanent link">&para;</a></h3>
+<p>当明文长度不满足工作模式所规定的分组长度的整数倍时,加解密操作方需要协商一个明文填充方法,满足以下性质:</p>
+<p>a)对于任意长度的非空明文输入,能够输出满足工作模式规定的分组长度的明文分组序列;</p>
+<p>b)不同的非空明文输入无法输出相同的明文分组序列,即填充后的非空明文输入总是唯一的。</p>
+<p>需要注意的是,填充方法的选择将影响到工作模式的安全强度,有必要专门分析确定。</p>
+<h3 id="c2-1">C.2 填充方法1<a class="headerlink" href="#c2-1" title="Permanent link">&para;</a></h3>
+<p>以字节为基本单位,在明文字节串<span class="arithmatex">\(P\)</span> 的右侧填充<span class="arithmatex">\(a\)</span>个字节“<span class="arithmatex">\(a\)</span>”,其中“<span class="arithmatex">\(a\)</span>”表示<span class="arithmatex">\(P\)</span> 的最后一个分组达到分组长度所需要的字节数。如果<span class="arithmatex">\(P\)</span> 为空串或其最后一个分组正好为分组长度,那么填充方法1规定在<span class="arithmatex">\(P\)</span> 右侧填充一个由<span class="arithmatex">\(b\)</span>个字节“<span class="arithmatex">\(b\)</span>”构成的分组,其中“<span class="arithmatex">\(b\)</span>”表示一个明文分组所需要的字节数目。</p>
+<p>例如:<span class="arithmatex">\(P\)</span> 为00112233445566778899,则填充之后为00112233445566778899060606060606;若<span class="arithmatex">\(P\)</span> 为00112233445566778899AABBCCDDEEFF,则填充之后为00112233445566778899AABBCCDDEEFF10 101010101010101010101010101010。</p>
+<h3 id="c3-2">C.3 填充方法2<a class="headerlink" href="#c3-2" title="Permanent link">&para;</a></h3>
+<p>在明文比特串<span class="arithmatex">\(P\)</span>的右侧填充一个比特“1”,然后在所得到的比特串右侧填充“0”,尽可能少填充(甚至不填充),使填充后的比特串的长度是<span class="arithmatex">\(j\)</span>的正整数倍。如果<span class="arithmatex">\(P\)</span>是空串,那么填充方法2规定对其填充一个“1”,然后在其右侧填充<span class="arithmatex">\(j-1\)</span>个“0”。</p>
+<p>例如:若<span class="arithmatex">\(j=128\)</span>,<span class="arithmatex">\(P\)</span>为00112233445566778899,则填充之后为<span class="arithmatex">\(\mathtt{0011223344556677889980}\parallel\operatorname{Zero}(40)\)</span>;若<span class="arithmatex">\(P\)</span>为00112233445566778899AABBCCDDEEFF,则填充之后为<span class="arithmatex">\(\mathtt{00112233445566778899AABBCCDDEEFF80}\parallel\operatorname{Zero}(120)\)</span>。</p>
+<h3 id="c4-3">C.4 填充方法3<a class="headerlink" href="#c4-3" title="Permanent link">&para;</a></h3>
+<p>在明文比特串<span class="arithmatex">\(P\)</span>的右侧填充“0”,尽可能少填充(甚至不填充),使填充后比特串的长度是<span class="arithmatex">\(j\)</span>的正整数倍。然后在所得到的明文比特串左侧填充一个分组<span class="arithmatex">\(L\)</span>。分组<span class="arithmatex">\(L\)</span>由尽可能少的“0”和明文比特串<span class="arithmatex">\(P\)</span>的长度<span class="arithmatex">\(L_P\)</span>的二进制表示组成,其中位于<span class="arithmatex">\(L_P\)</span>二进制表示的左侧的“0”尽可能少,且使<span class="arithmatex">\(L\)</span>的长度为<span class="arithmatex">\(j\)</span>比特。</p>
+<p><span class="arithmatex">\(L\)</span>最右端的比特和<span class="arithmatex">\(L_P\)</span>的二进制表示中的最低位相对应。如果是空串,那么填充方法3规定对其填充<span class="arithmatex">\(j\)</span>个“0”,然后在其左侧填充一个由<span class="arithmatex">\(j\)</span>个“0”组成的分组<span class="arithmatex">\(L\)</span>。</p>
+<p>例如:若<span class="arithmatex">\(j=128\)</span>,<span class="arithmatex">\(P\)</span>为00112233445566778899,则填充之后为<span class="arithmatex">\(\operatorname{Zero}(120)\parallel\mathtt{0A00112233445566778899}\parallel\operatorname{Zero}(48)\)</span>;若<span class="arithmatex">\(P\)</span>为00112233445566778899AABBCCDDEEFF,则填充之后为<span class="arithmatex">\(\operatorname{Zero}(120)\parallel\mathtt{1000112233445566778899AABBCCDDEEFF}\)</span>。</p>
+<h2 id="_1">参考文献<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>[1] GB/T 1988 信息技术 信息交换用七位编码字符集</p>
+<p>[2] GB/T 15852.1 信息技术 安全技术 消息鉴别码 第1部分:采用分组密码的机制</p>
+<p>[3] GB/T 15852.3—2019 信息技术 安全技术 消息鉴别码 第3部分:采用泛杂凑函数的机制</p>
+<p>[4] GB/T 32907—2016 信息安全技术 SM4分组密码算法</p>
+<p>[5] GB/T 36624—2018 信息技术 安全技术 可鉴别的加密机制</p>
+<p>[6] ISO/IEC 10116:2017 Information technology—Security techniques—Modes of operation for an n-bit block cipher</p>
+<p>[7] IEEE 1619—2018 Standard for Cryptographic Protection of Data on Block-Oriented Storage Devices</p>
+<p>[8] 郑凯燕,王鹏.BC加密模式的分析及其改进[J].信息安全学报,2017(3):61-78.</p>
+<p>[9] Bellare M.,Desai A.,Jokipii E.,Rogaway P.A Concrete Treatment of Symmetric Encryption.Proceedings of the 38th Annual Symposium on Foundations of Computer Science,pp.394-403,IEEE,1997.</p>
+<p>[10] Alkassar A.,Geraldy A.,Pfitzmann B.,Sadeghi A.R.Optimized Self-Synchronizing Mode of Operation.Proceedings of Fast Software Encryption (FSE) 2001,Yokohama,Japan,Lecture Notes in Computer Science Vol.2355,pp.78-91,Springer-Verlag,Berlin,2001.</p>
+<p>[11] Rogaway P.: Efficient Instantiations of Tweakable Blockciphers and Refinements to Modes OCB and PMAC.ASIACRYPT 2004:16-31.</p>
+<p>[12] Ball,M.V.,C.Guyot,J.P.Hughes,L.Martin,and L.C.Noll,“The XTS-AES Disk Encryption Algorithm and the Security of Ciphertext Stealing,”Cryptologia,vol.36,no.1,pp.70-79,2012.</p>
+<p>[13] Wang P.,Feng D.,Wu W.: HCTR A Variable-Input-Length Enciphering Mode.CISC 2005:175-188.</p>
+<p>[14] Debrup C.,Mridul N.: An Improved Security Bound for HCTR.FSE 2008:289-302.</p>
+<p>[15] Sun Z.,Wang P.Analysis of the OFBNLF encryption mode of operation,SCIENTIA SINICA Informationis,Volume 46,Issue 6:729-742(2016).</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate":null,"base":"../../..","features":["navigation.tabs","navigation.tabs.sticky","navigation.indexes","search.highlight","search.suggest","content.code.copy"],"search":"../../../assets/javascripts/workers/search.0ff0ccea966a6bf2.min.js","tags":null,"translations":{"clipboard.copied":"已复制","clipboard.copy":"复制","search.result.more.one":"在该页上还有 1 个符合条件的结果","search.result.more.other":"在该页上还有 # 个符合条件的结果","search.result.none":"没有找到符合条件的结果","search.result.one":"找到 1 个符合条件的结果","search.result.other":"# 个符合条件的结果","search.result.placeholder":"键入以开始搜索","search.result.term.missing":"缺少","select.version":"选择当前版本"},"version":null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.c21346df.min.js"></script>
+      
+        <script src="../../../assets/vendor/katex/katex.min.js"></script>
+      
+        <script src="../../../assets/javascripts/blue-topaz-maple.js"></script>
+      
+        <script src="../../../assets/javascripts/page-navigation.js"></script>
+      
+        <script src="../../../assets/javascripts/page-search.js"></script>
+      
+        <script src="../../../assets/javascripts/search-tables.js"></script>
+      
+        <script src="../../../assets/javascripts/search-notice.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,4002 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://loora1n.github.io/GM-crypto-assessment-wiki/protocol/IPSEC/GBT36968-2018/GBT36968-2018/">
+      
+      
+        <link rel="prev" href="../../../CSSH/GMT0129-2023/GMT0129-2023/">
+      
+      
+        <link rel="next" href="../../../%E4%BC%A0%E8%BE%93%E5%B1%82%E5%AF%86%E7%A0%81%E5%8D%8F%E8%AE%AE/GBT38636-2020/GBT38636-2020/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+    
+    
+      
+        <title>IPSEC协议 - 密评标准知识库</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+        <script src="../../../../assets/vendor/iframe-worker/shim.js"></script>
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/vendor/katex/katex.min.css">
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/blue-topaz-maple.css">
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/page-search.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ipsec-vpn" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../../.." title="密评标准知识库" class="md-header__button md-logo" aria-label="密评标准知识库" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            密评标准知识库
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              IPSEC协议
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="切换到深色主题"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换到深色主题" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="切换到浅色主题"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换到浅色主题" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../maintenance/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  使用手册
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../algorithm/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  密码算法
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  密码协议
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../product/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  密码产品
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../assessment/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  密码测评
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../standard/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  国标与行标
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../notes/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  个人笔记
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+  
+  
+  
+    
+  
+  <aside class="md-sidebar md-sidebar--secondary topaz-toc" data-md-component="sidebar" data-md-type="toc" aria-label="文章目录">
+    <div class="md-sidebar__scrollwrap">
+      <div class="md-sidebar__inner">
+        <nav class="md-nav md-nav--secondary" aria-label="文章标题目录">
+          <div class="md-nav__title topaz-toc__title">
+            文章目录
+            <label class="topaz-toc__close" for="__drawer" title="收起文章目录">收起 ×</label>
+          </div>
+          
+            <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+              
+                <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 范围
+      
+    </span>
+  </a>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 规范性引用文件
+      
+    </span>
+  </a>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 术语和定义
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 术语和定义">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-security-association" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 安全联盟 security association
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-internet-security-association-and-key-management-protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 互联网安全联盟和密钥管理协议 internet security association and key management protocol
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-payload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 载荷 payload
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-ipsec-internet-protocol-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 IPSec 协议 Internet Protocol Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-authentication-header" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5 鉴别头 authentication header
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36-encapsulating-security-payload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.6 封装安全载荷 encapsulating security payload
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#37-virtual-private-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.7 虚拟专用网 virtual private network
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4 缩略语
+      
+    </span>
+  </a>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5 密码算法和密钥种类
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5 密码算法和密钥种类">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 密码算法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 密钥种类
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6 协议
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6 协议">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 密钥交换协议
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.1 密钥交换协议">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#611" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1.1 概述
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#612" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1.2 交换阶段及模式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#613" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1.3 交换
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.1.3 交换">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#6131" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1.3.1 概述
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6132" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1.3.2 第一阶段———主模式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6133" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1.3.3 第二阶段———快速模式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6134-isakmp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1.3.4 ISAKMP 信息交换
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#614-nat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1.4 NAT 穿越
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#615" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1.5 密钥交换的载荷格式
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.1.5 密钥交换的载荷格式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#6151" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1.5.1 消息头格式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6152" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1.5.2 通用载荷头
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6153-sa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1.5.3 SA 载荷
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6154" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1.5.4 建议载荷
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6155" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1.5.5 变换载荷
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6156-sa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1.5.6 SA 属性载荷
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6157" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1.5.7 标识载荷
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6158" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1.5.8 证书载荷
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6159" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1.5.9 杂凑载荷
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#61510" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1.5.10 签名载荷
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#61511-nonce" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1.5.11 Nonce 载荷
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#61512" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1.5.12 通知载荷
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#61513" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1.5.13 删除载荷
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#61514-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1.5.14 厂商 ID 载荷
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#61515-nat_d" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1.5.15 NAT_D 载荷
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#61516-nat_oa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1.5.16 NAT_OA 载荷
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#61517" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1.5.17 对称密钥载荷
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#616" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1.6 密钥交换的数据包格式
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.1.6 密钥交换的数据包格式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#6161" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1.6.1 概述
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6162-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1.6.2 主模式消息 1 的数据包格式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6163-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1.6.3 主模式消息 2 的数据包格式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6164-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1.6.4 主模式消息 3 的数据包格式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6165-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1.6.5 主模式消息 4 的数据包格式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6166-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1.6.6 主模式消息 5 的数据包的格式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6167-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1.6.7 主模式消息 6 的数据的包格式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6168-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1.6.8 快速模式消息 1 的数据包格式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6169-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1.6.9 快速模式消息 2 的数据包格式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#61610-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1.6.10 快速模式消息 3 的数据包格式
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 安全报文协议
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.2 安全报文协议">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#621-ah" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2.1 鉴别头协议 AH
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.2.1 鉴别头协议 AH">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#6211" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2.1.1 概述
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6212-ah" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2.1.2 AH 头格式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6213-ah" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2.1.3 鉴别头 AH 的处理
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.2.1.3 鉴别头 AH 的处理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#62131-ah" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2.1.3.1 AH 头的位置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62132" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2.1.3.2 出站报文处理
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62133" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2.1.3.3 入站报文处理
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#622-esp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2.2 封装安全载荷 ESP
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.2.2 封装安全载荷 ESP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#6221" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2.2.1 概述
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6222-esp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2.2.2 ESP 头
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.2.2.2 ESP 头">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#62221-esp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2.2.2.1 ESP 头格式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62222-spi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2.2.2.2 安全参数索引 SPI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62223" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2.2.2.3 序列号
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62224" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2.2.2.4 载荷数据
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62225" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2.2.2.5 填充字段
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62226" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2.2.2.6 填充长度
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62227" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2.2.2.7 下一个头
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62228" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2.2.2.8 鉴别数据
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6223-esp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2.2.3 封装安全载荷 ESP 的处理
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.2.2.3 封装安全载荷 ESP 的处理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#62231-esp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2.2.3.1 ESP 头的位置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62232" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2.2.3.2 出站报文处理
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62233" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2.2.3.3 入站报文处理
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#623-nat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2.3 NAT 穿越
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#624" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2.4 匹配安全策略
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#7-ipsec-vpn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7 IPSec VPN 产品要求
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7 IPSec VPN 产品要求">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 产品功能要求
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.1 产品功能要求">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#711" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1.1 随机数生成
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#712" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1.2 密码算法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#713" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1.3 工作模式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#714" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1.4 密钥交换
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#715" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1.5 安全报文封装
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#716-nat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1.6 NAT 穿越
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#717" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1.7 鉴别方式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#718-ip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1.8 IP 协议版本支持
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#719" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1.9 抗重放攻击
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7110" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1.10 密钥更新
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 产品性能参数
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.2 产品性能参数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#721" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2.1 加解密吞吐率
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#722" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2.2 加解密时延
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#723" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2.3 加解密丢包率
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#724" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2.4 每秒新建连接数
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 安全管理要求
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.3 安全管理要求">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#731" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.1 密钥管理
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.3.1 密钥管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#7311" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.1.1 设备密钥
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7312" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.1.2 工作密钥
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7313" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.1.3 会话密钥
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#732" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.2 数据管理
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.3.2 数据管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#7321" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.2.1 配置数据管理
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7322" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.2.2 日志管理
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#733" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.3 管理员角色管理
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#734" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.4 设备管理
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.3.4 设备管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#7341" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.4.1 硬件安全
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7342" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.4.2 软件安全
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7343" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.4.3 设备初始化
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7344" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.4.4 注册和监控
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7345" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.4.5 设备自检
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7346" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.4.6 设备物理安全防护
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#8-ipsec-vpn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8 IPSec VPN 产品检测
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8 IPSec VPN 产品检测">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 产品功能检测
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8.1 产品功能检测">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#811" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1.1 随机数功能
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#812" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1.2 密码算法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#813" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1.3 工作模式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#814" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1.4 密钥交换
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#815" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1.5 安全报文封装协议
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#816-nat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1.6 NAT 穿越
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#817" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1.7 鉴别方式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#818-ip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1.8 IP 协议版本支持
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#819" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1.9 抗重放攻击
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8110" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1.10 密钥更新
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 产品性能检测
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8.2 产品性能检测">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#821" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2.1 加解密吞吐率
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#822" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2.2 加解密时延
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#823" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2.3 加解密丢包率
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#824" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2.4 每秒新建连接数
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3 安全管理检测
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8.3 安全管理检测">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#831" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3.1 密钥管理
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#832" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3.2 数据管理
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8.3.2 数据管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#8321" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3.2.1 配置数据管理
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8322" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3.2.2 日志管理
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#833" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3.3 管理员角色管理
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#834" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3.4 设备管理
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8.3.4 设备管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#8341" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3.4.1 硬件安全
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8342" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3.4.2 软件安全
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8343" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3.4.3 设备初始化
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8344" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3.4.4 注册和监控
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8345" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3.4.5 设备自检
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+              
+            </ul>
+          
+        </nav>
+      </div>
+    </div>
+  </aside>
+
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="ipsec-vpn">信息安全技术 IPSec VPN技术规范<a class="headerlink" href="#ipsec-vpn" title="Permanent link">&para;</a></h1>
+<h2 id="1">1 范围<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<p>本标准规定了 IPSec VPN 的技术协议、产品要求和检测方法。</p>
+<p>本标准适用于 IPSec VPN 产品的研制、检测、使用和管理。</p>
+<h2 id="2">2 规范性引用文件<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<p>下列文件对于本文件的应用是必不可少的。凡是注日期的引用文件,仅注日期的版本适用于本文件。凡是不注日期的引用文件,其最新版本(包括所有的修改单)适用于本文件。</p>
+<p>GB/T 20518 信息安全技术 公钥基础设施 数字证书格式</p>
+<p>GB/T 25056 信息安全技术 证书认证系统密码及其相关安全技术规范</p>
+<p>GB/T 32905 信息安全技术 SM3 密码杂凑算法</p>
+<p>GB/T 32907 信息安全技术 SM4 分组密码算法</p>
+<p>GB/T 32915 信息安全技术 二元序列随机性检测方法</p>
+<p>GB/T 32918(所有部分) 信息安全技术 SM2 椭圆曲线公钥密码算法</p>
+<p>GB/T 35276 信息安全技术 SM2 密码算法使用规范</p>
+<p>RFC 2408 互联网安全联盟和密钥管理协议(Internet Security Association and Key Management Protocol)</p>
+<p>RFC 3947 密钥交换过程中 NAT 穿越协商(Negotiation of NAT-Traversal in the IKE)</p>
+<p>RFC 3948 IPSec ESP 包的 UDP 封装(UDP Encapsulation of IPsec ESP Packets)</p>
+<h2 id="3">3 术语和定义<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<p>下列术语和定义适用于本文件。</p>
+<h3 id="31-security-association">3.1 安全联盟 security association<a class="headerlink" href="#31-security-association" title="Permanent link">&para;</a></h3>
+<p>两个通信实体经协商建立起来的一种协定,它描述了实体如何利用安全服务来进行安全的通信。</p>
+<p>注:安全联盟包括了执行各种网络安全服务所需要的所有信息,例如 IP 层服务(如头鉴别和载荷封装)、传输层和应用层服务或者协商通信的自我保护。</p>
+<h3 id="32-internet-security-association-and-key-management-protocol">3.2 互联网安全联盟和密钥管理协议 internet security association and key management protocol<a class="headerlink" href="#32-internet-security-association-and-key-management-protocol" title="Permanent link">&para;</a></h3>
+<p>一个在互联网环境中建立安全联盟和进行密钥管理的协议。它定义了建立、协商、修改和删除安全联盟的过程和报文格式,以及交换密钥产生和鉴别数据的载荷格式。这些格式为传输密钥和鉴别信息提供了一致的框架。</p>
+<h3 id="33-payload">3.3 载荷 payload<a class="headerlink" href="#33-payload" title="Permanent link">&para;</a></h3>
+<p>ISAKMP 通信双方交换消息的数据格式,是构造 ISAKMP 消息的基本单位。</p>
+<h3 id="34-ipsec-internet-protocol-security">3.4 IPSec 协议 Internet Protocol Security<a class="headerlink" href="#34-ipsec-internet-protocol-security" title="Permanent link">&para;</a></h3>
+<p>一种开放标准的框架结构,通过使用加密的安全服务以确保在公开网络上进行保密而安全的通信,可以端至端的层面上提供数据完整性保护、数据源鉴别、载荷机密性和抗重放攻击等安全服务。</p>
+<h3 id="35-authentication-header">3.5 鉴别头 authentication header<a class="headerlink" href="#35-authentication-header" title="Permanent link">&para;</a></h3>
+<p>IPSec 的一种协议,用于提供 IP 数据包的数据完整性、数据源鉴别以及抗重放攻击的功能,但不提供数据机密性的功能。</p>
+<h3 id="36-encapsulating-security-payload">3.6 封装安全载荷 encapsulating security payload<a class="headerlink" href="#36-encapsulating-security-payload" title="Permanent link">&para;</a></h3>
+<p>IPSec 的一种协议,用于提供 IP 数据包的机密性、数据完整性以及对数据源鉴别以及抗重放攻击的功能。</p>
+<h3 id="37-virtual-private-network">3.7 虚拟专用网 virtual private network<a class="headerlink" href="#37-virtual-private-network" title="Permanent link">&para;</a></h3>
+<p>使用密码技术在通信网络中构建安全通道的技术。</p>
+<h2 id="4">4 缩略语<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<p>下列缩略语适用于本文件。</p>
+<p>AH:鉴别头(Authentication Header)</p>
+<p>CBC:(密码分组的)密码分组链接(工作方式)(Cipher Block Chaining)</p>
+<p>ESP:封装安全载荷(Encapsulating Security Payload)</p>
+<p>HMAC:带密钥的杂凑运算(Keyed-Hash Message Authentication Code)</p>
+<p>IPSec:IP 安全协议(Internet Protocol Security)</p>
+<p>IPv4:互联网通信协议第四版(Internet Protocol version 4)</p>
+<p>IPv6:互联网通信协议第六版(Internet Protocol version 6)</p>
+<p>ISAKMP:互联网安全联盟和密钥管理协议(Internet Security Association and Key Management Protocol)</p>
+<p><span class="arithmatex">\(\text{IV}\)</span>:初始化向量(Initialization Vector)</p>
+<p>MAC:消息认证码(Message Authentication Code)</p>
+<p>NAT:网络地址转换(Network Adress Translation)</p>
+<p>SA:安全联盟(Security Association)</p>
+<p>UDP:用户数据报协议(User Datagram Protocol)</p>
+<p>VPN:虚拟专用网(Virtual Private Network)</p>
+<h2 id="5">5 密码算法和密钥种类<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
+<h3 id="51">5.1 密码算法<a class="headerlink" href="#51" title="Permanent link">&para;</a></h3>
+<p>IPSec VPN 应支持国家密码管理主管部门批准的非对称密码算法、对称密码算法、密码杂凑算法和随机数生成算法。各算法及使用要求如下:</p>
+<ul>
+<li>
+<p>非对称密码算法应当支持 SM2 椭圆曲线密码算法,用于实体鉴别、数字签名和数字信封等。SM2 算法的使用要求见 GB/T 32918。</p>
+</li>
+<li>
+<p>对称密码算法应当支持 SM4 分组密码算法,用于密钥交换数据的加密保护和报文数据的加密保护。算法的工作模式应当支持 CBC 模式。SM4 算法的使用要求见 GB/T 32907。</p>
+</li>
+<li>
+<p>密码杂凑算法应当支持 SM3 密码杂凑算法,用于完整性校验。SM3 算法的使用要求见 GB/T 32905。</p>
+</li>
+<li>
+<p>随机数生成算法生成的随机数应能通过 GB/T 32915 规定的检测。</p>
+</li>
+</ul>
+<h3 id="52">5.2 密钥种类<a class="headerlink" href="#52" title="Permanent link">&para;</a></h3>
+<p>IPSec VPN 使用下列密钥:</p>
+<ul>
+<li>
+<p>设备密钥:非对称算法使用的公私钥对,包括签名密钥对和加密密钥对,用于实体验证、数字签名和数字信封等。</p>
+</li>
+<li>
+<p>工作密钥:在密钥交换第一阶段得到的密钥,用于会话密钥交换过程的保护。</p>
+</li>
+<li>
+<p>会话密钥:在密钥交换第二阶段得到的密钥,用于数据报文及报文 MAC 的加密。</p>
+</li>
+</ul>
+<h2 id="6">6 协议<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
+<h3 id="61">6.1 密钥交换协议<a class="headerlink" href="#61" title="Permanent link">&para;</a></h3>
+<h4 id="611">6.1.1 概述<a class="headerlink" href="#611" title="Permanent link">&para;</a></h4>
+<p>密钥交换协议定义了协商、建立、修改、删除安全联盟的过程和报文格式。协议报文使用 UDP 协议 500 端口进行传输。</p>
+<p>本章用到的符号如下:</p>
+<p><span class="arithmatex">\(\text{HDR}\)</span>:一个 ISAKMP 头。</p>
+<p><span class="arithmatex">\(\text{HDR*}\)</span>:表示 ISAKMP 头后面的载荷是加密的。</p>
+<p><span class="arithmatex">\(\text{IDi}\)</span>:发起方的标识载荷。</p>
+<p><span class="arithmatex">\(\text{IDr}\)</span>:响应方的标识载荷。</p>
+<p><span class="arithmatex">\(\text{HASHi}\)</span>:发起方的杂凑载荷。</p>
+<p><span class="arithmatex">\(\text{HASHr}\)</span>:响应方的杂凑载荷。</p>
+<p><span class="arithmatex">\(\text{HASH\_&lt;n&gt;}\)</span>:双方进行协商交互时的中间 Hash 数据。</p>
+<p><span class="arithmatex">\(\text{SIGi}\)</span>:发起方的签名载荷。</p>
+<p><span class="arithmatex">\(\text{SIGr}\)</span>:响应方的签名载荷。</p>
+<p><span class="arithmatex">\(\text{CERT\_sig\_r}\)</span>:签名证书载荷。</p>
+<p><span class="arithmatex">\(\text{CERT\_enc\_r}\)</span>:加密证书载荷。</p>
+<p><span class="arithmatex">\(\text{MsgID}\)</span>:消息标识号。</p>
+<p><span class="arithmatex">\(\text{Ni}\)</span>:发起方的 Nonce 载荷。</p>
+<p><span class="arithmatex">\(\text{Nr}\)</span>:响应方的 Nonce 载荷。</p>
+<p><span class="arithmatex">\(\text{&lt;p&gt;\_b}\)</span>:载荷<span class="arithmatex">\(\text{&lt;p&gt;}\)</span>的主体,就是没有 ISAKMP 通用头的载荷。</p>
+<p><span class="arithmatex">\(\text{pub\_i}\)</span>:发起方公钥。</p>
+<p><span class="arithmatex">\(\text{pub\_r}\)</span>:响应方公钥。</p>
+<p><span class="arithmatex">\(\text{prv\_i}\)</span>:发起方私钥。</p>
+<p><span class="arithmatex">\(\text{prv\_r}\)</span>:响应方私钥。</p>
+<p><span class="arithmatex">\(\text{CKY-I}\)</span>:ISAKMP 头中的发起方 cookie。</p>
+<p><span class="arithmatex">\(\text{CKY-R}\)</span>:ISAKMP 头中的响应方 cookie。</p>
+<p><span class="arithmatex">\(x|y\)</span>:<span class="arithmatex">\(x\)</span>与<span class="arithmatex">\(y\)</span>串接。</p>
+<p><span class="arithmatex">\([x]\)</span>:<span class="arithmatex">\(x\)</span>为可选。</p>
+<p><span class="arithmatex">\(\text{Asymmetric\_Encrypt}(\text{msg},\text{pub\_key})\)</span>:使用非对称算法 <span class="arithmatex">\(\text{Asymmetric}\)</span>,<span class="arithmatex">\(\text{pub\_key}\)</span> 作为密钥对输入信息 <span class="arithmatex">\(\text{msg\_b}\)</span> 进行加密,其输出为 <span class="arithmatex">\(\text{msg}\)</span> 的通用载荷头和密文串接。如 <span class="arithmatex">\(\text{SM2\_Encrypt}(\text{Ski},\text{pub\_key})\)</span>表示使用 SM2 算法,使用公钥 <span class="arithmatex">\(\text{pub\_key}\)</span> 对 <span class="arithmatex">\(\text{Ski\_b}\)</span> 进行加密,其输出为 <span class="arithmatex">\(\text{Ski}\)</span> 的通用载荷头和密文串接。</p>
+<p><span class="arithmatex">\(\text{Asymmetric\_Sign}(\text{msg},\text{priv\_key})\)</span>:使用非对称算法 <span class="arithmatex">\(\text{Asymmetric}\)</span>,<span class="arithmatex">\(\text{priv\_key}\)</span> 作为密钥对 <span class="arithmatex">\(\text{msg}\)</span> 进行数字签名。</p>
+<p><span class="arithmatex">\(\text{Symmetric\_Encrypt}(\text{msg},\text{key})\)</span>:使用对称算法 <span class="arithmatex">\(\text{Symmetric}\)</span>,<span class="arithmatex">\(\text{key}\)</span> 作为密钥对输入信息 <span class="arithmatex">\(\text{msg\_b}\)</span> 进行加密,其输出为 <span class="arithmatex">\(\text{msg}\)</span> 的通用载荷头和密文串接。如 <span class="arithmatex">\(\text{SM4\_Encrypt}(\text{Ni},\text{key})\)</span>表示使用 SM4 算法,使用 <span class="arithmatex">\(\text{key}\)</span> 作为密钥对 <span class="arithmatex">\(\text{Ni\_b}\)</span> 进行加密,其输出为 <span class="arithmatex">\(\text{Ni}\)</span> 的通用载荷头和密文串接。</p>
+<p><span class="arithmatex">\(\text{HASH}(\text{msg})\)</span>:使用密码杂凑算法对 <span class="arithmatex">\(\text{msg}\)</span> 进行数据摘要运算。</p>
+<p><span class="arithmatex">\(\text{PRF}(\text{key},\text{msg})\)</span>:使用密钥 <span class="arithmatex">\(\text{key}\)</span> 对消息 <span class="arithmatex">\(\text{msg}\)</span> 进行数据摘要运算。</p>
+<h4 id="612">6.1.2 交换阶段及模式<a class="headerlink" href="#612" title="Permanent link">&para;</a></h4>
+<p>密钥交换协议包括第一阶段和第二阶段。</p>
+<p>在第一阶段交换中,通信双方建立了一个 ISAKMP 安全联盟。该安全联盟是协商双方为保护它们之间的通信而使用的共享策略和密钥。用这个安全联盟来保护 IPSec 安全联盟的协商过程。一个 ISAKMP 安全联盟可以用于建立多个 IPSec 安全联盟。该阶段使用主模式实现通信双方的身份鉴别和密钥交换,得到工作密钥,该工作密钥用于保护第二阶段的协商过程。</p>
+<p>在第二阶段交换中,通信双方使用第一阶段 ISAKMP 安全联盟协商建立 IPSec 安全联盟,IPSec 安全联盟是为保护它们之间的数据通信而使用的共享策略和密钥。该阶段使用快速模式实现通信双方 IPSec 安全联盟的协商,确定通信双方的 IPSec 安全策略及会话密钥。</p>
+<h4 id="613">6.1.3 交换<a class="headerlink" href="#613" title="Permanent link">&para;</a></h4>
+<h5 id="6131">6.1.3.1 概述<a class="headerlink" href="#6131" title="Permanent link">&para;</a></h5>
+<p>交换使用标准 ISAKMP 载荷语法、属性编码、消息的超时和重传以及通知消息。</p>
+<p>SA 载荷采用的载荷封装形式为:变换载荷封装在建议载荷中,建议载荷封装在 SA 载荷中。本标准不限制发起方可以发给响应方的提议数量,如果第一阶段交换中有多个变换载荷,应将多个变换载荷封装在一个建议载荷中,然后再将它们封装在一个 SA 载荷中。安全联盟的定义参见附录 A,有关变换载荷、建议载荷、SA 载荷等的具体定义见 6.1.5。</p>
+<p>在安全联盟的协商期间,响应方不能修改发起方发送的任何提议的属性。否则,交换的发起方应终止协商。</p>
+<h5 id="6132">6.1.3.2 第一阶段———主模式<a class="headerlink" href="#6132" title="Permanent link">&para;</a></h5>
+<p>主模式是一个身份保护的交换,其交换过程由 6 个消息组成。双方身份的鉴别采用数字证书的方式。</p>
+<p>本阶段涉及的消息头及载荷的具体内容见 6.1.5。</p>
+<p>主模式的交换过程如下:</p>
+<table>
+<thead>
+<tr>
+<th>消息序列</th>
+<th>发起方 i</th>
+<th>方向</th>
+<th>响应方 R</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><span class="arithmatex">\(\text{HDR}\)</span>,SA</td>
+<td>----&gt;</td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td></td>
+<td>&lt;----</td>
+<td><span class="arithmatex">\(\text{HDR}\)</span>,SA,<span class="arithmatex">\(\text{CERT\_sig\_r}\)</span>,<span class="arithmatex">\(\text{CERT\_enc\_r}\)</span></td>
+</tr>
+<tr>
+<td>3</td>
+<td><span class="arithmatex">\(\text{HDR}\)</span>,<span class="arithmatex">\(\text{XCHi}\)</span>,<span class="arithmatex">\(\text{SIGi}\)</span></td>
+<td>----&gt;</td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td></td>
+<td>&lt;----</td>
+<td><span class="arithmatex">\(\text{HDR}\)</span>,<span class="arithmatex">\(\text{XCHr}\)</span>,<span class="arithmatex">\(\text{SIGr}\)</span></td>
+</tr>
+<tr>
+<td>5</td>
+<td><span class="arithmatex">\(\text{HDR*}\)</span>,<span class="arithmatex">\(\text{HASHi}\)</span></td>
+<td>----&gt;</td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td></td>
+<td>&lt;----</td>
+<td><span class="arithmatex">\(\text{HDR*}\)</span>,<span class="arithmatex">\(\text{HASHr}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>消息 1:发起方向响应方发送一个封装有建议载荷的 SA 载荷,而建议载荷中又封装有变换载荷。</p>
+<p>消息 2:响应方发送一个 SA 载荷以及响应方的签名证书和加密证书,该载荷表明它所接受的发起方发送的 SA 提议。SA 载荷的具体内容见 6.1.5.6。</p>
+<p>消息 3 和消息 4:发起方和响应方交换数据,交换的数据内容包括 Nonce、身份标识(ID)等载荷。Nonce 是生成加密密钥和认证密钥所必需的参数;ID 是发起方或响应方的标识。这些数据使用临时密钥 <span class="arithmatex">\(\text{Sk}\)</span> 进行加密保护,<span class="arithmatex">\(\text{Sk}\)</span> 用对方加密证书中的公钥加密保护,并且,双方各自对数据进行数字签名。使用 SM2 算法进行加解密和数字签名验签的具体要求见 GB/T 35276。</p>
+<p>发起方交换的数据如下:</p>
+<div class="arithmatex">\[
+\text{XCHi}= \text{Asymmetric\_Encrypt}(\text{Ski},\text{pub\_r})|\text{Symmetric\_Encrypt}(\text{Ni},\text{Ski})|\text{Symmetric\_Encrypt}(\text{IDi},\text{Ski})|\text{CERT\_sig\_i}|\text{CERT\_enc\_i}
+\]</div>
+<div class="arithmatex">\[
+\text{SIGi\_b}= \text{Asymmetric\_Sign}(\text{Ski\_b}|\text{Ni\_b}|\text{IDi\_b}|\text{CERT\_enc\_i\_b},\text{priv\_i})
+\]</div>
+<p>响应方交换的数据如下:</p>
+<div class="arithmatex">\[
+\text{XCHr}= \text{Asymmetric\_Encrypt}(\text{Skr},\text{pub\_i})|\text{Symmetric\_Encrypt}(\text{Nr},\text{Skr})|\text{Symmetric\_Encrypt}(\text{IDr},\text{Skr})
+\]</div>
+<div class="arithmatex">\[
+\text{SIGr\_b}= \text{Asymmetric\_Sign}(\text{Skr\_b}|\text{Nr\_b}|\text{IDr\_b}|\text{CERT\_enc\_r\_b},\text{priv\_r})
+\]</div>
+<p>上述过程中使用的非对称密码算法、对称密码算法和密码杂凑算法均由消息 1 和消息 2 确定。临时密钥 <span class="arithmatex">\(\text{Sk}\)</span> 由发起方和响应方各自随机生成,其长度应符合对称密码算法对密钥长度的要求。</p>
+<p>对称密码运算使用 CBC 模式,第一个载荷的 <span class="arithmatex">\(\text{IV}\)</span> 值为 0;后续的 <span class="arithmatex">\(\text{IV}\)</span> 使用前面载荷的最后一组密文。</p>
+<p>加密前的交换数据应进行填充,使其长度等于对称密码算法分组长度的整数倍。所有的填充字节的值除最后一个字节外都是 0,最后一个填充字节的值为不包括它自己的填充字节数。</p>
+<p><span class="arithmatex">\(\text{IDi}\)</span> 和 <span class="arithmatex">\(\text{IDr}\)</span> 的类型应使用 <code>ID_DER_ASN1_DN</code>。</p>
+<p>如果对方证书已经在撤销列表中,系统应发送 <code>INVALID_CERTIFICATE</code> 通知消息。</p>
+<p>消息 3 和消息 4 交互完成后,参与通信的双方生成基本密钥参数 <span class="arithmatex">\(\text{SKEYID}\)</span>,以生成后续密钥 <span class="arithmatex">\(\text{SKEYID\_d}\)</span>、<span class="arithmatex">\(\text{SKEYID\_a}\)</span>、<span class="arithmatex">\(\text{SKEYID\_e}\)</span>,计算方法分别如下:</p>
+<div class="arithmatex">\[
+\text{SKEYID} = \text{PRF}(\text{HASH}(\text{Ni\_b}|\text{Nr\_b}),\text{CKY-I}|\text{CKY-R})
+\]</div>
+<div class="arithmatex">\[
+\text{SKEYID\_d}= \text{PRF}(\text{SKEYID},\text{CKY-I}|\text{CKY-R}|0)
+\]</div>
+<div class="arithmatex">\[
+\text{SKEYID\_a}= \text{PRF}(\text{SKEYID},\text{SKEYID\_d}|\text{CKY-I}|\text{CKY-R}|1)
+\]</div>
+<div class="arithmatex">\[
+\text{SKEYID\_e}= \text{PRF}(\text{SKEYID},\text{SKEYID\_a}|\text{CKY-I}|\text{CKY-R}|2)
+\]</div>
+<p>上述计算公式中的值 0,1,2 是单个字节的数值。</p>
+<p><span class="arithmatex">\(\text{SKEYID\_e}\)</span> 是 ISAKMP SA 用来保护其消息机密性所使用的工作密钥。<span class="arithmatex">\(\text{SKEYID\_a}\)</span> 是 ISAKMP SA 用来验证其消息完整性以及数据源身份所使用的工作密钥。<span class="arithmatex">\(\text{SKEYID\_d}\)</span> 用于会话密钥的产生。</p>
+<p>所有 <span class="arithmatex">\(\text{SKEYID}\)</span> 的长度都由 <span class="arithmatex">\(\text{PRF}\)</span> 函数的输出长度决定。如果 <span class="arithmatex">\(\text{PRF}\)</span> 函数的输出长度太短,不能作为一个密钥来使用,则 <span class="arithmatex">\(\text{SKEYID\_e}\)</span> 应进行扩展。例如,HMAC 的一个 <span class="arithmatex">\(\text{PRF}\)</span> 可产生 128 比特的输出,但密码算法要求用到大于 128 比特的密钥的时候,<span class="arithmatex">\(\text{SKEYID\_e}\)</span> 就需要利用反馈及连接方法加以扩展,直到满足对密钥长度的要求为止。反馈及连接方法如下:</p>
+<div class="arithmatex">\[
+\text{K} = \text{K1}|\text{K2}|\text{K3} \ldots
+\]</div>
+<div class="arithmatex">\[
+\text{K1} = \text{PRF}(\text{SKEYID\_e},0)
+\]</div>
+<div class="arithmatex">\[
+\text{K2} = \text{PRF}(\text{SKEYID\_e},\text{K1})
+\]</div>
+<div class="arithmatex">\[
+\text{K3} = \text{PRF}(\text{SKEYID\_e},\text{K2})
+\]</div>
+<div class="arithmatex">\[
+\ldots
+\]</div>
+<p>最后从 <span class="arithmatex">\(\text{K}\)</span> 的起始位置开始取密码算法的密钥所需要的位数。</p>
+<p>消息 5 和消息 6 发起方和响应方鉴别前面的交换过程。这两个消息中传递的信息使用对称密码算法加密。对称密码算法由消息 1 和消息 2 确定,密钥使用 <span class="arithmatex">\(\text{SKEYID\_e}\)</span>。对称密码运算使用 CBC 模式,初始化向量 <span class="arithmatex">\(\text{IV}\)</span> 是消息 3 中的 <span class="arithmatex">\(\text{Ski}\)</span> 和消息 4 中的 <span class="arithmatex">\(\text{Skr}\)</span> 串连起来经过 Hash 运算得到的,即:</p>
+<div class="arithmatex">\[
+\text{IV}= \text{HASH}(\text{Ski\_b}|\text{Skr\_b})
+\]</div>
+<p>Hash 算法由消息 1 和消息 2 确定。</p>
+<p>加密前的消息应进行填充,使其长度等于对称密码算法分组长度的整数倍。所有的填充字节的值都是 0。报头中的消息长度应包括填充字节的长度,因为这反映了密文的长度。</p>
+<p>为了鉴别交换,发起方产生 <span class="arithmatex">\(\text{HASHi}\)</span>,响应方产生 <span class="arithmatex">\(\text{HASHr}\)</span>,计算公式如下:</p>
+<div class="arithmatex">\[
+\text{HASHi}= \text{PRF}(\text{SKEYID},\text{CKY-I}|\text{CKY-R}|\text{SAi\_b}|\text{IDi\_b})
+\]</div>
+<div class="arithmatex">\[
+\text{HASHr}= \text{PRF}(\text{SKEYID},\text{CKY-R}|\text{CKY-I}|\text{SAr\_b}|\text{IDr\_b})
+\]</div>
+<h5 id="6133">6.1.3.3 第二阶段———快速模式<a class="headerlink" href="#6133" title="Permanent link">&para;</a></h5>
+<p>快速模式交换依赖于第一阶段主模式交换,作为 IPSec SA 协商过程的一部分协商 IPSec SA 的安全策略并衍生会话密钥。快速模式交换的信息由 ISAKMP SA 来保护,即除了 ISAKMP 头外所有的载荷都要加密。在快速模式中,一个 Hash 载荷应紧跟在 ISAKMP 头之后,这个 Hash 用于消息的完整性校验以及数据源身份验证。</p>
+<p>在第二阶段,载荷的加密使用对称密码算法的 CBC 工作模式,第 1 个消息的 <span class="arithmatex">\(\text{IV}\)</span> 是第一阶段的最后一组密文和第二阶段的 <span class="arithmatex">\(\text{MsgID}\)</span> 进行 Hash 运算所得到的,即:</p>
+<div class="arithmatex">\[
+\text{IV}=\text{HASH}(\text{第一阶段的最后一组密文} |\text{MsgID})
+\]</div>
+<p>后续的 <span class="arithmatex">\(\text{IV}\)</span> 是前一个消息的最后一组密文。消息的填充和第一阶段中的填充方式相同。</p>
+<p>在 ISAKMP 头中的 <span class="arithmatex">\(\text{MsgID}\)</span> 唯一标识了一个正在进行中的快速模式,而该 ISAKMP SA 本身又由 ISAKMP 头中的 cookie 来标识。因为快速模式的每个实例使用一个唯一的 <span class="arithmatex">\(\text{IV}\)</span>,这就有可能基于一个 ISAKMP SA 的多个快速模式在任一时间内同时进行。</p>
+<p>在快速模式协商中,身份标识 ID 缺省定义为 ISAKMP 双方的 IP 地址,并且没有强制规定允许的协议或端口号。如果协商双方需要指定 ID,则双方的身份应作为 <span class="arithmatex">\(\text{IDi}\)</span> 和 <span class="arithmatex">\(\text{IDr}\)</span> 被依次传递。响应方的本地安全策略将决定是否接受对方的身份标识 ID。如果发起方的身份标识 ID 由于安全策略或其他原因没有被响应方所接受,则响应方应该发送一个通知消息类型为 <code>INVALID_ID_INFORMATION</code>(18)的通知载荷。</p>
+<p>在通信双方之间有多条隧道同时存在的情况下,身份标识 ID 为对应的 IPSec SA 标识并规定通信数据流进入对应的隧道。</p>
+<p>本阶段涉及的消息头及载荷的具体内容见 6.1.5。</p>
+<p>快速模式的交换过程如下:</p>
+<table>
+<thead>
+<tr>
+<th>消息序列</th>
+<th>发起方</th>
+<th>方向</th>
+<th>响应方</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><span class="arithmatex">\(\text{HDR*}\)</span>,<span class="arithmatex">\(\text{HASH\_1}\)</span>,SA,<span class="arithmatex">\(\text{Ni}\)</span>[,<span class="arithmatex">\(\text{IDci}\)</span>,<span class="arithmatex">\(\text{IDcr}\)</span>]</td>
+<td>----&gt;</td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td></td>
+<td>&lt;----</td>
+<td><span class="arithmatex">\(\text{HDR*}\)</span>,<span class="arithmatex">\(\text{HASH\_2}\)</span>,SA,<span class="arithmatex">\(\text{Nr}\)</span>[,<span class="arithmatex">\(\text{IDci}\)</span>,<span class="arithmatex">\(\text{IDcr}\)</span>]</td>
+</tr>
+<tr>
+<td>3</td>
+<td><span class="arithmatex">\(\text{HDR*}\)</span>,<span class="arithmatex">\(\text{HASH\_3}\)</span></td>
+<td>----&gt;</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>消息 1:发起方向响应方发送一个杂凑载荷、一个 SA 载荷(其中封装了一个或多个建议载荷,而每个建议载荷中又封装一个或多个变换载荷)、一个 Nonce 载荷和标识载荷。</p>
+<p>杂凑载荷中消息摘要的计算方法如下:</p>
+<div class="arithmatex">\[
+\text{HASH\_1} = \text{PRF}(\text{SKEYID\_a},\text{MsgID}|\text{Ni\_b}|\text{SA} [|\text{IDi}|\text{IDr}])
+\]</div>
+<p>消息 2:响应方向发起方发送一个杂凑载荷、一个 SA 载荷、一个 Nonce 载荷和标识载荷。</p>
+<p>杂凑载荷中消息摘要的计算方法如下:</p>
+<div class="arithmatex">\[
+\text{HASH\_2} = \text{PRF}(\text{SKEYID\_a},\text{MsgID}|\text{Ni\_b}|\text{SA}|\text{Nr\_b}[|\text{IDi}|\text{IDr}])
+\]</div>
+<p>消息 3:发起方向响应方发送一个杂凑载荷,用于对前面的交换进行鉴别。</p>
+<p>杂凑载荷中消息摘要的计算方法如下:</p>
+<div class="arithmatex">\[
+\text{HASH\_3} = \text{PRF}(\text{SKEYID\_a},0|\text{MsgID}|\text{Ni\_b}|\text{Nr\_b})
+\]</div>
+<p>最后,会话密钥素材定义为:</p>
+<div class="arithmatex">\[
+\text{KEYMAT} = \text{PRF}(\text{SKEYID\_d},\text{protocol}|\text{SPI}|\text{Ni\_b}|\text{Nr\_b})
+\]</div>
+<p>其中,<span class="arithmatex">\(\text{protocol}\)</span> 和 SPI 从协商得到的 ISAKMP 建议载荷中选取。</p>
+<p>用于加密的会话密钥和用于完整性校验的会话密钥按照算法要求的长度从 <span class="arithmatex">\(\text{KEYMAT}\)</span> 中依次选取。先选取用于加密的会话密钥,后选取用于完整性校验的会话密钥。</p>
+<p>当 <span class="arithmatex">\(\text{PRF}\)</span> 函数的输出长度小于 <span class="arithmatex">\(\text{KEYMAT}\)</span> 需要的密钥素材长度时,需要利用反馈及连接方法加以扩展,直到满足对密钥长度的要求为止。即:</p>
+<div class="arithmatex">\[
+\text{KEYMAT} = \text{K1}|\text{K2}|\text{K3} \ldots
+\]</div>
+<p>其中:</p>
+<div class="arithmatex">\[
+\text{K1} = \text{PRF}(\text{SKEYID\_d},\text{protocol}|\text{SPI}|\text{Ni\_b}|\text{Nr\_b})
+\]</div>
+<div class="arithmatex">\[
+\text{K2} = \text{PRF}(\text{SKEYID\_d},\text{K1}|\text{protocol}|\text{SPI}|\text{Ni\_b}|\text{Nr\_b})
+\]</div>
+<div class="arithmatex">\[
+\text{K3} = \text{PRF}(\text{SKEYID\_d},\text{K2}|\text{protocol}|\text{SPI}|\text{Ni\_b}|\text{Nr\_b})
+\]</div>
+<div class="arithmatex">\[
+\ldots
+\]</div>
+<p>单个 SA 协商产生两个安全联盟——— 一个入,一个出。每个 SA(一个由发起方选择,另一个由响应方选择)的不同的 SPI 保证了每个方向都有一个不同的 <span class="arithmatex">\(\text{KEYMAT}\)</span>。由 SA 的目的地选择的 SPI,被用于衍生该 SA 的 <span class="arithmatex">\(\text{KEYMAT}\)</span>。</p>
+<h5 id="6134-isakmp">6.1.3.4 ISAKMP 信息交换<a class="headerlink" href="#6134-isakmp" title="Permanent link">&para;</a></h5>
+<p>如果安全联盟已经建立,则 ISAKMP 信息交换过程如下所示:</p>
+<table>
+<thead>
+<tr>
+<th>发起方</th>
+<th>方向</th>
+<th>响应方</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\text{HDR*}\)</span>,<span class="arithmatex">\(\text{HASH\_1}\)</span>,<span class="arithmatex">\(\text{N}/\text{D}\)</span></td>
+<td>----&gt;</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>其中,<span class="arithmatex">\(\text{N}/\text{D}\)</span> 是一个 ISAKMP 通知载荷,或是一个 ISAKMP 删除载荷。<span class="arithmatex">\(\text{HASH\_1}\)</span> 的计算方法为:</p>
+<div class="arithmatex">\[
+\text{HASH\_1} = \text{PRF}(\text{SKEYID\_a},\text{MsgID}|\text{N}/\text{D})
+\]</div>
+<p>其中,<span class="arithmatex">\(\text{MsgID}\)</span> 不能与同一个 ISAKMP SA 保护的其他第二阶段交换的 <span class="arithmatex">\(\text{MsgID}\)</span> 相同。</p>
+<p>这个消息的加密使用对称密码算法的 CBC 工作模式,其密钥使用 <span class="arithmatex">\(\text{SKEYID\_e}\)</span>,初始化向量 <span class="arithmatex">\(\text{IV}\)</span> 是第一阶段的最后一组密文和 <span class="arithmatex">\(\text{MsgID}\)</span> 进行 Hash 运算所得到的,即:</p>
+<div class="arithmatex">\[
+\text{IV}= \text{HASH}(\text{第一阶段的最后一组密文} |\text{MsgID})
+\]</div>
+<p>消息的填充和第一阶段中的填充方式相同。</p>
+<p>如果 ISAKMP 安全联盟在信息交换时还没有建立,则消息以明文发送,即:</p>
+<table>
+<thead>
+<tr>
+<th>发起方</th>
+<th>方向</th>
+<th>响应方</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\text{HDR}\)</span>,N</td>
+<td>----&gt;</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="614-nat">6.1.4 NAT 穿越<a class="headerlink" href="#614-nat" title="Permanent link">&para;</a></h4>
+<p>IPSec 穿越 NAT 特性让 IPSec 数据流能够穿越网络中的 NAT 设备。NAT 穿越由 3 个部分组成:首先判断通信的双方是否支持 NAT 穿越,其次检测双方之间的路径上是否存在 NAT,最后决定如何使用 UDP 封装来处理 NAT 穿越。</p>
+<p>实现 NAT 穿越的 <code>NAT_D</code> 载荷分别添加在第一阶段交换过程中消息 3 和消息 4 的载荷之后,这些载荷是独立的,不参与交换过程的所有密码运算。支持 NAT 穿越的第一阶段交换过程如下:</p>
+<table>
+<thead>
+<tr>
+<th>消息序列</th>
+<th>发起方</th>
+<th>方向</th>
+<th>响应方</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><span class="arithmatex">\(\text{HDR}\)</span>,SA,VID</td>
+<td>----&gt;</td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td></td>
+<td>&lt;----</td>
+<td><span class="arithmatex">\(\text{HDR}\)</span>,SA,VID</td>
+</tr>
+<tr>
+<td>3</td>
+<td><span class="arithmatex">\(\text{HDR}\)</span>,<span class="arithmatex">\(\text{XCHi}\)</span>,<span class="arithmatex">\(\text{SIGi}\)</span>,<code>NAT_D</code>,<code>NAT_D</code></td>
+<td>----&gt;</td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td></td>
+<td>&lt;----</td>
+<td><span class="arithmatex">\(\text{HDR}\)</span>,<span class="arithmatex">\(\text{XCHr}\)</span>,<span class="arithmatex">\(\text{SIGr}\)</span>,<code>NAT_D</code>,<code>NAT_D</code></td>
+</tr>
+<tr>
+<td>5</td>
+<td><span class="arithmatex">\(\text{HDR*\#}\)</span>,<span class="arithmatex">\(\text{HASHi}\)</span></td>
+<td>----&gt;</td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td></td>
+<td>&lt;----</td>
+<td><span class="arithmatex">\(\text{HDR*\#}\)</span>,<span class="arithmatex">\(\text{HASHr}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>注:#标志说明如果 NAT 存在,这些包将被发送到修改后的端口。</p>
+<p>如果需要,<code>NAT_OA</code> 载荷分别添加在第二阶段交换过程中消息 1 和消息 2 的载荷之后,同第二阶段的消息载荷一起参与密码运算。</p>
+<p>实现 NAT 穿越的处理过程和消息格式按 RFC 3947 的规定执行。</p>
+<h4 id="615">6.1.5 密钥交换的载荷格式<a class="headerlink" href="#615" title="Permanent link">&para;</a></h4>
+<h5 id="6151">6.1.5.1 消息头格式<a class="headerlink" href="#6151" title="Permanent link">&para;</a></h5>
+<p>密钥交换协议消息由一个定长的消息头和不定数量的载荷组成。消息头包含密钥交换协议用来保持状态并处理载荷所必须的信息。</p>
+<p>ISAKMP 的头格式如图 1 所示。</p>
+<p><img alt="图 1 ISAKMP 头格式" src="../images/figure_01.png" /></p>
+<p><strong>图 1 ISAKMP 头格式</strong></p>
+<p>发起方 cookie:这个字段是一个唯一的 8 字节比特串,由发起方随机生成。</p>
+<p>响应方 cookie:这个字段是一个唯一的 8 字节比特串,由响应方随机生成。</p>
+<p>cookie 的生成方法应依据 RFC 2408 中 2.5.3 要求生成。</p>
+<p>下一个载荷:这个字段为 1 个字节,说明消息中的第一个载荷的类型。载荷类型的定义如表 1 所示。</p>
+<p><strong>表 1 载荷类型的定义</strong></p>
+<table>
+<thead>
+<tr>
+<th>下一个载荷</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>无(None)</td>
+<td>0</td>
+</tr>
+<tr>
+<td>安全联盟(Security Association)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>建议(Proposal)</td>
+<td>2</td>
+</tr>
+<tr>
+<td>变换(Transform)</td>
+<td>3</td>
+</tr>
+<tr>
+<td>密钥交换(Key Exchange)</td>
+<td>4</td>
+</tr>
+<tr>
+<td>标识(Identification)</td>
+<td>5</td>
+</tr>
+<tr>
+<td>证书(Certificate)</td>
+<td>6</td>
+</tr>
+<tr>
+<td>证书请求(Certificate Request)</td>
+<td>7</td>
+</tr>
+<tr>
+<td>杂凑(Hash)</td>
+<td>8</td>
+</tr>
+<tr>
+<td>签名(Signature)</td>
+<td>9</td>
+</tr>
+<tr>
+<td>Nonce</td>
+<td>10</td>
+</tr>
+<tr>
+<td>通知(Norigication)</td>
+<td>11</td>
+</tr>
+<tr>
+<td>删除(Delete)</td>
+<td>12</td>
+</tr>
+<tr>
+<td>厂商(Vendor)</td>
+<td>13</td>
+</tr>
+<tr>
+<td>属性载荷</td>
+<td>14</td>
+</tr>
+<tr>
+<td><code>NAT_D</code></td>
+<td>20</td>
+</tr>
+<tr>
+<td><code>NAT_OA</code></td>
+<td>21</td>
+</tr>
+<tr>
+<td>对称密钥载荷(SK)</td>
+<td>128</td>
+</tr>
+<tr>
+<td>保留(Reserved)</td>
+<td><span class="arithmatex">\(15\sim 19\)</span>,<span class="arithmatex">\(22\sim 127\)</span></td>
+</tr>
+<tr>
+<td>私有使用(Private Use)</td>
+<td><span class="arithmatex">\(129\sim 255\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>版本号:这个字段为 1 个字节,其中 <span class="arithmatex">\(0\sim 3\)</span> 位表示主版本号,<span class="arithmatex">\(4\sim 7\)</span> 位表示次版本号。本标准规定主版本号为 1,次版本号为 1。</p>
+<p>交换类型:这个字段为 1 个字节,说明组成消息的交换的类型。交换类型的定义如表 2 所示。</p>
+<p><strong>表 2 交换类型的定义</strong></p>
+<table>
+<thead>
+<tr>
+<th>交换类型</th>
+<th>分配的值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>无(None)</td>
+<td>0</td>
+</tr>
+<tr>
+<td>基本(Base)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>身份保护(Identity Protection)</td>
+<td>2</td>
+</tr>
+<tr>
+<td>仅鉴别(Authentication Only)</td>
+<td>3</td>
+</tr>
+<tr>
+<td>信息(Informational)</td>
+<td>5</td>
+</tr>
+<tr>
+<td>将来使用(Future Use)</td>
+<td><span class="arithmatex">\(6\sim 31\)</span></td>
+</tr>
+<tr>
+<td>DOI 具体使用(DOI Specific Use)</td>
+<td><span class="arithmatex">\(32\sim 239\)</span></td>
+</tr>
+<tr>
+<td>私有使用(Private Use)</td>
+<td><span class="arithmatex">\(240\sim 255\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>本标准规定密钥交换第一阶段使用的交换类型为身份保护类型即主模式,其值为 2。第二阶段交换使用的快速模式所分配的值为 32。</p>
+<p>标志:这个字段的长度为 1 个字节,说明为密钥交换协议设置的具体选项。目前使用了这个域的前 3 个比特,其他比特在传输前被置为 0。具体定义如下:</p>
+<ul>
+<li>
+<p>加密比特:这是标志字段中的最低有效比特。当这个比特被置为 1 时,该消息头后面所有的载荷都采用 ISAKMP SA 中指定的密码算法加密。当这个比特被置为 0 时,载荷不加密。</p>
+</li>
+<li>
+<p>提交比特:这是标志字段的第 2 个比特,本标准中其值为 0。</p>
+</li>
+<li>
+<p>仅鉴别比特:这是标志字段的第 3 个比特,本标准中其值为 0。</p>
+</li>
+</ul>
+<p>消息 ID:这个字段的长度为 4 字节,第一阶段中该字段为 0,在第二阶段为发起方生成的随机数。它作为唯一的消息标志,用于在第二阶段的协商中标识协议状态。</p>
+<p>长度:这个字段的长度为 4 字节,长度数值以字节为单位,计算范围包含消息头和载荷在内的整个消息。</p>
+<h5 id="6152">6.1.5.2 通用载荷头<a class="headerlink" href="#6152" title="Permanent link">&para;</a></h5>
+<p>每个载荷由通用载荷头开始。通用载荷头定义了载荷的边界,所以就可以联接不同的载荷。通用载荷头的定义如图 2 所示。</p>
+<p><img alt="图 2 通用载荷头格式" src="../images/figure_02.png" /></p>
+<p><strong>图 2 通用载荷头格式</strong></p>
+<p>下一个载荷:这个字段的长度为 1 个字节,标识了本载荷后下一个载荷的类型。如果当前载荷是最后一个,则该字段将被置为 0。载荷类型由表 1 定义。</p>
+<p>保留:这个字段的长度为 1 个字节,其值为 0。</p>
+<p>载荷长度:这个字段的长度为 2 个字节,长度数值以字节为单位,计算范围包含通用载荷头在内的整个载荷。</p>
+<h5 id="6153-sa">6.1.5.3 SA 载荷<a class="headerlink" href="#6153-sa" title="Permanent link">&para;</a></h5>
+<p>SA 载荷用于协商安全联盟,并且指定协商所基于的解释域 DOI。载荷的格式依赖于它使用的 DOI,本载荷的类型值为 1。SA 载荷的格式如图 3 所示。</p>
+<p><img alt="图 3 SA 载荷格式" src="../images/figure_03.png" /></p>
+<p><strong>图 3 SA 载荷格式</strong></p>
+<p>下一个载荷:这个字段的长度为 1 个字节,标识了本载荷后下一个载荷的类型。如果当前载荷是最后一个,则该字段将被置为 0。载荷类型由表 1 定义。</p>
+<p>保留:这个字段的长度为 1 个字节,其值为 0。</p>
+<p>载荷长度:这个字段的长度为 2 个字节,长度数值以字节为单位,计算范围包括 SA 载荷、所有建议载荷和所有与被提议的安全联盟有关的变换载荷。</p>
+<p>解释域(DOI):这个字段长度为 4 个字节,其值为无符号整数,它指定协商所基于的 DOI,这个字段的值为 1。</p>
+<p>情形:这个字段长度为 4 个字节,表明协商发生时的情形,用来决定需要的安全服务的信息。定义如下:</p>
+<ul>
+<li>
+<p><code>SIT_IDENTITY_ONLY</code>:其值为 1。表明 SA 将由一个相关的标识载荷中的源标识信息来标识。</p>
+</li>
+<li>
+<p><code>SIT_SECRECY</code>:其值为 2。表明 SA 正在一个需经标记的秘密的环境中协商。</p>
+</li>
+<li>
+<p><code>SIT_INTEGRITY</code>:其值是 4。表明 SA 正在一个需经标记的完整性环境中协商。</p>
+</li>
+</ul>
+<p>本标准默认采用 <code>SIT_IDENTITY_ONLY</code> 情形。</p>
+<h5 id="6154">6.1.5.4 建议载荷<a class="headerlink" href="#6154" title="Permanent link">&para;</a></h5>
+<p>建议载荷用于密钥交换的发起方告知响应方它优先选择的安全协议以及希望协商中的 SA 采用的相关安全机制,本载荷的类型值为 2。建议载荷的格式如图 4 所示。</p>
+<p><img alt="图 4 建议载荷格式" src="../images/figure_04.png" /></p>
+<p><strong>图 4 建议载荷格式</strong></p>
+<p>下一个载荷:这个字段的长度为 1 个字节,如果后面还有建议载荷,其值为 2,否则应为 0。</p>
+<p>保留:这个字段的长度为 1 个字节,其值为 0。</p>
+<p>载荷长度:这个字段的长度为 2 个字节,长度数值以字节为单位,用于表示整个建议载荷的长度,计算范围包括通用载荷头、建议载荷所有与该建议有关的变换载荷,该长度仅用于标示本建议载荷的长度。</p>
+<p>建议号:这个字段的长度为 1 个字节,用于表示本建议载荷的建议编号。多个建议的建议号相同表示这些建议是“逻辑与”的关系,不同表示这些建议是“逻辑或”的关系;单调递增的建议号表示对建议的优先选择顺序,建议号越小优先权越高。</p>
+<p>协议 ID:这个字段的长度为 1 个字节,用于表示协议标识符。协议标识符的定义如表 3 所示。</p>
+<p><strong>表 3 协议标识符的定义</strong></p>
+<table>
+<thead>
+<tr>
+<th>协议标识符</th>
+<th>描述</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RESERVED</td>
+<td>未分配</td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>PROTO_ISAKMP</code></td>
+<td>ISAKMP 的协议标识符</td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>PROTO_IPSec_AH</code></td>
+<td>AH 的协议标识符</td>
+<td>2</td>
+</tr>
+<tr>
+<td><code>PROTO_IPSec_ESP</code></td>
+<td>ESP 的协议标识符</td>
+<td>3</td>
+</tr>
+<tr>
+<td><code>PROTO_IPCOMP</code></td>
+<td>IP 压缩的协议标识符</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<p>SPI 长度:这个字段的长度为 1 个字节,长度数值以字节为单位,用于表示 SPI 的长度。在第一阶段该长度为 0,在第二阶段该长度为 4。</p>
+<p>变换数:这个字段的长度为 1 个字节,标示建议的变换载荷个数。</p>
+<p>变长的 SPI:在第一阶段没有这个字段,在第二阶段这个字段的长度为 4 个字节,其内容是该建议的提出者产生的随机数。</p>
+<h5 id="6155">6.1.5.5 变换载荷<a class="headerlink" href="#6155" title="Permanent link">&para;</a></h5>
+<p>变换载荷用于密钥交换的发起方告知响应方为一个指定的协议提供不同的安全机制,本载荷的类型值为 3。变换载荷的格式如图 5 所示。</p>
+<p><img alt="图 5 变换载荷格式" src="../images/figure_05.png" /></p>
+<p><strong>图 5 变换载荷格式</strong></p>
+<p>下一个载荷:这个字段的长度为 1 个字节,如果后面还有变换载荷,其值为 3,否则应为 0。</p>
+<p>保留:这个字段的长度为 1 个字节,其值为 0。</p>
+<p>载荷长度:这个字段的长度为 2 个字节,长度数值以字节为单位,用于表示本变换载荷的长度。计算范围包括通用载荷头、变换载荷和所有的 SA 属性载荷。</p>
+<p>变换号:这个字段的长度为 1 个字节,用于表示本变换载荷的变换编号。单调递增的变换号表示对变换的优先选择顺序,变换号越小优先权越高。</p>
+<p>变换 ID:这个字段的长度为 1 个字节,用于表示建议协议的变换标识符。在第一阶段该字段的值为 1,在第二阶段根据不同的协议选用不同的变换 ID。AH 协议的变换 ID 的定义如表 4 所示,ESP 协议的变换 ID 的定义如表 5 所示。</p>
+<p><strong>表 4 AH 协议的变换 ID 的定义</strong></p>
+<table>
+<thead>
+<tr>
+<th>变换 ID</th>
+<th>描述</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RESERVED</td>
+<td>未使用</td>
+<td>0、1</td>
+</tr>
+<tr>
+<td><code>AH_SM3</code></td>
+<td>使用带 256 比特 SM3 密码杂凑算法的 HMAC</td>
+<td>20</td>
+</tr>
+</tbody>
+</table>
+<p><strong>表 5 ESP 协议的变换 ID 的定义</strong></p>
+<table>
+<thead>
+<tr>
+<th>变换 ID</th>
+<th>描述</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RESERVED</td>
+<td>未使用</td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>ESP_SM4</code></td>
+<td>SM4 分组密码算法</td>
+<td>129</td>
+</tr>
+</tbody>
+</table>
+<p>保留 2:这个字段的长度为 2 个字节,其值为 0。</p>
+<p>SA 属性:该字段的长度是可变的,用于表示本变换的 SA 属性。该字段的具体定义见 6.1.5.6。</p>
+<h5 id="6156-sa">6.1.5.6 SA 属性载荷<a class="headerlink" href="#6156-sa" title="Permanent link">&para;</a></h5>
+<p>SA 属性载荷只能用于变换载荷之后,并且没有通用载荷头,用于描述 SA 属性的数据结构,本载荷的类型值为 14。SA 属性载荷的格式如图 6 所示。</p>
+<p><img alt="图 6 SA 属性载荷格式" src="../images/figure_06.png" /></p>
+<p><strong>图 6 SA 属性载荷格式</strong></p>
+<p>属性类型:这个字段的长度为 2 个字节,用于表示属性类型。该字段的最高有效比特(比特 0)如果为 0,属性值是变长的,并且本载荷有 3 个字段,分别是属性类型、属性长度和属性值。如果属性类型最高有效比特为 1,属性值是定长的并且本载荷仅有 2 个字段,分别是属性类型和属性值。如果属性类型是变长的,并且属性值能在两个字节中表示,那么变长的属性可以用定长表示。</p>
+<p>第一阶段密钥交换属性类型的定义如表 6 所示。</p>
+<p><strong>表 6 第一阶段密钥交换属性类型的定义</strong></p>
+<table>
+<thead>
+<tr>
+<th>分类</th>
+<th>值</th>
+<th>长度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>加密算法</td>
+<td>1</td>
+<td>定长</td>
+</tr>
+<tr>
+<td>Hash 算法</td>
+<td>2</td>
+<td>定长</td>
+</tr>
+<tr>
+<td>鉴别方式</td>
+<td>3</td>
+<td>定长</td>
+</tr>
+<tr>
+<td>交换群描述</td>
+<td>4</td>
+<td>定长</td>
+</tr>
+<tr>
+<td>交换群类型</td>
+<td>5</td>
+<td>定长</td>
+</tr>
+<tr>
+<td>群素数/不可约多项式</td>
+<td>6</td>
+<td>变长</td>
+</tr>
+<tr>
+<td>群产生器 1</td>
+<td>7</td>
+<td>变长</td>
+</tr>
+<tr>
+<td>群产生器 2</td>
+<td>8</td>
+<td>变长</td>
+</tr>
+<tr>
+<td>群曲线 <span class="arithmatex">\(A\)</span></td>
+<td>9</td>
+<td>变长</td>
+</tr>
+<tr>
+<td>群曲线 <span class="arithmatex">\(B\)</span></td>
+<td>10</td>
+<td>变长</td>
+</tr>
+<tr>
+<td>SA 生存期类型</td>
+<td>11</td>
+<td>定长</td>
+</tr>
+<tr>
+<td>SA 生存期(SA Life Duration)</td>
+<td>12</td>
+<td>变长</td>
+</tr>
+<tr>
+<td>伪随机函数(PRF)</td>
+<td>13</td>
+<td>定长</td>
+</tr>
+<tr>
+<td>密钥长度</td>
+<td>14</td>
+<td>定长</td>
+</tr>
+<tr>
+<td>字段大小</td>
+<td>15</td>
+<td>定长</td>
+</tr>
+<tr>
+<td>群顺序</td>
+<td>16</td>
+<td>变长</td>
+</tr>
+<tr>
+<td>块大小</td>
+<td>17</td>
+<td>定长</td>
+</tr>
+<tr>
+<td>非对称算法类型</td>
+<td>20</td>
+<td>定长</td>
+</tr>
+</tbody>
+</table>
+<p>第二阶段密钥交换属性类型的定义如表 7 所示。</p>
+<p><strong>表 7 第二阶段密钥交换属性类型的定义</strong></p>
+<table>
+<thead>
+<tr>
+<th>分类</th>
+<th>值</th>
+<th>长度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SA 生存类型(SA Life Type)</td>
+<td>1</td>
+<td>定长</td>
+</tr>
+<tr>
+<td>SA 生存期(SA Life Duration)</td>
+<td>2</td>
+<td>变长</td>
+</tr>
+<tr>
+<td>组描述(Group Description)</td>
+<td>3</td>
+<td>定长</td>
+</tr>
+<tr>
+<td>封装模式(Encapsulation Mode)</td>
+<td>4</td>
+<td>定长</td>
+</tr>
+<tr>
+<td>鉴别算法(Authentication Algorithm)</td>
+<td>5</td>
+<td>定长</td>
+</tr>
+<tr>
+<td>密钥长度(Key Length)</td>
+<td>6</td>
+<td>定长</td>
+</tr>
+<tr>
+<td>密钥轮数(Key Rounds)</td>
+<td>7</td>
+<td>定长</td>
+</tr>
+<tr>
+<td>压缩字典长度(Compress Dictionary Size)</td>
+<td>8</td>
+<td>定长</td>
+</tr>
+<tr>
+<td>私有压缩算法(Compress Private Algorithm)</td>
+<td>9</td>
+<td>变长</td>
+</tr>
+</tbody>
+</table>
+<p>属性值:这个字段如果是定长的,其长度为 2 个字节。如果是变长的,其长度由属性长度字段指定。</p>
+<p>属性长度:当属性值是变长时,该字段用于表示属性值的长度。</p>
+<p>第一阶段加密算法属性值的定义如表 8 所示。</p>
+<p><strong>表 8 第一阶段加密算法属性值的定义</strong></p>
+<table>
+<thead>
+<tr>
+<th>可选择算法的名称</th>
+<th>描述</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ENC_ALG_SM4</code></td>
+<td>SM4 分组密码算法</td>
+<td>129</td>
+</tr>
+</tbody>
+</table>
+<p>第一阶段密码杂凑算法属性值的定义如表 9 所示。</p>
+<p><strong>表 9 第一阶段密码杂凑算法属性值的定义</strong></p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>描述</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>HASH_ALG_SM3</code></td>
+<td>SM3 密码杂凑算法</td>
+<td>20</td>
+</tr>
+</tbody>
+</table>
+<p>第一阶段鉴别方式属性值的定义如表 10 所示。</p>
+<p><strong>表 10 第一阶段鉴别方式属性值的定义</strong></p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>描述</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>AUTH_METHOD_DE</code></td>
+<td>公钥数字信封鉴别方式</td>
+<td>10</td>
+</tr>
+</tbody>
+</table>
+<p>SA 生存期类型属性值的定义适用于第一阶段和第二阶段,如表 11 所示。</p>
+<p><strong>表 11 SA 生存期类型属性值的定义</strong></p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>描述</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SA_LD_TYPE_SEC</code></td>
+<td>秒</td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>SA_LD_TYPE_KB</code></td>
+<td>千字节</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<p>第一阶段公钥算法类型属性值的定义如表 12 所示。</p>
+<p><strong>表 12 第一阶段公钥算法类型属性值的定义</strong></p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>描述</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ASYMMETRIC_SM2</code></td>
+<td>SM2 椭圆曲线密码算法</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<p>第二阶段封装模式属性值的定义如表 13 所示。</p>
+<p><strong>表 13 第二阶段封装模式属性值的定义</strong></p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>描述</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RESERVED</td>
+<td>使用</td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>ENC_MODE_TUNNEL</code></td>
+<td>隧道模式</td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>ENC_MODE_TRNS</code></td>
+<td>传输模式</td>
+<td>2</td>
+</tr>
+<tr>
+<td><code>ENC_MODE_UDPTUNNEL_RFC</code></td>
+<td>NAT 穿越隧道模式</td>
+<td>3</td>
+</tr>
+<tr>
+<td><code>ENC_MODE_UDPTRNS_RFC</code></td>
+<td>NAT 穿越传输模式</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<p>第二阶段鉴别算法属性值的定义如表 14 所示。</p>
+<p><strong>表 14 第二阶段鉴别算法属性值的定义</strong></p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>描述</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RESERVED</td>
+<td>使用</td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>HMAC_SM3</code></td>
+<td>SM3 密码杂凑算法的 HMAC</td>
+<td>20</td>
+</tr>
+</tbody>
+</table>
+<h5 id="6157">6.1.5.7 标识载荷<a class="headerlink" href="#6157" title="Permanent link">&para;</a></h5>
+<p>标识载荷用于通信双方交换身份信息,该信息用于确认通信双方的身份,本载荷的类型值为 5。标识载荷的格式如图 7 所示。</p>
+<p><img alt="图 7 标识载荷格式" src="../images/figure_07.png" /></p>
+<p><strong>图 7 标识载荷格式</strong></p>
+<p>下一个载荷:这个字段的长度为 1 个字节,标识了本载荷后下一个载荷的类型。如果当前载荷是最后一个,则该字段将被置为 0。载荷类型由表 1 定义。</p>
+<p>保留:这个字段的长度为 1 个字节,其值为 0。</p>
+<p>载荷长度:这个字段的长度为 2 个字节,长度数值以字节为单位,用于包含通用载荷头在内的整个载荷长度。</p>
+<p>标识类型:这个字段的长度为 1 个字节,用于表示标识数据字段中的身份信息类型。标识类型的定义如表 15 所示。</p>
+<p><strong>表 15 标识类型的定义</strong></p>
+<table>
+<thead>
+<tr>
+<th>ID 类型</th>
+<th>描述</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RESERVED</td>
+<td>未使用</td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>ID_IPv4_ADDR</code></td>
+<td>一个单独的 4 字节 IPv4 地址</td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>ID_FQDN</code></td>
+<td>完全合格的域名字符串</td>
+<td>2</td>
+</tr>
+<tr>
+<td><code>ID_USER_FQDN</code></td>
+<td>完全合格的用户名字符串</td>
+<td>3</td>
+</tr>
+<tr>
+<td><code>ID_IPv4_ADDR_SUBNET</code></td>
+<td>带有 4 字节子网掩码的 IPv4 地址</td>
+<td>4</td>
+</tr>
+<tr>
+<td><code>ID_IPv6_ADDR</code></td>
+<td>一个单独的 16 字节 IPv6 地址</td>
+<td>5</td>
+</tr>
+<tr>
+<td><code>ID_IPv6_ADDR_SUBNET</code></td>
+<td>一个带有 16 字节子网掩码的 IPv6 地址</td>
+<td>6</td>
+</tr>
+<tr>
+<td><code>ID_IPv4_ADDR_RANGE</code></td>
+<td>一个 IPv4 的地址范围</td>
+<td>7</td>
+</tr>
+<tr>
+<td><code>ID_IPv6_ADDR_RANGE</code></td>
+<td>一个 IPv6 的地址范围</td>
+<td>8</td>
+</tr>
+<tr>
+<td><code>ID_DER_ASN1_DN</code></td>
+<td>一个 ASN.1X.500 的文本编码</td>
+<td>9</td>
+</tr>
+<tr>
+<td><code>ID_DER_ASN1_GN</code></td>
+<td>一个 ASN.1X.500 的二进制编码</td>
+<td>10</td>
+</tr>
+<tr>
+<td><code>ID_KEY_ID</code></td>
+<td>用于传递特定厂商信息的字节流</td>
+<td>11</td>
+</tr>
+</tbody>
+</table>
+<p>在第一阶段可以使用的标识类型为:</p>
+<p><code>ID_IPv4_ADDR</code></p>
+<p><code>ID_IPv6_ADDR</code></p>
+<p><code>ID_DER_ASN1_DN</code></p>
+<p><code>ID_DER_ASN1_GN</code></p>
+<p><code>ID_FQDN</code></p>
+<p><code>ID_USER_FQDN</code></p>
+<p><code>ID_KEY_ID</code></p>
+<p>在第二阶段可以使用的标识类型为:</p>
+<p><code>ID_IPv4_ADDR</code></p>
+<p><code>ID_IPv6_ADDR</code></p>
+<p><code>ID_IPv4_ADDR_SUBNET</code></p>
+<p><code>ID_IPv6_ADDR_SUBNET</code></p>
+<p><code>ID_IPv4_ADDR_RANGE</code></p>
+<p><code>ID_IPv6_ADDR_RANGE</code></p>
+<p>协议 ID:这个字段的长度为 1 个字节,用于表示一个 IP 协议的上层协议号。值为 0 表明忽略这个字段,在第一阶段这个值应为 0。在第二阶段是用户配置的安全策略五元组的协议,值为 0 表明忽略这个字段。</p>
+<p>端口:这个字段的长度为 2 个字节,用于表示一个上层协议的端口。值为 0 表明忽略这个字段,在第一阶段这个值应为 0。在第二阶段是用户配置的安全策略五元组的端口,值为 0 表明忽略这个字段。</p>
+<p>标识数据:这个字段是变长的,用于表示与 ID 类型字段相对应的标识信息。</p>
+<h5 id="6158">6.1.5.8 证书载荷<a class="headerlink" href="#6158" title="Permanent link">&para;</a></h5>
+<p>证书载荷用于通信双方交换证书以及证书相关信息,本载荷的类型值为 6。</p>
+<p>证书载荷的格式如图 8 所示。</p>
+<p><img alt="图 8 证书载荷格式" src="../images/figure_08.png" /></p>
+<p><strong>图 8 证书载荷格式</strong></p>
+<p>下一个载荷:这个字段的长度为 1 个字节,标识了本载荷后下一个载荷的类型。如果当前载荷是最后一个,则该字段将被置为 0。载荷类型由表 1 定义。</p>
+<p>保留:这个字段的长度为 1 个字节,其值为 0。</p>
+<p>载荷长度:这个字段的长度为 2 个字节,长度数值以字节为单位,用于表示包含通用载荷头在内的整个载荷长度。</p>
+<p>证书编码:这个字段的长度为 1 个字节,用于表示证书数据字段的证书编码类型。证书编码类型定义如表 16 所示。</p>
+<p><strong>表 16 证书编码类型定义</strong></p>
+<table>
+<thead>
+<tr>
+<th>证书类型</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>X.509 签名证书</td>
+<td>4</td>
+</tr>
+<tr>
+<td>X.509 加密证书</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+<p>在本标准中,只能使用 X.509 格式的签名证书和加密证书。</p>
+<p>证书数据:这个字段是变长字段,证书的结构及定义见 GB/T 20518。</p>
+<h5 id="6159">6.1.5.9 杂凑载荷<a class="headerlink" href="#6159" title="Permanent link">&para;</a></h5>
+<p>杂凑载荷的内容是在 SA 协商过程中选定的密码杂凑算法生成的数据,本载荷的类型值为 8。杂凑载荷的格式如图 9 所示。</p>
+<p><img alt="图 9 杂凑载荷格式" src="../images/figure_09.png" /></p>
+<p><strong>图 9 杂凑载荷格式</strong></p>
+<p>下一个载荷:这个字段的长度为 1 个字节,标识了本载荷后下一个载荷的类型。如果当前载荷是最后一个,则该字段将被置为 0。载荷类型由表 1 定义。</p>
+<p>保留:这个字段的长度为 1 个字节,其值为 0。</p>
+<p>载荷长度:这个字段的长度为 2 个字节,长度数值以字节为单位,用于表示包含通用载荷头在内的整个载荷长度。</p>
+<p>杂凑数据:这个字段的长度是变长的,其内容为密码杂凑算法生成的数据。</p>
+<h5 id="61510">6.1.5.10 签名载荷<a class="headerlink" href="#61510" title="Permanent link">&para;</a></h5>
+<p>签名载荷的内容是在 SA 协商过程中的数字签名算法生成的数据,本载荷的类型值为 9。签名载荷的格式如图 10 所示。</p>
+<p><img alt="图 10 签名载荷格式" src="../images/figure_10.png" /></p>
+<p><strong>图 10 签名载荷格式</strong></p>
+<p>下一个载荷:这个字段的长度为 1 个字节,标识了本载荷后下一个载荷的类型。如果当前载荷是最后一个,则该字段将被置为 0。载荷类型由表 1 定义。</p>
+<p>保留:这个字段的长度为 1 个字节,其值为 0。</p>
+<p>载荷长度:这个字段的长度为 2 个字节,数值长度以字节为单位,用于表示包含通用载荷头在内的整个载荷长度。</p>
+<p>签名数据:这个字段的长度是变长的,其内容为签名算法生成的数据。</p>
+<h5 id="61511-nonce">6.1.5.11 Nonce 载荷<a class="headerlink" href="#61511-nonce" title="Permanent link">&para;</a></h5>
+<p>Nonce 载荷的内容是用于保护交换数据的随机数据,本载荷的类型值为 10。Nonce 载荷的格式如图 11 所示。</p>
+<p><img alt="图 11 Nonce 载荷格式" src="../images/figure_11.png" /></p>
+<p><strong>图 11 Nonce 载荷格式</strong></p>
+<p>下一个载荷:这个字段的长度为 1 个字节,标识了本载荷后下一个载荷的类型。如果当前载荷是最后一个,则该字段将被置为 0。载荷类型由表 1 定义。</p>
+<p>保留:这个字段的长度为 1 个字节,其值为 0。</p>
+<p>载荷长度:这个字段的长度为 2 个字节,数值长度以字节为单位,用于表示包含通用载荷头在内的整个载荷长度。</p>
+<p>Nonce 数据:这个字段的长度是变长的,其内容为随机数。</p>
+<h5 id="61512">6.1.5.12 通知载荷<a class="headerlink" href="#61512" title="Permanent link">&para;</a></h5>
+<p>通知载荷用于传送通知数据,本载荷的类型值为 11,通知载荷的格式如图 12 所示。</p>
+<p><img alt="图 12 通知载荷格式" src="../images/figure_12.png" /></p>
+<p><strong>图 12 通知载荷格式</strong></p>
+<p>下一个载荷:这个字段的长度为 1 个字节,标识了本载荷后下一个载荷的类型。如果当前载荷是最后一个,则该字段将被置为 0。载荷类型由表 1 定义。</p>
+<p>保留:这个字段的长度为 1 个字节,其值为 0。</p>
+<p>载荷长度:这个字段的长度为 2 个字节,长度数值以字节为单位,用于表示包含通用载荷头在内的整个载荷长度。</p>
+<p>解释域(DOI):这个字段的长度为 4 个字节,这个字段的值为 1。</p>
+<p>协议 ID:这个字段的长度为 1 个字节,用于表示协议标识符。协议标识符的定义如表 3 所示。</p>
+<p>SPI 长度:这个字段的长度为 1 个字节,长度数值以字节为单位,用于表示 SPI 的长度。在第一阶段该长度为 0,在第二阶段该长度为 4。</p>
+<p>通知消息类型:这个字段的长度为 2 个字节,用于表示通知消息类型。通知消息的错误类型如表 17 所示,通知消息的状态类型如表 18 所示。</p>
+<p><strong>表 17 通知消息的错误类型</strong></p>
+<table>
+<thead>
+<tr>
+<th>通知类型</th>
+<th>描述</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>INVALID_PAYLOAD_TYPE</code></td>
+<td>无效的载荷类型</td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>DOI_NOT_SUPPORTED</code></td>
+<td>不支持的 DOI</td>
+<td>2</td>
+</tr>
+<tr>
+<td><code>SITUATION_NOT_SUPPORTED</code></td>
+<td>不支持的 SITUATION</td>
+<td>3</td>
+</tr>
+<tr>
+<td><code>INVALID_COOKIE</code></td>
+<td>无效的 cookie</td>
+<td>4</td>
+</tr>
+<tr>
+<td><code>INVALID_MAJOR_VERSION</code></td>
+<td>无效的主版本</td>
+<td>5</td>
+</tr>
+<tr>
+<td><code>INVALID_MINOR_VERSION</code></td>
+<td>无效的微版本</td>
+<td>6</td>
+</tr>
+<tr>
+<td><code>INVALID_EXCHANGE_TYPE</code></td>
+<td>无效的交换类型</td>
+<td>7</td>
+</tr>
+<tr>
+<td><code>INVALID_FLAGS</code></td>
+<td>无效的标志</td>
+<td>8</td>
+</tr>
+<tr>
+<td><code>INVALID_MESSAGE_ID</code></td>
+<td>无效的消息 ID</td>
+<td>9</td>
+</tr>
+<tr>
+<td><code>INVALID_PROTOCOL_ID</code></td>
+<td>无效的协议号</td>
+<td>10</td>
+</tr>
+<tr>
+<td><code>INVALID_SPI</code></td>
+<td>无效的 SPI</td>
+<td>11</td>
+</tr>
+<tr>
+<td><code>INVALID_TRANSFORM_ID</code></td>
+<td>无效的变换号</td>
+<td>12</td>
+</tr>
+<tr>
+<td><code>ATTRIBUTES_NOT_SUPPORTED</code></td>
+<td>不支持的属性</td>
+<td>13</td>
+</tr>
+<tr>
+<td><code>NO_PROPOSAL_CHOSEN</code></td>
+<td>建议不被接受</td>
+<td>14</td>
+</tr>
+<tr>
+<td><code>BAD_PROPOSAL_SYNTAX</code></td>
+<td>错误的建议语法</td>
+<td>15</td>
+</tr>
+<tr>
+<td><code>PAYLOAD_MALFORMED</code></td>
+<td>错误的载荷格式</td>
+<td>16</td>
+</tr>
+<tr>
+<td><code>INVALID_KEY_INFORMATION</code></td>
+<td>无效的密钥信息</td>
+<td>17</td>
+</tr>
+<tr>
+<td><code>INVALID_ID_INFORMATION</code></td>
+<td>无效的 ID 信息</td>
+<td>18</td>
+</tr>
+<tr>
+<td><code>INVALID_CERT_ENCODING</code></td>
+<td>无效的证书编码</td>
+<td>19</td>
+</tr>
+<tr>
+<td><code>INVALID_CERTIFICATE</code></td>
+<td>无效的证书</td>
+<td>20</td>
+</tr>
+<tr>
+<td><code>CERT_TYPE_UNSUPPORTED</code></td>
+<td>不支持的证书类型</td>
+<td>21</td>
+</tr>
+<tr>
+<td><code>INVALID_CERT_AUTHORITY</code></td>
+<td>无效的证书机构</td>
+<td>22</td>
+</tr>
+<tr>
+<td><code>INVALID_HASH_INFORMATION</code></td>
+<td>无效的 Hash 信息</td>
+<td>23</td>
+</tr>
+<tr>
+<td><code>AUTHENTICATION_FALIED</code></td>
+<td>失败的鉴别</td>
+<td>24</td>
+</tr>
+<tr>
+<td><code>INVALID_SIGNATURE</code></td>
+<td>无效的签名</td>
+<td>25</td>
+</tr>
+<tr>
+<td><code>ADDRESS_NOTIFICATION</code></td>
+<td>地址通知</td>
+<td>26</td>
+</tr>
+<tr>
+<td><code>NOTIFY_SA_LIFETIME</code></td>
+<td>安全联盟生存周期通知</td>
+<td>27</td>
+</tr>
+<tr>
+<td><code>CERTFICATE_UNAVAILABLE</code></td>
+<td>证书不可用</td>
+<td>28</td>
+</tr>
+<tr>
+<td><code>UNSUPPORTED_EXCHANGE_TYPE</code></td>
+<td>不支持的交换类型</td>
+<td>29</td>
+</tr>
+<tr>
+<td><code>UNEQUAL_PAYLOAD_LENGTHS</code></td>
+<td>错误的载荷长度</td>
+<td>30</td>
+</tr>
+<tr>
+<td>RESERVED</td>
+<td>保留</td>
+<td><span class="arithmatex">\(31\sim 8191\)</span></td>
+</tr>
+<tr>
+<td>PRIVATE</td>
+<td>私有</td>
+<td><span class="arithmatex">\(8192\sim 16383\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><strong>表 18 通知消息的状态类型</strong></p>
+<table>
+<thead>
+<tr>
+<th>通知类型</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>已连接</td>
+<td>16384</td>
+</tr>
+<tr>
+<td>保留(将来使用)</td>
+<td><span class="arithmatex">\(16385\sim 24575\)</span></td>
+</tr>
+<tr>
+<td>特定于 DOI 的编码</td>
+<td><span class="arithmatex">\(24576\sim 32767\)</span></td>
+</tr>
+<tr>
+<td>私有(将来使用)</td>
+<td><span class="arithmatex">\(32768\sim 40959\)</span></td>
+</tr>
+<tr>
+<td>保留(将来使用)</td>
+<td><span class="arithmatex">\(40960\sim 65535\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>SPI:在第一阶段没有这个字段。在第二阶段这个字段的长度为 4 个字节,其内容是接收方建议载荷中的 SPI 值。</p>
+<p>通知数据:这个字段是变长的,用于传送通知消息类型对应的通知数据。</p>
+<h5 id="61513">6.1.5.13 删除载荷<a class="headerlink" href="#61513" title="Permanent link">&para;</a></h5>
+<p>删除载荷用于通知对方某个 SA 已经取消,本载荷的类型值为 12。删除载荷的格式如图 13 所示。</p>
+<p><img alt="图 13 删除载荷格式" src="../images/figure_13.png" /></p>
+<p><strong>图 13 删除载荷格式</strong></p>
+<p>下一个载荷:这个字段的长度为 1 个字节,标识了本载荷后下一个载荷的类型。如果当前载荷是最后一个,则该字段将被置为 0。载荷类型由表 1 定义。</p>
+<p>保留:这个字段的长度为 1 个字节,其值为 0。</p>
+<p>载荷长度:这个字段的长度为 2 个字节,长度数值以字节为单位,用于表示包含通用载荷头在内的整个载荷长度。</p>
+<p>解释域(DOI):这个字段的长度为 4 个字节,其值为 1。</p>
+<p>协议 ID:这个字段的长度为 1 个字节,用于表示要删除的 SA 的协议标识符。协议标识符的定义如表 3 所示。</p>
+<p>SPI 长度:这个字段的长度为 1 个字节,长度数值以字节为单位,用于表示 SPI 的长度。删除第一阶段的 SA 时该长度为 16,删除第二阶段的 SA 时该长度为 4。</p>
+<p>SPI 数目:这个字段的长度为 2 个字节,用于表示本载荷中包含的 SPI 数目。</p>
+<p>安全参数索引(SPI):这个字段是变长的,用于表示被删除 SA 的 SPI。这个字段的长度由 SPI 长度字段和 SPI 数目字段的值决定。</p>
+<h5 id="61514-id">6.1.5.14 厂商 ID 载荷<a class="headerlink" href="#61514-id" title="Permanent link">&para;</a></h5>
+<p>厂商 ID 载荷用于传递厂商自定义的常量,本载荷的类型值为 13。厂商 ID 载荷的格式如图 14 所示。</p>
+<p><img alt="图 14 厂商 ID 载荷格式" src="../images/figure_14.png" /></p>
+<p><strong>图 14 厂商 ID 载荷格式</strong></p>
+<p>下一个载荷:这个字段的长度为 1 个字节,标识了本载荷后下一个载荷的类型。如果当前载荷是最后一个,则该字段将被置为 0。载荷类型由表 1 定义。</p>
+<p>保留:这个字段的长度为 1 个字节,其值为 0。</p>
+<p>载荷长度:这个字段的长度为 2 个字节,长度数值以字节为单位,用于表示包含通用载荷头在内的整个载荷长度。</p>
+<p>厂商 ID(VID):这个字段是变长的,其内容为厂商 ID 串的杂凑值。</p>
+<h5 id="61515-nat_d">6.1.5.15 NAT_D 载荷<a class="headerlink" href="#61515-nat_d" title="Permanent link">&para;</a></h5>
+<p><code>NAT_D</code> 载荷用于检测两个密钥交换通信方之间是否存在 NAT 设备,以及检测 NAT 设备的确切位置,本载荷的类型值为 20。<code>NAT_D</code> 载荷的格式如图 15 所示。</p>
+<p><img alt="图 15 NAT_D 载荷格式" src="../images/figure_15.png" /></p>
+<p><strong>图 15 NAT_D 载荷格式</strong></p>
+<p>下一个载荷:这个字段的长度为 1 个字节,标识了本载荷后下一个载荷的类型。如果当前载荷是最后一个,则该字段将被置为 0。载荷类型由表 1 定义。</p>
+<p>保留:这个字段的长度为 1 个字节,其值为 0。</p>
+<p>载荷长度:这个字段的长度为 2 个字节,长度数值以字节为单位,用于表示包含通用载荷头在内的整个载荷长度。</p>
+<p>载荷内容:这个字段是变长的,其内容为:</p>
+<div class="arithmatex">\[
+\text{HASH}(\text{CKY-I}|\text{CKY-R}|\text{IP}|\text{Port})
+\]</div>
+<h5 id="61516-nat_oa">6.1.5.16 NAT_OA 载荷<a class="headerlink" href="#61516-nat_oa" title="Permanent link">&para;</a></h5>
+<p><code>NAT_OA</code> 载荷用于密钥交换第二阶段中,当使用传输模式穿越 NAT 时需要传送这个载荷,本载荷的类型值为 21。<code>NAT_OA</code> 载荷的载荷格式如图 16 所示。</p>
+<p><img alt="图 16 NAT_OA 载荷格式" src="../images/figure_16.png" /></p>
+<p><strong>图 16 NAT_OA 载荷格式</strong></p>
+<p>下一个载荷:这个字段的长度为 1 个字节,标识了本载荷后下一个载荷的类型。如果当前载荷是最后一个,则该字段将被置为 0。载荷类型由表 1 定义。</p>
+<p>保留:这个字段的长度为 1 个字节,其值为 0。</p>
+<p>载荷长度:这个字段的长度为 2 个字节,长度数值以字节为单位,用于表示包含通用载荷头在内的整个载荷长度。</p>
+<p>ID 类型:这个字段的长度为 1 个字节,其值为表 15 中的 <code>ID_IPV4_ADDR</code> 的值或 <code>ID_IPv6_ADDR</code> 的值。</p>
+<p>保留 2:这个字段的长度为 3 个字节,其值为 0。</p>
+<p><code>NAT_OA</code> 数据:这个字段的值是 4 字节 IPv4 地址或 16 字节 IPv6 地址。</p>
+<h5 id="61517">6.1.5.17 对称密钥载荷<a class="headerlink" href="#61517" title="Permanent link">&para;</a></h5>
+<p>对称密钥载荷用于在密钥交换第一阶段时,传递数字信封中的对称密钥,本载荷的类型值为 128。对称密钥载荷的格式如图 17 所示。</p>
+<p><img alt="图 17 对称密钥载荷格式" src="../images/figure_17.png" /></p>
+<p><strong>图 17 对称密钥载荷格式</strong></p>
+<p>下一个载荷:这个字段的长度为 1 个字节,标识了本载荷后下一个载荷的类型。如果当前载荷是最后一个,则该字段将被置为 0。载荷类型由表 1 定义。</p>
+<p>保留:这个字段的长度为 1 个字节,其值为 0。</p>
+<p>载荷长度:这个字段的长度为 2 个字节,长度数值以字节为单位,用于表示包含通用载荷头在内的整个载荷长度。</p>
+<p>对称密钥密文:这个字段的长度是可变的,其内容为由公钥加密的对称密钥。</p>
+<h4 id="616">6.1.6 密钥交换的数据包格式<a class="headerlink" href="#616" title="Permanent link">&para;</a></h4>
+<h5 id="6161">6.1.6.1 概述<a class="headerlink" href="#6161" title="Permanent link">&para;</a></h5>
+<p>密钥交换消息是基于 UDP 传输的,使用 UDP500 端口或者 4500 端口。在 UDP500 端口上发送的密钥交换消息直接跟在 UDP 报头后面。在 UDP4500 端口上发送的密钥交换消息,需要在 UDP 头与密钥交换消息之间插入 4 个全 0 的字节。</p>
+<p>每一条密钥交换消息以消息头 <span class="arithmatex">\(\text{HDR}\)</span> 作为开始标志。每个 <span class="arithmatex">\(\text{HDR}\)</span> 后可以有一个或者多个载荷。如果有多个载荷,则用每一个载荷内的“下一个载荷”字段进行标识,如果“下一个载荷”字段为 0,说明消息结束。</p>
+<p>在本条的所有图中,“下一载荷”用“NP”来表示。</p>
+<h5 id="6162-1">6.1.6.2 主模式消息 1 的数据包格式<a class="headerlink" href="#6162-1" title="Permanent link">&para;</a></h5>
+<p>主模式消息 1 的数据包的格式如图 18 所示,其中 SA 载荷中应当支持 SM4-SM3 变换载荷。</p>
+<p><img alt="图 18 主模式消息 1 的数据包格式" src="../images/figure_18.png" /></p>
+<p><strong>图 18 主模式消息 1 的数据包格式</strong></p>
+<h5 id="6163-2">6.1.6.3 主模式消息 2 的数据包格式<a class="headerlink" href="#6163-2" title="Permanent link">&para;</a></h5>
+<p>主模式消息 2 的数据包的格式如图 19 所示。</p>
+<p><img alt="图 19 主模式消息 2 的数据包格式" src="../images/figure_19.png" /></p>
+<p><strong>图 19 主模式消息 2 的数据包格式</strong></p>
+<h5 id="6164-3">6.1.6.4 主模式消息 3 的数据包格式<a class="headerlink" href="#6164-3" title="Permanent link">&para;</a></h5>
+<p>使用证书鉴别的主模式消息 3 数据包的格式如图 20 所示。</p>
+<p><img alt="图 20 主模式消息 2 的数据包格式" src="../images/figure_20.png" /></p>
+<p><strong>图 20 主模式消息 2 的数据包格式</strong></p>
+<h5 id="6165-4">6.1.6.5 主模式消息 4 的数据包格式<a class="headerlink" href="#6165-4" title="Permanent link">&para;</a></h5>
+<p>主模式消息 4 数据包的格式如图 21 所示。</p>
+<p><img alt="图 21 主模式消息 4 的数据包格式" src="../images/figure_21.png" /></p>
+<p><strong>图 21 主模式消息 4 的数据包格式</strong></p>
+<h5 id="6166-5">6.1.6.6 主模式消息 5 的数据包的格式<a class="headerlink" href="#6166-5" title="Permanent link">&para;</a></h5>
+<p>主模式消息 5 的数据包的格式如图 22 所示。</p>
+<p><img alt="图 22 主模式消息 5 的数据包格式" src="../images/figure_22.png" /></p>
+<p><strong>图 22 主模式消息 5 的数据包格式</strong></p>
+<h5 id="6167-6">6.1.6.7 主模式消息 6 的数据的包格式<a class="headerlink" href="#6167-6" title="Permanent link">&para;</a></h5>
+<p>主模式消息 6 的数据包的格式如图 23 所示。</p>
+<p><img alt="图 23 主模式消息 6 的数据包格式" src="../images/figure_23.png" /></p>
+<p><strong>图 23 主模式消息 6 的数据包格式</strong></p>
+<h5 id="6168-1">6.1.6.8 快速模式消息 1 的数据包格式<a class="headerlink" href="#6168-1" title="Permanent link">&para;</a></h5>
+<p>快速模式消息 1 的数据包的格式如图 24 所示,其中 SA 载荷中有一个 ESP 协议建议,建议中有两种变换。</p>
+<p><img alt="图 24 快速模式消息 1 的数据包格式" src="../images/figure_24.png" /></p>
+<p><strong>图 24 快速模式消息 1 的数据包格式</strong></p>
+<h5 id="6169-2">6.1.6.9 快速模式消息 2 的数据包格式<a class="headerlink" href="#6169-2" title="Permanent link">&para;</a></h5>
+<p>快速模式消息 2 的数据包的格式如图 25 所示,其中选择了一种变换。</p>
+<p><img alt="图 25 快速模式消息 2 的数据包格式" src="../images/figure_25.png" /></p>
+<p><strong>图 25 快速模式消息 2 的数据包格式</strong></p>
+<h5 id="61610-3">6.1.6.10 快速模式消息 3 的数据包格式<a class="headerlink" href="#61610-3" title="Permanent link">&para;</a></h5>
+<p>快速模式消息 3 的数据包的格式如图 26 所示。</p>
+<p><img alt="图 26 快速模式消息 3 的数据包格式" src="../images/figure_26.png" /></p>
+<p><strong>图 26 快速模式消息 3 的数据包格式</strong></p>
+<h3 id="62">6.2 安全报文协议<a class="headerlink" href="#62" title="Permanent link">&para;</a></h3>
+<h4 id="621-ah">6.2.1 鉴别头协议 AH<a class="headerlink" href="#621-ah" title="Permanent link">&para;</a></h4>
+<h5 id="6211">6.2.1.1 概述<a class="headerlink" href="#6211" title="Permanent link">&para;</a></h5>
+<p>鉴别头协议 AH 用于为 IP 数据报文提供无连接的完整性、数据源鉴别和抗重放攻击服务。AH 为 IP 头提供尽可能多的鉴别,同时为上层协议数据提供鉴别。对于抗重放攻击服务,AH 依靠一个单调递增的抗重放攻击序列号来完成。AH 不能提供机密性服务,因此本标准规定 AH 不能单独使用,而应和封装安全载荷协议 ESP 嵌套使用。</p>
+<h5 id="6212-ah">6.2.1.2 AH 头格式<a class="headerlink" href="#6212-ah" title="Permanent link">&para;</a></h5>
+<p>AH 头格式见图 27,该格式里的所有字段都是强制的,并且被包括在完整性校验值(ICV)计算中。AH 头紧跟在 IP 协议头(IPv4、IPv6,或者扩展)之后,在 IP 协议头中的协议字段(IPv4)或者下一个头(IPv6、扩展)字段的值是 51。</p>
+<p><img alt="图 27 AH 头格式" src="../images/figure_27.png" /></p>
+<p><strong>图 27 AH 头格式</strong></p>
+<p>下一个头:下一个头是一个 1 字节的字段,该字段指定了鉴别头后面下一个载荷的类型。这个字段的值是由 Internet 分配数字机构(IANA)的最新“分配数字”[STD-2]中定义的 IP 协议数字集合分配的。</p>
+<p>载荷长度:载荷长度是一个 1 字节的字段,该字段的值是 AH 头的长度减去 2,长度值以 4 字节为单位。</p>
+<p>保留:保留字段是一个 2 字节的字段,留给将来使用。该字段应被设置成 0,并且参与完整性校验值 ICV 的计算。</p>
+<p>安全参数索引(SPI):安全参数索引 SPI 是一个 4 字节值,它与目的 IP 地址和安全协议共同标识了这个数据报文的安全联盟。从 1 至 255 范围内的 SPI 值是保留给将来使用的,0 值保留给本地的特定实现使用并且不能在网络上传送,通信协商得到的 SPI 值不能小于 256。</p>
+<p>序列号:序列号是一个无符号的 4 字节单调递增计数器,发送方对使用该 SA 的每个数据报文进行计数,接收方应检测这个字段来实现 SA 的抗重放攻击服务。发送方的计数器和接收方的计数器在建立一个 SA 时被初始化为 0,该序列号在一个 SA 生存期内不能循环使用,在这个计数器溢出之前,通信的双方应协商出一个新的 SA 来使这个字段复位为 0。</p>
+<p>鉴别数据:鉴别数据是一个变长字段,它是一个完整性校验值 ICV,用于校验整个 IP 报文的完整性(可变字段除外)。该字段的长度应是 4 字节的整数倍,具体长度取决于所使用的完整性校验算法。</p>
+<h5 id="6213-ah">6.2.1.3 鉴别头 AH 的处理<a class="headerlink" href="#6213-ah" title="Permanent link">&para;</a></h5>
+<h6 id="62131-ah">6.2.1.3.1 AH 头的位置<a class="headerlink" href="#62131-ah" title="Permanent link">&para;</a></h6>
+<p>AH 头在传输模式和隧道模式中分别有不同的放置位置。</p>
+<p>在 IPv4 环境中使用传输模式,AH 头应放在原 IP 头之后,上层协议 ESP 之前,如图 28 所示。</p>
+<p><img alt="图 28 IPv4 的 AH 传输模式" src="../images/figure_28.png" /></p>
+<p><strong>图 28 IPv4 的 AH 传输模式</strong></p>
+<p>在 IPv6 环境中使用传输模式,AH 头被看作是一个端到端的载荷,因而应该出现在逐跳(Hop-by-Hop)、路由(Routing)和分片扩展头 (Fragmentation Extensionheaders)之后。 目的选项扩展头(Destination Options Extension Header)既可以出现在 AH 头之前,也可以在 AH 头之后。如图 29 所示。</p>
+<p><img alt="图 29 IPv6 的 AH 传输模式" src="../images/figure_29.png" /></p>
+<p><strong>图 29 IPv6 的 AH 传输模式</strong></p>
+<p>在隧道模式中,AH 头保护整个 IP 报文,包括整个原 IP 报文以及新建外部 IP 头的部分字段。图 30 和图 31 分别表示了隧道模式中典型的 IPv4 和 IPv6 报文的 AH 头的位置。</p>
+<p><img alt="图 30 IPv4 的 AH 隧道模式" src="../images/figure_30.png" /></p>
+<p><strong>图 30 IPv4 的 AH 隧道模式</strong></p>
+<p><img alt="图 31 IPv6 的 AH 隧道模式" src="../images/figure_31.png" /></p>
+<p><strong>图 31 IPv6 的 AH 隧道模式</strong></p>
+<h6 id="62132">6.2.1.3.2 出站报文处理<a class="headerlink" href="#62132" title="Permanent link">&para;</a></h6>
+<h6 aria-level="7">6.2.1.3.2.1 概述</h6>
+
+<p>出站报文的处理包括查找 SA、产生序列号、计算完整性校验值、鉴别数据字段的填充和分片等过程。</p>
+<h6 aria-level="7">6.2.1.3.2.2 查找 SA</h6>
+
+<p>应根据本地策略查找 SA,只有当一个 IPSec 实现确定了报文与该 SA 相关联后,AH 才应用于一个出站报文。否则应开始新的密钥交换过程,建立 SA。</p>
+<h6 aria-level="7">6.2.1.3.2.3 产生序列号</h6>
+
+<p>当建立一个 SA 时,发送方的序列号计数器初始化为 0,每发送一个报文之前,该计数器加 1,并且把这个计数器值赋予序列号字段。当该计数器计数达到最大值前,应生成新的 SA。</p>
+<h6 aria-level="7">6.2.1.3.2.4 计算完整性校验值 ICV</h6>
+
+<p>接收方采用指定的完整性校验算法对报文计算 ICV。IPv4 和 IPv6 的 ICV 计算方法分别如下所述:</p>
+<p><strong>a）IPv4 中的 ICV 计算</strong></p>
+<p>IPv4 基本头字段、IPv4 头的选项、AH 头和上层协议数据都参与 ICV 计算。</p>
+<p>IPv4 基本头字段中,直接参与计算的字段为:版本(Version)、IPv4 头长度(Header Length)、总长度(Total Length)、标识(Identification)、协议(Protocol)、源地址(Source Address)、目的地址(Destination Address)。</p>
+<p>IPv4 基本头字段中,在计算 ICV 之前设置为“0”的字段为:服务类型(TOS)、标志(Flags)、片偏移(Fragment Offset)、生存时间(TTL)、首部校验和(Header Checksum)。</p>
+<p>IPv4 头的整个选项被看作一个单元,选项中的类型和长度字段在传送中是不变的,但如果有一个字段是属于可变的,则整个选项用于计算 ICV 时都要清“0”。</p>
+<p>整个 AH 头参与 ICV 计算,其中完整性校验值字段在计算 ICV 之前置“0”,在计算后,将计算得到的值赋于该字段。</p>
+<p>整个上层协议数据直接参与 ICV 计算。</p>
+<p><strong>b) IPv6 中的 ICV 计算</strong></p>
+<p>IPv6 基本头字段、IPv6 扩展头、AH 头和上层协议数据都参与 ICV 计算。</p>
+<p>IPv6 基本头字段中,直接参与计算的字段为:版本(Version)、载荷长度(Payload Length)、下一个头(Next Header)、源地址(Source Address)、没有路由扩展头的目的地址(Destination Address)。</p>
+<p>IPv6 基本头字段中,在计算 ICV 之前设置为“0”的字段为:类别(Class)、流标签(Flow Label)、跳极限(Hop Limit)。</p>
+<p>IPv6 的扩展头中,在逐跳(Hop-by-Hop)和目的扩展头(Destination Extension Headers)中的 IPv6 选项包含有一个比特,该比特指出选项在传送过程期间是否会改变。对于在路由过程中内容可能变换的任何选项,整个“选项数据(Option Data)”字段在计算和校验 ICV 时应被当作零值的字节串对待。选项类型(Option Type)和选项数据长度(Opt Data Len)被包括进 ICV 计算。由比特位确定为不变的所有选项都被包括进 ICV 计算。</p>
+<p>整个 AH 头参与 ICV 计算,其中鉴别数据字段在计算 ICV 之前置“0”,在计算后,将计算得到的值赋于该字段。</p>
+<p>整个上层协议数据直接参与 ICV 计算。</p>
+<h6 aria-level="7">6.2.1.3.2.5 鉴别数据的填充</h6>
+
+<p>鉴别数据字段应确保是 4 字节(IPv4)或 8 字节(IPv6)的整数倍,否则需要填充。填充应放在鉴别数据字段的最末端,其内容由发送方任意选择,并且参与 ICV 计算。</p>
+<h6 aria-level="7">6.2.1.3.2.6 分片</h6>
+
+<p>一个 IPSec 实现在 AH 处理之后,如果发现 IP 数据报文长度超过输出接口的 MTU 值,则对处理后的数据报文进行分片。</p>
+<h6 id="62133">6.2.1.3.3 入站报文处理<a class="headerlink" href="#62133" title="Permanent link">&para;</a></h6>
+<h6 aria-level="7">6.2.1.3.3.1 概述</h6>
+
+<p>入站报文的处理包括重组、查找 SA、验证序列号和验证完整性校验值等过程。</p>
+<h6 aria-level="7">6.2.1.3.3.2 重组</h6>
+
+<p>如果需要,在 AH 处理之前要进行 IP 数据报文重组。AH 不处理分片报文,如果提供给 AH 处理的一个报文是一个分片的 IP 数据报文,接收方应丢弃该报文。</p>
+<h6 aria-level="7">6.2.1.3.3.3 查找 SA</h6>
+
+<p>当收到一个包含 AH 头的报文时,接收方应根据目的 IP 地址、AH 和 SPI 来查找 SA,查找失败则丢弃该报文。</p>
+<h6 aria-level="7">6.2.1.3.3.4 验证序列号</h6>
+
+<p>所有 AH 实现应支持抗重放攻击服务,在 SA 建立时,接收方序列号计数器应初始化为 0。对于每个接收到的报文,接收方应确认报文包含一个序列号,并且该序列号在这个 SA 生命期中不重复,否则应丢弃该报文。</p>
+<p>如果该序列号超出接收窗口有效检查范围的高端值,则对报文进行完整性校验。如果校验通过,接收窗口应相应调整;如果校验不通过则丢弃该报文。</p>
+<p>接收窗口的大小默认为 64。</p>
+<h6 aria-level="7">6.2.1.3.3.5 验证完整性校验值</h6>
+
+<p>接收方采用指定的完整性校验算法对报文计算 ICV,计算方法和参与计算的内容与出站报文计算 ICV 的一致。计算的结果与报文中的 ICV 进行比较。如果一致,则接收到的数据报文是有效的,否则接收方应将收到的数据报文丢弃。</p>
+<h6 aria-level="7">6.2.1.3.3.6 匹配安全策略</h6>
+
+<p>检查数据包是否符合设置的安全策略要求。</p>
+<h4 id="622-esp">6.2.2 封装安全载荷 ESP<a class="headerlink" href="#622-esp" title="Permanent link">&para;</a></h4>
+<h5 id="6221">6.2.2.1 概述<a class="headerlink" href="#6221" title="Permanent link">&para;</a></h5>
+<p>封装安全载荷 ESP 提供了机密性、数据源鉴别、无连接的完整性、抗重放攻击服务和有限信息流量的保护。当 ESP 单独使用时,应同时选择机密性和数据源鉴别服务,当 ESP 和 AH 结合使用时不应选择数据源鉴别服务。</p>
+<h5 id="6222-esp">6.2.2.2 ESP 头<a class="headerlink" href="#6222-esp" title="Permanent link">&para;</a></h5>
+<h6 id="62221-esp">6.2.2.2.1 ESP 头格式<a class="headerlink" href="#62221-esp" title="Permanent link">&para;</a></h6>
+<p>ESP 头格式见图 32,其位置紧接在 IPv4、IPv6 或者扩展协议之后,在头中的协议(IPv4)字段或者下一个头(IPv6、扩展)字段的值是 50。</p>
+<p><img alt="图 32 ESP 头格式" src="../images/figure_32.png" /></p>
+<p><strong>图 32 ESP 头格式</strong></p>
+<h6 id="62222-spi">6.2.2.2.2 安全参数索引 SPI<a class="headerlink" href="#62222-spi" title="Permanent link">&para;</a></h6>
+<p>安全参数索引 SPI 是一个 4 字节值,它与目的 IP 地址和安全协议共同标识了这个数据报文的安全联盟。从 1 至 255 范围内的 SPI 值是保留给将来使用的,0 值保留给本地的特定实现使用并且不能在网络上传送,通信协商得到的 SPI 值不能小于 256。</p>
+<h6 id="62223">6.2.2.2.3 序列号<a class="headerlink" href="#62223" title="Permanent link">&para;</a></h6>
+<p>序列号是一个无符号的 4 字节单调递增计数器,发送方对使用该 SA 的每个数据报文进行计数,接收方应检测这个字段来实现 SA 的抗重放攻击服务。发送方的计数器和接收方的计数器在建立一个 SA 时被初始化为 0,该序列号在一个 SA 生存期内不能循环使用,在这个计数器溢出之前,通信的双方应协商出一个新的 SA 来使这个字段复位为 0。</p>
+<h6 id="62224">6.2.2.2.4 载荷数据<a class="headerlink" href="#62224" title="Permanent link">&para;</a></h6>
+<p>载荷数据是一个变长的字段,它包含初始化向量 <span class="arithmatex">\(\text{IV}\)</span> 和下一个头字段所描述的数据,其长度单位为字节。</p>
+<p><span class="arithmatex">\(\text{IV}\)</span> 应置于载荷数据首部。</p>
+<h6 id="62225">6.2.2.2.5 填充字段<a class="headerlink" href="#62225" title="Permanent link">&para;</a></h6>
+<p>如果载荷数据的长度不是加密算法的分组长度的整数倍,则需要对不足的部分进行填充,填充以字节为单位。如果需要,也可以提供更多的填充数据,但应符合加密算法分组长度的要求。</p>
+<p>填充的方法和内容应由指定的加密算法规定。如果加密算法没有规定,则附加在报文之后的第一个字节为 1,后续的填充字节按单调递增的顺序拼凑。</p>
+<h6 id="62226">6.2.2.2.6 填充长度<a class="headerlink" href="#62226" title="Permanent link">&para;</a></h6>
+<p>填充长度字段指出了填充字节的个数。有效值范围是 0 至 255,其中 0 表明没有填充字节。</p>
+<h6 id="62227">6.2.2.2.7 下一个头<a class="headerlink" href="#62227" title="Permanent link">&para;</a></h6>
+<p>下一个头是一个 1 字节的字段,该字段指定了 ESP 头后面下一个载荷的类型。这个字段的值是由 Internet 分配数字机构(IANA)的最新“分配数字”[STD-2]中定义的 IP 协议数字集合分配的。</p>
+<h6 id="62228">6.2.2.2.8 鉴别数据<a class="headerlink" href="#62228" title="Permanent link">&para;</a></h6>
+<p>鉴别数据是一个变长字段,它是一个完整性校验值 ICV,是对 ESP 报文去掉 ICV 外的其余部分进行完整性校验计算所得的值。该字段的长度由选择的完整性校验算法决定。鉴别数据字段是可选的,只有当 SA 选择了完整性校验服务时才包含鉴别数据字段。</p>
+<h5 id="6223-esp">6.2.2.3 封装安全载荷 ESP 的处理<a class="headerlink" href="#6223-esp" title="Permanent link">&para;</a></h5>
+<h6 id="62231-esp">6.2.2.3.1 ESP 头的位置<a class="headerlink" href="#62231-esp" title="Permanent link">&para;</a></h6>
+<p>ESP 头在传输模式和隧道模式中分别有不同的放置位置。</p>
+<p>在 IPv4 环境中使用传输模式,ESP 应放在 IP 头和它包含的所有选项之后和上层协议之前,如图 33 所示,图中“数据”包含“载荷数据”和“填充”,“ESP 尾”包含“填充长度”和“下一个头”字段。</p>
+<p><img alt="图 33 IPv4 的 ESP 传输模式" src="../images/figure_33.png" /></p>
+<p><strong>图 33 IPv4 的 ESP 传输模式</strong></p>
+<p>在 IPv6 环境中使用传输模式,ESP 被看作是一个端到端的载荷,因而应该出现在逐跳(Hop-by-Hop)、路由(Routing)和分片扩展头(Fragmentation Extensionheaders)之后,如图 34 所示,图中“数据”包含“载荷数据”和“填充”,“ESP 尾”包含“填充长度”和“下一个头”字段。</p>
+<p><img alt="图 34 IPv6 的 ESP 传输模式" src="../images/figure_34.png" /></p>
+<p><strong>图 34 IPv6 的 ESP 传输模式</strong></p>
+<p>在 IPv4 和 IPv6 中使用隧道模式,ESP 保护包括原内部 IP 头在内的整个原 IP 报文,分别如图 35 和图 36 所示,图中“数据”包含“载荷数据”和“填充”,“ESP 尾”包含“填充长度”和“下一个头”字段。</p>
+<p><img alt="图 35 IPv4 的 ESP 隧道模式" src="../images/figure_35.png" /></p>
+<p><strong>图 35 IPv4 的 ESP 隧道模式</strong></p>
+<p><img alt="图 36 IPv6 的 ESP 隧道模式" src="../images/figure_36.png" /></p>
+<p><strong>图 36 IPv6 的 ESP 隧道模式</strong></p>
+<h6 id="62232">6.2.2.3.2 出站报文处理<a class="headerlink" href="#62232" title="Permanent link">&para;</a></h6>
+<h6 aria-level="7">6.2.2.3.2.1 概述</h6>
+
+<p>出站报文的处理包括查找 SA、封装、加密报文、产生序列号、计算完整性校验值和分片等过程,并按照由 6.2.2.3.2.2 至 6.2.2.3.2.7 的顺序进行处理。</p>
+<h6 aria-level="7">6.2.2.3.2.2 查找 SA</h6>
+
+<p>应根据本地策略查找 SA,只有当一个 IPSec 实现确定了报文与该 SA 相关联后,ESP 才应用于一个出站报文。否则应开始新的密钥交换过程,建立 SA。</p>
+<h6 aria-level="7">6.2.2.3.2.3 封装</h6>
+
+<p>在传输模式中,将原始上层协议封装到 ESP 载荷字段中。</p>
+<p>在隧道模式中,将整个原始 IP 数据报文封装到 ESP 载荷字段中。</p>
+<h6 aria-level="7">6.2.2.3.2.4 加密报文</h6>
+
+<p>首先对报文添加所有需要的填充,然后使用由 SA 指定的密钥、加密算法、算法模式和 <span class="arithmatex">\(\text{IV}\)</span> 进行加密,加密范围包括载荷数据、填充、填充长度和下一个头。</p>
+<h6 aria-level="7">6.2.2.3.2.5 产生序列号</h6>
+
+<p>当建立一个 SA 时,发送方的序列号计数器初始化为 0,每发送一个报文之前,该计数器加 1,并且把这个计数器值插入到序列号字段中。当该计数器计数达到最大值前,应生成新的 SA。</p>
+<h6 aria-level="7">6.2.2.3.2.6 计算完整性校验值</h6>
+
+<p>如果 SA 提供完整性校验服务,发送方在除去鉴别数据字段的 ESP 报文上计算 ICV。将计算后得到的值赋于鉴别数据字段。</p>
+<h6 aria-level="7">6.2.2.3.2.7 分片</h6>
+
+<p>一个 IPSec 实现在 ESP 处理之后,如果发现 IP 数据报文长度超过输出接口的 MTU 值,则对处理后的数据报文进行分片。</p>
+<h6 id="62233">6.2.2.3.3 入站报文处理<a class="headerlink" href="#62233" title="Permanent link">&para;</a></h6>
+<h6 aria-level="7">6.2.2.3.3.1 概述</h6>
+
+<p>入站报文的处理包括重组、查找 SA、验证序列号、验证完整性校验值、解密报文和重构等过程,并按由 6.2.2.3.3.2 至 6.2.2.3.3.7 的顺序进行处理。</p>
+<h6 aria-level="7">6.2.2.3.3.2 重组</h6>
+
+<p>如果需要,在 ESP 处理之前要进行 IP 数据报文重组。ESP 不处理分片报文,如果提供给 ESP 处理的一个报文是一个分片的 IP 数据报文,接收方应丢弃该报文。</p>
+<h6 aria-level="7">6.2.2.3.3.3 查找 SA</h6>
+
+<p>当收到一个包含 ESP 头的报文时,接收方应根据目的 IP 地址、ESP 和 SPI 来查找 SA,查找失败则丢弃该报文。</p>
+<h6 aria-level="7">6.2.2.3.3.4 验证序列号</h6>
+
+<p>所有 ESP 实现应支持抗重放攻击服务,在 SA 建立时,接收方序列号计数器应初始化为 0。对于每个接收到的报文,接收方应确认报文包含一个序列号,并且该序列号在这个 SA 生命期中不重复任何已接收的其他报文的序列号,否则应丢弃该报文。</p>
+<p>如果该序列号超出接收窗口有效检查范围的高端值,则对报文进行完整性校验。如果校验通过,接收窗口应相应调整;如果校验不通过则丢弃该报文。</p>
+<p>接收窗口的大小默认为 64。</p>
+<h6 aria-level="7">6.2.2.3.3.5 验证完整性校验值</h6>
+
+<p>接收方采用指定的完整性校验算法对报文计算 ICV,计算方法和参与计算的内容与出站报文计算 ICV 的一致。计算的结果与报文中的 ICV 进行比较。如果一致,则接收到的数据报文是有效的,否则接收方应将收到的数据报文丢弃。</p>
+<h6 aria-level="7">6.2.2.3.3.6 解密报文</h6>
+
+<p>使用 SA 指定的密钥、加密算法、算法模式和 <span class="arithmatex">\(\text{IV}\)</span>,对接收报文的加密部分进行解密。根据解密后报文中填充数据的长度及内容判断是否解密成功,解密失败则丢弃该报文。</p>
+<h6 aria-level="7">6.2.2.3.3.7 重构</h6>
+
+<p>对解密成功的报文,重构原始 IP 数据报文。</p>
+<h4 id="623-nat">6.2.3 NAT 穿越<a class="headerlink" href="#623-nat" title="Permanent link">&para;</a></h4>
+<p>为了穿越 NAT,在 UDP 报文中封装和解封装 ESP 报文的方法按 RFC 3948 的要求实现。</p>
+<h4 id="624">6.2.4 匹配安全策略<a class="headerlink" href="#624" title="Permanent link">&para;</a></h4>
+<p>检查数据包是否符合设置的安全策略要求。</p>
+<h2 id="7-ipsec-vpn">7 IPSec VPN 产品要求<a class="headerlink" href="#7-ipsec-vpn" title="Permanent link">&para;</a></h2>
+<h3 id="71">7.1 产品功能要求<a class="headerlink" href="#71" title="Permanent link">&para;</a></h3>
+<h4 id="711">7.1.1 随机数生成<a class="headerlink" href="#711" title="Permanent link">&para;</a></h4>
+<p>IPSec VPN 产品应具有随机数生成功能,在使用随机数前能对生成的随机数进行偏“0”、偏“1”、“0、1”平衡等常规检测,并提供检测接口,能通过检测接口对 IPSec VPN 产品所生成的随机数进行样本采集,随机数检验应符合 GB/T 32915 的要求。</p>
+<h4 id="712">7.1.2 密码算法<a class="headerlink" href="#712" title="Permanent link">&para;</a></h4>
+<p>IPSec VPN 产品应支持国密 SM2、SM3、SM4 算法,并将国密算法作为默认密码套件使用。</p>
+<h4 id="713">7.1.3 工作模式<a class="headerlink" href="#713" title="Permanent link">&para;</a></h4>
+<p>IPSec VPN 产品工作模式应支持隧道模式和传输模式,其中隧道模式是必备功能,用于主机和网关实现,传输模式是可选功能,仅用于主机实现。</p>
+<h4 id="714">7.1.4 密钥交换<a class="headerlink" href="#714" title="Permanent link">&para;</a></h4>
+<p>IPSec VPN 产品应具有密钥交换功能,通过协商产生工作密钥和会话密钥。</p>
+<p>密钥交换协议应按照 6.1 的要求进行。</p>
+<h4 id="715">7.1.5 安全报文封装<a class="headerlink" href="#715" title="Permanent link">&para;</a></h4>
+<p>安全报文封装协议分为 AH 协议和 ESP 协议。</p>
+<p>AH 协议应与 ESP 协议嵌套使用,这种情况下不启用 ESP 协议中的验证操作。</p>
+<p>ESP 协议可单独使用,这种情况下应启用 ESP 协议中的验证操作。</p>
+<p>安全报文封装协议应按照 6.2 的要求进行。</p>
+<h4 id="716-nat">7.1.6 NAT 穿越<a class="headerlink" href="#716-nat" title="Permanent link">&para;</a></h4>
+<p>IPSec VPN 产品应支持 ESP 单独使用时 NAT 穿越。</p>
+<p>NAT 穿越协议应按照 6.2.3 的要求进行。</p>
+<h4 id="717">7.1.7 鉴别方式<a class="headerlink" href="#717" title="Permanent link">&para;</a></h4>
+<p>IPSec VPN 产品应具有实体鉴别的功能,身份鉴别数据应支持数字证书方式。</p>
+<h4 id="718-ip">7.1.8 IP 协议版本支持<a class="headerlink" href="#718-ip" title="Permanent link">&para;</a></h4>
+<p>IPSec VPN 产品应支持 IPv4 协议或 IPv6 协议。</p>
+<h4 id="719">7.1.9 抗重放攻击<a class="headerlink" href="#719" title="Permanent link">&para;</a></h4>
+<p>IPSec VPN 产品在安全报文传输阶段应具有对抗重放攻击的功能。</p>
+<h4 id="7110">7.1.10 密钥更新<a class="headerlink" href="#7110" title="Permanent link">&para;</a></h4>
+<p>IPSec VPN 产品应具有根据时间周期和报文流量两种条件进行工作密钥和会话密钥的更新功能,其中根据时间周期条件进行密钥更新为必备功能,根据报文流量条件进行密钥更新为可选功能。</p>
+<p>工作密钥的最大更新周期不大于 24h。</p>
+<p>会话密钥的最大更新周期不大于 1h。</p>
+<h3 id="72">7.2 产品性能参数<a class="headerlink" href="#72" title="Permanent link">&para;</a></h3>
+<h4 id="721">7.2.1 加解密吞吐率<a class="headerlink" href="#721" title="Permanent link">&para;</a></h4>
+<p>加解密吞吐率是指分别在 64 字节以太帧长和 1428 字节(IPv6 是 1408 字节)以太帧长时,IPSec VPN 产品在丢包率为 0 的条件下内网口上达到的双向数据最大流量。产品应满足用户网络环境对网络数据加解密吞吐性能的要求。</p>
+<h4 id="722">7.2.2 加解密时延<a class="headerlink" href="#722" title="Permanent link">&para;</a></h4>
+<p>加解密时延是指分别在 64 字节以太帧长和 1428 字节(IPv6 是 1408 字节)以太帧长时,IPSec VPN 产品在丢包率为 0 的条件下,一个明文数据流经加密变为密文,再由密文解密还原为明文所消耗的平均时间。产品应满足用户网络环境对网络数据加解密时延性能的要求。</p>
+<h4 id="723">7.2.3 加解密丢包率<a class="headerlink" href="#723" title="Permanent link">&para;</a></h4>
+<p>加解密丢包率是指分别在 64 字节以太帧长和 1428 字节(IPv6 是 1408 字节)以太帧长时,在 IPSec VPN 产品内网口处于线速情况下,单位时间内错误或丢失的数据包占总发数据包数量的百分比。产品应满足用户网络环境对网络数据加解密丢包率性能的要求。</p>
+<h4 id="724">7.2.4 每秒新建连接数<a class="headerlink" href="#724" title="Permanent link">&para;</a></h4>
+<p>每秒新建连接数是指 IPSec VPN 产品在 1s 的时间单位内能够建立隧道数目的最大值。产品应满足用户网络环境对每秒新建连接数性能的要求。</p>
+<h3 id="73">7.3 安全管理要求<a class="headerlink" href="#73" title="Permanent link">&para;</a></h3>
+<h4 id="731">7.3.1 密钥管理<a class="headerlink" href="#731" title="Permanent link">&para;</a></h4>
+<h5 id="7311">7.3.1.1 设备密钥<a class="headerlink" href="#7311" title="Permanent link">&para;</a></h5>
+<p>设备密钥是非对称密钥,包括签名密钥对和加密密钥对。</p>
+<p>签名密钥对由 IPSec VPN 产品自身产生,其公钥应能被导出,由外部认证机构签发签名证书。</p>
+<p>加密密钥对由外部密钥管理机构产生并由外部认证机构签发加密证书。加密密钥对的私钥保护方法见 GB/T 25056。</p>
+<p>签名证书、加密证书和加密密钥对的私钥应能被导入 IPSec VPN 产品中。</p>
+<p>在 IPSec VPN 产品中,设备密钥的私钥应有安全保护措施。</p>
+<p>设备密钥应按设定的安全策略进行更新。</p>
+<p>设备密钥可以安全形式进行备份,并在需要时能够恢复。</p>
+<h5 id="7312">7.3.1.2 工作密钥<a class="headerlink" href="#7312" title="Permanent link">&para;</a></h5>
+<p>工作密钥在密钥交换的第一阶段产生,产生后应保存在易失性存储器中,达到其更新条件后应立即更换,在连接断开、设备断电时应销毁。</p>
+<h5 id="7313">7.3.1.3 会话密钥<a class="headerlink" href="#7313" title="Permanent link">&para;</a></h5>
+<p>会话密钥在密钥交换的第二阶段产生,产生后应保存在易失性存储器中,达到其更新条件后应立即更换,在连接断开、设备断电时应销毁。</p>
+<h4 id="732">7.3.2 数据管理<a class="headerlink" href="#732" title="Permanent link">&para;</a></h4>
+<h5 id="7321">7.3.2.1 配置数据管理<a class="headerlink" href="#7321" title="Permanent link">&para;</a></h5>
+<p>所有的配置数据应保证其在设备中的完整性、可靠性。应有管理界面对配置数据进行配置和管理,管理员进入管理界面应通过身份鉴别。</p>
+<h5 id="7322">7.3.2.2 日志管理<a class="headerlink" href="#7322" title="Permanent link">&para;</a></h5>
+<p>IPSec VPN 产品应提供日志功能,日志可被查看、导出。</p>
+<p>日志内容包括:</p>
+<ol>
+<li>操作行为,包括登录认证、参数配置、策略配置、密钥管理等操作。</li>
+<li>安全事件,安全联盟的协商成功、协商失败、过期等事件。</li>
+<li>异常事件,解密失败、完整性校验失败等异常事件的统计。</li>
+</ol>
+<h4 id="733">7.3.3 管理员角色管理<a class="headerlink" href="#733" title="Permanent link">&para;</a></h4>
+<p>IPSec VPN 产品应设置管理员,进行设备参数配置、策略配置、设备密钥的生成、导入、备份和恢复等操作。管理员应持有表征用户身份(如证书、公私钥对等)信息的硬件装置,与登录口令相结合登录系统,进行管理操作前应通过身份鉴别。</p>
+<p>登录口令长度应不小于 8 个字符。登录失败重试次数不应超过 8 次。</p>
+<h4 id="734">7.3.4 设备管理<a class="headerlink" href="#734" title="Permanent link">&para;</a></h4>
+<h5 id="7341">7.3.4.1 硬件安全<a class="headerlink" href="#7341" title="Permanent link">&para;</a></h5>
+<p>IPSec VPN 产品应提供安全措施,保证密码算法、密钥、关键数据的存储安全。</p>
+<p>所有密码运算应在独立的密码部件中进行。</p>
+<p>除必需的通信接口和管理接口以外,不提供任何可供调试、跟踪的外部接口。内部的调试、检测接口应在产品定型后封闭。</p>
+<h5 id="7342">7.3.4.2 软件安全<a class="headerlink" href="#7342" title="Permanent link">&para;</a></h5>
+<p>所有的安全协议及管理软件应自主实现。</p>
+<p>操作系统应进行安全加固,裁减一切不需要的模块,关闭所有不需要的端口和服务。</p>
+<p>任何操作指令及其任意组合,不能泄露密钥和敏感信息。</p>
+<h5 id="7343">7.3.4.3 设备初始化<a class="headerlink" href="#7343" title="Permanent link">&para;</a></h5>
+<p>IPSec VPN 产品的初始化,除必须由厂商进行的操作外,参数的配置、安全策略的配置、密钥的生成和管理、管理员的产生等均应由用户完成。</p>
+<h5 id="7344">7.3.4.4 注册和监控<a class="headerlink" href="#7344" title="Permanent link">&para;</a></h5>
+<p>IPSec VPN 产品可具有向管理中心进行注册的功能,同时接受管理中心对其运行状态的实时监控管理。</p>
+<p>与管理中心的通信应采用加密通道和身份鉴别等安全措施。</p>
+<h5 id="7345">7.3.4.5 设备自检<a class="headerlink" href="#7345" title="Permanent link">&para;</a></h5>
+<p>应对密码运算部件等关键部件进行正确性检查。</p>
+<p>应对存储的密钥等敏感信息进行完整性检查。</p>
+<p>在检查不通过时应报警并停止工作。</p>
+<h5 id="7346">7.3.4.6 设备物理安全防护<a class="headerlink" href="#7346" title="Permanent link">&para;</a></h5>
+<p>在工艺设计、硬件配置等方面要采取相应的保护措施,保证设备基本的物理安全防护功能。</p>
+<h2 id="8-ipsec-vpn">8 IPSec VPN 产品检测<a class="headerlink" href="#8-ipsec-vpn" title="Permanent link">&para;</a></h2>
+<h3 id="81">8.1 产品功能检测<a class="headerlink" href="#81" title="Permanent link">&para;</a></h3>
+<h4 id="811">8.1.1 随机数功能<a class="headerlink" href="#811" title="Permanent link">&para;</a></h4>
+<p>按照 GB/T 32915 的要求提取样本,并按照该标准的相关要求进行检测,检测结果应合格。</p>
+<h4 id="812">8.1.2 密码算法<a class="headerlink" href="#812" title="Permanent link">&para;</a></h4>
+<p>测试设备在出厂状态下,建立一条 IPSec 配置,查看其密码套件配置选项,默认使用的算法应当为国密算法。</p>
+<h4 id="813">8.1.3 工作模式<a class="headerlink" href="#813" title="Permanent link">&para;</a></h4>
+<p>将测试设备与被测设备均设置为隧道模式,应能成功完成密钥交换,建立 IPSec 隧道进行通信。</p>
+<p>被测设备支持传输模式时,将测试设备与被测设备均设置为传输模式,应能成功完成密钥交换,进行通信。</p>
+<p>将测试设备与被测设备一方设置为隧道模式,另一方设置为传输模式,密钥交换应失败,无法建立 IPSec 隧道进行通信。</p>
+<h4 id="814">8.1.4 密钥交换<a class="headerlink" href="#814" title="Permanent link">&para;</a></h4>
+<p>密钥交换的检测按 8.1.3 的方法进行。对密钥交换过程进行网络数据截获,查看其过程应符合 6.1 的要求,应能正确进行加解密通信。该项测试通过,可以间接证明设备采用的对称密码算法、非对称密码算法和密码杂凑算法的实现正确性。</p>
+<h4 id="815">8.1.5 安全报文封装协议<a class="headerlink" href="#815" title="Permanent link">&para;</a></h4>
+<p>将测试设备与被测设备的安全报文封装协议均配置为 ESP 协议,对通信的报文进行网络数据截获,查看其封装格式应符合 6.2 的要求,应能正确进行加解密通信。</p>
+<p>将测试设备与被测设备的安全报文封装协议均配置为 AH 协议嵌套 ESP 协议,对通信的报文进行网络数据截获,查看其封装格式应符合 6.2 的要求,应能正确进行加解密通信。</p>
+<h4 id="816-nat">8.1.6 NAT 穿越<a class="headerlink" href="#816-nat" title="Permanent link">&para;</a></h4>
+<p>将待检测设备放在 NAT 下,与检测中心设备进行隧道测试,建立 ESP 协议的隧道模式的 IPSec VPN,测其功能是否完成,该项检测是必备检测。</p>
+<p>按 6.2.3 的方法进行密钥交换。对密钥交换过程进行网络数据截获,查看其过程应符合 7.1.4 的要求,应能正确进行加解密通信;对加密通信的报文进行网络数据截获,查看其封装格式应符合 7.1.5 的要求。</p>
+<h4 id="817">8.1.7 鉴别方式<a class="headerlink" href="#817" title="Permanent link">&para;</a></h4>
+<p>按产品提供的鉴别方式,按 7.1.4 的方法进行密钥交换,应能成功完成协商过程,建立 IPSec 隧道进行通信。产品应支持基于数字证书进行鉴别的方式。</p>
+<h4 id="818-ip">8.1.8 IP 协议版本支持<a class="headerlink" href="#818-ip" title="Permanent link">&para;</a></h4>
+<p>在 IPv4 或者 IPv6 的环境下,按 7.1.4 的方法进行密钥交换,应能成功完成协商过程,建立 IPSec 隧道进行通信。</p>
+<h4 id="819">8.1.9 抗重放攻击<a class="headerlink" href="#819" title="Permanent link">&para;</a></h4>
+<p>利用测试设备或网络报文截获工具重放报文传输阶段的安全报文,在被测设备的内网口应不能检测到重放的数据报文。</p>
+<h4 id="8110">8.1.10 密钥更新<a class="headerlink" href="#8110" title="Permanent link">&para;</a></h4>
+<p>在被测设备上分别设定工作密钥和会话密钥的更新周期,当满足更新条件时,使用网络报文截获工具应能分别看到相应的第一阶段和第二阶段的密钥的协商过程。</p>
+<p>如果设备具有根据流量更新密钥的功能,在被测设备上设定会话密钥的流量更新条件,当满足更新条件时,使用网络报文截获工具应能看到第二阶段的密钥的协商过程。</p>
+<h3 id="82">8.2 产品性能检测<a class="headerlink" href="#82" title="Permanent link">&para;</a></h3>
+<h4 id="821">8.2.1 加解密吞吐率<a class="headerlink" href="#821" title="Permanent link">&para;</a></h4>
+<p>按 7.2.1 的要求进行测试,记录测试结果。</p>
+<h4 id="822">8.2.2 加解密时延<a class="headerlink" href="#822" title="Permanent link">&para;</a></h4>
+<p>按 7.2.2 的要求进行测试,记录测试结果。</p>
+<h4 id="823">8.2.3 加解密丢包率<a class="headerlink" href="#823" title="Permanent link">&para;</a></h4>
+<p>按 7.2.3 的要求进行测试,记录测试结果。</p>
+<h4 id="824">8.2.4 每秒新建连接数<a class="headerlink" href="#824" title="Permanent link">&para;</a></h4>
+<p>按 7.2.4 的要求进行测试,统计 1min 时间内建立的 IPSec 隧道数,得到每秒新建连接数,并记录结果。</p>
+<h3 id="83">8.3 安全管理检测<a class="headerlink" href="#83" title="Permanent link">&para;</a></h3>
+<h4 id="831">8.3.1 密钥管理<a class="headerlink" href="#831" title="Permanent link">&para;</a></h4>
+<p>在被测设备的管理界面上进行设备密钥的产生或导入、备份和恢复以及更新操作。应符合 7.3.1.1 的要求。</p>
+<h4 id="832">8.3.2 数据管理<a class="headerlink" href="#832" title="Permanent link">&para;</a></h4>
+<h5 id="8321">8.3.2.1 配置数据管理<a class="headerlink" href="#8321" title="Permanent link">&para;</a></h5>
+<p>通过管理界面对配置数据进行配置和管理,结果应符合 7.3.2.1 的要求。</p>
+<h5 id="8322">8.3.2.2 日志管理<a class="headerlink" href="#8322" title="Permanent link">&para;</a></h5>
+<p>查看并导出日志记录,结果应符合 7.3.2.2 的要求。</p>
+<h4 id="833">8.3.3 管理员角色管理<a class="headerlink" href="#833" title="Permanent link">&para;</a></h4>
+<p>用非法的身份或错误的口令登录,系统应拒绝;当连续重试次数到达系统设定的限制值时系统应锁定。</p>
+<p>用合法的身份和正确口令登录,应能进入管理界面,进行相应的管理操作。</p>
+<h4 id="834">8.3.4 设备管理<a class="headerlink" href="#834" title="Permanent link">&para;</a></h4>
+<h5 id="8341">8.3.4.1 硬件安全<a class="headerlink" href="#8341" title="Permanent link">&para;</a></h5>
+<p>审查厂商提供的设计文档和厂商提交的产品安全性承诺,应符合 7.3.4.1 的要求。</p>
+<h5 id="8342">8.3.4.2 软件安全<a class="headerlink" href="#8342" title="Permanent link">&para;</a></h5>
+<p>使用扫描工具探测系统的端口和服务,并审查厂商提供的设计文档和厂商提交的产品安全性承诺,应符合 7.3.4.2 的要求。</p>
+<h5 id="8343">8.3.4.3 设备初始化<a class="headerlink" href="#8343" title="Permanent link">&para;</a></h5>
+<p>对设备进行初始化操作,结果应符合 7.3.4.3 的要求。</p>
+<h5 id="8344">8.3.4.4 注册和监控<a class="headerlink" href="#8344" title="Permanent link">&para;</a></h5>
+<p>当系统有管理中心时,进行设备的注册、状态监控等管理操作。结果应符合 7.3.4.4 的要求。</p>
+<h5 id="8345">8.3.4.5 设备自检<a class="headerlink" href="#8345" title="Permanent link">&para;</a></h5>
+<p>对设备进行自检操作,结果应符合 7.3.4.5 的要求。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate":null,"base":"../../../..","features":["navigation.tabs","navigation.tabs.sticky","navigation.indexes","search.highlight","search.suggest","content.code.copy"],"search":"../../../../assets/javascripts/workers/search.0ff0ccea966a6bf2.min.js","tags":null,"translations":{"clipboard.copied":"已复制","clipboard.copy":"复制","search.result.more.one":"在该页上还有 1 个符合条件的结果","search.result.more.other":"在该页上还有 # 个符合条件的结果","search.result.none":"没有找到符合条件的结果","search.result.one":"找到 1 个符合条件的结果","search.result.other":"# 个符合条件的结果","search.result.placeholder":"键入以开始搜索","search.result.term.missing":"缺少","select.version":"选择当前版本"},"version":null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.c21346df.min.js"></script>
+      
+        <script src="../../../../assets/vendor/katex/katex.min.js"></script>
+      
+        <script src="../../../../assets/javascripts/blue-topaz-maple.js"></script>
+      
+        <script src="../../../../assets/javascripts/page-navigation.js"></script>
+      
+        <script src="../../../../assets/javascripts/page-search.js"></script>
+      
+        <script src="../../../../assets/javascripts/search-tables.js"></script>
+      
+        <script src="../../../../assets/javascripts/search-notice.js"></script>
+      
+    
+  </body>
+</html>

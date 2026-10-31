@@ -1,0 +1,2470 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://loora1n.github.io/GM-crypto-assessment-wiki/protocol/CSSH/GMT0129-2023/GMT0129-2023/">
+      
+      
+        <link rel="prev" href="../../../">
+      
+      
+        <link rel="next" href="../../../IPSEC/GBT36968-2018/GBT36968-2018/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+    
+    
+      
+        <title>CSSH协议 - 密评标准知识库</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+        <script src="../../../../assets/vendor/iframe-worker/shim.js"></script>
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/vendor/katex/katex.min.css">
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/blue-topaz-maple.css">
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/page-search.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#gmt0129-2023-ssh" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../../.." title="密评标准知识库" class="md-header__button md-logo" aria-label="密评标准知识库" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            密评标准知识库
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              CSSH协议
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="切换到深色主题"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换到深色主题" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="切换到浅色主题"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换到浅色主题" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../maintenance/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  使用手册
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../algorithm/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  密码算法
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  密码协议
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../product/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  密码产品
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../assessment/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  密码测评
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../standard/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  国标与行标
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../notes/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  个人笔记
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+  
+  
+  
+    
+  
+  <aside class="md-sidebar md-sidebar--secondary topaz-toc" data-md-component="sidebar" data-md-type="toc" aria-label="文章目录">
+    <div class="md-sidebar__scrollwrap">
+      <div class="md-sidebar__inner">
+        <nav class="md-nav md-nav--secondary" aria-label="文章标题目录">
+          <div class="md-nav__title topaz-toc__title">
+            文章目录
+            <label class="topaz-toc__close" for="__drawer" title="收起文章目录">收起 ×</label>
+          </div>
+          
+            <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+              
+                <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 范围
+      
+    </span>
+  </a>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 规范性引用文件
+      
+    </span>
+  </a>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 术语和定义
+      
+    </span>
+  </a>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4 缩略语
+      
+    </span>
+  </a>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5 协议框架
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5 协议框架">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 协议概述
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 传输层协议
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 鉴别协议
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 连接协议
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6 密码算法和密钥种类
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6 密码算法和密钥种类">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 密码算法
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.1 密码算法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#611" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1.1 非对称密码算法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#612" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1.2 对称密码算法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#613" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1.3 密码杂凑算法
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 密钥种类
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.2 密钥种类">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#621" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2.1 服务端密钥
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#622" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2.2 客户端密钥
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#623" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2.3 传输层会话密钥
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7 数据类型定义
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7 数据类型定义">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 算法标识
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 基本数据类型
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8 传输层协议
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8 传输层协议">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 协议概述
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 协议流程
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3 协议版本
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#84" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.4 数据包
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8.4 数据包">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#841" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.4.1 数据包格式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#842" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.4.2 最大数据包长度
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#843" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.4.3 数据压缩
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#844" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.4.4 数据加密
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#845" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.4.5 数据完整性
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#846" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.4.6 公钥与数字证书格式
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#85" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.5 密钥协商
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8.5 密钥协商">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#851" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.5.1 密钥协商过程
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#852" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.5.2 密钥协商数据包
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#853" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.5.3 密钥协商计算
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#854" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.5.4 密钥交付
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#855" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.5.5 密钥更新
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#86" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.6 服务请求
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#87" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.7 断开连接
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9 鉴别协议
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9 鉴别协议">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 协议概述
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 协议流程
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3 数据包
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.3 数据包">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#931" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3.1 鉴别请求消息
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#932" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3.2 鉴别挑战消息
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#933" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3.3 鉴别拒绝消息
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#934" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3.4 鉴别成功消息
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#935" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3.5 服务端提示消息
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#94" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.4 基于口令的鉴别方法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#95" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.5 基于非对称密钥的鉴别方法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#96" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.6 基于数字证书的鉴别方法
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10 连接协议
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10 连接协议">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1 协议概述
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2 连接信道
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#103" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3 数据包
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10.3 数据包">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1031" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3.1 新建信道
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1032" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3.2 数据传输
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1033" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3.3 关闭信道
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        参考文献
+      
+    </span>
+  </a>
+  
+</li>
+              
+            </ul>
+          
+        </nav>
+      </div>
+    </div>
+  </aside>
+
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="gmt0129-2023-ssh">GMT0129-2023 国密SSH密码协议规范<a class="headerlink" href="#gmt0129-2023-ssh" title="Permanent link">&para;</a></h1>
+<h2 id="1">1 范围<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<p>本文件规定了 SSH 的安全交互密码协议，规定了交互通道的加密传输协议、鉴别协议与连接协议，规定了密码算法在协议中的使用方法。</p>
+<p>本文件适用于 SSH 服务端和 SSH 客户端产品的研发和检测。</p>
+<h2 id="2">2 规范性引用文件<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<p>下列文件中的内容通过文中的规范性引用而构成本文件必不可少的条款。其中，注日期的引用文件，仅该日期对应的版本适用于本文件；不注日期的引用文件，其最新版本（包括所有的修改单）适用于本文件。</p>
+<p>GB/T 15852.1　信息技术　安全技术　消息鉴别码　第 1 部分：采用分组密码的机制</p>
+<p>GB/T 15852.2　信息技术　安全技术　消息鉴别码　第 2 部分：采用专用杂凑函数的机制</p>
+<p>GB/T 33560　信息安全技术 密码应用标识规范</p>
+<p>GB/T 35275　信息安全技术 SM2 密码算法加密签名消息语法规范</p>
+<p>GB/T 35276　信息安全技术 SM2 密码算法使用规范</p>
+<p>GM/T 0015　基于 SM2 密码算法的数字证书格式规范</p>
+<p>GM/Z 4001　密码术语</p>
+<h2 id="3">3 术语和定义<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<p>GM/Z 4001 界定的术语和定义适用于本文件。</p>
+<h2 id="4">4 缩略语<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<p>下列缩略语适用于本文件。</p>
+<p>CR：回车（Carriage-Return）</p>
+<p>LF：换行（Line-Feed）</p>
+<p>SP：空格（Space）</p>
+<p>SSH：安全交互（Secure Shell）</p>
+<h2 id="5">5 协议框架<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
+<h3 id="51">5.1 协议概述<a class="headerlink" href="#51" title="Permanent link">&para;</a></h3>
+<p>SSH 密码协议是由传输层协议、鉴别协议和连接协议组成的协议族，用于在不安全的网络上进行安全远程登录和安全网络服务。传输层协议、鉴别协议也可和其他服务共同组成 sftp、scp 等安全应用服务。</p>
+<p>SSH 密码协议的建立过程中，首先由传输层协议建立安全的通信信道；然后在此安全通信信道上由鉴别协议鉴别客户端和服务端的身份；最后在鉴别完成后，由连接协议在安全通信信道上建立对应的 SSH 服务。</p>
+<h3 id="52">5.2 传输层协议<a class="headerlink" href="#52" title="Permanent link">&para;</a></h3>
+<p>传输层协议提供服务端鉴别、机密性和完整性。传输层协议可运行在一个 TCP 连接上，也可被用在其他可靠的数据流上。</p>
+<h3 id="53">5.3 鉴别协议<a class="headerlink" href="#53" title="Permanent link">&para;</a></h3>
+<p>鉴别协议用于服务端鉴别客户端用户身份。鉴别协议运行在传输层协议上。</p>
+<h3 id="54">5.4 连接协议<a class="headerlink" href="#54" title="Permanent link">&para;</a></h3>
+<p>连接协议用于将加密通道复用为若干逻辑信道。连接协议运行在鉴别协议上。连接协议可被用于提供各种网络服务，包括交互环境（shell）、端口转发和 X11 连接。</p>
+<h2 id="6">6 密码算法和密钥种类<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
+<h3 id="61">6.1 密码算法<a class="headerlink" href="#61" title="Permanent link">&para;</a></h3>
+<h4 id="611">6.1.1 非对称密码算法<a class="headerlink" href="#611" title="Permanent link">&para;</a></h4>
+<p>使用的非对称密码算法为 SM2 算法，用于身份鉴别、密钥交换。</p>
+<h4 id="612">6.1.2 对称密码算法<a class="headerlink" href="#612" title="Permanent link">&para;</a></h4>
+<p>使用的对称密码算法为分组密码算法 SM4，用于密钥交换数据的加密保护和报文数据的加密保护。</p>
+<h4 id="613">6.1.3 密码杂凑算法<a class="headerlink" href="#613" title="Permanent link">&para;</a></h4>
+<p>使用的密码杂凑算法为 SM3 算法，用于完整性校验。</p>
+<h3 id="62">6.2 密钥种类<a class="headerlink" href="#62" title="Permanent link">&para;</a></h3>
+<h4 id="621">6.2.1 服务端密钥<a class="headerlink" href="#621" title="Permanent link">&para;</a></h4>
+<p>服务端密钥为非对称密码算法的密钥对，包括签名密钥对和加密密钥对。其中签名密钥对由服务端自身密码模块产生。</p>
+<p>服务端公钥可使用数字证书表示。使用数字证书时，加密密钥对应通过 CA 认证中心向密钥管理中心（KMC）申请。用于在密钥交换过程中鉴别服务端身份。</p>
+<h4 id="622">6.2.2 客户端密钥<a class="headerlink" href="#622" title="Permanent link">&para;</a></h4>
+<p>客户端密钥为非对称密码算法的密钥对，包括签名密钥对和加密密钥对。其中签名密钥对由客户端自身密码模块产生。</p>
+<p>客户端公钥可使用数字证书表示。使用数字证书时，加密密钥对应通过 CA 认证中心向 KMC 申请。用于在鉴别过程中鉴别客户端身份。</p>
+<h4 id="623">6.2.3 传输层会话密钥<a class="headerlink" href="#623" title="Permanent link">&para;</a></h4>
+<p>传输层会话密钥为对称密码算法密钥。密钥根据传输层协议由服务端和客户端共同生成。</p>
+<h2 id="7">7 数据类型定义<a class="headerlink" href="#7" title="Permanent link">&para;</a></h2>
+<h3 id="71">7.1 算法标识<a class="headerlink" href="#71" title="Permanent link">&para;</a></h3>
+<p>本文件中使用的算法标识应符合 GB/T 33560 的规定。</p>
+<h3 id="72">7.2 基本数据类型<a class="headerlink" href="#72" title="Permanent link">&para;</a></h3>
+<p>本文件中的 <code>uint32</code> 和 <code>uint64</code> 均为高位字节在前（Big-Endian）方式存储和交换。基本数据类型定义见表 1。</p>
+<p><strong>表 1 基本数据类型</strong></p>
+<table>
+<thead>
+<tr>
+<th>类型名称</th>
+<th>描述</th>
+<th>定义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>int8</code></td>
+<td>有符号 8 位整数</td>
+<td>1　个字节</td>
+</tr>
+<tr>
+<td><code>uint8</code></td>
+<td>无符号 8 位整数</td>
+<td>1　个字节</td>
+</tr>
+<tr>
+<td><code>uint32</code></td>
+<td>无符号 32 位整数</td>
+<td>4　个字节</td>
+</tr>
+<tr>
+<td><code>uint64</code></td>
+<td>无符号 64 位整数</td>
+<td>8　个字节</td>
+</tr>
+<tr>
+<td><code>bool</code></td>
+<td>布尔类型，取值为 <code>TRUE</code> 或 <code>FALSE</code></td>
+<td>1　为 <code>TRUE</code>，0 为 <code>FALSE</code></td>
+</tr>
+<tr>
+<td><code>byte</code></td>
+<td>字节类型，无符号 8 位整数</td>
+<td>1　个字节</td>
+</tr>
+<tr>
+<td><code>string</code></td>
+<td>任意长度的二进制字符串。前 4 个字节为 <code>uint32</code>，表示字符串的长 度，当为 0 时表示空字符串</td>
+<td>字节串</td>
+</tr>
+<tr>
+<td><code>mpint</code></td>
+<td>表示二进制补码格式的多精度整数，存储为一个字符串</td>
+<td>字节串</td>
+</tr>
+<tr>
+<td><code>name-list</code></td>
+<td>一个包含以逗号分隔的名称列表的字符串。字符编码为 ASCII</td>
+<td>字节串</td>
+</tr>
+</tbody>
+</table>
+<h2 id="8">8 传输层协议<a class="headerlink" href="#8" title="Permanent link">&para;</a></h2>
+<h3 id="81">8.1 协议概述<a class="headerlink" href="#81" title="Permanent link">&para;</a></h3>
+<p>传输层协议运行在 TCP/IP 协议之上，或者其他可靠的数据流之上。协议可被用作多个安全网络服务的基础。传输层协议提供加密、服务端鉴别和完整性保护，也可提供压缩。传输层的密钥交换方法、密码算法、消息鉴别算法和密码杂凑算法都通过协商完成。</p>
+<p>本协议的鉴别是基于服务端的，不执行客户端用户鉴别，用户的鉴别由鉴别协议执行。</p>
+<p>传输层的连接由客户端发起。</p>
+<p>传输层使用的消息编号为：</p>
+<ul>
+<li>
+<p><code>SSH_MSG_DISCONNECT</code> 1；</p>
+</li>
+<li>
+<p>SSH_MSG_SERVICE_REQUEST 5；</p>
+</li>
+<li>
+<p>SSH_MSG_SERVICE_ACCEPT 6；</p>
+</li>
+<li>
+<p><code>SSH_MSG_KEXINIT</code> 20；</p>
+</li>
+<li>
+<p>SSH_MSG_NEWKEYS 21；</p>
+</li>
+<li>
+<p>SSH_MSG_KEX_REQUEST 200；</p>
+</li>
+<li>
+<p>SSH_MSG_KEX_REPLY 201；</p>
+</li>
+<li>
+<p>SSH_MSG_KEX 202。</p>
+</li>
+</ul>
+<h3 id="82">8.2 协议流程<a class="headerlink" href="#82" title="Permanent link">&para;</a></h3>
+<p>传输层协议的协议流程见图 1。</p>
+<p><img alt="图 1 传输层协议流程" src="../images/figure_01.png" /></p>
+<p><strong>图 1 传输层协议流程</strong></p>
+<h3 id="83">8.3 协议版本<a class="headerlink" href="#83" title="Permanent link">&para;</a></h3>
+<p>本文件定义的传输层协议的版本号为 1.0。</p>
+<p>当客户端-服务端的网络连接建立后，双方都应发送一个版本标识字符串。版本标识字符串的格式为：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>CSSH-&lt;protoversion&gt;-&lt;softwareversion&gt; [SP&lt;comments&gt;]CR LF
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>示例：“CSSH-1.0-MySSH3.3 This is comment CR LF”。
+</code></pre></div>
+<p>其中，CSSH 为本文件的简称，<code>&lt;protoversion&gt;</code>为协议的版本号，由于本协议的版本号为 1.0，因此在此处为“1.0”。 <code>&lt;softwareversion&gt;</code> 为软件的名称和版本号 ，由实现者定义 。 <code>&lt;protoversion&gt;</code> 和 <code>&lt;softwareversion&gt;</code>不可含有 SP 和减号（-）。<code>&lt;comments&gt;</code>字段是可选的，当存在<code>&lt;comments&gt;</code>字段时，<code>&lt;softwareversion&gt;</code>和<code>&lt;comments&gt;</code>字段之间需要用 SP（Space，空格）分割。在版本标识字符串的最后应以 CR LF 结束。版本标识字符串的字符集为 ASCII，最大长度为 255 字节，包括 CR 和 LF。</p>
+<p>服务端可在发送版本标识字符串之前发送其他数据行，用于在断开前显示错误信息。每个数据行字符串的字符集为 UTF-8，应使用 CR LF 结束。客户端应能够处理这些数据行，可忽略或者显示给用户。</p>
+<p>密钥交换在发送版本标识字符串后立即开始。</p>
+<h3 id="84">8.4 数据包<a class="headerlink" href="#84" title="Permanent link">&para;</a></h3>
+<h4 id="841">8.4.1 数据包格式<a class="headerlink" href="#841" title="Permanent link">&para;</a></h4>
+<p>在客户端和服务端发送版本表示字符串之后的所有数据，使用表 2 给出的数据包格式。</p>
+<p><strong>表 2 数据包格式</strong></p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>数据类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>packet_length</code></td>
+<td><code>uint32</code></td>
+</tr>
+<tr>
+<td><code>padding_length</code></td>
+<td><code>byte</code></td>
+</tr>
+<tr>
+<td><code>payload</code></td>
+<td><code>byte</code>[<span class="arithmatex">\(\mathit{n1}\)</span>]</td>
+</tr>
+<tr>
+<td><code>padding</code></td>
+<td><code>byte</code>[<span class="arithmatex">\(\mathit{n2}\)</span>]</td>
+</tr>
+<tr>
+<td><code>mac</code></td>
+<td><code>byte</code>[<span class="arithmatex">\(m\)</span>]</td>
+</tr>
+</tbody>
+</table>
+<p>其中：</p>
+<p><code>packet_length</code> 为 <code>uint32</code> 类型，表示以字节为单位的数据包长度。数据包长度不包括 <code>packet_length</code> 本身和 <code>mac</code>。</p>
+<p><code>padding_length</code> 为 <code>byte</code> 类型，表示以字节为单位的 <code>padding</code> 的长度。</p>
+<p><code>payload</code> 为数据包中有效载荷，<span class="arithmatex">\(\mathit{n1}\)</span> 为字节单位的长度，值为 <span class="arithmatex">\(\mathrm{packet\_length}-\mathrm{padding\_length}-1\)</span>。 如果已经协商了压缩，则该内容是压缩的。在密钥协商后的数据包中，该内容为加密数据。</p>
+<p><code>padding</code> 为任意长度的填充，使得 <span class="arithmatex">\(\mathrm{packet\_length}\mathbin{\Vert}\mathrm{padding\_length}\mathbin{\Vert}\mathrm{payload}\mathbin{\Vert}\mathrm{padding}\)</span> 的总长度是加密分组长度的倍数。<span class="arithmatex">\(\mathit{n2}\)</span> 是字节单位的长度，值为 <code>padding_length</code>。最少应有 4 字节的填充。填充应包含随机字节。填充的最大长度为 255 字节。本协议的对称加密算法使用 SM4 算法，加密分组长度为 16 字节。</p>
+<p><code>mac</code> 为消息鉴别码，<span class="arithmatex">\(m\)</span> 是字节单位的长度。当使用的工作模式为可鉴别工作模式时，<code>mac</code> 字段可省略。</p>
+<p>当双方协商的 <code>mac</code> 算法为“<code>none</code>”时，<code>mac</code> 字段忽略。</p>
+<h4 id="842">8.4.2 最大数据包长度<a class="headerlink" href="#842" title="Permanent link">&para;</a></h4>
+<p>客户端和服务端应能够处理含有 <span class="arithmatex">\(2^{16}\)</span> 字节或以下的非压缩有效载荷的数据包。</p>
+<h4 id="843">8.4.3 数据压缩<a class="headerlink" href="#843" title="Permanent link">&para;</a></h4>
+<p>如果协商了压缩，有效载荷将使用协商的算法压缩，<code>payload</code> 为压缩后的有效载荷。<code>packet_length</code> 和 <code>mac</code> 将根据压缩后的有效载荷计算产生。对数据包的加密在压缩之后进行。服务端和客户端使用的压缩算法可不一致。</p>
+<p>本文件定义的压缩算法见表 3。</p>
+<p><strong>表 3 数据压缩算法</strong></p>
+<table>
+  <tr>
+    <th>算法名称</th>
+    <th>描述</th>
+    <th>可选/必选</th>
+  </tr>
+  <tr>
+    <td><code>zlib</code></td>
+    <td>LZ77<sup>a</sup> 压缩</td>
+    <td>可选</td>
+  </tr>
+  <tr>
+    <td><code>none</code></td>
+    <td>无压缩</td>
+    <td>可选</td>
+  </tr>
+  <tr>
+    <td colspan="3"><sup>a</sup> Lempel-Ziv77 数据压缩算法。</td>
+  </tr>
+</table>
+
+<h4 id="844">8.4.4 数据加密<a class="headerlink" href="#844" title="Permanent link">&para;</a></h4>
+<p>在密钥交互中将协商出一种加密算法和一个会话密钥。当加密生效时，每个数据包的数据包长度 <code>packet_length</code>、填充长度 <code>padding_length</code>、有效载荷 <code>payload</code> 和填充 <code>padding</code> 应使用给定的算法加密。</p>
+<p>本文件定义的加密算法见表 4。</p>
+<p><strong>表 4 数据加密算法</strong></p>
+<table>
+<thead>
+<tr>
+<th>算法名称</th>
+<th>描述</th>
+<th>可选/必选</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SM4-CBC</code></td>
+<td>SM4　算法 CBC 工作模式</td>
+<td>必选</td>
+</tr>
+<tr>
+<td><code>SM4-CFB</code></td>
+<td>SM4　算法 CFB 工作模式</td>
+<td>可选</td>
+</tr>
+<tr>
+<td><code>SM4-CTR</code></td>
+<td>SM4　算法 CTR 工作模式</td>
+<td>可选</td>
+</tr>
+<tr>
+<td><code>SM4-OFB</code></td>
+<td>SM4　算法 OFB 工作模式</td>
+<td>可选</td>
+</tr>
+<tr>
+<td><code>SM4-CCM</code></td>
+<td>SM4　算法 CCM 工作模式，为可鉴别加密模式</td>
+<td>可选</td>
+</tr>
+<tr>
+<td><code>SM4-KW</code></td>
+<td>SM4　算法 Key Wrap 工作模式，为可鉴别加密模式</td>
+<td>可选</td>
+</tr>
+<tr>
+<td><code>SM4-GCM</code></td>
+<td>SM4　算法 GCM 工作模式，为可鉴别加密模式</td>
+<td>可选</td>
+</tr>
+</tbody>
+</table>
+<h4 id="845">8.4.5 数据完整性<a class="headerlink" href="#845" title="Permanent link">&para;</a></h4>
+<p>每个数据包包含一个从会话密钥、数据包序号和数据包内容计算出来的 <code>mac</code> 对数据完整性进行保护。<code>mac</code> 的计算方法为：</p>
+<div class="arithmatex">\[
+\mathit{mac}=\operatorname{MAC}\left(\text{会话密钥，}\text{数据包序号}\mathbin{\Vert}\text{原始数据}\right)
+\]</div>
+<p>原始数据是除 <code>mac</code> 之外的完整的数据包，数据包序号是一个 <code>uint32</code> 类型的数据。第一个数据的数据包序号为 0，在断开连接之前序号是递增的，到达 <code>uint32</code> 能够表示的最大值后重新从 0 开始。序号由客户端和服务端自行维护，不包含在数据包中。</p>
+<p><code>mac</code> 本身不进行加密。<code>mac</code> 的长度由所选的 MAC 算法决定。</p>
+<p>本文件定义的 MAC 算法见表 5。</p>
+<p><strong>表 5 数据完整性算法</strong></p>
+<table>
+<thead>
+<tr>
+<th>算法名称</th>
+<th>可选/必选</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CBC-MAC</code></td>
+<td>可选</td>
+</tr>
+<tr>
+<td><code>HMAC</code></td>
+<td>可选</td>
+</tr>
+<tr>
+<td><code>none</code></td>
+<td>可选</td>
+</tr>
+</tbody>
+</table>
+<p>当使用的工作模式非可鉴别工作模式 ，MAC 算法为 CBC - MAC 时 ，计算过程应符合 GB/T 15852.1 的规定。</p>
+<p>当使用的工作模式非可鉴别工作模式，MAC 算法为 <code>HMAC</code> 时，计算过程应符合 GB/T 15852.2 的规定。</p>
+<p>当使用可鉴别数据加密算法对数据加密时，MAC 算法可选择“<code>none</code>”，不使用 MAC 算法。</p>
+<h4 id="846">8.4.6 公钥与数字证书格式<a class="headerlink" href="#846" title="Permanent link">&para;</a></h4>
+<p>公钥的数据格式应符合 GB/T 35276 的规定，传输时使用 DER 编码。数字证书的数据格式应符合 GM/T 0015 的规定，传输时使用 DER 编码。数字证书未指明为签名证书或者加密证书时，均为签名证书和加密证书二者按顺序拼接。</p>
+<h3 id="85">8.5 密钥协商<a class="headerlink" href="#85" title="Permanent link">&para;</a></h3>
+<h4 id="851">8.5.1 密钥协商过程<a class="headerlink" href="#851" title="Permanent link">&para;</a></h4>
+<p>密钥协商规定生成用于加密和鉴别的会话密钥的方法，以及鉴别服务端的方法。</p>
+<p>在客户端和服务端发送完成版本标识字符串之后，立即进行密钥协商。</p>
+<p>双方发送支持的算法名称列表。名称列表中的第一个为首选算法。双方在列表中选择第一个与对方达成一致的算法作为密钥协商算法。</p>
+<p>在协商达成一致后，双方各自使用该算法生成会话密钥。并使用该会话密钥加密数据包，进行后续的交互操作。</p>
+<h4 id="852">8.5.2 密钥协商数据包<a class="headerlink" href="#852" title="Permanent link">&para;</a></h4>
+<p>密钥协商时，双方各自发送数据包格式见表 6。</p>
+<p><strong>表 6 数据包格式</strong></p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>数据类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SSH_MSG_KEXINIT</code></td>
+<td><code>byte</code></td>
+</tr>
+<tr>
+<td><code>cookie</code></td>
+<td><code>byte[16]</code></td>
+</tr>
+<tr>
+<td><code>kex_algorithms</code></td>
+<td><code>name-list</code></td>
+</tr>
+<tr>
+<td><code>server_host_key_algorithms</code></td>
+<td><code>name-list</code></td>
+</tr>
+<tr>
+<td><code>encryption_algorithms_client_to_server</code></td>
+<td><code>name-list</code></td>
+</tr>
+<tr>
+<td><code>encryption_algorithms_server_to_client</code></td>
+<td><code>name-list</code></td>
+</tr>
+<tr>
+<td><code>mac_algorithms_client_to_server</code></td>
+<td><code>name-list</code></td>
+</tr>
+<tr>
+<td><code>mac_algorithms_server_to_client</code></td>
+<td><code>name-list</code></td>
+</tr>
+<tr>
+<td><code>compression_algorithms_client_to_server</code></td>
+<td><code>name-list</code></td>
+</tr>
+<tr>
+<td><code>compression_algorithms_server_to_client</code></td>
+<td><code>name-list</code></td>
+</tr>
+<tr>
+<td><code>languages_client_to_server</code></td>
+<td><code>name-list</code></td>
+</tr>
+<tr>
+<td><code>languages_server_to_client</code></td>
+<td><code>name-list</code></td>
+</tr>
+<tr>
+<td><code>first_kex_packet_follows</code></td>
+<td><code>bool</code></td>
+</tr>
+<tr>
+<td>0</td>
+<td><code>uint32</code>（为将来保留）</td>
+</tr>
+</tbody>
+</table>
+<p><code>name-list</code> 是一个逗号分隔的算法名称列表，每一种支持的算法应按照优先顺序由高到低排列。</p>
+<p>其中：</p>
+<p><code>cookie</code> 是由发送方生成的随机数。作用是使任何一方都不可能对最终的密钥拥有完全的决定权。</p>
+<p><code>kex_algorithms</code> 为密钥协商算法。支持的密钥协商算法为：“sm2-sm3”。</p>
+<p><code>server_host_key_algorithms</code> 服务端发送的为服务端加密算法。客户端发送的为客户端支持的加密算法。固定为“sm2”。</p>
+<p>encryption_algorithms 为支持的对称加密算法列表。</p>
+<p>mac_algorithms 为支持的 <code>mac</code> 算法列表。</p>
+<p>compression_algorithms 为支持的压缩算法列表。</p>
+<p>languages 为使用的语言。除非需要语言标志，否则不应提供。</p>
+<p><code>first_kex_packet_follows</code> 表示是否有一个密钥协商数据包跟随。如果协商不一致，需要再次协商， 则该值为 <code>true</code>，否则为 <code>false</code>。</p>
+<p>在 <code>SSH_MSG_KEXINIT</code> 消息交换后，密钥协商算法开始执行。根据协商算法的规定，可能需要几个数据包交换。</p>
+<h4 id="853">8.5.3 密钥协商计算<a class="headerlink" href="#853" title="Permanent link">&para;</a></h4>
+<p>客户端-服务端密钥协商算法达成一致后，开始进行密钥协商计算。</p>
+<p>首先客户端发送消息：</p>
+<div class="arithmatex">\[
+\mathrm{SSH\_MSG\_KEX\_REQUEST}\mathbin{\Vert}\mathrm{random\text{-}client}
+\]</div>
+<p>其中 <code>random</code> 为 8 字节随机数。</p>
+<p>服务端响应如下：</p>
+<div class="arithmatex">\[
+\mathrm{SSH\_MSG\_KEX\_REPLY}\mathbin{\Vert}\mathrm{certificate}\mathbin{\Vert}\mathrm{random\text{-}server}\mathbin{\Vert}\mathrm{sign}
+\]</div>
+<p>其中 <code>certificate</code> 为 <code>string</code> 类型的服务端数字证书，<code>sign</code> 为 DER 编码的对 <span class="arithmatex">\(\mathrm{random\text{-}client}\mathbin{\Vert}\mathrm{random\text{-}server}\)</span> 的数字签名。</p>
+<p>协商会话密钥的密钥交换算法应符合 GB/T 35276 的要求。</p>
+<p>客户端在接收到服务端发送的 SSH_MSG_KEX_REPLY 并验证签名之后，产生 32 字节随机数作为密钥 <span class="arithmatex">\(K\)</span>。对 <span class="arithmatex">\(K\)</span> 使用服务端加密证书公钥对其进行加密得到 <span class="arithmatex">\(\operatorname{enc}(K)\)</span>。客户端发送消息：</p>
+<div class="arithmatex">\[
+\mathrm{SSH\_MSG\_KEX}\mathbin{\Vert}\operatorname{enc}(K)
+\]</div>
+<p>双方各自计算会话杂凑值 <span class="arithmatex">\(H\)</span>：</p>
+<div class="arithmatex">\[
+H=\operatorname{HASH}\left(\mathrm{random\text{-}client}\mathbin{\Vert}\mathrm{random\text{-}server}\mathbin{\Vert}\mathrm{certificate}\mathbin{\Vert}K\right)
+\]</div>
+<p>密钥协商产生两个结果：一个会话密钥 <span class="arithmatex">\(K\)</span> 和一个会话杂凑值 <span class="arithmatex">\(H\)</span>，分别用于加密和鉴别。第一次密钥协商的会话杂凑 <span class="arithmatex">\(H\)</span> 也被用于会话标识 <code>session_id</code>，用于标识一个会话连接。会话标识一旦建立，除非断开连接，不应改变。</p>
+<p>客户端到服务端的初始 <span class="arithmatex">\(\mathrm{IV}\)</span> 为：</p>
+<div class="arithmatex">\[
+\mathrm{IV}=\operatorname{HASH}\left(K\mathbin{\Vert}H\mathbin{\Vert}\text{“A”}\mathbin{\Vert}\mathrm{session\_id}\right)
+\]</div>
+<p>其中 <span class="arithmatex">\(K\)</span> 为 <code>mpint</code> 格式，“A”为 <code>byte</code> 格式，<code>session_id</code> 为原始数据。</p>
+<p>服务端到客户端的初始 <span class="arithmatex">\(\mathrm{IV}\)</span> 为：</p>
+<div class="arithmatex">\[
+\mathrm{IV}=\operatorname{HASH}\left(K\mathbin{\Vert}H\mathbin{\Vert}\text{“B”}\mathbin{\Vert}\mathrm{session\_id}\right)
+\]</div>
+<p>客户端到服务端的加密密钥为：</p>
+<div class="arithmatex">\[
+\mathit{Kc}=\operatorname{HASH}\left(K\mathbin{\Vert}H\mathbin{\Vert}\text{“C”}\mathbin{\Vert}\mathrm{session\_id}\right)
+\]</div>
+<p>服务端到客户端的加密密钥为：</p>
+<div class="arithmatex">\[
+\mathit{Ks}=\operatorname{HASH}\left(K\mathbin{\Vert}H\mathbin{\Vert}\text{“D”}\mathbin{\Vert}\mathrm{session\_id}\right)
+\]</div>
+<p>客户端到服务端的完整性密钥为：</p>
+<div class="arithmatex">\[
+\mathrm{Kmac\text{-}c}=\operatorname{HASH}\left(K\mathbin{\Vert}H\mathbin{\Vert}\text{“E”}\mathbin{\Vert}\mathrm{session\_id}\right)
+\]</div>
+<p>服务端到客户端的完整性密钥为：</p>
+<div class="arithmatex">\[
+\mathrm{Kmac\text{-}s}=\operatorname{HASH}\left(K\mathbin{\Vert}H\mathbin{\Vert}\text{“F”}\mathbin{\Vert}\mathrm{session\_id}\right)
+\]</div>
+<h4 id="854">8.5.4 密钥交付<a class="headerlink" href="#854" title="Permanent link">&para;</a></h4>
+<p>密钥协商在双方发送一个 SSH_MSG_NEWKEYS 消息后结束。该消息使用旧的密钥和算法发送。所有在该消息之后发送的消息应使用新的密钥和算法。</p>
+<h4 id="855">8.5.5 密钥更新<a class="headerlink" href="#855" title="Permanent link">&para;</a></h4>
+<p>除了正在进行密钥协商以外的时刻，发送一个 <code>SSH_MSG_KEXINIT</code> 数据包将开始密钥重新交换。当一方接收到 <code>SSH_MSG_KEXINIT</code> 消息后，应用自己的 <code>SSH_MSG_KEXINIT</code> 消息进行响应。</p>
+<p>密钥重新协商使用本消息之前使用的会话密钥和加密算法。加密算法、压缩算法和 MAC 算法在密钥重新协商完成之前不改变。除会话标识保留不变外，重新协商的处理与初次密钥协商过程一致。 可在重新协商中改变一些或者全部算法，包括加密、MAC 和压缩，也可改变服务端数字证书。所有密钥和初始化向量在协商时重新计算。压缩和加密的上下文被重置。</p>
+<p>推荐在传输 1 G 字节数据或连接 1 h（两者中较早到达的一个）后改变密钥。应在传输 100 G 字节数据或连接 24 h（两者中较早到达的一个）后改变密钥。在 SSH_MSG_NEWKEYS 数据包之后可继续发送应用数据。密钥交换不影响位于传输层之上的协议。</p>
+<h3 id="86">8.6 服务请求<a class="headerlink" href="#86" title="Permanent link">&para;</a></h3>
+<p>在密钥协商之后，客户端可请求一个服务。服务由其名称标识。请求数据包格式为：</p>
+<div class="arithmatex">\[
+\mathrm{SSH\_MSG\_SERVICE\_REQUEST}\mathbin{\Vert}\mathrm{service\_name}
+\]</div>
+<p>其中 <code>service_name</code> 为 <code>string</code> 类型的服务名称。</p>
+<p>服务端如果拒绝该服务请求，可发送 <code>SSH_MSG_DISCONNECT</code> 消息并且断开连接。</p>
+<p>服务端如果支持该服务并允许客户端使用，应发送响应数据包，格式为：</p>
+<div class="arithmatex">\[
+\mathrm{SSH\_MSG\_SERVICE\_ACCEPT}\mathbin{\Vert}\mathrm{service\_name}
+\]</div>
+<h3 id="87">8.7 断开连接<a class="headerlink" href="#87" title="Permanent link">&para;</a></h3>
+<p>在 SSH 通信中的任何阶段，客户端和服务端均可发送断开连接数据包通知对方断开当前连接。 请求数据包格式见表 7。</p>
+<p><strong>表 7 数据包格式</strong></p>
+<table>
+  <tr>
+    <th>名称</th>
+    <th>数据类型</th>
+  </tr>
+  <tr>
+    <td><code>SSH_MSG_DISCONNECT</code></td>
+    <td><code>byte</code></td>
+  </tr>
+  <tr>
+    <td><code>reason_code</code></td>
+    <td><code>uint32</code></td>
+  </tr>
+  <tr>
+    <td><code>description</code></td>
+    <td><code>string</code>，UTF-8 编码<sup>a</sup></td>
+  </tr>
+  <tr>
+    <td colspan="2"><sup>a</sup> 8-bit Unicode Transformation Format，一种可变长度字符编码。</td>
+  </tr>
+</table>
+
+<p><code>reason_code</code> 为断开原因代码。断开原因代码见表 8。</p>
+<p><code>description</code> 为原因描述。</p>
+<p><strong>表 8 断开原因</strong></p>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>服务端拒绝连接</td>
+</tr>
+<tr>
+<td>2</td>
+<td>错误的协议</td>
+</tr>
+<tr>
+<td>3</td>
+<td>密钥协商失败</td>
+</tr>
+<tr>
+<td>4</td>
+<td>保留</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>mac</code> 错误</td>
+</tr>
+<tr>
+<td>6</td>
+<td>压缩/解压缩错误</td>
+</tr>
+<tr>
+<td>7</td>
+<td>要求的服务不存在</td>
+</tr>
+<tr>
+<td>8</td>
+<td>协议版本不支持</td>
+</tr>
+<tr>
+<td>9</td>
+<td>密钥不存在</td>
+</tr>
+<tr>
+<td>10</td>
+<td>连接丢失</td>
+</tr>
+<tr>
+<td>11</td>
+<td>应用原因</td>
+</tr>
+<tr>
+<td>12</td>
+<td>已超出连接数</td>
+</tr>
+<tr>
+<td>13</td>
+<td>用户取消鉴别</td>
+</tr>
+<tr>
+<td>14</td>
+<td>鉴别方式不支持</td>
+</tr>
+<tr>
+<td>15</td>
+<td>错误的用户名</td>
+</tr>
+</tbody>
+</table>
+<h2 id="9">9 鉴别协议<a class="headerlink" href="#9" title="Permanent link">&para;</a></h2>
+<h3 id="91">9.1 协议概述<a class="headerlink" href="#91" title="Permanent link">&para;</a></h3>
+<p>鉴别协议是运行传输层协议之上的用户身份鉴别协议，由传输层协议提供完整性和机密性保护。</p>
+<p>本协议启动的时候从下层传输层获得会话标识（会话杂凑 <span class="arithmatex">\(H\)</span>）。</p>
+<p>服务端通过在任意时间告知客户端为继续交换信息可使用哪些鉴别方法来进行身份认证。鉴别方法的优先顺序为：基于数字证书的鉴别方法、基于非对称密钥的鉴别方法、基于口令的鉴别方法。客户端应按顺序尝试服务端列出的方法。</p>
+<p>服务端应对鉴别设置超时。如果客户端未能在设定时间内完成鉴别应断开连接。推荐的超时时间为 10 min，最长不超过 30 min。服务端应限制一个客户端在一个会话中尝试次数。当客户端连续鉴别失败超过 20 次时，应断开连接。</p>
+<p>鉴别协议的 <code>service_name</code> 为“ssh-userauth”</p>
+<p>鉴别协议使用的消息编号为：</p>
+<ul>
+<li>
+<p><code>SSH_MSG_USERAUTH_REQUEST</code> 50</p>
+</li>
+<li>
+<p><code>SSH_MSG_USERAUTH_FAILURE</code> 51</p>
+</li>
+<li>
+<p><code>SSH_MSG_USERAUTH_SUCCESS</code> 52</p>
+</li>
+<li>
+<p><code>SSH_MSG_USERAUTH_BANNER</code> 53</p>
+</li>
+<li>
+<p>SSH_MSG_USERAUTH_PK_OK 56</p>
+</li>
+<li>
+<p><code>SSH_MSG_USERAUTH_CHALLENGE</code> 210</p>
+</li>
+<li>
+<p><code>SSH_MSG_USERAUTH_RESPOND</code> 211</p>
+</li>
+</ul>
+<p>鉴别协议的流程为：</p>
+<p>1） 客户端发起鉴别请求消息；</p>
+<p>2） 服务端发送鉴别拒绝消息，或者鉴别挑战消息；</p>
+<p>3） 客户端发送鉴别响应消息；</p>
+<p>4） 服务端发送鉴别拒绝消息，或者鉴别成功消息。</p>
+<h3 id="92">9.2 协议流程<a class="headerlink" href="#92" title="Permanent link">&para;</a></h3>
+<p>鉴别协议的协议流程见图 2。</p>
+<p><img alt="图 2 鉴别协议协议流程" src="../images/figure_02.png" /></p>
+<p><strong>图 2 鉴别协议协议流程</strong></p>
+<h3 id="93">9.3 数据包<a class="headerlink" href="#93" title="Permanent link">&para;</a></h3>
+<h4 id="931">9.3.1 鉴别请求消息<a class="headerlink" href="#931" title="Permanent link">&para;</a></h4>
+<p>所有的鉴别请求使用消息格式见表 9。</p>
+<p><strong>表 9 数据包格式</strong></p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>数据类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SSH_MSG_USERAUTH_REQUEST</code></td>
+<td><code>byte</code></td>
+</tr>
+<tr>
+<td><code>user_name</code></td>
+<td><code>string</code>，UTF-8 编码</td>
+</tr>
+<tr>
+<td><code>service_name</code></td>
+<td><code>string</code>，ASCII编码</td>
+</tr>
+<tr>
+<td><code>method</code></td>
+<td><code>string</code>，ASCII编码</td>
+</tr>
+</tbody>
+</table>
+<p><code>user_name</code> 和 <code>service_name</code> 在每一次新的鉴别尝试中重复出现，可改变。服务端应对 <code>user_name</code> 和 <code>service_name</code> 进行检查，如果发现改变，应重置鉴别状态。</p>
+<p><code>service_name</code> 规定了鉴别完成后启动的服务。可有多个不同的已鉴别的服务。如果所请求的服务不可用，服务端可立即断开连接，并发送断开连接消息。</p>
+<p>如果 <code>user_name</code> 不存在，服务端应断开连接。</p>
+<p>客户端可在任何时候发送一个新的 <code>SSH_MSG_USERAUTH_REQUEST</code> 消息。而服务端在接收到消息后应重置鉴别状态并处理新的鉴别请求。</p>
+<h4 id="932">9.3.2 鉴别挑战消息<a class="headerlink" href="#932" title="Permanent link">&para;</a></h4>
+<p>服务端收到鉴别请求消息后，如果接受该请求，则回复鉴别挑战消息。响应消息的数据包格式见表 10。</p>
+<p><strong>表 10 数据包格式</strong></p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>数据类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SSH_MSG_USERAUTH_CHALLENGE</code></td>
+<td><code>byte</code></td>
+</tr>
+<tr>
+<td><code>challenge</code></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td><code>salt</code></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td><code>certificate</code></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td><code>sign</code></td>
+<td><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<p><code>challenge</code> 为服务端发送给客户端的认证参数。<code>salt</code> 为口令鉴别时的盐值。<code>certificate</code> 为服务端的数字证书。<code>sign</code> 为使用服务端签名私钥对以下数据的签名（按顺序拼接）。待签名数据格式见表 11。</p>
+<p><strong>表 11 待签名数据格式</strong></p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>数据类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>session_id</code></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td><code>SSH_MSG_USERAUTH_REQUEST</code></td>
+<td><code>byte</code></td>
+</tr>
+<tr>
+<td><code>user_name</code></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td><code>service_name</code></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td><code>method</code></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td><code>public_key_algorithm_name</code></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td><code>public_key_blob</code></td>
+<td><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<p><code>method</code> 为“public_key”，<code>public_key_algorithm_name</code> 为“sm2”。<code>public_key_blob</code> 为服务端数字证书。</p>
+<h4 id="933">9.3.3 鉴别拒绝消息<a class="headerlink" href="#933" title="Permanent link">&para;</a></h4>
+<p>如果服务端拒绝请求，响应的数据包格式见表 12。</p>
+<p><strong>表 12 数据包格式</strong></p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>数据类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SSH_MSG_USERAUTH_FAILURE</code></td>
+<td><code>byte</code></td>
+</tr>
+<tr>
+<td><code>authentication_that_can_continue</code></td>
+<td><code>name-list</code></td>
+</tr>
+<tr>
+<td><code>partial_success</code></td>
+<td><code>bool</code></td>
+</tr>
+</tbody>
+</table>
+<p><code>authentication_that_can_continue</code> 为 <code>method</code> 方法列表 。 根据支持的身份认证方式 ，<code>authentication_that_can_continue</code> 可为“password”“public_key”“<code>certificate</code>”或者三者的组合，如“password，<code>certificate</code>”。</p>
+<p>如果在鉴别失败后服务端断开链接，<code>partial_success</code> 为 <code>false</code>，否则为 <code>true</code>。鉴别失败是否需要断开链接取决于服务端的策略设置及客户端的行为，如口令鉴别失败超过设定次数，或在设定时间内进行多次失败的尝试时，可断开链接。</p>
+<h4 id="934">9.3.4 鉴别成功消息<a class="headerlink" href="#934" title="Permanent link">&para;</a></h4>
+<p>如果服务端鉴别成功，则应发送响应消息。数据包格式见表 13。</p>
+<p><strong>表 13 数据包格式</strong></p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>数据类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SSH_MSG_USERAUTH_SUCCESS</code></td>
+<td><code>byte</code></td>
+</tr>
+<tr>
+<td><code>prompt</code></td>
+<td><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<p>客户端可连续发送多个鉴别请求而不必等待前一个请求的响应。服务端应完整地处理每个请求， 对于失败的鉴别，发送 <code>SSH_MSG_USERAUTH_FAILURE</code> 消息，然后继续处理下一个请求。</p>
+<p>鉴别成功后服务端发送 <code>SSH_MSG_USERAUTH_SUCCESS</code> 消息。之后客户端发送的鉴别请求，服务端应忽略，发送的其他请求，应传递给鉴别协议之上的其他协议（如连接协议）。服务端应启动客户端所请求的服务。</p>
+<h4 id="935">9.3.5 服务端提示消息<a class="headerlink" href="#935" title="Permanent link">&para;</a></h4>
+<p>服务端可在鉴别协议从请求直至成功期间的任意阶段发送 <code>SSH_MSG_USERAUTH_BANNER</code> 消息。消息数据包格式见表 14。</p>
+<p><strong>表 14 数据包格式</strong></p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>数据类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SSH_MSG_USERAUTH_BANNER</code></td>
+<td><code>byte</code></td>
+</tr>
+<tr>
+<td><code>message</code></td>
+<td><code>string</code>，UTF-8 编码</td>
+</tr>
+</tbody>
+</table>
+<p>客户端应在屏幕上显示 <code>message</code>。<code>message</code> 可为多行，以 CR LF 换行。提示消息包可用于提示错误或者指导用户操作。客户端可选择忽略或者显示给用户。</p>
+<h3 id="94">9.4 基于口令的鉴别方法<a class="headerlink" href="#94" title="Permanent link">&para;</a></h3>
+<p>服务端和客户端都应支持此方法。</p>
+<p>使用此方法，用户使用客户端时应输入口令进行身份鉴别。</p>
+<p>当使用基于口令的鉴别方法时，客户端发送的鉴别响应数据包格式见表 15。</p>
+<p><strong>表 15 数据包格式</strong></p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>数据类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SSH_MSG_USERAUTH_RESPOND</code></td>
+<td><code>byte</code></td>
+</tr>
+<tr>
+<td><code>user_name</code></td>
+<td><code>string</code>，UTF-8 编码</td>
+</tr>
+<tr>
+<td><code>service_name</code></td>
+<td><code>string</code>，ASCII编码</td>
+</tr>
+<tr>
+<td><code>method</code></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td><code>response</code></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td><code>algorithm_name</code></td>
+<td><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<p><code>method</code> 为“password”。<code>response</code> 为口令与认证参数进行密码计算的结果。<code>algorithm_name</code> 为密码校验函数，为“sm3”。</p>
+<p><code>reponse</code> 的计算方法为：</p>
+<div class="arithmatex">\[
+\mathrm{response}=\operatorname{HASH}\left(\mathrm{challenge}\mathbin{\Vert}\operatorname{SM3}\left(\mathrm{password}\mathbin{\Vert}\mathrm{salt}\right)\right)\text{。}
+\]</div>
+<h3 id="95">9.5 基于非对称密钥的鉴别方法<a class="headerlink" href="#95" title="Permanent link">&para;</a></h3>
+<p>此方法为可选方法。</p>
+<p>当使用此方法时，用户使用客户端应拥有非对称密钥对。</p>
+<p>当使用基于非对称密钥的鉴别方法时，客户端发送的鉴别响应数据包格式见表 16。</p>
+<p><strong>表 16 数据包格式</strong></p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>数据类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SSH_MSG_USERAUTH_RESPOND</code></td>
+<td><code>byte</code></td>
+</tr>
+<tr>
+<td><code>user_name</code></td>
+<td><code>string</code>，UTF-8 编码</td>
+</tr>
+<tr>
+<td><code>service_name</code></td>
+<td><code>string</code>，ASCII编码</td>
+</tr>
+<tr>
+<td><code>method</code></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td><code>response</code></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td><code>public_key_algorithm_name</code></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td><code>public_key_blob</code></td>
+<td><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<p><code>method</code> 为“public_key”。 <code>algorithm_name</code> 为非对称算法 ，为“sm2”。 <code>public_key_blob</code> 为用户的公钥。</p>
+<p><code>response</code> 值为使用用户签名私钥对表 17 所示数据的签名（按顺序拼接）。</p>
+<p><strong>表 17 待签名数据格式</strong></p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>数据类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>session_id</code></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td><code>SSH_MSG_USERAUTH_REQUEST</code></td>
+<td><code>byte</code></td>
+</tr>
+<tr>
+<td><code>user_name</code></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td><code>service_name</code></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td><code>method</code></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td><code>challenge</code></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td><code>public_key_algorithm_name</code></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td><code>public_key_blob</code></td>
+<td><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<p><code>method</code> 为“public_key”，<code>public_key_algorithm_name</code> 为“sm2”。<code>public_key_blob</code> 为用户公钥。</p>
+<h3 id="96">9.6 基于数字证书的鉴别方法<a class="headerlink" href="#96" title="Permanent link">&para;</a></h3>
+<p>服务端和客户端都应支持此方法。</p>
+<p>使用此方法，用户使用客户端应拥有签名证书和加密证书。</p>
+<p>当使用基于数字证书的鉴别方法时，客户端发送的鉴别请求包格式见表 18。</p>
+<p><strong>表 18 数据包格式</strong></p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>数据类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SSH_MSG_USERAUTH_RESPOND</code></td>
+<td><code>byte</code></td>
+</tr>
+<tr>
+<td><code>user_name</code></td>
+<td><code>string</code>，UTF-8 编码</td>
+</tr>
+<tr>
+<td><code>service_name</code></td>
+<td><code>string</code>，ASCII编码</td>
+</tr>
+<tr>
+<td><code>method</code></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td><code>response</code></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td><code>public_key_algorithm_name</code></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td><code>public_key_blob</code></td>
+<td><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<p><code>method</code> 为“<code>certificate</code>”。 <code>public_key_algorithm_name</code> 为“sm2”。 <code>public_key_blob</code> 为用户的数字证书。</p>
+<p><code>response</code> 为使用用户签名私钥对表 19 所示数据的签名（按顺序拼接）并编码后生成的 signedData 类型数据。signedData 类型定义应符合 GB/T 35275 的规定。</p>
+<p><strong>表 19 待签名数据格式</strong></p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>数据类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>session_id</code></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td><code>SSH_MSG_USERAUTH_REQUEST</code></td>
+<td><code>byte</code></td>
+</tr>
+<tr>
+<td><code>user_name</code></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td><code>service_name</code></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td><code>method</code></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td><code>challenge</code></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td><code>public_key_algorithm_name</code></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td><code>public_key_blob</code></td>
+<td><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<p><code>method</code> 为“<code>certificate</code>”，<code>public_key_algorithm_name</code> 为“sm2”。<code>public_key_blob</code> 为用户的数字证书。</p>
+<h2 id="10">10 连接协议<a class="headerlink" href="#10" title="Permanent link">&para;</a></h2>
+<h3 id="101">10.1 协议概述<a class="headerlink" href="#101" title="Permanent link">&para;</a></h3>
+<p>连接协议运行于鉴别协议之上。连接协议提供交互式登录会话、远程命令执行、TCP/IP 连接转发和 X11 连接转发服务。</p>
+<p>连接协议的 <code>service_name</code> 为“ssh-connection”。</p>
+<p>连接协议使用的消息编号为：</p>
+<ul>
+<li>
+<p>SSH_MSG_GLOBAL_REQUEST 80</p>
+</li>
+<li>
+<p>SSH_MSG_REQUEST_SUCCESS 81</p>
+</li>
+<li>
+<p>SSH_MSG_REQUEST_FAILURE 82</p>
+</li>
+<li>
+<p><code>SSH_MSG_CHANNEL_OPEN</code> 90</p>
+</li>
+<li>
+<p><code>SSH_MSG_CHANNEL_OPEN_CONFIRMATION</code> 91</p>
+</li>
+<li>
+<p><code>SSH_MSG_CHANNEL_OPEN_FAILURE</code> 92</p>
+</li>
+<li>
+<p><code>SSH_MSG_CHANNEL_WINDOW_ADJUST</code> 93</p>
+</li>
+</ul>
+<h3 id="102">10.2 连接信道<a class="headerlink" href="#102" title="Permanent link">&para;</a></h3>
+<p>连接信道为客户端与服务端建立的登录会话、转发连接。服务端和客户端都可新建信道。多个信道复用同一个连接。</p>
+<p>双方通过信道编号对信道进行识别。同一个信道在客户端和服务端的编号可不同。当新建信道时，发送方在请求消息中提供己方的新建信道编号。其他消息数据包中则包括接收方的信道编号。</p>
+<h3 id="103">10.3 数据包<a class="headerlink" href="#103" title="Permanent link">&para;</a></h3>
+<h4 id="1031">10.3.1 新建信道<a class="headerlink" href="#1031" title="Permanent link">&para;</a></h4>
+<p>当客户端或者服务端新建连接时，首先为该信道分配一个本地编号，然后向对方发送消息格式见</p>
+<p><strong>表 20 。</strong></p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>数据类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SSH_MSG_CHANNEL_OPEN</code></td>
+<td><code>byte</code></td>
+</tr>
+<tr>
+<td><code>channel_type</code></td>
+<td><code>string</code>，ASCII编码</td>
+</tr>
+<tr>
+<td><code>sender_channel_id</code></td>
+<td><code>uint32</code></td>
+</tr>
+<tr>
+<td><code>initial_window_size</code></td>
+<td><code>uint32</code></td>
+</tr>
+<tr>
+<td><code>maximum_packet_size</code></td>
+<td><code>uint32</code></td>
+</tr>
+</tbody>
+</table>
+<p>接收方如果同意新建连接，则发送确认响应消息，格式见表 21。</p>
+<p><strong>表 21 数据包格式</strong></p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>数据类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SSH_MSG_CHANNEL_OPEN_CONFIRMATION</code></td>
+<td><code>byte</code></td>
+</tr>
+<tr>
+<td><code>recipient_channel_id</code></td>
+<td><code>uint32</code></td>
+</tr>
+<tr>
+<td><code>sender_channel_id</code></td>
+<td><code>uint32</code></td>
+</tr>
+<tr>
+<td><code>initial_window_size</code></td>
+<td><code>uint32</code></td>
+</tr>
+<tr>
+<td><code>maximum_packet_size</code></td>
+<td><code>uint32</code></td>
+</tr>
+</tbody>
+</table>
+<p>否则则发送失败响应消息，格式见表 22。</p>
+<p><strong>表 22 数据包格式</strong></p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>数据类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SSH_MSG_CHANNEL_OPEN_FAILURE</code></td>
+<td><code>byte</code></td>
+</tr>
+<tr>
+<td><code>recipient_channel_id</code></td>
+<td><code>uint32</code></td>
+</tr>
+<tr>
+<td><code>reason</code></td>
+<td><code>uint32</code></td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td>UTF-8 编码</td>
+</tr>
+<tr>
+<td><code>language</code></td>
+<td><code>tag</code></td>
+</tr>
+</tbody>
+</table>
+<p>其中 <code>reason</code> 的定义为：</p>
+<ul>
+<li>
+<p>SSH_OPEN_ADMINISTRATIVELY_PROHIBITED 1 禁止；</p>
+</li>
+<li>
+<p>SSH_OPEN_CONNECT_FAILED 2 连接失败；</p>
+</li>
+<li>
+<p>SSH_OPEN_UNKNOWN_CHANNEL_TYPE 3 无法识别的连接类型；</p>
+</li>
+<li>
+<p>SSH_OPEN_RESOURCE_SHORTAGE 4 资源不足。</p>
+</li>
+</ul>
+<h4 id="1032">10.3.2 数据传输<a class="headerlink" href="#1032" title="Permanent link">&para;</a></h4>
+<p>每次传输的数据量由窗口大小规定。双方使用调整窗口消息以调整最大传输数据量。消息格式见表 23。</p>
+<p><strong>表 23 数据包格式</strong></p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>数据类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SSH_MSG_CHANNEL_WINDOW_ADJUST</code></td>
+<td><code>byte</code></td>
+</tr>
+<tr>
+<td><code>recipient_channel_id</code></td>
+<td><code>uint32</code></td>
+</tr>
+<tr>
+<td><code>size</code></td>
+<td><code>uint32</code></td>
+</tr>
+</tbody>
+</table>
+<p>窗口大小不能超过 <code>uint32</code> 的表示范围。</p>
+<p>数据传输消息格式见表 24。</p>
+<p><strong>表 24 数据包格式</strong></p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>数据类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SSH_MSG_CHANNEL_DATA</code></td>
+<td><code>byte</code></td>
+</tr>
+<tr>
+<td><code>recipient_channel_id</code></td>
+<td><code>uint32</code></td>
+</tr>
+<tr>
+<td><code>data</code></td>
+<td><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="1033">10.3.3 关闭信道<a class="headerlink" href="#1033" title="Permanent link">&para;</a></h4>
+<p>当一方不再向信道发送数据时，可发送消息格式见表 25。</p>
+<p><strong>表 25 数据包格式</strong></p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>数据类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SSH_MSG_CHANNEL_EOF</code></td>
+<td><code>byte</code></td>
+</tr>
+<tr>
+<td><code>recipient_channel_id</code></td>
+<td><code>uint32</code></td>
+</tr>
+</tbody>
+</table>
+<p>接收方无需回复，或者回复一个同样的消息。</p>
+<p>客户端和服务端均可主动发送关闭信道消息以关闭一个信道。消息格式见表 26。</p>
+<p><strong>表 26 数据包格式</strong></p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>数据类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SSH_MSG_CHANNEL_CLOSE</code></td>
+<td><code>byte</code></td>
+</tr>
+<tr>
+<td><code>recipient_channel_id</code></td>
+<td><code>uint32</code></td>
+</tr>
+</tbody>
+</table>
+<p>对于此消息接收方无需回复。</p>
+<h2 id="_1">参考文献<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>［1］ RFC 4251　SSH Protocol Architecture，January 2006</p>
+<p>［2］ RFC 4252　SSH Authentication Protocol，January 2006</p>
+<p>［3］　RFC 4253　SSH Transport Layer Protocol，January 2006</p>
+<p>［4］　RFC 4254　SSH Connection Protocol，January 2006</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate":null,"base":"../../../..","features":["navigation.tabs","navigation.tabs.sticky","navigation.indexes","search.highlight","search.suggest","content.code.copy"],"search":"../../../../assets/javascripts/workers/search.0ff0ccea966a6bf2.min.js","tags":null,"translations":{"clipboard.copied":"已复制","clipboard.copy":"复制","search.result.more.one":"在该页上还有 1 个符合条件的结果","search.result.more.other":"在该页上还有 # 个符合条件的结果","search.result.none":"没有找到符合条件的结果","search.result.one":"找到 1 个符合条件的结果","search.result.other":"# 个符合条件的结果","search.result.placeholder":"键入以开始搜索","search.result.term.missing":"缺少","select.version":"选择当前版本"},"version":null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.c21346df.min.js"></script>
+      
+        <script src="../../../../assets/vendor/katex/katex.min.js"></script>
+      
+        <script src="../../../../assets/javascripts/blue-topaz-maple.js"></script>
+      
+        <script src="../../../../assets/javascripts/page-navigation.js"></script>
+      
+        <script src="../../../../assets/javascripts/page-search.js"></script>
+      
+        <script src="../../../../assets/javascripts/search-tables.js"></script>
+      
+        <script src="../../../../assets/javascripts/search-notice.js"></script>
+      
+    
+  </body>
+</html>

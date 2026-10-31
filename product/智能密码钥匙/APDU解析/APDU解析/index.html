@@ -1,0 +1,719 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://loora1n.github.io/GM-crypto-assessment-wiki/product/%E6%99%BA%E8%83%BD%E5%AF%86%E7%A0%81%E9%92%A5%E5%8C%99/APDU%E8%A7%A3%E6%9E%90/APDU%E8%A7%A3%E6%9E%90/">
+      
+      
+        <link rel="prev" href="../../../">
+      
+      
+        <link rel="next" href="../../GMT0016-2023/GMT0016-2023%E6%99%BA%E8%83%BD%E5%AF%86%E7%A0%81%E9%92%A5%E5%8C%99%E5%AF%86%E7%A0%81%E5%BA%94%E7%94%A8%E6%8E%A5%E5%8F%A3%E8%A7%84%E8%8C%83/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+    
+    
+      
+        <title>APDU解析 - 密评标准知识库</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+        <script src="../../../../assets/vendor/iframe-worker/shim.js"></script>
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/vendor/katex/katex.min.css">
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/blue-topaz-maple.css">
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/page-search.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#apdu" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../../.." title="密评标准知识库" class="md-header__button md-logo" aria-label="密评标准知识库" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            密评标准知识库
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              APDU解析
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="切换到深色主题"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换到深色主题" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="切换到浅色主题"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换到浅色主题" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../maintenance/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  使用手册
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../algorithm/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  密码算法
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../protocol/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  密码协议
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  密码产品
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../assessment/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  密码测评
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../standard/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  国标与行标
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../notes/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  个人笔记
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+  
+  
+  
+    
+  
+  <aside class="md-sidebar md-sidebar--secondary topaz-toc" data-md-component="sidebar" data-md-type="toc" aria-label="文章目录">
+    <div class="md-sidebar__scrollwrap">
+      <div class="md-sidebar__inner">
+        <nav class="md-nav md-nav--secondary" aria-label="文章标题目录">
+          <div class="md-nav__title topaz-toc__title">
+            文章目录
+            <label class="topaz-toc__close" for="__drawer" title="收起文章目录">收起 ×</label>
+          </div>
+          
+            <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+              
+                <li class="md-nav__item">
+  <a href="#apdu_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        APDU命令结构
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="APDU命令结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        整体结构
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apdu-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        APDU请求 - 命令头
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="APDU请求 - 命令头">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cla" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CLA
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ins" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        INS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p1-p2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        P1 &amp; P2参数
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apdu-_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        APDU请求 - 命令体
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="APDU请求 - 命令体">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        命令体编码规范
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apdu_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        APDU响应
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#a-ins" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        附录A INS指令代码集
+      
+    </span>
+  </a>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#b-sw1-sw2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        附录B SW1 &amp; SW2 响应状态集
+      
+    </span>
+  </a>
+  
+</li>
+              
+            </ul>
+          
+        </nav>
+      </div>
+    </div>
+  </aside>
+
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="apdu">APDU报文结构解析<a class="headerlink" href="#apdu" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>[!note]</p>
+<p>APDU 全称 Application Protocol Data Unit，即应用协议数据单元</p>
+<p>本文总结自《GM/T 0017-2023智能密码钥匙应用接口数据格式规范》</p>
+</blockquote>
+<h2 id="apdu_1">APDU命令结构<a class="headerlink" href="#apdu_1" title="Permanent link">&para;</a></h2>
+<h3 id="_1">整体结构<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>APDU请求体由固定 <strong>4byte的命令头</strong>和<strong>不定长的命令体组成</strong>：</p>
+<p><img alt="image-20261006163831690" src="../APDU%E8%A7%A3%E6%9E%90.assets/image-20261006163831690.png" /></p>
+<p>其中命令体的<strong>Lc字段、数据字段、Le字段</strong>均为可选字段，Lc用来标识数据字段的长度，Le用来标识期望的数据长度。</p>
+<p>APDU响应体由<strong>不定长的主体和固定2byte的尾标</strong>组成：</p>
+<p><img alt="image-20261006164603341" src="../APDU%E8%A7%A3%E6%9E%90.assets/image-20261006164603341.png" /></p>
+<h3 id="apdu-">APDU请求 - 命令头<a class="headerlink" href="#apdu-" title="Permanent link">&para;</a></h3>
+<p>由上述结构图可知，命令头由以下四个部分组成，每个部分各占1byte：</p>
+<ul>
+<li>CLA: Class Type, the type of the ADPU</li>
+<li>INS: Instruction Byte of Command Message</li>
+<li>P1: Parameter 1</li>
+<li>P2: Parameter 2</li>
+</ul>
+<p>其中比较重要的便是CLA和INS，分别代表了指令的类型以及指令具体是什么。</p>
+<h4 id="cla">CLA<a class="headerlink" href="#cla" title="Permanent link">&para;</a></h4>
+<p>CLA采用比特编码的方式标识类型，具体如图所示</p>
+<p><img alt="image-20261006165509074" src="../APDU%E8%A7%A3%E6%9E%90.assets/image-20261006165509074.png" /></p>
+<p>b1-b8分别表示一个字节的从低到高比特位，其中b1-b4为预留位，无实际含义。由上图易得CLA的取值范围只可以是<strong>80和90</strong>，分别对应最后一条指令和非最后一条指令。</p>
+<h4 id="ins">INS<a class="headerlink" href="#ins" title="Permanent link">&para;</a></h4>
+<p>INS用来标识具体的指令，部分的指令对应表如下，完整的INS指令表项可以查找文末的附录：</p>
+<p><img alt="image-20261006165906802" src="../APDU%E8%A7%A3%E6%9E%90.assets/image-20261006165906802.png" /></p>
+<h4 id="p1-p2">P1 &amp; P2参数<a class="headerlink" href="#p1-p2" title="Permanent link">&para;</a></h4>
+<p>P1和P2可以为任何值，如果不对P1和P2进行进一步的限定，应均置0x00</p>
+<h3 id="apdu-_1">APDU请求 - 命令体<a class="headerlink" href="#apdu-_1" title="Permanent link">&para;</a></h3>
+<p>上文中，我们提到：</p>
+<blockquote>
+<p>命令体的<strong>Lc字段、数据字段、Le字段</strong>均为可选字段</p>
+<p>Lc: 标识数据字段的长度；</p>
+<p>数据字段：实际的数据内容；</p>
+<p>Le：标识期望的数据字段的长度，当Le为0时，表示期望返回数据为65536字节，否则为1-65535的具体值</p>
+</blockquote>
+<p>因此，一个完整的APDU命令有以下四种情况</p>
+<p><img alt="image-20261006170907911" src="../APDU%E8%A7%A3%E6%9E%90.assets/image-20261006170907911.png" /></p>
+<ul>
+<li>情况1：Lc、数据、Le均为空。<strong>特别注意：Le为空即Le为0，期望返回数据长度为65536</strong>；</li>
+<li>情况2：Le非空，有具体期望返回长度</li>
+<li>情况3：Lc、数据非空，Le为空</li>
+<li>情况4：Lc、数据、Le均为非空，最完整的命令情况</li>
+</ul>
+<h4 id="_2">命令体编码规范<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
+<p>命令体为一个不定长的字节合集，遵从一套<strong>命令体编码规范</strong>，并非直接进行数据的拼接。具体来说，规范讲命令体定义为一个L个字节的集合体，每个字节分别对应B1 - BL，L为命令的字节总长度。</p>
+<p><img alt="image-20261006171439190" src="../APDU%E8%A7%A3%E6%9E%90.assets/image-20261006171439190.png" /></p>
+<p>其中核心要求为两点：</p>
+<ol>
+<li>B1的值必须为0x00，也就是这个字段非空时的开头一定是0x00</li>
+<li>Lc和Le若非空，长度均为固定2字节</li>
+</ol>
+<p>也就是说，当Lc、数据字段、Le均存在时，完整的APDU命令如下：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>+-----+-----+------+------+------+-----------+--------------+-----------+
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="p">|</span><span class="w"> </span>CLA<span class="w"> </span><span class="p">|</span><span class="w"> </span>INS<span class="w"> </span><span class="p">|</span><span class="w"> </span>0x00<span class="w"> </span><span class="p">|</span><span class="w"> </span>0x00<span class="w"> </span><span class="p">|</span><span class="w"> </span>0x00<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="m">2</span><span class="w"> </span>Byte<span class="w"> </span>Lc<span class="w"> </span><span class="p">|</span><span class="w"> </span>Lc<span class="w"> </span>Byte<span class="w"> </span>Data<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="m">2</span><span class="w"> </span>Byte<span class="w"> </span>Le<span class="w"> </span><span class="p">|</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>+-----+-----+------+------+------+-----------+--------------+-----------+
+</code></pre></div>
+<p>用标准中的图表表示我们上文谈到的四种情况如下：</p>
+<p><img alt="image-20261006172037794" src="../APDU%E8%A7%A3%E6%9E%90.assets/image-20261006172037794.png" /></p>
+<ul>
+<li>情况1：全为空，L为0</li>
+<li>情况2：Le非空。B1固定0x00， B2-B3一起代表Le的具体值，L总长度为3</li>
+<li>情况3：Lc和数据非空，但是Le为空。B1固定0x00，B2-B3代表Lc，之后紧挨着Lc长度的数据段。L的长度为<span class="arithmatex">\(L = 3 + (B_2 || B_3)\)</span></li>
+<li>情况4：均为非空。B1固定0x00，B2-B3代表Lc，之后紧挨着Lc长度的数据段，最后两字节为Le。L的长度为<span class="arithmatex">\(L = 5 +(B_2 || B_3)\)</span></li>
+</ul>
+<h3 id="apdu_2">APDU响应<a class="headerlink" href="#apdu_2" title="Permanent link">&para;</a></h3>
+<p>上文我们说到响应由数据段和SW1、SW2组成</p>
+<p><img alt="image-20261006164603341" src="../APDU%E8%A7%A3%E6%9E%90.assets/image-20261006164603341.png" /></p>
+<p>数据字段的长度由请求对应的Le决定，SW1和SW2则更加具体的体现了智能密码钥匙的处理状态</p>
+<p><img alt="image-20261009113410763" src="../APDU%E8%A7%A3%E6%9E%90.assets/image-20261009113410763.png" /></p>
+<blockquote>
+<p>[!note]</p>
+<p>注：当SW1=63或65时，非易失存储器状态发生改变，当SW1为其他6X时，非易失存储器状态不发生变化</p>
+</blockquote>
+<h2 id="a-ins">附录A INS指令代码集<a class="headerlink" href="#a-ins" title="Permanent link">&para;</a></h2>
+<p><img alt="image-20261006165906802" src="../APDU%E8%A7%A3%E6%9E%90.assets/image-20261006165906802.png" /></p>
+<p><img alt="image-20261006165920419" src="../APDU%E8%A7%A3%E6%9E%90.assets/image-20261006165920419.png" /></p>
+<p><img alt="image-20261006170238282" src="../APDU%E8%A7%A3%E6%9E%90.assets/image-20261006170238282.png" /></p>
+<p><img alt="image-20261006170250099" src="../APDU%E8%A7%A3%E6%9E%90.assets/image-20261006170250099.png" /></p>
+<h2 id="b-sw1-sw2">附录B SW1 &amp; SW2 响应状态集<a class="headerlink" href="#b-sw1-sw2" title="Permanent link">&para;</a></h2>
+<p><img alt="image-20261009113900829" src="../APDU%E8%A7%A3%E6%9E%90.assets/image-20261009113900829.png" /></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate":null,"base":"../../../..","features":["navigation.tabs","navigation.tabs.sticky","navigation.indexes","search.highlight","search.suggest","content.code.copy"],"search":"../../../../assets/javascripts/workers/search.0ff0ccea966a6bf2.min.js","tags":null,"translations":{"clipboard.copied":"已复制","clipboard.copy":"复制","search.result.more.one":"在该页上还有 1 个符合条件的结果","search.result.more.other":"在该页上还有 # 个符合条件的结果","search.result.none":"没有找到符合条件的结果","search.result.one":"找到 1 个符合条件的结果","search.result.other":"# 个符合条件的结果","search.result.placeholder":"键入以开始搜索","search.result.term.missing":"缺少","select.version":"选择当前版本"},"version":null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.c21346df.min.js"></script>
+      
+        <script src="../../../../assets/vendor/katex/katex.min.js"></script>
+      
+        <script src="../../../../assets/javascripts/blue-topaz-maple.js"></script>
+      
+        <script src="../../../../assets/javascripts/page-navigation.js"></script>
+      
+        <script src="../../../../assets/javascripts/page-search.js"></script>
+      
+        <script src="../../../../assets/javascripts/search-tables.js"></script>
+      
+        <script src="../../../../assets/javascripts/search-notice.js"></script>
+      
+    
+  </body>
+</html>

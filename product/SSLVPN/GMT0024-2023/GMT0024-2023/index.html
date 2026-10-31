@@ -1,0 +1,3555 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://loora1n.github.io/GM-crypto-assessment-wiki/product/SSLVPN/GMT0024-2023/GMT0024-2023/">
+      
+      
+        <link rel="prev" href="../../../%E6%99%BA%E8%83%BD%E5%AF%86%E7%A0%81%E9%92%A5%E5%8C%99/GMT0017-2023/GMT0017-2023/">
+      
+      
+        <link rel="next" href="../../../GMT0018-2023/GMT0018-2023%E5%AF%86%E7%A0%81%E8%AE%BE%E5%A4%87%E5%BA%94%E7%94%A8%E6%8E%A5%E5%8F%A3%E8%A7%84%E8%8C%83/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+    
+    
+      
+        <title>SSLVPN网关 - 密评标准知识库</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+        <script src="../../../../assets/vendor/iframe-worker/shim.js"></script>
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/vendor/katex/katex.min.css">
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/blue-topaz-maple.css">
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/page-search.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#gmt-0024-2023-ssl-vpn" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../../.." title="密评标准知识库" class="md-header__button md-logo" aria-label="密评标准知识库" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            密评标准知识库
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              SSLVPN网关
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="切换到深色主题"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换到深色主题" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="切换到浅色主题"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换到浅色主题" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../maintenance/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  使用手册
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../algorithm/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  密码算法
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../protocol/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  密码协议
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  密码产品
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../assessment/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  密码测评
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../standard/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  国标与行标
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../notes/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  个人笔记
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+  
+  
+  
+    
+  
+  <aside class="md-sidebar md-sidebar--secondary topaz-toc" data-md-component="sidebar" data-md-type="toc" aria-label="文章目录">
+    <div class="md-sidebar__scrollwrap">
+      <div class="md-sidebar__inner">
+        <nav class="md-nav md-nav--secondary" aria-label="文章标题目录">
+          <div class="md-nav__title topaz-toc__title">
+            文章目录
+            <label class="topaz-toc__close" for="__drawer" title="收起文章目录">收起 ×</label>
+          </div>
+          
+            <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+              
+                <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 范围
+      
+    </span>
+  </a>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 规范性引用文件
+      
+    </span>
+  </a>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 术语和定义
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 术语和定义">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-ibc-identity-based-cryptography-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 IBC算法 identity based cryptography algorithm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-ibc-ibc-identity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 IBC标识 IBC identity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-ibc-ibc-public-parameter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 IBC公共参数 IBC public parameter
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4 符号和缩略语
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4 符号和缩略语">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 符号
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 缩略语
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5 密码算法和密钥种类
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5 密码算法和密钥种类">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 密码算法
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.1 密码算法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#511" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1.1 非对称密码算法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#512" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1.2 分组密码算法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#513" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1.3 密码杂凑算法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#514-p_hash" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1.4 数据扩展函数P_hash
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#515-prf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1.5 伪随机函数PRF
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 密钥种类
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.2 密钥种类">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#521" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2.1 概述
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#522" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2.2 预主密钥
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#523" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2.3 主密钥
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#524" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2.4 工作密钥
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#525" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2.5 服务端密钥
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#526" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2.6 客户端密钥
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6 协议
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6 协议">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 概述
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 数据类型定义
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.2 数据类型定义">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#621" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2.1 基本数据类型
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#622" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2.2 向量
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#623" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2.3 枚举类型
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#624" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2.4 结构类型
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#625" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2.5 变体类型
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 记录层协议
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.3 记录层协议">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#631" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3.1 概述
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#632" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3.2 连接状态
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#633" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3.3 记录层
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.3.3 记录层">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#6331" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3.3.1 概述
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6332" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3.3.2 分段
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6333" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3.3.3 压缩和解压缩
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6334" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3.3.4 加密和校验
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.3.3.4 加密和校验">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#63341" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3.3.4.1 概述
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63342" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3.3.4.2 校验算法的数据处理
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63343" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3.3.4.3 分组密码算法的数据处理
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63344-aead" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3.3.4.4 带关联数据的可鉴别的加密(AEAD)的数据处理
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 握手协议族
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.4 握手协议族">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#641" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4.1 概述
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#642" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4.2 密码规格变更协议
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#643" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4.3 报警协议
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.4.3 报警协议">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#6431" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4.3.1 结构定义
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6432" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4.3.2 关闭通知
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6433" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4.3.3 错误报警
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#644" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4.4 握手协议总览
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#645" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4.5 握手协议
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.4.5 握手协议">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#6451" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4.5.1 结构定义
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6452-hello" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4.5.2 Hello消息
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.4.5.2 Hello消息">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#64521-clienthello" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4.5.2.1 ClientHello消息
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64522-serverhello" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4.5.2.2 ServerHello消息
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64523-hello" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4.5.2.3 Hello消息扩展字段
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6453-servercertificate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4.5.3 ServerCertificate消息
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6454-serverkeyexchange" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4.5.4 ServerKeyExchange消息
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6455-certificaterequest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4.5.5 CertificateRequest消息
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6456-serverhellodone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4.5.6 ServerHelloDone消息
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6457-clientcertificate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4.5.7 ClientCertificate消息
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6458-clientkeyexchange" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4.5.8 ClientKeyExchange消息
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6459-certificateverify" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4.5.9 CertificateVerify消息
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64510-finished" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4.5.10 Finished消息
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#65" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.5 密钥计算
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.5 密钥计算">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#651" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.5.1 主密钥计算
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#652" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.5.2 工作密钥
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#66" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.6 网关到网关协议
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.6 网关到网关协议">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#661" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.6.1 概述
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#662" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.6.2 协议报文格式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#663" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.6.3 控制报文交换过程
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#664" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.6.4 数据报文出入站过程
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.6.4 数据报文出入站过程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#6641" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.6.4.1 出站报文处理
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6642" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.6.4.2 入站报文处理
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7 产品要求
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7 产品要求">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 产品功能要求
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.1 产品功能要求">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#711" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1.1 工作模式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#712" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1.2 随机数功能
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#713" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1.3 密钥交换
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#714" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1.4 安全报文传输
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#715" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1.5 访问控制
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#716" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1.6 密钥更新
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 产品性能参数
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.2 产品性能参数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#721" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2.1 最大并发连接数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#722" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2.2 每秒新建连接数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#723" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2.3 最大并发用户数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#724" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2.4 加解密吞吐率
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 安全管理要求
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.3 安全管理要求">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#731" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.1 安全要求
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.3.1 安全要求">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#7311" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.1.1 密钥安全
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7312" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.1.2 数据配置安全
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7313" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.1.3 存储与部件安全
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7314" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.1.4 软件安全
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#732" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.2 管理要求
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.3.2 管理要求">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#7321" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.2.1 日志管理
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7322" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.2.2 管理员管理
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7323" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.2.3 设备管理
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.3.2.3 设备管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#73231" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.2.3.1 设备初始化
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73232" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.2.3.2 设备自检
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8 产品检测
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8 产品检测">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 产品功能检测
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8.1 产品功能检测">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#811" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1.1 工作模式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#812" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1.2 随机数功能
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#813" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1.3 密钥交换
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#814" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1.4 安全报文传输
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#815" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1.5 访问控制
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#816" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1.6 密钥更新
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 产品性能检测
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8.2 产品性能检测">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#821" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2.1 最大并发连接数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#822" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2.2 每秒新接连接数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#823" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2.3 最大并发用户数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#824" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2.4 加解密吞吐率
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3 安全管理检测
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8.3 安全管理检测">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#831" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3.1 安全检测
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8.3.1 安全检测">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#8311" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3.1.1 密钥安全
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8312" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3.1.2 数据配置安全
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8313" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3.1.3 存储与部件安全
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8314" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3.1.4 软件安全
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#832" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3.2 管理检测
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8.3.2 管理检测">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#8321" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3.2.1 日志管理
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8322" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3.2.2 管理员管理
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8323" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3.2.3 设备管理
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8.3.2.3 设备管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#83231" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3.2.3.1 设备初始化
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83232" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3.2.3.2 设备自检
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9 判定规则
+      
+    </span>
+  </a>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#a" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        附录 A（资料性）扩展字段说明
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="附录 A（资料性）扩展字段说明">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a1-sni" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A.1 SNI服务器名称指示
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a2-trusted-ca-indicationca" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A.2 Trusted CA Indication受信CA指示
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a3-certificate-status-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A.3 Certificate Status Request证书状态请求
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a4-supported-elliptic-curves" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A.4 Supported Elliptic Curves支持的椭圆曲线
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a5-signature-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A.5 Signature Algorithm签名算法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a6-applicatoin-layer-protocol-negotiation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A.6 Applicatoin Layer Protocol Negotiation应用层协议协商
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a7-client-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A.7 Client ID客户端标识
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        参考文献
+      
+    </span>
+  </a>
+  
+</li>
+              
+            </ul>
+          
+        </nav>
+      </div>
+    </div>
+  </aside>
+
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="gmt-0024-2023-ssl-vpn">GM/T 0024-2023 SSL VPN技术规范<a class="headerlink" href="#gmt-0024-2023-ssl-vpn" title="Permanent link">&para;</a></h1>
+<h2 id="1">1 范围<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<p>本文件规定了SSL VPN的技术协议、产品功能要求、产品性能参数和安全管理要求。</p>
+<p>本文件适用于SSL VPN产品的研制,也适用于指导SSL VPN产品的检测、管理和使用。</p>
+<h2 id="2">2 规范性引用文件<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<p>下列文件中的内容通过文中的规范性引用而构成本文件必不可少的条款。其中,注日期的引用文件,仅该日期对应的版本适用于本文件;不注日期的引用文件,其最新版本(包括所有的修改单)适用于本文件。</p>
+<p>GB/T 25069 信息安全技术 术语</p>
+<p>GB/T 36624—2018 信息技术 安全技术 可鉴别的加密机制</p>
+<p>GM/T 0005 随机性检测规范</p>
+<p>GM/T 0009 SM2密码算法使用规范</p>
+<p>GM/T 0010 SM2密码算法加密签名消息语法规范</p>
+<p>GM/T 0015 基于SM2密码算法的数字证书格式规范</p>
+<p>GM/T 0016 智能密码钥匙密码应用接口规范</p>
+<p>GM/T 0081—2020 SM9密码算法加密签名消息语法规范</p>
+<p>GM/T 0090—2020 标识密码应用标识格式规范</p>
+<p>GM/Z 4001 密码术语</p>
+<h2 id="3">3 术语和定义<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<p>GB/T 25069和GM/Z 4001界定的以及下列术语和定义适用于本文件。</p>
+<h3 id="31-ibc-identity-based-cryptography-algorithm">3.1 IBC算法 identity based cryptography algorithm<a class="headerlink" href="#31-ibc-identity-based-cryptography-algorithm" title="Permanent link">&para;</a></h3>
+<p>基于用户/实体唯一性身份标识和系统主密钥而生成用户密钥的密码机制。</p>
+<h3 id="32-ibc-ibc-identity">3.2 IBC标识 IBC identity<a class="headerlink" href="#32-ibc-ibc-identity" title="Permanent link">&para;</a></h3>
+<p>由实体无法否认的信息组成,可唯一确定一个实体的身份。</p>
+<blockquote>
+<p>[!note]</p>
+<p>注:如实体的可识别名称、电子邮箱、身份证号、电话号码、街道地址等。</p>
+</blockquote>
+<h3 id="33-ibc-ibc-public-parameter">3.3 IBC公共参数 IBC public parameter<a class="headerlink" href="#33-ibc-ibc-public-parameter" title="Permanent link">&para;</a></h3>
+<p>为IBC系统的用户提供包括密码算法参数、系统策略和用户标识变化等相关公开信息的服务。</p>
+<h2 id="4">4 符号和缩略语<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<h3 id="41">4.1 符号<a class="headerlink" href="#41" title="Permanent link">&para;</a></h3>
+<p>下列符号适用于本文件。</p>
+<p><span class="arithmatex">\(+\)</span>:串联</p>
+<p><span class="arithmatex">\(\mathrm{HMAC}(X,Y)\)</span>:以<span class="arithmatex">\(X\)</span>为密钥对<span class="arithmatex">\(Y\)</span>进行密码杂凑运算</p>
+<h3 id="42">4.2 缩略语<a class="headerlink" href="#42" title="Permanent link">&para;</a></h3>
+<p>下列缩略语适用于本文件。</p>
+<p>AEAD:带关联数据的可鉴别的加密(Authenticated Encryption with Associated Data)</p>
+<p>ADD:附加鉴别数据(Additional Authenticated Data)</p>
+<p>CBC:密码分组链接(Cipher Block Chaining)</p>
+<p>DN:识别名(Distinguished Name)</p>
+<p>GCM:Galois计数器模式(Galois Counter Mode)</p>
+<p>HMAC:采用带密钥杂凑的消息验证码(keyed-Hash Message Authentication Code)</p>
+<p>IBC:标识密码算法(Identity-Based Cryptography)</p>
+<p>IV:初始向量(Initialization Vector)</p>
+<p>MAC:消息鉴别码(Message Authentication Code)</p>
+<p>SSL:安全套接字层(Secure Sockets Layer)</p>
+<p>TLCP:传输层密码协议(Transport Layer Cryptography Protocol)</p>
+<p>VPN:虚拟专用网络(Virtual Private Network)</p>
+<h2 id="5">5 密码算法和密钥种类<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
+<h3 id="51">5.1 密码算法<a class="headerlink" href="#51" title="Permanent link">&para;</a></h3>
+<h4 id="511">5.1.1 非对称密码算法<a class="headerlink" href="#511" title="Permanent link">&para;</a></h4>
+<p>非对称密码算法包括ECC椭圆曲线密码算法SM2、IBC标识密码算法SM9和RSA算法,用于身份鉴别、数字签名、密钥交换。</p>
+<h4 id="512">5.1.2 分组密码算法<a class="headerlink" href="#512" title="Permanent link">&para;</a></h4>
+<p>分组密码算法包括SM4算法,用于密钥交换数据的加密保护和报文数据的加密保护。该算法的工作模式为GCM或CBC模式。GCM工作模式应符合GB/T 36624—2018的加密机制5。</p>
+<h4 id="513">5.1.3 密码杂凑算法<a class="headerlink" href="#513" title="Permanent link">&para;</a></h4>
+<p>密码杂凑算法包括SM3算法和SHA256算法,用于对称密钥生成、完整性校验和数字签名。</p>
+<h4 id="514-p_hash">5.1.4 数据扩展函数P_hash<a class="headerlink" href="#514-p_hash" title="Permanent link">&para;</a></h4>
+<p><span class="arithmatex">\(\mathrm{P\_hash}\)</span>函数定义如下:</p>
+<div class="arithmatex">\[
+\begin{aligned}\mathrm{P\_hash}(\mathrm{secret},\mathrm{seed}) &amp;= \mathrm{HMAC}(\mathrm{secret},A(1)+\mathrm{seed}) + \\ &amp;\quad \mathrm{HMAC}(\mathrm{secret},A(2)+\mathrm{seed}) + \\ &amp;\quad \mathrm{HMAC}(\mathrm{secret},A(3)+\mathrm{seed}) + \\ &amp;\quad \ldots\end{aligned}
+\]</div>
+<p>其中:</p>
+<p><span class="arithmatex">\(\mathrm{secret}\)</span>是进行计算所需要的密钥;</p>
+<p><span class="arithmatex">\(\mathrm{seed}\)</span>是进行计算所需要的数据;</p>
+<div class="arithmatex">\[
+\begin{aligned}A(0)=\mathrm{seed}; \\ A(i)=\mathrm{HMAC}(\mathrm{secret},A(i-1));\end{aligned}
+\]</div>
+<p><span class="arithmatex">\(\mathrm{P\_hash}\)</span>能反复迭代直至产生要求长度的数据。</p>
+<h4 id="515-prf">5.1.5 伪随机函数PRF<a class="headerlink" href="#515-prf" title="Permanent link">&para;</a></h4>
+<p>PRF的计算方法如下:</p>
+<div class="arithmatex">\[
+\mathrm{PRF}(\mathrm{secret},\mathrm{label},\mathrm{seed})=\mathrm{P\_hash}(\mathrm{secret},\mathrm{label}+\mathrm{seed})\text{。}
+\]</div>
+<h3 id="52">5.2 密钥种类<a class="headerlink" href="#52" title="Permanent link">&para;</a></h3>
+<h4 id="521">5.2.1 概述<a class="headerlink" href="#521" title="Permanent link">&para;</a></h4>
+<p>在本文件中采用非对称密码算法进行身份鉴别和密钥交换,身份鉴别通过后协商预主密钥,双方各自计算主密钥,进而推导出工作密钥。使用工作密钥进行加解密和完整性校验。</p>
+<h4 id="522">5.2.2 预主密钥<a class="headerlink" href="#522" title="Permanent link">&para;</a></h4>
+<p>预主密钥(pre_master_secret)是双方协商生成的密钥素材,用于生成主密钥。</p>
+<h4 id="523">5.2.3 主密钥<a class="headerlink" href="#523" title="Permanent link">&para;</a></h4>
+<p>主密钥(master_secret)是由预主密钥、客户端随机数、服务端随机数、常量字符串,经计算生成的密钥素材,用于生成工作密钥。</p>
+<h4 id="524">5.2.4 工作密钥<a class="headerlink" href="#524" title="Permanent link">&para;</a></h4>
+<p>工作密钥包括数据加密密钥和校验密钥。其中数据加密密钥用于数据的加密和解密,校验密钥用于数据的完整性计算和校验。在本文件中,发送方使用的工作密钥称为写密钥,接收方使用的工作密钥称为读密钥。</p>
+<h4 id="525">5.2.5 服务端密钥<a class="headerlink" href="#525" title="Permanent link">&para;</a></h4>
+<p>服务端密钥为非对称密码算法的密钥对,包括签名密钥对和加密密钥对,用于握手过程中服务端身份鉴别和预主密钥的协商。其中基于证书体系的非对称算法的密钥对,其签名密钥对由VPN自身密码模块产生,加密密钥对应通过CA认证中心向KMC申请;基于标识体系的非对称密钥对,其签名密钥对和加密密钥对应由KGC产生。</p>
+<h4 id="526">5.2.6 客户端密钥<a class="headerlink" href="#526" title="Permanent link">&para;</a></h4>
+<p>客户端密钥为非对称密码算法的密钥对,包括签名密钥对和加密密钥对,用于握手过程中客户端身份鉴别和预主密钥的协商。其中基于证书体系的非对称算法的密钥对,其签名密钥对由对应的客户端密码模块产生(例如智能密码钥匙),加密密钥对应通过CA认证中心向KMC申请;基于标识体系的非对称密钥对,其签名密钥对和加密密钥对应由KGC产生。</p>
+<h2 id="6">6 协议<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
+<h3 id="61">6.1 概述<a class="headerlink" href="#61" title="Permanent link">&para;</a></h3>
+<p>SSL VPN协议包括记录层协议、密码规格变更协议、报警协议、握手协议和网关到网关协议。记录层协议用于传输数据的分段、压缩及解压缩、加密及解密、完整性校验;密码规格变更协议用于通知安全参数的变更;报警协议用于关闭通知和对错误进行报警;握手协议用于身份鉴别和安全参数协商;网关到网关协议用于建立网关到网关的传输层隧道。</p>
+<h3 id="62">6.2 数据类型定义<a class="headerlink" href="#62" title="Permanent link">&para;</a></h3>
+<h4 id="621">6.2.1 基本数据类型<a class="headerlink" href="#621" title="Permanent link">&para;</a></h4>
+<p>定义了六种基本数据类型,分别为opaque、uint8、uint16、uint24、uint32、uint64。所有类型都以网络字节顺序表示,最小数据的大小是一个8位字节。</p>
+<p>opaque:任意类型数据,1个字节;</p>
+<p>uint8:无符号的8位整数,1个字节;</p>
+<p>uint16:无符号的16位整数,2个字节;</p>
+<p>uint24:无符号的24位整数,3个字节;</p>
+<p>uint32:无符号的32位整数,4个字节;</p>
+<p>uint64:无符号的64位整数,8个字节。</p>
+<h4 id="622">6.2.2 向量<a class="headerlink" href="#622" title="Permanent link">&para;</a></h4>
+<p>向量(Vectors)是给定类型的数据序列。向量分为两种:定长和变长。定长向量以<span class="arithmatex">\([x]\)</span>来表示;变长向量以<span class="arithmatex">\(&lt;x..y&gt;\)</span>来表示,其中<span class="arithmatex">\(x\)</span>代表下限,<span class="arithmatex">\(y\)</span>代表上限,如果只需表达上限时,用<span class="arithmatex">\(&lt;y&gt;\)</span>表示。所有向量的长度都以字节为单位。变长向量首部表示向量实际长度,其首部大小为能容纳变长向量最大长度的最小字节数。</p>
+<h4 id="623">6.2.3 枚举类型<a class="headerlink" href="#623" title="Permanent link">&para;</a></h4>
+<p>枚举(Enumerateds)是一系列特定值的字段集合,通常每个字段都包括一个名称和值。如果包含一个未命名的值,这个值表示指定的最大值。如果只包含了名称而不定义值,只能用来指代状态值,不能在实际编码中使用。例如,</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">enum</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">red</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span><span class="w"> </span><span class="n">green</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="n">color</span>
+</code></pre></div>
+<p>。枚举变量大小为能容纳最大枚举值的最小字节数。</p>
+<h4 id="624">6.2.4 结构类型<a class="headerlink" href="#624" title="Permanent link">&para;</a></h4>
+<p>结构类型(Constructed Types)用struct来定义。struct中的字段按照先后顺序串连起来进行编码。如果一个struct包含于另一个struct中,则可省略该struct的名字。</p>
+<h4 id="625">6.2.5 变体类型<a class="headerlink" href="#625" title="Permanent link">&para;</a></h4>
+<p>变体(Variants)类型用select、case来定义,用于定义依赖外部信息而变化的结构,类似于C语言中的union或ASN.1的CHOICE。</p>
+<h3 id="63">6.3 记录层协议<a class="headerlink" href="#63" title="Permanent link">&para;</a></h3>
+<h4 id="631">6.3.1 概述<a class="headerlink" href="#631" title="Permanent link">&para;</a></h4>
+<p>记录层协议是分层次的,每一层都包括长度字段、描述字段和内容字段。记录层协议接收将要被传输的消息,将数据分块、压缩(可选)、计算HMAC、加密,然后传输。接收到的数据经过解密、验证、解压缩(可选)、重新封装然后传送给高层应用。</p>
+<p>记录层协议包括:握手,报警,密码规格变更和网关到网关协议。为了支持协议的扩展,记录层协议可支持其他的记录类型。任何新的记录类型都应在针对上述类型分配的内容类型值之外去分配。如果接收到一个不能识别的记录类型应忽略。</p>
+<h4 id="632">6.3.2 连接状态<a class="headerlink" href="#632" title="Permanent link">&para;</a></h4>
+<p>连接状态是记录层协议的操作环境。包括四种典型的连接状态:当前读与写状态,未决的读与写状态。其中,读表示接收数据,写表示发送数据。所有记录都是在当前读写状态下处理的。未决状态的安全参数可由握手协议设定,而密码规格变更消息可使未决状态变为当前状态。除了最初的当前状态外,当前状态应包含经过协商的安全参数。</p>
+<p>连接状态的安全参数结构如下:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="n">ConnectionEnd</span><span class="w"> </span><span class="n">entity</span><span class="p">;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="n">BulkCipherAlgorithm</span><span class="w"> </span><span class="n">bulk_cipher_algorithm</span><span class="p">;</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="n">CipherType</span><span class="w"> </span><span class="n">cipher_type</span><span class="p">;</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="n">uint8</span><span class="w"> </span><span class="n">key_material_length</span><span class="p">;</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="n">MACAlgorithm</span><span class="w"> </span><span class="n">mac_algorithm</span><span class="p">;</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="n">uint8</span><span class="w"> </span><span class="n">hash_size</span><span class="p">;</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="n">CompressionMethod</span><span class="w"> </span><span class="n">compression_algorithm</span><span class="p">;</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="n">opaque</span><span class="w"> </span><span class="n">master_secret</span><span class="p">[</span><span class="mi">48</span><span class="p">];</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="n">opaque</span><span class="w"> </span><span class="n">client_random</span><span class="p">[</span><span class="mi">32</span><span class="p">];</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="n">opaque</span><span class="w"> </span><span class="n">server_random</span><span class="p">[</span><span class="mi">32</span><span class="p">];</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="n">unit8</span><span class="w"> </span><span class="n">record_iv_length</span><span class="p">;</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="n">unit8</span><span class="w"> </span><span class="n">fixed_iv_length</span><span class="p">;</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">    </span><span class="n">unit8</span><span class="w"> </span><span class="n">mac_length</span><span class="p">;</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="p">}</span><span class="w"> </span><span class="n">SecurityParameters</span><span class="p">;</span>
+</code></pre></div>
+<p>其中:</p>
+<p><strong>a) ConnectionEnd</strong></p>
+<p>表示本端在连接中的角色,为客户端或服务端。定义为:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">enum</span><span class="w"> </span><span class="p">{</span><span class="n">server</span><span class="p">,</span><span class="w"> </span><span class="n">client</span><span class="p">}</span><span class="w"> </span><span class="n">ConnectionEnd</span>
+</code></pre></div>
+<p><strong>b) BulkCipherAlgorithm</strong></p>
+<p>用于数据加解密的密码算法。定义为:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">enum</span><span class="w"> </span><span class="p">{</span><span class="n">sm4</span><span class="p">}</span><span class="w"> </span><span class="n">BulkCipherAlgorithm</span>
+</code></pre></div>
+<p><strong>c) CipherType</strong></p>
+<p>表示密码算法的类型。定义为:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">enum</span><span class="w"> </span><span class="p">{</span><span class="n">block</span><span class="p">}</span><span class="w"> </span><span class="n">CipherType</span>
+</code></pre></div>
+<p><strong>d) key_material_length</strong></p>
+<p>表示密钥材料的长度。</p>
+<p><strong>e) MACAlgorithm</strong></p>
+<p>用于计算和校验消息完整性的密码杂凑算法。定义为:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">enum</span><span class="w"> </span><span class="p">{</span><span class="n">sm3</span><span class="p">,</span><span class="w"> </span><span class="n">sha_256</span><span class="p">}</span><span class="w"> </span><span class="n">MACAlgorithm</span>
+</code></pre></div>
+<p><strong>f) hash_size</strong></p>
+<p>杂凑长度。</p>
+<p><strong>g) CompressionMethod</strong></p>
+<p>用于数据压缩的算法。定义为:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">enum</span><span class="w"> </span><span class="p">{</span><span class="n">null</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="mi">255</span><span class="p">)}</span><span class="w"> </span><span class="n">CompressionMethod</span>
+</code></pre></div>
+<p><strong>h) master_secret</strong></p>
+<p>在协商过程中由预主密钥、客户端随机数、服务端随机数计算出的48字节密钥。</p>
+<p><strong>i) client_random</strong></p>
+<p>由客户端产生的32字节随机数据。</p>
+<p><strong>j) server_random</strong></p>
+<p>由服务端产生的32字节随机数据。</p>
+<p><strong>k) record_iv_length</strong></p>
+<p>初始向量的长度。</p>
+<p><strong>l) fixed_iv_length</strong></p>
+<p>固定的初始向量长度。</p>
+<p><strong>m) mac_length</strong></p>
+<p>MAC长度。</p>
+<p>记录层将使用上述安全参数来生成下列内容:</p>
+<ul>
+<li>
+<p>客户端写校验密钥client write MAC secret;</p>
+</li>
+<li>
+<p>服务端写校验密钥server write MAC secret;</p>
+</li>
+<li>
+<p>客户端写密钥client write key;</p>
+</li>
+<li>
+<p>服务端写密钥server write key;</p>
+</li>
+<li>
+<p>客户端写初始向量client write iv;</p>
+</li>
+<li>
+<p>服务端写初始向量server write iv。</p>
+</li>
+</ul>
+<p>服务端接收和处理记录时使用客户端写参数,客户端接收和处理记录时使用服务端写参数。用安全参数生成这些密钥的算法,详见6.5。密钥生成后,连接状态可改变为当前状态。</p>
+<h4 id="633">6.3.3 记录层<a class="headerlink" href="#633" title="Permanent link">&para;</a></h4>
+<h5 id="6331">6.3.3.1 概述<a class="headerlink" href="#6331" title="Permanent link">&para;</a></h5>
+<p>记录层接收从高层来的任意大小的非空连续数据,将数据分段、压缩、计算校验码、加密,然后传输。接收到的数据经过解密、验证、解压缩、重新封装然后传送给高层应用。</p>
+<h5 id="6332">6.3.3.2 分段<a class="headerlink" href="#6332" title="Permanent link">&para;</a></h5>
+<p>记录层将数据分成<span class="arithmatex">\(2^{14}\)</span>字节或者更小的片段。</p>
+<p>每个片段结构如下:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span><span class="n">ContentType</span><span class="w"> </span><span class="n">type</span><span class="p">;</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="n">ProtocolVersion</span><span class="w"> </span><span class="n">version</span><span class="p">;</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="n">uint16</span><span class="w"> </span><span class="n">length</span><span class="p">;</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">    </span><span class="n">opaque</span><span class="w"> </span><span class="n">fragment</span><span class="p">[</span><span class="n">TLSPlaintext</span><span class="p">.</span><span class="n">length</span><span class="p">];</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="p">}</span><span class="w"> </span><span class="n">TLSPlaintext</span><span class="p">;</span>
+</code></pre></div>
+<p>其中:</p>
+<p><strong>a) type</strong></p>
+<p>片段的记录层协议类型。定义为:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">enum</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span><span class="n">change_cipher_spec</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span><span class="w"> </span><span class="n">alert</span><span class="p">(</span><span class="mi">21</span><span class="p">),</span><span class="w"> </span><span class="n">handshake</span><span class="p">(</span><span class="mi">22</span><span class="p">),</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="n">application_data</span><span class="p">(</span><span class="mi">23</span><span class="p">),</span><span class="w"> </span><span class="n">site2site</span><span class="p">(</span><span class="mi">80</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="mi">255</span><span class="p">)</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="p">}</span><span class="w"> </span><span class="n">ContentType</span><span class="p">;</span>
+</code></pre></div>
+<p><strong>b) version</strong></p>
+<p>所用协议的版本号。本文件的版本号为1.1。定义为:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span><span class="n">uint8</span><span class="w"> </span><span class="n">major</span><span class="o">=</span><span class="mh">0x01</span><span class="p">,</span><span class="w"> </span><span class="n">minor</span><span class="o">=</span><span class="mh">0x01</span><span class="p">;</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="p">}</span><span class="w"> </span><span class="n">ProtocolVersion</span><span class="p">;</span>
+</code></pre></div>
+<p><strong>c) length</strong></p>
+<p>以字节为单位的片段长度,小于或等于<span class="arithmatex">\(2^{14}\)</span>。</p>
+<p><strong>d) fragment</strong></p>
+<p>将传输的数据。记录层协议不关心具体数据内容。</p>
+<h5 id="6333">6.3.3.3 压缩和解压缩<a class="headerlink" href="#6333" title="Permanent link">&para;</a></h5>
+<p>所有的记录都使用当前会话状态指定的压缩算法进行压缩。当前会话状态指定的压缩算法被初始化为空算法。</p>
+<p>压缩算法将一个TLSPlaintext结构的数据转换成一个TLSCompressed结构的数据。</p>
+<p>压缩后的数据长度最多只能增加1024个字节。如果解压缩后的数据长度超过了<span class="arithmatex">\(2^{14}\)</span>个字节,则报告一个decompression failure致命错误。</p>
+<p>压缩后数据结构如下:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">    </span><span class="n">ContentType</span><span class="w"> </span><span class="n">type</span><span class="p">;</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">    </span><span class="n">ProtocolVersion</span><span class="w"> </span><span class="n">version</span><span class="p">;</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">    </span><span class="n">uint16</span><span class="w"> </span><span class="n">length</span><span class="p">;</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">    </span><span class="n">opaque</span><span class="w"> </span><span class="n">fragment</span><span class="p">[</span><span class="n">TLSCompressed</span><span class="p">.</span><span class="n">length</span><span class="p">];</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="p">}</span><span class="w"> </span><span class="n">TLSCompressed</span><span class="p">;</span>
+</code></pre></div>
+<p>其中:</p>
+<p>a) type、version的定义同6.3.3.2。</p>
+<p><strong>b) length</strong></p>
+<p>以字节为单位的TLSCompressed.fragment长度,小于或等于<span class="arithmatex">\(2^{14}+1024\)</span>。</p>
+<p><strong>c) fragment</strong></p>
+<p>TLSPlaintext.fragment的压缩形式。</p>
+<h5 id="6334">6.3.3.4 加密和校验<a class="headerlink" href="#6334" title="Permanent link">&para;</a></h5>
+<h6 id="63341">6.3.3.4.1 概述<a class="headerlink" href="#63341" title="Permanent link">&para;</a></h6>
+<p>加密运算和校验运算把一个TLSCompressed结构的数据转化为一个TLSCiphertext结构的数据。解密运算则是执行相反的操作。</p>
+<p>加密后数据结构如下:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">    </span><span class="n">ContentType</span><span class="w"> </span><span class="n">type</span><span class="p">;</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">    </span><span class="n">ProtocolVersion</span><span class="w"> </span><span class="n">version</span><span class="p">;</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">    </span><span class="n">uint16</span><span class="w"> </span><span class="n">length</span><span class="p">;</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">    </span><span class="n">select</span><span class="p">(</span><span class="n">CipherSpec</span><span class="p">.</span><span class="n">cipher_type</span><span class="p">){</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">block</span><span class="p">:</span><span class="w"> </span><span class="n">GenericBlockCipher</span><span class="p">;</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">aead</span><span class="p">:</span><span class="w"> </span><span class="n">GenericAEADCipher</span><span class="p">;</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="n">fragment</span><span class="p">;</span>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="p">}</span><span class="w"> </span><span class="n">TLSCiphertext</span><span class="p">;</span>
+</code></pre></div>
+<p>其中:</p>
+<p>a) type、version的定义同6.3.3.2。</p>
+<p><strong>b) length</strong></p>
+<p>以字节为单位的TLSCiphertext.fragment长度,小于或等于<span class="arithmatex">\(2^{14}+2048\)</span>。</p>
+<p><strong>c) fragment</strong></p>
+<p>带有校验码的TLSCompressed.fragment加密形式。</p>
+<h6 id="63342">6.3.3.4.2 校验算法的数据处理<a class="headerlink" href="#63342" title="Permanent link">&para;</a></h6>
+<p>校验码的计算是在加密之前进行,运算方法如下:</p>
+<div class="arithmatex">\[
+\begin{aligned}&amp;\mathrm{HMAC\_hash}\bigl(\mathrm{MAC\_write\_secret},\;\mathrm{seq\_num}\\&amp;\quad +\mathrm{TLSCompressed.type}+\mathrm{TLSCompressed.version}\\&amp;\quad +\mathrm{TLSCompressed.length}+\mathrm{TLSCompressed.fragment}\bigr)\end{aligned}
+\]</div>
+<p><strong>a) seq_num</strong></p>
+<p>序列号。每一个读写状态都分别维持一个单调递增序列号。序列号的类型为uint64,序列号初始值为零,最大不能超出<span class="arithmatex">\(2^{64}-1\)</span>。序列号不能回绕。如果序列号溢出,应重新开始握手。</p>
+<p><strong>b) hash</strong></p>
+<p>计算校验码时使用的杂凑算法。</p>
+<h6 id="63343">6.3.3.4.3 分组密码算法的数据处理<a class="headerlink" href="#63343" title="Permanent link">&para;</a></h6>
+<p>使用分组密码算法加解密数据时,加密运算和校验运算用于将一个TLSCompressed.fragment结构的数据转换成一个TLSCiphertext.fragment结构的数据。被加密的数据包括了校验运算的结果。</p>
+<p>加密处理前数据结构如下:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">    </span><span class="n">opaque</span><span class="w"> </span><span class="n">IV</span><span class="p">[</span><span class="n">SecurityParameters</span><span class="p">.</span><span class="n">record_iv_length</span><span class="p">];</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span><span class="n">block</span><span class="o">-</span><span class="n">ciphered</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">        </span><span class="n">opaque</span><span class="w"> </span><span class="n">content</span><span class="p">[</span><span class="n">TLSCompressed</span><span class="p">.</span><span class="n">length</span><span class="p">];</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">        </span><span class="n">opaque</span><span class="w"> </span><span class="n">MAC</span><span class="p">[</span><span class="n">SecurityParameters</span><span class="p">.</span><span class="n">mac_length</span><span class="p">];</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">        </span><span class="n">uint8</span><span class="w"> </span><span class="n">padding_length</span><span class="p">;</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="w">        </span><span class="n">uint8</span><span class="w"> </span><span class="n">padding</span><span class="p">[</span><span class="n">GenericBlockCipher</span><span class="p">.</span><span class="n">padding_length</span><span class="p">];</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="w">    </span><span class="p">};</span>
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="p">}</span><span class="w"> </span><span class="n">GenericBlockCipher</span><span class="p">;</span>
+</code></pre></div>
+<p>其中:</p>
+<p><strong>a) IV</strong></p>
+<p>在GenericBlockCipher中传输的初始化向量。该向量应随机产生。</p>
+<p><strong>b) SecurityParameters.record_iv_length</strong></p>
+<p>IV的长度,其缺省值与使用的密码套件相关。</p>
+<p><strong>c) SecurityParameters.mac_length</strong></p>
+<p>MAC的长度,其缺省值与使用的密码套件相关。</p>
+<p><strong>d) content</strong></p>
+<p>加密前的明文数据。</p>
+<p><strong>e) MAC</strong></p>
+<p>Content的校验值。</p>
+<p><strong>f) padding</strong></p>
+<p>填充的数据。在数据加密前应将数据填充为密码算法分组长度的整数倍,填充的长度不能超过255个字节。填充的每个字节的内容是填充的字节数。接收者应检查这个填充,如果出错,发送bad_record_mac报警消息。</p>
+<h6 id="63344-aead">6.3.3.4.4 带关联数据的可鉴别的加密(AEAD)的数据处理<a class="headerlink" href="#63344-aead" title="Permanent link">&para;</a></h6>
+<p>使用AEAD时,可鉴别加密函数在TLSCompressed.fragment结构和可鉴别加密TLSCiphertext.fragment结构之间进行转换。</p>
+<p>AEAD的输入是一个密钥、一个随机数、明文和额外认证数据。密钥是客户端写密钥或服务端写密钥,根据是哪一端进行加密来确定。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">    </span><span class="n">opaque</span><span class="w"> </span><span class="n">nonce_explicit</span><span class="p">[</span><span class="n">SecurityParameters</span><span class="p">.</span><span class="n">record_iv_length</span><span class="p">];</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">    </span><span class="n">aead</span><span class="o">-</span><span class="n">ciphered</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">        </span><span class="n">opaque</span><span class="w"> </span><span class="n">content</span><span class="p">[</span><span class="n">TLSCompressed</span><span class="p">.</span><span class="n">length</span><span class="p">];</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">    </span><span class="p">};</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="p">}</span><span class="w"> </span><span class="n">GenericAEADCipher</span><span class="p">;</span>
+</code></pre></div>
+<p>每个AEAD密码套件应指定提供给AEAD操作的随机数,以及GenericAEADCipher.nonce_explicit部分的长度大小。AEAD加密模式一般采用计数器模式。AEAD使用的随机数应由显式和隐式两部分组成,显式部分即nonce explicit,客户端和服务端使用的隐式部分分别来自client_write_iv和server_write_iv。</p>
+<p>额外认证数据(additional_data)定义如下:</p>
+<div class="arithmatex">\[
+\begin{aligned}\mathrm{additional\_data}={}&amp;\mathrm{seq\_num}+\mathrm{TLSCompressed.type}\\&amp;+\mathrm{TLSCompressed.version}+\mathrm{TLSCompressed.length};\end{aligned}
+\]</div>
+<p>AEAD的输出是由AEAD加密操作的密文输出组成。其长度通常比TLSCompressed.length长,但是多出的长度在AEAD密码算法中并不统一。因为密码算法可能包括了填充,所以开销的数量可能随着不同的TLSCompressed.length值而不同。每个AEAD密码算法生成的扩展应不能多于1024比特。</p>
+<div class="arithmatex">\[
+\begin{aligned}\mathrm{AEADEncrypted}={}&amp;\operatorname{AEAD\text{-}Encrypt}\bigl(\mathrm{write\_key},\;\mathrm{nonce},\\&amp;\mathrm{plaintext},\;\mathrm{additional\_data}\bigr)\end{aligned}
+\]</div>
+<p>为了解密和验证,密码算法把密钥、随机数、additional_data和AEADEncrypted值当作输入。输出为明文或者一个指示解密失败的错误。即:</p>
+<div class="arithmatex">\[
+\begin{aligned}\mathrm{TLSCompressed.fragment}={}&amp;\operatorname{AEAD\text{-}Decrypt}\bigl(\mathrm{write\_key},\;\mathrm{nonce},\\&amp;\mathrm{AEADEncrypted},\;\mathrm{additional\_data}\bigr)\end{aligned}
+\]</div>
+<p>如果解密失败,应生成一个致命的bad_record_mac警告。</p>
+<h3 id="64">6.4 握手协议族<a class="headerlink" href="#64" title="Permanent link">&para;</a></h3>
+<h4 id="641">6.4.1 概述<a class="headerlink" href="#641" title="Permanent link">&para;</a></h4>
+<p>握手协议族由密码规格变更协议、握手协议和报警协议三个子协议组成,用于双方协商出供记录层使用的安全参数,进行身份验证以及向对方报告错误。</p>
+<p>握手协议族负责协商出一个会话,这个会话包含以下内容。</p>
+<p>会话标识:由服务端选取的随意的字节序列,用于识别活跃或可恢复的会话。</p>
+<p>证书:数字证书的格式应符合GM/T 0015。</p>
+<p>压缩方法:压缩数据的算法。</p>
+<p>密码规格:指定的密码算法。</p>
+<p>主密钥:客户端和服务端共享的48个字节的密钥。</p>
+<p>重用标识:标明能否用该会话发起一个新连接的标识。本文件仅支持会话标识的重用模式,表明是否能重用已有的或者现在的会话,不重新协商安全参数。</p>
+<p>利用以上数据可产生安全参数。利用握手协议的重用特性,可使用相同的会话建立多个连接。</p>
+<h4 id="642">6.4.2 密码规格变更协议<a class="headerlink" href="#642" title="Permanent link">&para;</a></h4>
+<p>密码规格变更协议用于通知密码规格的改变,即通知对方使用刚协商好的安全参数来保护接下来的数据。该协议由一条消息组成,该消息用当前的压缩算法压缩并用当前的密码规格加密,如果是首次协商,该消息为明文。</p>
+<p>该消息的长度为一个字节,其值为1。客户端和服务端都应在安全参数协商完毕之后、握手结束消息之前发送此消息。</p>
+<p>对于刚协商好的密钥,写密钥在此消息发送之后立即启用;读密钥在收到此消息之后立即启用。</p>
+<p>密码规格变更消息结构定义如下:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">    </span><span class="k">enum</span><span class="w"> </span><span class="p">{</span><span class="n">change_cipher_spec</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="mi">255</span><span class="p">)}</span><span class="w"> </span><span class="n">type</span><span class="p">;</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="p">}</span><span class="w"> </span><span class="n">ChangeCipherSpec</span><span class="p">;</span>
+</code></pre></div>
+<h4 id="643">6.4.3 报警协议<a class="headerlink" href="#643" title="Permanent link">&para;</a></h4>
+<h5 id="6431">6.4.3.1 结构定义<a class="headerlink" href="#6431" title="Permanent link">&para;</a></h5>
+<p>报警协议用于关闭连接的通知以及对整个连接过程中出现的错误进行报警,其中关闭通知由发起者发送,错误报警由错误的发现者发送。该协议由一条消息组成,该消息用当前的压缩算法压缩并用当前的密码规格加密,如果是首次协商,该消息为明文。</p>
+<p>报警消息的长度为两个字节,分别为报警级别和报警内容。</p>
+<p>报警消息结构定义如下:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="k">enum</span><span class="w"> </span><span class="p">{</span><span class="n">warning</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">fatal</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="mi">255</span><span class="p">)}</span><span class="w"> </span><span class="n">AlertLevel</span><span class="p">;</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="k">enum</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">    </span><span class="n">close_notify</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">    </span><span class="n">unexpected_message</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">    </span><span class="n">bad_record_mac</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span>
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="w">    </span><span class="n">decryption_failed</span><span class="p">(</span><span class="mi">21</span><span class="p">),</span>
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="w">    </span><span class="n">record_overflow</span><span class="p">(</span><span class="mi">22</span><span class="p">),</span>
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="w">    </span><span class="n">decompression_failure</span><span class="p">(</span><span class="mi">30</span><span class="p">),</span>
+<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="w">    </span><span class="n">handshake_failure</span><span class="p">(</span><span class="mi">40</span><span class="p">),</span>
+<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="w">    </span><span class="n">bad_certificate</span><span class="p">(</span><span class="mi">42</span><span class="p">),</span>
+<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="w">    </span><span class="n">unsupported_certificate</span><span class="p">(</span><span class="mi">43</span><span class="p">),</span>
+<a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a><span class="w">    </span><span class="n">certificate_revoked</span><span class="p">(</span><span class="mi">44</span><span class="p">),</span>
+<a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a><span class="w">    </span><span class="n">certificate_expired</span><span class="p">(</span><span class="mi">45</span><span class="p">),</span>
+<a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a><span class="w">    </span><span class="n">certificate_unknown</span><span class="p">(</span><span class="mi">46</span><span class="p">),</span>
+<a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a><span class="w">    </span><span class="n">illegal_parameter</span><span class="p">(</span><span class="mi">47</span><span class="p">),</span>
+<a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a><span class="w">    </span><span class="n">unknown_ca</span><span class="p">(</span><span class="mi">48</span><span class="p">),</span>
+<a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a><span class="w">    </span><span class="n">access_denied</span><span class="p">(</span><span class="mi">49</span><span class="p">),</span>
+<a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a><span class="w">    </span><span class="n">decode_error</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span>
+<a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a><span class="w">    </span><span class="n">decrypt_error</span><span class="p">(</span><span class="mi">51</span><span class="p">),</span>
+<a id="__codelineno-15-20" name="__codelineno-15-20" href="#__codelineno-15-20"></a><span class="w">    </span><span class="n">protocol_version</span><span class="p">(</span><span class="mi">70</span><span class="p">),</span>
+<a id="__codelineno-15-21" name="__codelineno-15-21" href="#__codelineno-15-21"></a><span class="w">    </span><span class="n">insufficient_security</span><span class="p">(</span><span class="mi">71</span><span class="p">),</span>
+<a id="__codelineno-15-22" name="__codelineno-15-22" href="#__codelineno-15-22"></a><span class="w">    </span><span class="n">internal_error</span><span class="p">(</span><span class="mi">80</span><span class="p">),</span>
+<a id="__codelineno-15-23" name="__codelineno-15-23" href="#__codelineno-15-23"></a><span class="w">    </span><span class="n">user_canceled</span><span class="p">(</span><span class="mi">90</span><span class="p">),</span>
+<a id="__codelineno-15-24" name="__codelineno-15-24" href="#__codelineno-15-24"></a><span class="w">    </span><span class="n">unsupported_site2site</span><span class="p">(</span><span class="mi">200</span><span class="p">),</span>
+<a id="__codelineno-15-25" name="__codelineno-15-25" href="#__codelineno-15-25"></a><span class="w">    </span><span class="n">no_area</span><span class="p">(</span><span class="mi">201</span><span class="p">),</span>
+<a id="__codelineno-15-26" name="__codelineno-15-26" href="#__codelineno-15-26"></a><span class="w">    </span><span class="n">unsupported_areatype</span><span class="p">(</span><span class="mi">202</span><span class="p">),</span>
+<a id="__codelineno-15-27" name="__codelineno-15-27" href="#__codelineno-15-27"></a><span class="w">    </span><span class="n">bad_ibcparam</span><span class="p">(</span><span class="mi">203</span><span class="p">),</span>
+<a id="__codelineno-15-28" name="__codelineno-15-28" href="#__codelineno-15-28"></a><span class="w">    </span><span class="n">unsupported_ibcparam</span><span class="p">(</span><span class="mi">204</span><span class="p">)</span>
+<a id="__codelineno-15-29" name="__codelineno-15-29" href="#__codelineno-15-29"></a><span class="w">    </span><span class="n">identity_need</span><span class="p">(</span><span class="mi">205</span><span class="p">),</span>
+<a id="__codelineno-15-30" name="__codelineno-15-30" href="#__codelineno-15-30"></a><span class="w">    </span><span class="p">(</span><span class="mi">255</span><span class="p">)</span>
+<a id="__codelineno-15-31" name="__codelineno-15-31" href="#__codelineno-15-31"></a><span class="p">}</span><span class="w"> </span><span class="n">AlertDescription</span><span class="p">;</span>
+<a id="__codelineno-15-32" name="__codelineno-15-32" href="#__codelineno-15-32"></a>
+<a id="__codelineno-15-33" name="__codelineno-15-33" href="#__codelineno-15-33"></a><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-15-34" name="__codelineno-15-34" href="#__codelineno-15-34"></a><span class="w">    </span><span class="n">AlertLevel</span><span class="w"> </span><span class="n">level</span><span class="p">;</span>
+<a id="__codelineno-15-35" name="__codelineno-15-35" href="#__codelineno-15-35"></a><span class="w">    </span><span class="n">AlertDescription</span><span class="w"> </span><span class="n">description</span><span class="p">;</span>
+<a id="__codelineno-15-36" name="__codelineno-15-36" href="#__codelineno-15-36"></a><span class="p">}</span><span class="w"> </span><span class="n">Alert</span><span class="p">;</span>
+</code></pre></div>
+<h5 id="6432">6.4.3.2 关闭通知<a class="headerlink" href="#6432" title="Permanent link">&para;</a></h5>
+<p>除非出现致命报警,客户端和服务端任何一方在结束连接之前都应发送关闭通知消息。对于该消息的发送方,该消息通知对方不再发送任何数据,可等待接收方回应的关闭通知消息后关闭本次连接,也可立即关闭本次连接。对于接收方,收到该消息后应回应一个关闭通知消息,然后关闭本次连接,不再接收和发送数据。</p>
+<h5 id="6433">6.4.3.3 错误报警<a class="headerlink" href="#6433" title="Permanent link">&para;</a></h5>
+<p>当发送或接收到一个致命级别报警之后,双方都应立即关闭连接,废弃出错连接的会话标识和密钥,被致命报警关闭的连接是不能复用的。本文件定义的错误报警表见表1。</p>
+<p><strong>表 1 错误报警表</strong></p>
+<table>
+<thead>
+<tr>
+<th>错误报警名称</th>
+<th>值</th>
+<th>级别</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>unexpected_message</td>
+<td>10</td>
+<td>致命</td>
+<td>接收到一个不符合上下文关系的消息</td>
+</tr>
+<tr>
+<td>bad_record_mac</td>
+<td>20</td>
+<td>致命</td>
+<td>MAC校验错误或解密错误</td>
+</tr>
+<tr>
+<td>decryption_failed</td>
+<td>21</td>
+<td>致命</td>
+<td>解密失败</td>
+</tr>
+<tr>
+<td>record_overflow</td>
+<td>22</td>
+<td>致命</td>
+<td>报文过长</td>
+</tr>
+<tr>
+<td>decompression_failure</td>
+<td>30</td>
+<td>致命</td>
+<td>解压缩失败</td>
+</tr>
+<tr>
+<td>handshake_failure</td>
+<td>40</td>
+<td>致命</td>
+<td>协商失败</td>
+</tr>
+<tr>
+<td>bad_certificate</td>
+<td>42</td>
+<td>—</td>
+<td>证书被破坏</td>
+</tr>
+<tr>
+<td>unsupported_certificate</td>
+<td>43</td>
+<td>—</td>
+<td>不支持证书类型</td>
+</tr>
+<tr>
+<td>certificate_revoked</td>
+<td>44</td>
+<td>—</td>
+<td>证书被撤销</td>
+</tr>
+<tr>
+<td>certificate_expired</td>
+<td>45</td>
+<td>—</td>
+<td>证书过期或未生效</td>
+</tr>
+<tr>
+<td>certificate_unknown</td>
+<td>46</td>
+<td>—</td>
+<td>未知证书错误</td>
+</tr>
+<tr>
+<td>illegal_parameter</td>
+<td>47</td>
+<td>致命</td>
+<td>非法参数</td>
+</tr>
+<tr>
+<td>unknown_ca</td>
+<td>48</td>
+<td>致命</td>
+<td>根证书不可信</td>
+</tr>
+<tr>
+<td>access_denied</td>
+<td>49</td>
+<td>致命</td>
+<td>拒绝访问</td>
+</tr>
+<tr>
+<td>decode_error</td>
+<td>50</td>
+<td>致命</td>
+<td>消息解码失败</td>
+</tr>
+<tr>
+<td>decrypt_error</td>
+<td>51</td>
+<td>—</td>
+<td>消息解密失败</td>
+</tr>
+<tr>
+<td>protocol_version</td>
+<td>70</td>
+<td>致命</td>
+<td>版本不匹配</td>
+</tr>
+<tr>
+<td>insufficient_security</td>
+<td>71</td>
+<td>致命</td>
+<td>安全性不足</td>
+</tr>
+<tr>
+<td>internal_error</td>
+<td>80</td>
+<td>致命</td>
+<td>内部错误</td>
+</tr>
+<tr>
+<td>user_canceled</td>
+<td>90</td>
+<td>警告</td>
+<td>用户取消操作</td>
+</tr>
+<tr>
+<td>unsupported_site2site</td>
+<td>200</td>
+<td>致命</td>
+<td>不支持site2site</td>
+</tr>
+<tr>
+<td>no_area</td>
+<td>201</td>
+<td>—</td>
+<td>没有保护域</td>
+</tr>
+<tr>
+<td>unsupported_areatype</td>
+<td>202</td>
+<td>—</td>
+<td>不支持的保护域类型</td>
+</tr>
+<tr>
+<td>bad_ibcparam</td>
+<td>203</td>
+<td>致命</td>
+<td>接收到一个无效的ibc公共参数</td>
+</tr>
+<tr>
+<td>unsupported_ibcparam</td>
+<td>204</td>
+<td>致命</td>
+<td>不支持ibc公共参数中定义的信息</td>
+</tr>
+<tr>
+<td>identity_need</td>
+<td>205</td>
+<td>致命</td>
+<td>缺少对方的ibc标识</td>
+</tr>
+</tbody>
+</table>
+<p>对于没有明确指出级别的错误报警,发送者可自行决定是否致命,如果发送者认为是致命的,应向接收者发出关闭通知,最后关闭本次连接;如果接收到一个警告级别的报警,接收者可自行决定是否致命,如果接收者认为是致命的,应向发起者发出关闭通知,最后关闭本次连接。</p>
+<h4 id="644">6.4.4 握手协议总览<a class="headerlink" href="#644" title="Permanent link">&para;</a></h4>
+<p>握手协议涉及以下过程:</p>
+<p>a) 交换hello消息来协商密码套件,交换随机数,决定是否会话重用;</p>
+<p>b) 交换必要的参数,协商预主密钥;</p>
+<p>c) 交换证书或IBC信息,用于验证对方;</p>
+<p>d) 使用预主密钥和交换的随机数生成主密钥;</p>
+<p>e) 向记录层提供安全参数;</p>
+<p>f) 验证双方计算的安全参数的一致性、握手过程的真实性和完整性。</p>
+<p>握手过程如下:客户端发送客户端hello消息给服务端,服务端应回应服务端hello消息,否则产生一个致命错误并且断开连接。客户端hello和服务端hello用于在客户端和服务端进行基于SM2、RSA或IBC的密码算法协商,以及确定安全传输能力,包括协议版本,会话标识,密码套件属性,并且产生和交换随机数。此外,客户端hello和服务端hello消息中可根据情况内嵌多种不同的扩展字段,来实现额外的信息协商能力,扩展字段及其定义见附录A。</p>
+<p>在客户端hello和服务端hello消息之后是身份验证和密钥交换过程。包括服务端证书、服务端密钥交换,客户端证书、客户端密钥交换。</p>
+<p>在服务端发送完hello消息之后,接着发送自己的证书消息,服务端密钥交换消息。如果服务端需要验证客户端的身份,则向客户端发送证书请求消息。然后发送服务端hello完成消息,表示hello消息阶段已经结束,服务端等待客户端的返回消息。如果服务端发送了一个证书请求消息,客户端应返回一个证书消息。然后客户端发送密钥交换消息,消息内容取决于客户端hello消息和服务端hello消息协商出的密钥交换算法。如果客户端发送了证书消息,那么也应发送一个带数字签名的证书验证消息供服务端验证客户端的身份。</p>
+<p>接着客户端发送密码规格变更消息,然后客户端立即使用刚协商的算法和密钥,加密并发送握手结束消息。服务端则回应密码规格变更消息,使用刚协商的算法和密钥,加密并发送握手结束消息。至此握手过程结束,服务端和客户端可开始数据安全传输。</p>
+<p>握手消息流程见图1。</p>
+<p><img alt="图 1 握手消息流程" src="../images/figure_01.png" /></p>
+<blockquote>
+<p>[!note]</p>
+<p>注:</p>
+<p>* 表示可选或依赖于上下文关系的消息,不是每次都发送。</p>
+<p>[]不属于握手协议消息。</p>
+</blockquote>
+<p><strong>图 1 握手消息流程</strong></p>
+<p>如果客户端和服务端决定重用之前的会话,可不必重新协商安全参数。客户端发送客户端hello消息,并且带上要重用的会话标识。如果服务端有匹配的会话存在,服务端则使用相应的会话状态接受连接,发送一个具有相同会话标识的服务端hello消息。然后客户端和服务端各自发送密码规格变更消息和握手结束消息。至此握手过程结束,服务端和客户端可开始数据安全传输。如果服务端没有匹配的会话标识,服务端会生成一个新的会话标识进行一个完整的握手过程。</p>
+<p>会话重用的握手消息流程见图2。</p>
+<p><img alt="图 2 重用的握手消息流程" src="../images/figure_02.png" /></p>
+<p><strong>图 2 重用的握手消息流程</strong></p>
+<h4 id="645">6.4.5 握手协议<a class="headerlink" href="#645" title="Permanent link">&para;</a></h4>
+<h5 id="6451">6.4.5.1 结构定义<a class="headerlink" href="#6451" title="Permanent link">&para;</a></h5>
+<p>握手协议是在记录层协议之上的协议,用于协商安全参数。握手协议的消息通过记录层协议传输。</p>
+<p>握手消息结构定义如下:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">    </span><span class="n">HandshakeType</span><span class="w"> </span><span class="n">msg_type</span><span class="p">;</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">    </span><span class="n">uint24</span><span class="w"> </span><span class="n">length</span><span class="p">;</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">    </span><span class="n">select</span><span class="p">(</span><span class="n">HandshakeType</span><span class="p">){</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">client_hello</span><span class="p">:</span><span class="w"> </span><span class="n">ClientHello</span><span class="p">;</span>
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">server_hello</span><span class="p">:</span><span class="w"> </span><span class="n">ServerHello</span><span class="p">;</span>
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">certificate</span><span class="p">:</span><span class="w"> </span><span class="n">Certificate</span><span class="p">;</span>
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">server_key_exchange</span><span class="p">:</span><span class="w"> </span><span class="n">ServerKeyExchange</span><span class="p">;</span>
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">certificate_request</span><span class="p">:</span><span class="w"> </span><span class="n">CertificateRequest</span><span class="p">;</span>
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">server_hello_done</span><span class="p">:</span><span class="w"> </span><span class="n">ServerHelloDone</span><span class="p">;</span>
+<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">certificate_verify</span><span class="p">:</span><span class="w"> </span><span class="n">CertificateVerify</span><span class="p">;</span>
+<a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">client_key_exchange</span><span class="p">:</span><span class="w"> </span><span class="n">ClientKeyExchange</span><span class="p">;</span>
+<a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">finished</span><span class="p">:</span><span class="w"> </span><span class="n">Finished</span><span class="p">;</span>
+<a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="n">body</span><span class="p">;</span>
+<a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a><span class="p">}</span><span class="w"> </span><span class="n">Handshake</span><span class="p">;</span>
+</code></pre></div>
+<p>握手消息类型定义如下:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="k">enum</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">    </span><span class="n">client_hello</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">server_hello</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">    </span><span class="n">certificate</span><span class="p">(</span><span class="mi">11</span><span class="p">),</span><span class="w"> </span><span class="n">server_key_exchange</span><span class="p">(</span><span class="mi">12</span><span class="p">),</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">    </span><span class="n">certificate_request</span><span class="p">(</span><span class="mi">13</span><span class="p">),</span><span class="w"> </span><span class="n">server_hello_done</span><span class="p">(</span><span class="mi">14</span><span class="p">),</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">    </span><span class="n">certificate_verify</span><span class="p">(</span><span class="mi">15</span><span class="p">),</span><span class="w"> </span><span class="n">client_key_exchange</span><span class="p">(</span><span class="mi">16</span><span class="p">),</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="w">    </span><span class="n">finished</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="mi">255</span><span class="p">)</span>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="p">}</span><span class="w"> </span><span class="n">HandshakeType</span><span class="p">;</span>
+</code></pre></div>
+<p>握手协议消息应按照规定的流程顺序进行发送,否则将会导致致命的错误。不需要的握手消息可被接收方忽略。</p>
+<h5 id="6452-hello">6.4.5.2 Hello消息<a class="headerlink" href="#6452-hello" title="Permanent link">&para;</a></h5>
+<h6 id="64521-clienthello">6.4.5.2.1 ClientHello消息<a class="headerlink" href="#64521-clienthello" title="Permanent link">&para;</a></h6>
+<p>该消息为客户端hello消息。</p>
+<p>客户端hello消息作为握手协议的第一条消息。</p>
+<p>客户端在发送客户端hello消息之后,等待服务端回应服务端hello消息。</p>
+<p>客户端hello消息结构定义如下:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="w">    </span><span class="n">ProtocolVersion</span><span class="w"> </span><span class="n">client_version</span><span class="p">;</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">    </span><span class="n">Random</span><span class="w"> </span><span class="n">random</span><span class="p">;</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w">    </span><span class="n">SessionID</span><span class="w"> </span><span class="n">session_id</span><span class="p">;</span>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="w">    </span><span class="n">CipherSuite</span><span class="w"> </span><span class="n">cipher_suites</span><span class="o">&lt;</span><span class="mf">2..2</span><span class="o">^</span><span class="mi">16-1</span><span class="o">&gt;</span><span class="p">;</span>
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="w">    </span><span class="n">CompressionMethod</span><span class="w"> </span><span class="n">compression_methods</span><span class="o">&lt;</span><span class="mf">1..2</span><span class="o">^</span><span class="mi">8-1</span><span class="o">&gt;</span><span class="p">;</span>
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="w">    </span><span class="n">select</span><span class="p">(</span><span class="n">extensions_present</span><span class="p">){</span>
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">false</span><span class="p">:</span>
+<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="w">            </span><span class="k">struct</span><span class="w"> </span><span class="p">{};</span>
+<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">true</span><span class="p">:</span>
+<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a><span class="w">            </span><span class="n">Extension</span><span class="w"> </span><span class="n">extensions</span><span class="o">&lt;</span><span class="mf">0..2</span><span class="o">^</span><span class="mi">16-1</span><span class="o">&gt;</span><span class="p">;</span>
+<a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a><span class="p">}</span><span class="w"> </span><span class="n">ClientHello</span><span class="p">;</span>
+</code></pre></div>
+<p>其中:</p>
+<p><strong>a) client_version</strong></p>
+<p>客户端在这个会话中使用的协议版本。在本文件中,协议版本号是1.1。</p>
+<p><strong>b) random</strong></p>
+<p>客户端产生的随机信息,其内容包括时钟和随机数,结构定义如下:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w">    </span><span class="n">uint32</span><span class="w"> </span><span class="n">gmt_unix_time</span><span class="p">;</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w">    </span><span class="n">opaque</span><span class="w"> </span><span class="n">random_bytes</span><span class="p">[</span><span class="mi">28</span><span class="p">];</span>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="p">}</span><span class="w"> </span><span class="n">Random</span><span class="p">;</span>
+</code></pre></div>
+<p>gmt_unix_time为标准UNIX32位格式表示的发送者时钟,其值为从格林威治时间的1970年1月1日零点到当前时间的秒数。</p>
+<p>random_bytes为28个字节的随机数。</p>
+<p><strong>c) session_id</strong></p>
+<p>客户端在连接中使用的会话标识,定义为:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="n">opaque</span><span class="w"> </span><span class="n">SessionID</span><span class="o">&lt;</span><span class="mf">0..32</span><span class="o">&gt;</span>
+</code></pre></div>
+<p>session_id是一个可变长字段,其值由服务端决定。如果没有可重用的会话标识或希望协商安全参数,该字段应为空,否则表示客户端希望重用该会话。这个会话标识可能是之前的连接标识、当前连接标识、或其他处于连接状态的连接标识。会话标识生成后应一直保持到被超时删除或与这个会话相关的连接遇到致命错误被关闭。一个会话失效或被关闭时则与其相关的连接都应被强制关闭。</p>
+<p><strong>d) cipher_suites</strong></p>
+<p>客户端所支持的密码套件列表,客户端应按照密码套件使用的优先级顺序排列,优先级最高的密码套件应排在首位。如果会话标识字段不为空,本字段应至少包含将重用的会话所使用的密码套件。</p>
+<p>密码套件定义如下:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="n">uint8</span><span class="w"> </span><span class="n">CipherSuite</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+</code></pre></div>
+<p>每个密码套件包括一个密钥交换算法、一个加密算法和一个校验算法。服务端将在密码套件列表中选择一个与之匹配的密码套件,如果没有可匹配的密码套件,应返回握手失败报警消息handshake_failure并且关闭连接。</p>
+<p>本文件支持的密码套件列表如表2所示。</p>
+<p><strong>表 2 密码套件列表</strong></p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>密钥交换</th>
+<th>加密</th>
+<th>校验</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ECDHE_SM4_CBC_SM3</td>
+<td>ECDHE</td>
+<td>SM4_CBC</td>
+<td>SM3</td>
+<td>{0xe0,0x11}</td>
+</tr>
+<tr>
+<td>ECDHE_SM4_GCM_SM3</td>
+<td>ECDHE</td>
+<td>SM4_GCM</td>
+<td>SM3</td>
+<td>{0xe0,0x51}</td>
+</tr>
+<tr>
+<td>ECC_SM4_CBC_SM3</td>
+<td>ECC</td>
+<td>SM4_CBC</td>
+<td>SM3</td>
+<td>{0xe0,0x13}</td>
+</tr>
+<tr>
+<td>ECC_SM4_GCM_SM3</td>
+<td>ECC</td>
+<td>SM4_GCM</td>
+<td>SM3</td>
+<td>{0xe0,0x53}</td>
+</tr>
+<tr>
+<td>IBSDH_SM4_CBC_SM3</td>
+<td>IBSDH</td>
+<td>SM4_CBC</td>
+<td>SM3</td>
+<td>{0xe0,0x15}</td>
+</tr>
+<tr>
+<td>IBSDH_SM4_GCM_SM3</td>
+<td>IBSDH</td>
+<td>SM4_GCM</td>
+<td>SM3</td>
+<td>{0xe0,0x55}</td>
+</tr>
+<tr>
+<td>IBC_SM4_CBC_SM3</td>
+<td>IBC</td>
+<td>SM4_CBC</td>
+<td>SM3</td>
+<td>{0xe0,0x17}</td>
+</tr>
+<tr>
+<td>IBC_SM4_GCM_SM3</td>
+<td>IBC</td>
+<td>SM4_GCM</td>
+<td>SM3</td>
+<td>{0xe0,0x57}</td>
+</tr>
+<tr>
+<td>RSA_SM4_CBC_SM3</td>
+<td>RSA</td>
+<td>SM4_CBC</td>
+<td>SM3</td>
+<td>{0xe0,0x19}</td>
+</tr>
+<tr>
+<td>RSA_SM4_GCM_SM3</td>
+<td>RSA</td>
+<td>SM4_GCM</td>
+<td>SM3</td>
+<td>{0xe0,0x59}</td>
+</tr>
+<tr>
+<td>RSA_SM4_CBC_SHA256</td>
+<td>RSA</td>
+<td>SM4_CBC</td>
+<td>SHA256</td>
+<td>{0xe0,0x1c}</td>
+</tr>
+<tr>
+<td>RSA_SM4_GCM_SHA256</td>
+<td>RSA</td>
+<td>SM4_GCM</td>
+<td>SHA256</td>
+<td>{0xe0,0x5a}</td>
+</tr>
+</tbody>
+</table>
+<p>在本文件中实现ECC和ECDHE的算法为SM2;实现IBC和IBSDH的算法为SM9。</p>
+<p><strong>a) compression_methods</strong></p>
+<p>客户端所支持的压缩算法列表,客户端应按照压缩算法使用的优先级顺序排列,优先级最高的压缩算法应排在首位。</p>
+<p>定义如下:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="k">enum</span><span class="w"> </span><span class="p">{</span><span class="n">null</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="mi">255</span><span class="p">)}</span><span class="w"> </span><span class="n">CompressionMethod</span><span class="p">;</span>
+</code></pre></div>
+<p>服务端将在压缩算法列表中选择一个与之匹配的压缩算法。列表中应包含空压缩算法,这样客户端和服务端总能协商出一致的压缩算法,压缩算法默认为空。</p>
+<p><strong>b) extensions</strong></p>
+<p>客户端可根据需要在客户端hello消息中携带扩展字段以便进行额外的握手信息协商。具体的Extension结构定义见6.4.5.2.3。</p>
+<h6 id="64522-serverhello">6.4.5.2.2 ServerHello消息<a class="headerlink" href="#64522-serverhello" title="Permanent link">&para;</a></h6>
+<p>该消息为服务端hello消息。</p>
+<p>如果能从客户端hello消息中找到匹配的密码套件,服务端发送这个消息作为对客户端hello消息的回复。如果找不到匹配的密码套件,服务端将回应handshake failure报警消息。</p>
+<p>服务端hello消息结构定义如下:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="w">    </span><span class="n">ProtocolVersion</span><span class="w"> </span><span class="n">server_version</span><span class="p">;</span>
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="w">    </span><span class="n">Random</span><span class="w"> </span><span class="n">random</span><span class="p">;</span>
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="w">    </span><span class="n">SessionID</span><span class="w"> </span><span class="n">session_id</span><span class="p">;</span>
+<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="w">    </span><span class="n">CipherSuite</span><span class="w"> </span><span class="n">cipher_suite</span><span class="p">;</span>
+<a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a><span class="w">    </span><span class="n">CompressionMethod</span><span class="w"> </span><span class="n">compression_method</span><span class="p">;</span>
+<a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a><span class="w">    </span><span class="n">select</span><span class="p">(</span><span class="n">extensions_present</span><span class="p">){</span>
+<a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">false</span><span class="p">:</span>
+<a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a><span class="w">            </span><span class="k">struct</span><span class="w"> </span><span class="p">{};</span>
+<a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">true</span><span class="p">:</span>
+<a id="__codelineno-23-11" name="__codelineno-23-11" href="#__codelineno-23-11"></a><span class="w">            </span><span class="n">Extension</span><span class="w"> </span><span class="n">extensions</span><span class="o">&lt;</span><span class="mf">0..2</span><span class="o">^</span><span class="mi">16-1</span><span class="o">&gt;</span><span class="p">;</span>
+<a id="__codelineno-23-12" name="__codelineno-23-12" href="#__codelineno-23-12"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-23-13" name="__codelineno-23-13" href="#__codelineno-23-13"></a><span class="p">}</span><span class="w"> </span><span class="n">ServerHello</span><span class="p">;</span>
+</code></pre></div>
+<p>其中:</p>
+<p><strong>a) server_version</strong></p>
+<p>该字段表示服务端支持的协议版本。本文件的版本号是1.1。</p>
+<p><strong>b) random</strong></p>
+<p>服务端产生的随机数。</p>
+<p><strong>c) session_id</strong></p>
+<p>服务端使用的会话标识,如果客户端hello消息中的会话标识不为空,且服务端存在匹配的会话标识,则服务端重用与该标识对应的会话建立新连接,并在回应的服务端hello消息中带上与客户端一致的会话标识,否则服务端产生一个新的会话标识,用来建立一个新的会话。</p>
+<p><strong>d) cipher_suite</strong></p>
+<p>服务端从客户端hello消息中选取的一个密码套件。对于重用的会话,本字段存放重用会话使用的密码套件。</p>
+<p><strong>e) compression_method</strong></p>
+<p>服务端从客户端hello消息中选取的一个压缩算法,对于重用的会话,本字段存放重用会话使用的压缩算法,压缩算法默认为空。</p>
+<p><strong>f) extensions</strong></p>
+<p>服务端响应客户端hello中扩展字段而产生的服务端扩展字段条目。只有出现在客户端hello中的扩展字段才允许被服务器端响应。</p>
+<h6 id="64523-hello">6.4.5.2.3 Hello消息扩展字段<a class="headerlink" href="#64523-hello" title="Permanent link">&para;</a></h6>
+<p>扩展字段的结构定义如下:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="w">    </span><span class="n">ExtensionType</span><span class="w"> </span><span class="n">extension_type</span><span class="p">;</span>
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="w">    </span><span class="n">opaque</span><span class="w"> </span><span class="n">extension_data</span><span class="o">&lt;</span><span class="mf">0..2</span><span class="o">^</span><span class="mi">16-1</span><span class="o">&gt;</span><span class="p">;</span>
+<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="p">}</span><span class="w"> </span><span class="n">Extension</span><span class="p">;</span>
+<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a>
+<a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a><span class="k">enum</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a><span class="w">    </span><span class="n">server_name</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span><span class="w"> </span><span class="n">trusted_ca_keys</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span><span class="w"> </span><span class="n">status_request</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span>
+<a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a><span class="w">    </span><span class="n">supported_groups</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span><span class="w"> </span><span class="n">signature_algorithm</span><span class="p">(</span><span class="mi">13</span><span class="p">)</span>
+<a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a><span class="w">    </span><span class="n">application_layer_protocol_negotiation</span><span class="p">(</span><span class="mi">16</span><span class="p">),</span><span class="w"> </span><span class="n">client_id</span><span class="p">(</span><span class="mi">66</span><span class="p">);</span>
+<a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a><span class="p">}</span><span class="w"> </span><span class="n">ExtensionType</span><span class="p">;</span>
+</code></pre></div>
+<p>其中:</p>
+<p><strong>a) extension_type</strong></p>
+<p>标识了具体的扩展类型,具体的扩展类型见ExtensionType的定义。具体的扩展字段含义请见附录A。其中扩展字段类型和扩展字段名称对应关系为:server_name对应附录A中“A.1 SNI服务器名称指示”、trusted_ca_keys对应“A.2 Trusted CA Indication受信CA指示”、status_request对应“A.3 Certificate Status Request证书状态请求”、supported_groups对应“A.4 Supported Elliptic Curves支持的椭圆曲线”、signature_algorithm对应“A.5 Signature Algorithm签名算法”、application_layer_protocol_negotiation对应“A.6 Application Layer Protocol Negotiation应用层协议协商”、client_id对应“A.7 Client ID客户端标识”。</p>
+<p><strong>b) extension_data</strong></p>
+<p>包含了某个扩展字段自有的数据内容,每个扩展字段的自有数据内容和结构见附录A。</p>
+<h5 id="6453-servercertificate">6.4.5.3 ServerCertificate消息<a class="headerlink" href="#6453-servercertificate" title="Permanent link">&para;</a></h5>
+<p>该消息为服务端证书消息。</p>
+<p>服务端应发送一个服务端证书消息给客户端,该消息总是紧跟在服务端hello消息之后。当选中的密码套件使用ECC或RSA或ECDHE算法时,本消息的内容为服务端的签名证书和加密证书;当选中的密码套件使用IBC或IBSDH算法时,本消息的内容为服务端标识和IBC公共参数,用于客户端与服务端协商IBC公开参数。</p>
+<p>证书格式应符合GM/T 0015,证书类型应能适用于已经确定的密钥交换算法。密钥交换算法与证书密钥类型的关系如表3所示。</p>
+<p><strong>表 3 密钥交换算法与证书密钥类型关系表</strong></p>
+<table>
+<thead>
+<tr>
+<th>密钥交换算法</th>
+<th>证书密钥类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RSA</td>
+<td>RSA公钥,应使用加密证书中的公钥</td>
+</tr>
+<tr>
+<td>IBC</td>
+<td>服务端标识和IBC公共参数</td>
+</tr>
+<tr>
+<td>IBSDH</td>
+<td>服务端标识和IBC公共参数</td>
+</tr>
+<tr>
+<td>ECC</td>
+<td>ECC公钥,应使用加密证书中的公钥</td>
+</tr>
+<tr>
+<td>ECDHE</td>
+<td>ECC公钥,应使用加密证书中的公钥</td>
+</tr>
+</tbody>
+</table>
+<p>对于证书消息结构如下:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="n">opaque</span><span class="w"> </span><span class="n">ASN</span><span class="mf">.1</span><span class="n">Cert</span><span class="o">&lt;</span><span class="mf">1..2</span><span class="o">^</span><span class="mi">24-1</span><span class="o">&gt;</span><span class="p">;</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="w">    </span><span class="n">ASN</span><span class="mf">.1</span><span class="n">Cert</span><span class="w"> </span><span class="n">certificate</span><span class="o">&lt;</span><span class="mf">0..2</span><span class="o">^</span><span class="mi">24-1</span><span class="o">&gt;</span><span class="p">;</span>
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="p">}</span><span class="w"> </span><span class="n">Certificate</span><span class="p">;</span>
+</code></pre></div>
+<p>certificate</p>
+<p>服务器证书:按照先后顺序分为为签名证书、加密证书、签名证书链和加密证书链。</p>
+<p>IBC标识及公共参数结构:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="n">opaque</span><span class="w"> </span><span class="n">ASN</span><span class="mf">.1</span><span class="n">IBCParam</span><span class="o">&lt;</span><span class="mf">1..2</span><span class="o">^</span><span class="mi">24-1</span><span class="o">&gt;</span><span class="p">;</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="w">    </span><span class="n">opaque</span><span class="w"> </span><span class="n">ibc_id</span><span class="o">&lt;</span><span class="mf">1..2</span><span class="o">^</span><span class="mi">16-1</span><span class="o">&gt;</span><span class="p">;</span>
+<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="w">    </span><span class="n">ASN</span><span class="mf">.1</span><span class="n">IBCParam</span><span class="w"> </span><span class="n">ibc_parameter</span><span class="p">;</span>
+<a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="p">}</span><span class="w"> </span><span class="n">Certificate</span><span class="p">;</span>
+</code></pre></div>
+<p>其中:</p>
+<p><strong>a) ibc_id</strong></p>
+<p>服务端标识,内容应符合GM/T 0090—2020中Identifier结构的DER编码结果,或由用户自定义的标识信息。</p>
+<p><strong>b) ibc_parameter</strong></p>
+<p>IBC公共参数,内容应符合GM/T 0081—2020附录A定义的IBCSysParams结构的DER编码结果。</p>
+<h5 id="6454-serverkeyexchange">6.4.5.4 ServerKeyExchange消息<a class="headerlink" href="#6454-serverkeyexchange" title="Permanent link">&para;</a></h5>
+<p>本消息为服务端密钥交换消息。本消息传送的信息用于客户端计算产生48字节的预主密钥。</p>
+<p>服务端密钥交换消息结构定义如下:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="k">enum</span><span class="w"> </span><span class="p">{</span><span class="n">ECDHE</span><span class="p">,</span><span class="w"> </span><span class="n">ECC</span><span class="p">,</span><span class="w"> </span><span class="n">IBSDH</span><span class="p">,</span><span class="w"> </span><span class="n">IBC</span><span class="p">,</span><span class="w"> </span><span class="n">RSA</span><span class="p">}</span><span class="w"> </span><span class="n">KeyExchangeAlgorithm</span><span class="p">;</span>
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="w">    </span><span class="n">select</span><span class="p">(</span><span class="n">KeyExchangeAlgorithm</span><span class="p">){</span>
+<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">ECDHE</span><span class="p">:</span>
+<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="w">            </span><span class="n">ServerECDHEParams</span><span class="w"> </span><span class="n">params</span><span class="p">;</span>
+<a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="w">            </span><span class="n">digitally</span><span class="o">-</span><span class="kt">signed</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a><span class="w">                </span><span class="n">opaque</span><span class="w"> </span><span class="n">client_random</span><span class="p">[</span><span class="mi">32</span><span class="p">];</span>
+<a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a><span class="w">                </span><span class="n">opaque</span><span class="w"> </span><span class="n">server_random</span><span class="p">[</span><span class="mi">32</span><span class="p">];</span>
+<a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a><span class="w">                </span><span class="n">ServerECDHEParams</span><span class="w"> </span><span class="n">params</span><span class="p">;</span>
+<a id="__codelineno-27-10" name="__codelineno-27-10" href="#__codelineno-27-10"></a><span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="n">signed_params</span><span class="p">;</span>
+<a id="__codelineno-27-11" name="__codelineno-27-11" href="#__codelineno-27-11"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">ECC</span><span class="p">:</span>
+<a id="__codelineno-27-12" name="__codelineno-27-12" href="#__codelineno-27-12"></a><span class="w">            </span><span class="n">digitally</span><span class="o">-</span><span class="kt">signed</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-27-13" name="__codelineno-27-13" href="#__codelineno-27-13"></a><span class="w">                </span><span class="n">opaque</span><span class="w"> </span><span class="n">client_random</span><span class="p">[</span><span class="mi">32</span><span class="p">];</span>
+<a id="__codelineno-27-14" name="__codelineno-27-14" href="#__codelineno-27-14"></a><span class="w">                </span><span class="n">opaque</span><span class="w"> </span><span class="n">server_random</span><span class="p">[</span><span class="mi">32</span><span class="p">];</span>
+<a id="__codelineno-27-15" name="__codelineno-27-15" href="#__codelineno-27-15"></a><span class="w">                </span><span class="n">opaque</span><span class="w"> </span><span class="n">ASN</span><span class="mf">.1</span><span class="n">Cert</span><span class="o">&lt;</span><span class="mf">1..2</span><span class="o">^</span><span class="mi">24-1</span><span class="o">&gt;</span><span class="p">;</span>
+<a id="__codelineno-27-16" name="__codelineno-27-16" href="#__codelineno-27-16"></a><span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="n">signed_params</span><span class="p">;</span>
+<a id="__codelineno-27-17" name="__codelineno-27-17" href="#__codelineno-27-17"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">IBSDH</span><span class="p">:</span>
+<a id="__codelineno-27-18" name="__codelineno-27-18" href="#__codelineno-27-18"></a><span class="w">            </span><span class="n">ServerIBSDHParams</span><span class="w"> </span><span class="n">params</span><span class="p">;</span>
+<a id="__codelineno-27-19" name="__codelineno-27-19" href="#__codelineno-27-19"></a><span class="w">            </span><span class="n">digitally</span><span class="o">-</span><span class="kt">signed</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-27-20" name="__codelineno-27-20" href="#__codelineno-27-20"></a><span class="w">                </span><span class="n">opaque</span><span class="w"> </span><span class="n">client_random</span><span class="p">[</span><span class="mi">32</span><span class="p">];</span>
+<a id="__codelineno-27-21" name="__codelineno-27-21" href="#__codelineno-27-21"></a><span class="w">                </span><span class="n">opaque</span><span class="w"> </span><span class="n">server_random</span><span class="p">[</span><span class="mi">32</span><span class="p">];</span>
+<a id="__codelineno-27-22" name="__codelineno-27-22" href="#__codelineno-27-22"></a><span class="w">                </span><span class="n">ServerIBSDHParams</span><span class="w"> </span><span class="n">params</span><span class="p">;</span>
+<a id="__codelineno-27-23" name="__codelineno-27-23" href="#__codelineno-27-23"></a><span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="n">signed_params</span><span class="p">;</span>
+<a id="__codelineno-27-24" name="__codelineno-27-24" href="#__codelineno-27-24"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">IBC</span><span class="p">:</span>
+<a id="__codelineno-27-25" name="__codelineno-27-25" href="#__codelineno-27-25"></a><span class="w">            </span><span class="n">digitally</span><span class="o">-</span><span class="kt">signed</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-27-26" name="__codelineno-27-26" href="#__codelineno-27-26"></a><span class="w">                </span><span class="n">opaque</span><span class="w"> </span><span class="n">client_random</span><span class="p">[</span><span class="mi">32</span><span class="p">];</span>
+<a id="__codelineno-27-27" name="__codelineno-27-27" href="#__codelineno-27-27"></a><span class="w">                </span><span class="n">opaque</span><span class="w"> </span><span class="n">server_random</span><span class="p">[</span><span class="mi">32</span><span class="p">];</span>
+<a id="__codelineno-27-28" name="__codelineno-27-28" href="#__codelineno-27-28"></a><span class="w">                </span><span class="n">opaque</span><span class="w"> </span><span class="n">ibc_id</span><span class="o">&lt;</span><span class="mf">1..2</span><span class="o">^</span><span class="mi">16-1</span><span class="o">&gt;</span><span class="p">;</span>
+<a id="__codelineno-27-29" name="__codelineno-27-29" href="#__codelineno-27-29"></a><span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="n">signed_params</span><span class="p">;</span>
+<a id="__codelineno-27-30" name="__codelineno-27-30" href="#__codelineno-27-30"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">RSA</span><span class="p">:</span>
+<a id="__codelineno-27-31" name="__codelineno-27-31" href="#__codelineno-27-31"></a><span class="w">            </span><span class="n">digitally</span><span class="o">-</span><span class="kt">signed</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-27-32" name="__codelineno-27-32" href="#__codelineno-27-32"></a><span class="w">                </span><span class="n">opaque</span><span class="w"> </span><span class="n">client_random</span><span class="p">[</span><span class="mi">32</span><span class="p">];</span>
+<a id="__codelineno-27-33" name="__codelineno-27-33" href="#__codelineno-27-33"></a><span class="w">                </span><span class="n">opaque</span><span class="w"> </span><span class="n">server_random</span><span class="p">[</span><span class="mi">32</span><span class="p">];</span>
+<a id="__codelineno-27-34" name="__codelineno-27-34" href="#__codelineno-27-34"></a><span class="w">                </span><span class="n">opaque</span><span class="w"> </span><span class="n">ASN</span><span class="mf">.1</span><span class="n">Cert</span><span class="o">&lt;</span><span class="mf">1..2</span><span class="o">^</span><span class="mi">24-1</span><span class="o">&gt;</span><span class="p">;</span>
+<a id="__codelineno-27-35" name="__codelineno-27-35" href="#__codelineno-27-35"></a><span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="n">signed_params</span><span class="p">;</span>
+<a id="__codelineno-27-36" name="__codelineno-27-36" href="#__codelineno-27-36"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-27-37" name="__codelineno-27-37" href="#__codelineno-27-37"></a><span class="p">}</span><span class="w"> </span><span class="n">ServerKeyExchange</span><span class="p">;</span>
+</code></pre></div>
+<p>其中:</p>
+<p><strong>a) ServerECDHEParams</strong></p>
+<p>服务端的密钥交换参数,当使用SM2算法时,交换的参数应符合GM/T 0009,其中服务端的公钥不需要交换,客户端直接从服务端的加密证书中获取。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="w">    </span><span class="n">ECParameters</span><span class="w"> </span><span class="n">curve_params</span><span class="p">;</span>
+<a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="w">    </span><span class="n">ECPoint</span><span class="w"> </span><span class="n">public</span><span class="p">;</span>
+<a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a><span class="p">}</span><span class="w"> </span><span class="n">ServerECDHParams</span><span class="p">;</span>
+</code></pre></div>
+<p>如果使用SM2算法,第一个参数不校验。</p>
+<p><strong>b) ServerIBSDHParams</strong></p>
+<p>使用IBSDH算法时,服务端的密钥交换参数,内容应符合GM/T 0081中的KeyAgreementInfo结构的DER编码结果。</p>
+<p><strong>c) signed_params</strong></p>
+<p>当密钥交换方式为ECDHE和IBSDH时,signed_params是服务端对双方随机数和服务端密钥交换参数的签名;当密钥交换方式为ECC和RSA时,signed_params是服务端对双方随机数和服务端加密证书的签名;当密钥交换方式为IBC时,signed_params是服务端对双方随机数和服务端标识的签名,其中ibc_id为服务端标识。</p>
+<h5 id="6455-certificaterequest">6.4.5.5 CertificateRequest消息<a class="headerlink" href="#6455-certificaterequest" title="Permanent link">&para;</a></h5>
+<p>本消息为证书请求消息。</p>
+<p>如果服务端要求认证客户端,则应发送此消息,要求客户端发送自己的证书。</p>
+<p>该消息紧跟在服务端密钥交换消息之后。</p>
+<p>证书请求消息的结构定义如下:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="w">    </span><span class="n">ClientCertificateType</span><span class="w"> </span><span class="n">certificate_types</span><span class="o">&lt;</span><span class="mf">1..2</span><span class="o">^</span><span class="mi">8-1</span><span class="o">&gt;</span><span class="p">;</span>
+<a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="w">    </span><span class="n">DistinguishedName</span><span class="w"> </span><span class="n">certificate_authorities</span><span class="o">&lt;</span><span class="mf">0..2</span><span class="o">^</span><span class="mi">16-1</span><span class="o">&gt;</span><span class="p">;</span>
+<a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="p">}</span><span class="w"> </span><span class="n">CertificateRequest</span><span class="p">;</span>
+</code></pre></div>
+<p>其中:</p>
+<p><strong>a) certificate_types</strong></p>
+<p>要求客户端提供的证书类型的列表。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="k">enum</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="w">    </span><span class="n">rsa_sign</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">sm2_sign</span><span class="p">(</span><span class="mi">64</span><span class="p">),</span><span class="w"> </span><span class="n">ibc_params</span><span class="p">(</span><span class="mi">80</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="mi">255</span><span class="p">)</span>
+<a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="p">}</span><span class="w"> </span><span class="n">ClientCertificateType</span><span class="p">;</span>
+</code></pre></div>
+<p><strong>b) certificate_authorities</strong></p>
+<p>如果ClientCertificateType是ibc_params,本字段的内容是IBC密钥管理中心的信任域名列表。否则是服务端信任的CA的证书DN列表,包括根CA或者二级CA的DN。</p>
+<p>定义如下:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="n">opaque</span><span class="w"> </span><span class="n">DistinguishedName</span><span class="o">&lt;</span><span class="mf">1..2</span><span class="o">^</span><span class="mi">16-1</span><span class="o">&gt;</span><span class="p">;</span>
+</code></pre></div>
+<h5 id="6456-serverhellodone">6.4.5.6 ServerHelloDone消息<a class="headerlink" href="#6456-serverhellodone" title="Permanent link">&para;</a></h5>
+<p>表示握手过程的hello消息阶段完成。发送完该消息后服务端会等待客户端的响应消息。</p>
+<p>客户端接收到服务端的hello完成消息之后,应验证服务端证书是否有效,并检验服务端的hello消息参数是否可接受。如果可接受,客户端继续握手过程。否则发送一个Handshake failure致命报警。</p>
+<p>服务端hello完成消息结构如下:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="k">struct</span><span class="w"> </span><span class="p">{}</span><span class="w"> </span><span class="n">ServerHelloDone</span><span class="p">;</span>
+</code></pre></div>
+<h5 id="6457-clientcertificate">6.4.5.7 ClientCertificate消息<a class="headerlink" href="#6457-clientcertificate" title="Permanent link">&para;</a></h5>
+<p>本消息为客户端证书消息。如果服务端请求客户端证书,客户端要随后发送本消息。</p>
+<p>当协商的密码套件使用IBC或IBSDH算法时,此消息的内容为客户端标识和IBC公共参数,用于客户端与服务端协商IBC公开参数。</p>
+<p>客户端证书消息的结构见6.4.5.3。</p>
+<h5 id="6458-clientkeyexchange">6.4.5.8 ClientKeyExchange消息<a class="headerlink" href="#6458-clientkeyexchange" title="Permanent link">&para;</a></h5>
+<p>本消息为客户端密钥交换消息。</p>
+<p>如果服务端请求客户端证书,本消息紧跟于客户端证书消息之后,否则本消息是客户端接收到服务端hello完成消息后所发送的第一条消息。</p>
+<p>如果密钥交换算法使用RSA算法、ECC算法和IBC算法,本消息中包含预主密钥,该预主密钥由客户端产生,采用服务端的加密公钥进行加密。当服务端收到加密后的预主密钥后,利用相应的私钥进行解密,获取所述预主密钥的明文。如果是IBC算法,客户端利用获取的服务端标识和IBC公开参数,产生服务端公钥。如果是RSA算法,宜使用PKCS#1版本2.1对RSA加密后的密文进行编码。如果密钥交换算法使用ECDHE算法或IBSDH算法,本消息中包含计算预主密钥的客户端密钥交换参数。</p>
+<p>客户端密钥交换消息结构定义如下:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a><span class="w">    </span><span class="n">select</span><span class="p">(</span><span class="n">KeyExchangeAlgorithm</span><span class="p">){</span>
+<a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">ECDHE</span><span class="p">:</span>
+<a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a><span class="w">            </span><span class="n">Opaque</span><span class="w"> </span><span class="n">ClientECDHEParams</span><span class="o">&lt;</span><span class="mf">1..2</span><span class="o">^</span><span class="mi">16-1</span><span class="o">&gt;</span><span class="p">;</span>
+<a id="__codelineno-33-5" name="__codelineno-33-5" href="#__codelineno-33-5"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">IBSDH</span><span class="p">:</span>
+<a id="__codelineno-33-6" name="__codelineno-33-6" href="#__codelineno-33-6"></a><span class="w">            </span><span class="n">Opaque</span><span class="w"> </span><span class="n">ClientIBSDHParams</span><span class="o">&lt;</span><span class="mf">1..2</span><span class="o">^</span><span class="mi">16-1</span><span class="o">&gt;</span><span class="p">;</span>
+<a id="__codelineno-33-7" name="__codelineno-33-7" href="#__codelineno-33-7"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">ECC</span><span class="p">:</span>
+<a id="__codelineno-33-8" name="__codelineno-33-8" href="#__codelineno-33-8"></a><span class="w">            </span><span class="n">opaque</span><span class="w"> </span><span class="n">ECCEncryptedPreMasterSecret</span><span class="o">&lt;</span><span class="mf">0..2</span><span class="o">^</span><span class="mi">16-1</span><span class="o">&gt;</span><span class="p">;</span>
+<a id="__codelineno-33-9" name="__codelineno-33-9" href="#__codelineno-33-9"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">IBC</span><span class="p">:</span>
+<a id="__codelineno-33-10" name="__codelineno-33-10" href="#__codelineno-33-10"></a><span class="w">            </span><span class="n">opaque</span><span class="w"> </span><span class="n">IBCEncryptedPreMasterSecret</span><span class="o">&lt;</span><span class="mf">0..2</span><span class="o">^</span><span class="mi">16-1</span><span class="o">&gt;</span><span class="p">;</span>
+<a id="__codelineno-33-11" name="__codelineno-33-11" href="#__codelineno-33-11"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">RSA</span><span class="p">:</span>
+<a id="__codelineno-33-12" name="__codelineno-33-12" href="#__codelineno-33-12"></a><span class="w">            </span><span class="n">opaque</span><span class="w"> </span><span class="n">RSAEncryptedPreMasterSecret</span><span class="o">&lt;</span><span class="mf">0..2</span><span class="o">^</span><span class="mi">16-1</span><span class="o">&gt;</span><span class="p">;</span>
+<a id="__codelineno-33-13" name="__codelineno-33-13" href="#__codelineno-33-13"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="n">exchange_keys</span><span class="p">;</span>
+<a id="__codelineno-33-14" name="__codelineno-33-14" href="#__codelineno-33-14"></a><span class="p">}</span><span class="w"> </span><span class="n">ClientKeyExchange</span><span class="p">;</span>
+</code></pre></div>
+<p>其中:</p>
+<p><strong>a) ClientECDHEParams:</strong></p>
+<p>使用ECDHE算法时,要求客户端发送证书。客户端的密钥交换参数,当使用SM2算法时,交换的参数应符合GM/T 0009。</p>
+<p>其结构如下:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a><span class="w">    </span><span class="n">ECParameters</span><span class="w"> </span><span class="n">curve_params</span><span class="p">;</span>
+<a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a><span class="w">    </span><span class="n">ECPoint</span><span class="w"> </span><span class="n">public</span><span class="p">;</span>
+<a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a><span class="p">}</span><span class="w"> </span><span class="n">ClientECDHParams</span><span class="p">;</span>
+</code></pre></div>
+<p>如果使用SM2算法,第一个参数不校验。</p>
+<p><strong>b) ClientIBSDHParams:</strong></p>
+<p>使用IBSDH算法时,客户端的密钥交换参数。</p>
+<p><strong>c) ECCEncryptedPreMasterSecret</strong></p>
+<p>使用ECC加密算法时,用服务端加密公钥加密的预主密钥。</p>
+<p><strong>d) IBCEncryptedPreMasterSecret</strong></p>
+<p>使用IBC加密算法时,用服务端加密公钥加密的预主密钥。</p>
+<p><strong>e) RSAEncryptedPreMasterSecret</strong></p>
+<p>使用RSA加密算法时,用服务端加密公钥加密的预主密钥。</p>
+<p>预主密钥的数据结构如下:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a><span class="w">    </span><span class="n">ProtocolVersion</span><span class="w"> </span><span class="n">client_version</span><span class="p">;</span>
+<a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a><span class="w">    </span><span class="n">opaque</span><span class="w"> </span><span class="n">random</span><span class="p">[</span><span class="mi">46</span><span class="p">];</span>
+<a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a><span class="p">}</span><span class="w"> </span><span class="n">PreMasterSecret</span><span class="p">;</span>
+</code></pre></div>
+<p>其中:</p>
+<p><strong>1) client_version</strong></p>
+<p>客户端所支持的版本号。服务端要检查这个值是否跟客户端hello消息中所发送的值相匹配。</p>
+<p><strong>2) random</strong></p>
+<p>46字节的随机数。</p>
+<h5 id="6459-certificateverify">6.4.5.9 CertificateVerify消息<a class="headerlink" href="#6459-certificateverify" title="Permanent link">&para;</a></h5>
+<p>本消息为证书校验消息。</p>
+<p>该消息用于鉴别客户端是否为证书的合法持有者,只有ClientCertificate消息发送时才发送此消息,紧跟于客户端密钥交换消息之后。</p>
+<p>证书校验消息的数据结构如下:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a><span class="w">    </span><span class="n">Signature</span><span class="w"> </span><span class="n">signature</span><span class="p">;</span>
+<a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a><span class="p">}</span><span class="w"> </span><span class="n">CertificateVerify</span><span class="p">;</span>
+</code></pre></div>
+<p>其中:</p>
+<p>Signature的结构如下:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="k">enum</span><span class="w"> </span><span class="p">{</span><span class="n">rsa_sha256</span><span class="p">,</span><span class="w"> </span><span class="n">rsa_sm3</span><span class="p">,</span>
+<a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a><span class="w">    </span><span class="n">ecc_sm3</span><span class="p">,</span>
+<a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a><span class="w">    </span><span class="n">ibs_sm3</span><span class="p">}</span><span class="w"> </span><span class="n">SignatureAlgorithm</span><span class="p">;</span>
+<a id="__codelineno-37-4" name="__codelineno-37-4" href="#__codelineno-37-4"></a>
+<a id="__codelineno-37-5" name="__codelineno-37-5" href="#__codelineno-37-5"></a><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-37-6" name="__codelineno-37-6" href="#__codelineno-37-6"></a><span class="w">    </span><span class="n">select</span><span class="p">(</span><span class="n">SignatureAlgorithm</span><span class="p">)</span>
+<a id="__codelineno-37-7" name="__codelineno-37-7" href="#__codelineno-37-7"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-37-8" name="__codelineno-37-8" href="#__codelineno-37-8"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">rsa_sha256</span><span class="p">:</span>
+<a id="__codelineno-37-9" name="__codelineno-37-9" href="#__codelineno-37-9"></a><span class="w">            </span><span class="n">digitally</span><span class="o">-</span><span class="kt">signed</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-37-10" name="__codelineno-37-10" href="#__codelineno-37-10"></a><span class="w">                </span><span class="n">opaque</span><span class="w"> </span><span class="n">sha256_hash</span><span class="p">[</span><span class="mi">32</span><span class="p">];</span>
+<a id="__codelineno-37-11" name="__codelineno-37-11" href="#__codelineno-37-11"></a><span class="w">            </span><span class="p">};</span>
+<a id="__codelineno-37-12" name="__codelineno-37-12" href="#__codelineno-37-12"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">rsa_sm3</span><span class="p">:</span>
+<a id="__codelineno-37-13" name="__codelineno-37-13" href="#__codelineno-37-13"></a><span class="w">            </span><span class="n">digitally</span><span class="o">-</span><span class="kt">signed</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-37-14" name="__codelineno-37-14" href="#__codelineno-37-14"></a><span class="w">                </span><span class="n">opaque</span><span class="w"> </span><span class="n">sm3_hash</span><span class="p">[</span><span class="mi">32</span><span class="p">];</span>
+<a id="__codelineno-37-15" name="__codelineno-37-15" href="#__codelineno-37-15"></a><span class="w">            </span><span class="p">};</span>
+<a id="__codelineno-37-16" name="__codelineno-37-16" href="#__codelineno-37-16"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">ecc_sm3</span><span class="p">:</span><span class="c1">//当ECC为SM2算法时, 用这个套件。</span>
+<a id="__codelineno-37-17" name="__codelineno-37-17" href="#__codelineno-37-17"></a><span class="w">            </span><span class="n">digitally</span><span class="o">-</span><span class="kt">signed</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-37-18" name="__codelineno-37-18" href="#__codelineno-37-18"></a><span class="w">                </span><span class="n">opaque</span><span class="w"> </span><span class="n">sm3_hash</span><span class="p">[</span><span class="mi">32</span><span class="p">];</span>
+<a id="__codelineno-37-19" name="__codelineno-37-19" href="#__codelineno-37-19"></a><span class="w">            </span><span class="p">};</span>
+<a id="__codelineno-37-20" name="__codelineno-37-20" href="#__codelineno-37-20"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">ibs_sm3</span><span class="p">:</span>
+<a id="__codelineno-37-21" name="__codelineno-37-21" href="#__codelineno-37-21"></a><span class="w">            </span><span class="n">digitally</span><span class="o">-</span><span class="kt">signed</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-37-22" name="__codelineno-37-22" href="#__codelineno-37-22"></a><span class="w">                </span><span class="n">opaque</span><span class="w"> </span><span class="n">sm3_hash</span><span class="p">[</span><span class="mi">32</span><span class="p">];</span>
+<a id="__codelineno-37-23" name="__codelineno-37-23" href="#__codelineno-37-23"></a><span class="w">            </span><span class="p">};</span>
+<a id="__codelineno-37-24" name="__codelineno-37-24" href="#__codelineno-37-24"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-37-25" name="__codelineno-37-25" href="#__codelineno-37-25"></a><span class="p">}</span><span class="w"> </span><span class="n">Signature</span><span class="p">;</span>
+</code></pre></div>
+<p>sm3_hash和sha256_hash是指hash运算的结果,运算的内容是自客户端hello消息开始直到本消息为止(不包括本消息)的所有与握手有关的消息(加密证书要包在签名计算中),包括握手消息的类型和长度域。</p>
+<p>当使用SM2算法签名时,使用客户端的签名密钥,应符合GM/T 0009和GM/T 0010。</p>
+<h5 id="64510-finished">6.4.5.10 Finished消息<a class="headerlink" href="#64510-finished" title="Permanent link">&para;</a></h5>
+<p>本消息为握手结束消息。</p>
+<p>服务端和客户端各自在密码规格变更消息之后发送本消息,用于验证密钥交换过程是否成功,并校验握手过程的完整性。</p>
+<p>本消息用本次握手过程协商出的算法和密钥保护。</p>
+<p>本消息的接收方应检验消息内容的正确性。一旦一方发送了握手结束消息,并且接收到了对方的握手结束消息并通过校验,可使用该连接进行数据安全传输。</p>
+<p>握手结束消息数据结构如下:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a><span class="w">    </span><span class="n">opaque</span><span class="w"> </span><span class="n">verify_data</span><span class="p">[</span><span class="mi">12</span><span class="p">];</span>
+<a id="__codelineno-38-3" name="__codelineno-38-3" href="#__codelineno-38-3"></a><span class="p">}</span><span class="w"> </span><span class="n">Finished</span><span class="p">;</span>
+</code></pre></div>
+<p>其中:</p>
+<p>verify_data为校验数据,该数据产生方法如下:</p>
+<div class="arithmatex">\[
+\mathrm{PRF}(\mathrm{master\_secret},\mathrm{finished\_label},\mathrm{SM3}(\mathrm{handshake\_messages}))[0..11]\text{。}
+\]</div>
+<p>表达式中:</p>
+<p><strong>a) finished_label</strong></p>
+<p>对于由客户端发送的结束消息,该标签是字符串“client finished”。对于服务端,该标签是字符串“server finished”。</p>
+<p><strong>b) handshake_messages</strong></p>
+<p>指自客户端hello消息开始直到本消息为止(不包括本消息、密码规格变更消息)的所有与握手有关的消息,包括握手消息的类型和长度域。</p>
+<h3 id="65">6.5 密钥计算<a class="headerlink" href="#65" title="Permanent link">&para;</a></h3>
+<h4 id="651">6.5.1 主密钥计算<a class="headerlink" href="#651" title="Permanent link">&para;</a></h4>
+<p>主密钥由48个字节组成,由预主密钥、客户端随机数、服务端随机数、常量字符串,经PRF计算生成。</p>
+<p>计算方法如下:</p>
+<div class="arithmatex">\[
+\begin{aligned}\mathrm{master\_secret}={}&amp;\mathrm{PRF}\bigl(\mathrm{pre\_master\_secret},\;\texttt{"master secret"},\\&amp;\mathrm{ClientHello.random}+\mathrm{ServerHello.random}\bigr)[0..47]\end{aligned}
+\]</div>
+<h4 id="652">6.5.2 工作密钥<a class="headerlink" href="#652" title="Permanent link">&para;</a></h4>
+<p>工作密钥包括校验密钥和加密密钥,具体密钥长度由选用的密码算法决定。由主密钥、客户端随机数、服务端随机数、常量字符串,经PRF计算生成。</p>
+<p>计算方法如下:</p>
+<div class="arithmatex">\[
+\begin{aligned}\mathrm{key\_block}={}&amp;\mathrm{PRF}\bigl(\mathrm{SecurityParameters.master\_secret},\;\texttt{"key expansion"},\\&amp;\mathrm{SecurityParameters.server\_random}\\&amp;+\mathrm{SecurityParameters.client\_random}\bigr);\end{aligned}
+\]</div>
+<p>直到生成所需长度的输出,然后按顺序分割得到所需的密钥:</p>
+<div class="arithmatex">\[
+\begin{gathered}\mathrm{client\_write\_MAC\_secret}[\mathrm{SecurityParameters.hash\_size}] \\ \mathrm{server\_write\_MAC\_secret}[\mathrm{SecurityParameters.hash\_size}] \\ \mathrm{client\_write\_key}[\mathrm{SecurityParameters.key\_material\_length}] \\ \mathrm{server\_write\_key}[\mathrm{SecurityParameters.key\_material\_length}] \\ \mathrm{client\_write\_IV}[\mathrm{SecurityParameters.fixed\_iv\_length}] \\ \mathrm{server\_write\_IV}[\mathrm{SecurityParameters.fixed\_iv\_length}]\end{gathered}
+\]</div>
+<h3 id="66">6.6 网关到网关协议<a class="headerlink" href="#66" title="Permanent link">&para;</a></h3>
+<h4 id="661">6.6.1 概述<a class="headerlink" href="#661" title="Permanent link">&para;</a></h4>
+<p>网关到网关协议定义了SSL VPN之间建立网关到网关的传输层隧道,对IP数据报文进行安全传输时所采用的报文格式(包括控制报文与数据报文),以及控制报文交换过程和数据报文封装过程。网关到网关协议采用记录层协议作为底层的承载协议,和握手协议在同一层次,使用80作为协议类型编号,详见6.3.3.2。网关到网关协议在当前的连接状态之下进行传输数据的处理。</p>
+<h4 id="662">6.6.2 协议报文格式<a class="headerlink" href="#662" title="Permanent link">&para;</a></h4>
+<p>网关到网关协议包括两种协议报文,控制报文和数据报文。定义如下:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="k">enum</span><span class="w"> </span><span class="p">{</span><span class="n">command</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span><span class="w"> </span><span class="n">data</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="mi">255</span><span class="p">)}</span><span class="w"> </span><span class="n">Site2SiteContentType</span><span class="p">;</span>
+<a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a><span class="w">    </span><span class="n">uint16</span><span class="w"> </span><span class="n">length</span><span class="p">;</span>
+<a id="__codelineno-39-4" name="__codelineno-39-4" href="#__codelineno-39-4"></a><span class="w">    </span><span class="n">select</span><span class="p">(</span><span class="n">Site2SiteContentType</span><span class="p">){</span>
+<a id="__codelineno-39-5" name="__codelineno-39-5" href="#__codelineno-39-5"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">command</span><span class="p">:</span><span class="w"> </span><span class="n">Site2SiteCmd</span><span class="p">;</span>
+<a id="__codelineno-39-6" name="__codelineno-39-6" href="#__codelineno-39-6"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">data</span><span class="p">:</span><span class="w"> </span><span class="n">Site2SiteData</span><span class="p">;</span>
+<a id="__codelineno-39-7" name="__codelineno-39-7" href="#__codelineno-39-7"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="n">Site2Sitefragment</span><span class="p">;</span>
+<a id="__codelineno-39-8" name="__codelineno-39-8" href="#__codelineno-39-8"></a><span class="p">}</span><span class="w"> </span><span class="n">Site2Site</span><span class="p">;</span>
+</code></pre></div>
+<p>其中:</p>
+<p><strong>a) Site2SiteContentType</strong></p>
+<p>网关到网关载荷数据类型,0为控制报文,1为数据报文。</p>
+<p><strong>b) length</strong></p>
+<p>网关到网关载荷的长度,不包括类型域和长度域。</p>
+<p><strong>c) Site2SiteCmd</strong></p>
+<p>网关到网关控制报文,定义了保护域的信息交换报文。定义如下:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="k">enum</span><span class="w"> </span><span class="p">{</span><span class="n">cmd_area</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="mi">255</span><span class="p">)}</span><span class="w"> </span><span class="n">CmdType</span><span class="p">;</span>
+<a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a><span class="w">    </span><span class="n">select</span><span class="p">(</span><span class="n">CmdType</span><span class="p">){</span>
+<a id="__codelineno-40-4" name="__codelineno-40-4" href="#__codelineno-40-4"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">cmdarea</span><span class="p">:</span>
+<a id="__codelineno-40-5" name="__codelineno-40-5" href="#__codelineno-40-5"></a><span class="w">            </span><span class="n">Arealist</span><span class="w"> </span><span class="n">arealist</span><span class="o">&lt;</span><span class="mf">0..2</span><span class="o">^</span><span class="mi">14</span><span class="o">&gt;</span><span class="p">;</span>
+<a id="__codelineno-40-6" name="__codelineno-40-6" href="#__codelineno-40-6"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="n">CmdFragment</span><span class="p">;</span>
+<a id="__codelineno-40-7" name="__codelineno-40-7" href="#__codelineno-40-7"></a><span class="p">}</span><span class="w"> </span><span class="n">Site2SiteCmd</span><span class="p">;</span>
+</code></pre></div>
+<p>其中:</p>
+<p>AreaList:</p>
+<p>SSL VPN保护域列表,包括网络层保护域和传输层保护域。网络层保护域可采用子网与子网掩码、网络地址范围这两种方式表示。定义如下:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="k">enum</span><span class="w"> </span><span class="p">{</span><span class="n">subnet_ipv4</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span><span class="w"> </span><span class="n">subnet_ipv6</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">range_ipv4</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="n">range_ipv6</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="mi">255</span><span class="p">)}</span><span class="w"> </span><span class="n">AreaType</span><span class="p">;</span>
+</code></pre></div>
+<p>传输层保护域由传输层协议和传输层端口来表示。传输层端口为0代表任意端口(TCP/UDP)或任意类型(ICMP)。定义如下:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a><span class="w">    </span><span class="n">uint8</span><span class="w"> </span><span class="n">Protocol</span><span class="p">;</span>
+<a id="__codelineno-42-3" name="__codelineno-42-3" href="#__codelineno-42-3"></a><span class="w">    </span><span class="n">uint16</span><span class="w"> </span><span class="n">port</span><span class="p">;</span>
+<a id="__codelineno-42-4" name="__codelineno-42-4" href="#__codelineno-42-4"></a><span class="p">}</span><span class="w"> </span><span class="n">TlArea</span><span class="p">;</span>
+<a id="__codelineno-42-5" name="__codelineno-42-5" href="#__codelineno-42-5"></a>
+<a id="__codelineno-42-6" name="__codelineno-42-6" href="#__codelineno-42-6"></a><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-42-7" name="__codelineno-42-7" href="#__codelineno-42-7"></a><span class="w">    </span><span class="n">select</span><span class="p">(</span><span class="n">AreaType</span><span class="p">){</span>
+<a id="__codelineno-42-8" name="__codelineno-42-8" href="#__codelineno-42-8"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">subnet_ipv4</span><span class="p">:</span><span class="w"> </span><span class="n">ipv4_addr_subnet</span><span class="p">;</span>
+<a id="__codelineno-42-9" name="__codelineno-42-9" href="#__codelineno-42-9"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">subnet_ipv6</span><span class="p">:</span><span class="w"> </span><span class="n">ipv6_addr_subnet</span><span class="p">;</span>
+<a id="__codelineno-42-10" name="__codelineno-42-10" href="#__codelineno-42-10"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">range_ipv4</span><span class="p">:</span><span class="w"> </span><span class="n">ipv4_addr_range</span><span class="p">;</span>
+<a id="__codelineno-42-11" name="__codelineno-42-11" href="#__codelineno-42-11"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">range_ipv6</span><span class="p">:</span><span class="w"> </span><span class="n">ipv6_addr_range</span><span class="p">;</span>
+<a id="__codelineno-42-12" name="__codelineno-42-12" href="#__codelineno-42-12"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="n">NlAreaFragment</span><span class="p">;</span>
+<a id="__codelineno-42-13" name="__codelineno-42-13" href="#__codelineno-42-13"></a><span class="w">    </span><span class="n">TlArea</span><span class="w"> </span><span class="n">TlAreaFragment</span><span class="p">;</span>
+<a id="__codelineno-42-14" name="__codelineno-42-14" href="#__codelineno-42-14"></a><span class="p">}</span><span class="w"> </span><span class="n">AreaList</span><span class="p">;</span>
+</code></pre></div>
+<p>其中:</p>
+<p><strong>1) TlArea</strong></p>
+<p>传输层保护域。</p>
+<p><strong>2) ipv4_addr_subnet</strong></p>
+<p>表示ipv4的子网地址。由两个32位的值组成,第一个值表示子网的IP地址,第二个值表示子网的网络掩码。网络掩码中的比特1表示该子网的IP地址中对应位是固定值,比特0表示对应位是通配值。</p>
+<p><strong>3) ipv4_addr_range</strong></p>
+<p>表示ipv4的地址范围。由两个32位的值组成,第一个值表示地址范围的起始地址,第二个值表示地址范围的结束地址。落在这两个地址区间的所有IP地址都被认为属于该地址范围之内。</p>
+<p><strong>4) ipv6_addr_subnet</strong></p>
+<p>表示ipv6的子网地址。由一个128位和一个8位的值构成。第一个值表示ipv6子网地址,第二个值表示子网地址的前缀长度。该长度表示128位的子网地址的前若干位为固定值,剩下的后若干位为通配值。</p>
+<p><strong>5) ipv6_addr_range</strong></p>
+<p>表示ipv6的地址范围。由两个128位的值组成,第一个值表示地址范围的起始地址,第二个值表示地址范围的结束地址。落在这两个地址区间的所有IP地址都被认为属于该地址范围之内。</p>
+<p><strong>d) Site2SiteData</strong></p>
+<p>网关到网关数据报文,内容为原始的完整IP报文。</p>
+<h4 id="663">6.6.3 控制报文交换过程<a class="headerlink" href="#663" title="Permanent link">&para;</a></h4>
+<p>控制报文的交换过程由通信双方的任何一方发起,通知对方自己所保护的网络信息。在握手协议完成之后可发送控制报文,使用握手协议协商好的安全参数保护控制报文。</p>
+<p>在网关到网关的数据报文传输过程中,如果接收到新的传递保护域的控制报文,将触发该连接的重用过程,详见6.4.4。</p>
+<h4 id="664">6.6.4 数据报文出入站过程<a class="headerlink" href="#664" title="Permanent link">&para;</a></h4>
+<p>SSL VPN网关之间通过握手协议建立SSL连接,并将该连接与本地和对端的保护域进行绑定,出入站的IP报文应与对端和本地的保护域进行匹配。本地和对端保护域可通过控制报文获取,也可人工配置。</p>
+<h5 id="6641">6.6.4.1 出站报文处理<a class="headerlink" href="#6641" title="Permanent link">&para;</a></h5>
+<p>本地保护域内的IP报文在通过SSL VPN转发时,SSL VPN根据该报文的目的IP地址和源IP地址信息查找匹配的对端保护域及本地保护域,获取相应的有效SSL连接。然后将整个IP报文作为记录层的数据内容封装在该连接的记录层之上,通过记录层传送,封装格式详见6.3.3。如果没有相应的有效连接,则触发新的握手过程或者该连接的重用过程,详见6.4.4,协商建立或者更新相应的连接。如果查找不到相应的保护域,根据本地安全策略丢弃该报文或者进行其他处理。</p>
+<h5 id="6642">6.6.4.2 入站报文处理<a class="headerlink" href="#6642" title="Permanent link">&para;</a></h5>
+<p>对入站的数据报文进行解密、校验、解压缩操作,然后对于恢复出的IP报文,首先根据目的IP地址和源IP地址信息查找匹配的本地保护域及对端保护域,并检查和该SSL连接的绑定关系是否一致,对于查找到对应保护域并符合绑定关系的IP报文,进行路由和转发。如果查找不到相应的保护域或者不符合绑定关系的IP报文,根据本地安全策略丢弃该报文或者进行其他处理。</p>
+<h2 id="7">7 产品要求<a class="headerlink" href="#7" title="Permanent link">&para;</a></h2>
+<h3 id="71">7.1 产品功能要求<a class="headerlink" href="#71" title="Permanent link">&para;</a></h3>
+<h4 id="711">7.1.1 工作模式<a class="headerlink" href="#711" title="Permanent link">&para;</a></h4>
+<p>SSL VPN产品工作模式分为客户端-服务端模式和网关-网关模式两种。其中客户端-服务端模式是必备模式,网关-网关模式是可选模式,两种模式都应按照第6章的要求正确实现。</p>
+<h4 id="712">7.1.2 随机数功能<a class="headerlink" href="#712" title="Permanent link">&para;</a></h4>
+<p>SSL VPN产品应具有随机数生成功能,其随机数应由多路硬件噪声源产生。</p>
+<h4 id="713">7.1.3 密钥交换<a class="headerlink" href="#713" title="Permanent link">&para;</a></h4>
+<p>SSL VPN产品应具有密钥交换功能,通过协商产生工作密钥。</p>
+<p>密钥交换应按照6.4的要求进行。</p>
+<h4 id="714">7.1.4 安全报文传输<a class="headerlink" href="#714" title="Permanent link">&para;</a></h4>
+<p>SSL VPN产品具有安全报文传输功能,保证数据的安全传输。</p>
+<p>安全报文传输应按照6.3的要求进行。</p>
+<h4 id="715">7.1.5 访问控制<a class="headerlink" href="#715" title="Permanent link">&para;</a></h4>
+<p>SSL VPN产品具有细粒度的访问控制功能,基于用户或用户组对资源进行有效的控制。其中网络访问至少应控制到IP地址、端口、对Web资源的访问至少应控制到URL,并能根据访问时间进行控制。</p>
+<h4 id="716">7.1.6 密钥更新<a class="headerlink" href="#716" title="Permanent link">&para;</a></h4>
+<p>SSL VPN产品应根据时间周期或报文流量进行工作密钥更新。其中,根据时间周期进行更新为必备功能,根据报文流量进行更新为必备功能。根据时间周期进行更新的情况下,客户端-服务端模式最长时间不超过8h,网关-网关模式最长时间不超过1h。</p>
+<h3 id="72">7.2 产品性能参数<a class="headerlink" href="#72" title="Permanent link">&para;</a></h3>
+<h4 id="721">7.2.1 最大并发连接数<a class="headerlink" href="#721" title="Permanent link">&para;</a></h4>
+<p>同时在线TLCP连接的最大数目,产品应满足用户网络环境对最大TLCP连接数量性能的要求。</p>
+<h4 id="722">7.2.2 每秒新建连接数<a class="headerlink" href="#722" title="Permanent link">&para;</a></h4>
+<p>每秒钟可新建的最大TLCP连接数目,产品应满足用户网络环境对每秒能接入新TLCP连接性能的要求。</p>
+<h4 id="723">7.2.3 最大并发用户数<a class="headerlink" href="#723" title="Permanent link">&para;</a></h4>
+<p>同时在线用户的最大数目,产品应满足用户网络环境对最大并发用户数量性能的要求。</p>
+<h4 id="724">7.2.4 加解密吞吐率<a class="headerlink" href="#724" title="Permanent link">&para;</a></h4>
+<p>在丢包率为0的条件下,产品应满足用户网络环境对网络数据加解密吞吐性能的要求。</p>
+<h3 id="73">7.3 安全管理要求<a class="headerlink" href="#73" title="Permanent link">&para;</a></h3>
+<h4 id="731">7.3.1 安全要求<a class="headerlink" href="#731" title="Permanent link">&para;</a></h4>
+<h5 id="7311">7.3.1.1 密钥安全<a class="headerlink" href="#7311" title="Permanent link">&para;</a></h5>
+<p>加密密钥对由外部密钥管理机构产生并由CA认证机构签发加密证书。加密密钥对的私钥保护方法应符合GM/T 0016。</p>
+<p>签名证书、加密证书和加密密钥对的私钥应能被导入SSL VPN产品中。</p>
+<p>在SSL VPN产品中,密钥的私钥应有安全保护措施。</p>
+<p>密钥应按设定的安全策略进行更新。</p>
+<p>密钥可以安全形式进行备份,并在需要时能恢复。</p>
+<p>工作密钥产生后应保存在易失性存储器中,达到其更新条件后应立即更换,在连接断开、设备断电、实例释放时应销毁。</p>
+<h5 id="7312">7.3.1.2 数据配置安全<a class="headerlink" href="#7312" title="Permanent link">&para;</a></h5>
+<p>所有的配置数据应保证其在设备中的完整性、可靠性。应有管理界面对配置数据进行配置和管理,管理员进入管理界面应通过身份鉴别。</p>
+<h5 id="7313">7.3.1.3 存储与部件安全<a class="headerlink" href="#7313" title="Permanent link">&para;</a></h5>
+<p>SSL VPN产品应提供安全措施,保证密码算法、密钥、关键数据的存储安全。</p>
+<p>所有密码运算应在独立的密码部件中进行。</p>
+<p>除必需的通信接口和管理接口以外,不提供任何可供调试、跟踪的外部接口。内部的调试、检测接口应在产品定型后封闭。</p>
+<h5 id="7314">7.3.1.4 软件安全<a class="headerlink" href="#7314" title="Permanent link">&para;</a></h5>
+<p>所有的安全协议及管理软件应自主实现。</p>
+<p>操作系统应进行安全加固,关闭所有不需要的端口和服务。</p>
+<p>任何操作指令及其任意组合,不能泄露密钥和敏感信息。</p>
+<h4 id="732">7.3.2 管理要求<a class="headerlink" href="#732" title="Permanent link">&para;</a></h4>
+<h5 id="7321">7.3.2.1 日志管理<a class="headerlink" href="#7321" title="Permanent link">&para;</a></h5>
+<p>SSL VPN产品应提供日志记录、查看和导出功能。</p>
+<p>日志内容包括:</p>
+<ul>
+<li>
+<p>管理员操作行为,包括登录认证、系统配置、密钥管理操作;</p>
+</li>
+<li>
+<p>用户访问行为,包括用户、时间、访问资源、结果;</p>
+</li>
+<li>
+<p>异常事件,包括认证失败、非法访问异常事件的记录。</p>
+</li>
+</ul>
+<h5 id="7322">7.3.2.2 管理员管理<a class="headerlink" href="#7322" title="Permanent link">&para;</a></h5>
+<p>SSL VPN服务端产品应设置管理员,进行系统配置、密钥生成、导入、备份和恢复操作。管理员应持有表征用户身份信息(如证书)的装置,与登录口令相结合登录系统,进行管理操作前应通过身份鉴别。</p>
+<p>登录口令长度应不小于8个字符,且至少由数字、字母和特殊字符其中的两种类型组成。</p>
+<p>使用错误口令或非法身份登录的次数限制应小于或等于8。</p>
+<h5 id="7323">7.3.2.3 设备管理<a class="headerlink" href="#7323" title="Permanent link">&para;</a></h5>
+<h6 id="73231">7.3.2.3.1 设备初始化<a class="headerlink" href="#73231" title="Permanent link">&para;</a></h6>
+<p>SSL VPN产品的初始化,除必须由厂商进行的操作外,系统配置、密钥的生成和管理、管理员的产生均应由用户完成。</p>
+<h6 id="73232">7.3.2.3.2 设备自检<a class="headerlink" href="#73232" title="Permanent link">&para;</a></h6>
+<p>应对密码运算部件、关键部件(包括随机数生成器等)进行正确性检查、敏感信息进行完整性检查,在检查不通过时应报警并停止工作。</p>
+<h2 id="8">8 产品检测<a class="headerlink" href="#8" title="Permanent link">&para;</a></h2>
+<h3 id="81">8.1 产品功能检测<a class="headerlink" href="#81" title="Permanent link">&para;</a></h3>
+<h4 id="811">8.1.1 工作模式<a class="headerlink" href="#811" title="Permanent link">&para;</a></h4>
+<p>在客户端-服务端工作模式下,客户端应能通过服务端访问到受保护内网服务器。在网关-网关工作模式下,一个网关保护的客户主机应能访问到另一个网关保护的内网服务器。检测结果应符合7.1.1的要求。</p>
+<h4 id="812">8.1.2 随机数功能<a class="headerlink" href="#812" title="Permanent link">&para;</a></h4>
+<p>按照GM/T 0005的要求对随机数进行检测,检测结果应符合7.1.2的要求。</p>
+<h4 id="813">8.1.3 密钥交换<a class="headerlink" href="#813" title="Permanent link">&para;</a></h4>
+<p>密钥交换协议应按照6.4的要求进行。检测结果应符合7.1.3的要求。</p>
+<h4 id="814">8.1.4 安全报文传输<a class="headerlink" href="#814" title="Permanent link">&para;</a></h4>
+<p>安全报文封装协议应按照6.3的要求进行。检测结果应符合7.1.4的要求。</p>
+<h4 id="815">8.1.5 访问控制<a class="headerlink" href="#815" title="Permanent link">&para;</a></h4>
+<p>从客户端访问服务端保护的内网服务器,应只能访问到授权的资源。检测结果应符合7.1.5的要求。</p>
+<h4 id="816">8.1.6 密钥更新<a class="headerlink" href="#816" title="Permanent link">&para;</a></h4>
+<p>密钥更新应按照6.5的要求进行。检测结果应符合7.1.6的要求。</p>
+<h3 id="82">8.2 产品性能检测<a class="headerlink" href="#82" title="Permanent link">&para;</a></h3>
+<h4 id="821">8.2.1 最大并发连接数<a class="headerlink" href="#821" title="Permanent link">&para;</a></h4>
+<p>最大并发连接数是指在同一时刻能与服务器进行交互的连接的最大数量。在检测平台模拟多个客户端行为,与服务端进行TLCP连接并保持,然后不断增加客户端,并重复此过程,直到无法建立并保持连接为止。取已经接入的TLCP连接数目为测试结果。</p>
+<h4 id="822">8.2.2 每秒新接连接数<a class="headerlink" href="#822" title="Permanent link">&para;</a></h4>
+<p>在检测平台模拟多个客户端行为,并发与服务端建立TLCP会话。重复此过程一段时间,取每秒建立SSL会话数目的平均值作为测试结果。</p>
+<h4 id="823">8.2.3 最大并发用户数<a class="headerlink" href="#823" title="Permanent link">&para;</a></h4>
+<p>最大并发用户数是指在同一时刻能与服务器进行交互的在线用户的最大数量。这些用户的最大特征是和服务器产生了交互,这种交互既可是单向的传输数据,也可是双向的传送数据。在检测平台模拟多个客户端行为,与服务端建立TLCP会话,在这个会话上,从内网服务器下载512字节页面的数据,并在内网服务器上设置页面延迟,以保证在整个负载增加的过程中每一个会话均被保持且有数据通过。然后,不断增加客户端,并重复此过程,取负载稳定期的平均并发会话数作为测试结果。</p>
+<h4 id="824">8.2.4 加解密吞吐率<a class="headerlink" href="#824" title="Permanent link">&para;</a></h4>
+<p>在检测平台模拟多个客户端行为,与服务端建立TLCP会话。在这个会话上,从内网服务器下载1MB数据,重复以上步骤,直到每个用户成功下载20MB大小的数据。然后向内网服务器上传1MB数据,重复以上步骤,直到每个用户成功上传20MB大小的数据。取内网服务器收发数据的平均速率作为测试结果。</p>
+<h3 id="83">8.3 安全管理检测<a class="headerlink" href="#83" title="Permanent link">&para;</a></h3>
+<h4 id="831">8.3.1 安全检测<a class="headerlink" href="#831" title="Permanent link">&para;</a></h4>
+<h5 id="8311">8.3.1.1 密钥安全<a class="headerlink" href="#8311" title="Permanent link">&para;</a></h5>
+<p>对密钥进行管理以确保密钥安全。在被测设备的管理界面上进行设备密钥的产生或导入、备份和恢复以及更新操作。密钥的检测结果应符合7.3.1.1的要求。</p>
+<h5 id="8312">8.3.1.2 数据配置安全<a class="headerlink" href="#8312" title="Permanent link">&para;</a></h5>
+<p>所有的配置数据应保证其在设备中的完整性、可靠性。应有管理界面对配置数据进行配置和管理,管理员进入管理界面应通过身份鉴别。检测结果应符合7.3.1.2的要求。</p>
+<h5 id="8313">8.3.1.3 存储与部件安全<a class="headerlink" href="#8313" title="Permanent link">&para;</a></h5>
+<p>对被检测设备的存储及其密码部件进行检测。检测结果应符合7.3.1.3的要求。</p>
+<h5 id="8314">8.3.1.4 软件安全<a class="headerlink" href="#8314" title="Permanent link">&para;</a></h5>
+<p>使用漏洞扫描工具探测系统的端口和服务,并审查厂商提供的设计文档和厂商提交的产品安全性承诺,应符合相应产品规范的要求。检测结果应符合7.3.1.4的要求</p>
+<h4 id="832">8.3.2 管理检测<a class="headerlink" href="#832" title="Permanent link">&para;</a></h4>
+<h5 id="8321">8.3.2.1 日志管理<a class="headerlink" href="#8321" title="Permanent link">&para;</a></h5>
+<p>可以查看并导出日志记录。日志格式应符合相关产品规范的要求。检测结果应符合7.3.2.1的要求。</p>
+<h5 id="8322">8.3.2.2 管理员管理<a class="headerlink" href="#8322" title="Permanent link">&para;</a></h5>
+<p>用非法的身份或错误的口令登录,系统应拒绝;当连续重试次数到达系统设定的限制值时系统应锁定;用合法的身份和正确口令登录,应能进入管理界面,进行相应的管理操作。检测结果应符合7.3.2.2的要求。</p>
+<h5 id="8323">8.3.2.3 设备管理<a class="headerlink" href="#8323" title="Permanent link">&para;</a></h5>
+<h6 id="83231">8.3.2.3.1 设备初始化<a class="headerlink" href="#83231" title="Permanent link">&para;</a></h6>
+<p>对设备进行初始化操作,结果应符合相应产品规范的要求。检测结果应符合7.3.2.3.1的要求。</p>
+<h6 id="83232">8.3.2.3.2 设备自检<a class="headerlink" href="#83232" title="Permanent link">&para;</a></h6>
+<p>对设备进行自检操作,产品检测结果应符合相应产品规范的要求。检测结果应符合7.3.2.3.2的要求。</p>
+<h2 id="9">9 判定规则<a class="headerlink" href="#9" title="Permanent link">&para;</a></h2>
+<p>本文件中,8.1和8.3(除8.3.1.2)中的任意一项不合格,判定为产品密码检测不合格。</p>
+<h2 id="a">附录 A（资料性）扩展字段说明<a class="headerlink" href="#a" title="Permanent link">&para;</a></h2>
+<h3 id="a1-sni">A.1 SNI服务器名称指示<a class="headerlink" href="#a1-sni" title="Permanent link">&para;</a></h3>
+<p>SNI扩展字段的定义:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a><span class="w">    </span><span class="n">NameType</span><span class="w"> </span><span class="n">name_type</span><span class="p">;</span>
+<a id="__codelineno-43-3" name="__codelineno-43-3" href="#__codelineno-43-3"></a><span class="w">    </span><span class="n">select</span><span class="p">(</span><span class="n">name_type</span><span class="p">){</span>
+<a id="__codelineno-43-4" name="__codelineno-43-4" href="#__codelineno-43-4"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">host_name</span><span class="p">:</span><span class="w"> </span><span class="n">HostName</span><span class="p">;</span>
+<a id="__codelineno-43-5" name="__codelineno-43-5" href="#__codelineno-43-5"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<a id="__codelineno-43-6" name="__codelineno-43-6" href="#__codelineno-43-6"></a><span class="p">}</span><span class="w"> </span><span class="n">ServerName</span><span class="p">;</span>
+<a id="__codelineno-43-7" name="__codelineno-43-7" href="#__codelineno-43-7"></a>
+<a id="__codelineno-43-8" name="__codelineno-43-8" href="#__codelineno-43-8"></a><span class="k">enum</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-43-9" name="__codelineno-43-9" href="#__codelineno-43-9"></a><span class="w">    </span><span class="n">host_name</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="mi">255</span><span class="p">)</span>
+<a id="__codelineno-43-10" name="__codelineno-43-10" href="#__codelineno-43-10"></a><span class="p">}</span><span class="w"> </span><span class="n">NameType</span><span class="p">;</span>
+<a id="__codelineno-43-11" name="__codelineno-43-11" href="#__codelineno-43-11"></a>
+<a id="__codelineno-43-12" name="__codelineno-43-12" href="#__codelineno-43-12"></a><span class="n">opaque</span><span class="w"> </span><span class="n">HostName</span><span class="o">&lt;</span><span class="mf">1..2</span><span class="o">^</span><span class="mi">16-1</span><span class="o">&gt;</span><span class="p">;</span>
+<a id="__codelineno-43-13" name="__codelineno-43-13" href="#__codelineno-43-13"></a>
+<a id="__codelineno-43-14" name="__codelineno-43-14" href="#__codelineno-43-14"></a><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-43-15" name="__codelineno-43-15" href="#__codelineno-43-15"></a><span class="w">    </span><span class="n">ServerName</span><span class="w"> </span><span class="n">server_name_list</span><span class="o">&lt;</span><span class="mf">1..2</span><span class="o">^</span><span class="mi">16-1</span><span class="o">&gt;</span>
+<a id="__codelineno-43-16" name="__codelineno-43-16" href="#__codelineno-43-16"></a><span class="p">}</span><span class="w"> </span><span class="n">ServerNameList</span><span class="p">;</span>
+</code></pre></div>
+<p>其中:HostName是DNS主机名。</p>
+<h3 id="a2-trusted-ca-indicationca">A.2 Trusted CA Indication受信CA指示<a class="headerlink" href="#a2-trusted-ca-indicationca" title="Permanent link">&para;</a></h3>
+<p>Trusted CA Indication定义:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-44-2" name="__codelineno-44-2" href="#__codelineno-44-2"></a><span class="w">    </span><span class="n">TrustedAuthority</span><span class="w"> </span><span class="n">trusted_authorities_list</span><span class="o">&lt;</span><span class="mf">0..2</span><span class="o">^</span><span class="mi">16-1</span><span class="o">&gt;</span><span class="p">;</span>
+<a id="__codelineno-44-3" name="__codelineno-44-3" href="#__codelineno-44-3"></a><span class="p">}</span><span class="w"> </span><span class="n">TrustedAuthorities</span><span class="p">;</span>
+<a id="__codelineno-44-4" name="__codelineno-44-4" href="#__codelineno-44-4"></a>
+<a id="__codelineno-44-5" name="__codelineno-44-5" href="#__codelineno-44-5"></a><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-44-6" name="__codelineno-44-6" href="#__codelineno-44-6"></a><span class="w">    </span><span class="n">IdentifierType</span><span class="w"> </span><span class="n">identifier_type</span><span class="p">;</span>
+<a id="__codelineno-44-7" name="__codelineno-44-7" href="#__codelineno-44-7"></a><span class="w">    </span><span class="n">select</span><span class="p">(</span><span class="n">identifier_type</span><span class="p">){</span>
+<a id="__codelineno-44-8" name="__codelineno-44-8" href="#__codelineno-44-8"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">pre_agreed</span><span class="p">:</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{};</span>
+<a id="__codelineno-44-9" name="__codelineno-44-9" href="#__codelineno-44-9"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">key_sm3_hash</span><span class="p">:</span><span class="w"> </span><span class="n">SM3Hash</span><span class="p">;</span>
+<a id="__codelineno-44-10" name="__codelineno-44-10" href="#__codelineno-44-10"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">x509_name</span><span class="p">:</span><span class="w"> </span><span class="n">DistinguishedName</span><span class="p">;</span>
+<a id="__codelineno-44-11" name="__codelineno-44-11" href="#__codelineno-44-11"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">cert_sm3_hash</span><span class="p">:</span><span class="w"> </span><span class="n">SM3Hash</span><span class="p">;</span>
+<a id="__codelineno-44-12" name="__codelineno-44-12" href="#__codelineno-44-12"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="n">identifier</span><span class="p">;</span>
+<a id="__codelineno-44-13" name="__codelineno-44-13" href="#__codelineno-44-13"></a><span class="p">}</span><span class="w"> </span><span class="n">TrustedAuthority</span><span class="p">;</span>
+<a id="__codelineno-44-14" name="__codelineno-44-14" href="#__codelineno-44-14"></a>
+<a id="__codelineno-44-15" name="__codelineno-44-15" href="#__codelineno-44-15"></a><span class="k">enum</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-44-16" name="__codelineno-44-16" href="#__codelineno-44-16"></a><span class="w">    </span><span class="n">pre_agreed</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span><span class="w"> </span><span class="n">x509_name</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span>
+<a id="__codelineno-44-17" name="__codelineno-44-17" href="#__codelineno-44-17"></a><span class="w">    </span><span class="n">key_sm3_hash</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span><span class="w"> </span><span class="n">cert_sm3_hash</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="mi">255</span><span class="p">)</span>
+<a id="__codelineno-44-18" name="__codelineno-44-18" href="#__codelineno-44-18"></a><span class="p">}</span><span class="w"> </span><span class="n">IdentifierType</span><span class="p">;</span>
+</code></pre></div>
+<p>客户端指定其信任的CA,从而服务器端可根据客户端所信任的CA发送服务器证书给客户端。</p>
+<h3 id="a3-certificate-status-request">A.3 Certificate Status Request证书状态请求<a class="headerlink" href="#a3-certificate-status-request" title="Permanent link">&para;</a></h3>
+<p>Certificate Status Request定义:</p>
+<p>客户端发送的扩展内容为:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-45-2" name="__codelineno-45-2" href="#__codelineno-45-2"></a><span class="w">    </span><span class="n">CertificateStatusType</span><span class="w"> </span><span class="n">status_type</span><span class="p">;</span>
+<a id="__codelineno-45-3" name="__codelineno-45-3" href="#__codelineno-45-3"></a><span class="w">    </span><span class="n">select</span><span class="p">(</span><span class="n">status_type</span><span class="p">){</span>
+<a id="__codelineno-45-4" name="__codelineno-45-4" href="#__codelineno-45-4"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">ocsp</span><span class="p">:</span><span class="w"> </span><span class="n">OCSPStatusRequest</span><span class="p">;</span>
+<a id="__codelineno-45-5" name="__codelineno-45-5" href="#__codelineno-45-5"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="n">request</span><span class="p">;</span>
+<a id="__codelineno-45-6" name="__codelineno-45-6" href="#__codelineno-45-6"></a><span class="p">}</span><span class="w"> </span><span class="n">CertificateStatusRequest</span><span class="p">;</span>
+<a id="__codelineno-45-7" name="__codelineno-45-7" href="#__codelineno-45-7"></a>
+<a id="__codelineno-45-8" name="__codelineno-45-8" href="#__codelineno-45-8"></a><span class="k">enum</span><span class="w"> </span><span class="p">{</span><span class="n">ocsp</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="mi">255</span><span class="p">)}</span><span class="w"> </span><span class="n">CertificateStatusType</span><span class="p">;</span>
+<a id="__codelineno-45-9" name="__codelineno-45-9" href="#__codelineno-45-9"></a>
+<a id="__codelineno-45-10" name="__codelineno-45-10" href="#__codelineno-45-10"></a><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-45-11" name="__codelineno-45-11" href="#__codelineno-45-11"></a><span class="w">    </span><span class="n">ResponderID</span><span class="w"> </span><span class="n">responder_id_list</span><span class="o">&lt;</span><span class="mf">0..2</span><span class="o">^</span><span class="mi">16-1</span><span class="o">&gt;</span><span class="p">;</span>
+<a id="__codelineno-45-12" name="__codelineno-45-12" href="#__codelineno-45-12"></a><span class="w">    </span><span class="n">Extensions</span><span class="w"> </span><span class="n">request_extensions</span><span class="p">;</span>
+<a id="__codelineno-45-13" name="__codelineno-45-13" href="#__codelineno-45-13"></a><span class="p">}</span><span class="w"> </span><span class="n">OCSPStatusRequest</span><span class="p">;</span>
+<a id="__codelineno-45-14" name="__codelineno-45-14" href="#__codelineno-45-14"></a>
+<a id="__codelineno-45-15" name="__codelineno-45-15" href="#__codelineno-45-15"></a><span class="n">opaque</span><span class="w"> </span><span class="n">ResponderID</span><span class="o">&lt;</span><span class="mf">1..2</span><span class="o">^</span><span class="mi">16-1</span><span class="o">&gt;</span><span class="p">;</span>
+<a id="__codelineno-45-16" name="__codelineno-45-16" href="#__codelineno-45-16"></a><span class="n">opaque</span><span class="w"> </span><span class="n">Extensions</span><span class="o">&lt;</span><span class="mf">0..2</span><span class="o">^</span><span class="mi">16-1</span><span class="o">&gt;</span><span class="p">;</span>
+</code></pre></div>
+<p>如果服务器端对客户端进行响应,则应以如下格式应答:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-46-2" name="__codelineno-46-2" href="#__codelineno-46-2"></a><span class="w">    </span><span class="n">CertificateStatusType</span><span class="w"> </span><span class="n">status_type</span><span class="p">;</span>
+<a id="__codelineno-46-3" name="__codelineno-46-3" href="#__codelineno-46-3"></a><span class="w">    </span><span class="n">select</span><span class="p">(</span><span class="n">status_type</span><span class="p">){</span>
+<a id="__codelineno-46-4" name="__codelineno-46-4" href="#__codelineno-46-4"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">ocsp</span><span class="p">:</span><span class="w"> </span><span class="n">OCSPResponse</span><span class="p">;</span>
+<a id="__codelineno-46-5" name="__codelineno-46-5" href="#__codelineno-46-5"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="n">response</span><span class="p">;</span>
+<a id="__codelineno-46-6" name="__codelineno-46-6" href="#__codelineno-46-6"></a><span class="p">}</span><span class="w"> </span><span class="n">CertificateStatus</span><span class="p">;</span>
+<a id="__codelineno-46-7" name="__codelineno-46-7" href="#__codelineno-46-7"></a><span class="n">opaque</span><span class="w"> </span><span class="n">OCSPResponse</span><span class="o">&lt;</span><span class="mf">1..2</span><span class="o">^</span><span class="mi">24-1</span><span class="o">&gt;</span><span class="p">;</span>
+</code></pre></div>
+<p>其中,OCSPResponse应包括完整的OCSP应答内容。</p>
+<h3 id="a4-supported-elliptic-curves">A.4 Supported Elliptic Curves支持的椭圆曲线<a class="headerlink" href="#a4-supported-elliptic-curves" title="Permanent link">&para;</a></h3>
+<p>Supported Elliptic Curves定义:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a><span class="k">enum</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-47-2" name="__codelineno-47-2" href="#__codelineno-47-2"></a><span class="w">    </span><span class="n">deprecated</span><span class="p">(</span><span class="mf">1..22</span><span class="p">),</span>
+<a id="__codelineno-47-3" name="__codelineno-47-3" href="#__codelineno-47-3"></a><span class="w">    </span><span class="n">SM2Curve</span><span class="p">(</span><span class="mi">41</span><span class="p">)</span>
+<a id="__codelineno-47-4" name="__codelineno-47-4" href="#__codelineno-47-4"></a><span class="w">    </span><span class="n">reserved</span><span class="p">(</span><span class="mh">0xFE00</span><span class="p">.</span><span class="mf">.0</span><span class="n">xFEFF</span><span class="p">),</span>
+<a id="__codelineno-47-5" name="__codelineno-47-5" href="#__codelineno-47-5"></a><span class="w">    </span><span class="n">deprecated</span><span class="p">(</span><span class="mh">0xFF01</span><span class="p">.</span><span class="mf">.0</span><span class="n">xFF02</span><span class="p">),</span>
+<a id="__codelineno-47-6" name="__codelineno-47-6" href="#__codelineno-47-6"></a><span class="w">    </span><span class="p">(</span><span class="mh">0xFFFF</span><span class="p">)</span>
+<a id="__codelineno-47-7" name="__codelineno-47-7" href="#__codelineno-47-7"></a><span class="p">}</span><span class="w"> </span><span class="n">NamedCurve</span><span class="p">;</span>
+<a id="__codelineno-47-8" name="__codelineno-47-8" href="#__codelineno-47-8"></a><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-47-9" name="__codelineno-47-9" href="#__codelineno-47-9"></a><span class="w">    </span><span class="n">NamedCurve</span><span class="w"> </span><span class="n">named_curve_list</span><span class="o">&lt;</span><span class="mf">2..2</span><span class="o">^</span><span class="mi">16-1</span><span class="o">&gt;</span>
+<a id="__codelineno-47-10" name="__codelineno-47-10" href="#__codelineno-47-10"></a><span class="p">}</span><span class="w"> </span><span class="n">NamedCurveList</span><span class="p">;</span>
+</code></pre></div>
+<p>服务器应从客户端支持的椭圆曲线列表中选择一个曲线进行后续的握手流程。</p>
+<h3 id="a5-signature-algorithm">A.5 Signature Algorithm签名算法<a class="headerlink" href="#a5-signature-algorithm" title="Permanent link">&para;</a></h3>
+<p>Signature Algorithm定义:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a><span class="k">enum</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-48-2" name="__codelineno-48-2" href="#__codelineno-48-2"></a><span class="w">    </span><span class="n">none</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span><span class="w"> </span><span class="n">sha224</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span><span class="w"> </span><span class="n">sha256</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span><span class="w"> </span><span class="n">sha384</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span>
+<a id="__codelineno-48-3" name="__codelineno-48-3" href="#__codelineno-48-3"></a><span class="w">    </span><span class="n">sha512</span><span class="p">(</span><span class="mi">6</span><span class="p">),</span><span class="w"> </span><span class="n">SM3</span><span class="p">(</span><span class="mi">7</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="mi">255</span><span class="p">)</span>
+<a id="__codelineno-48-4" name="__codelineno-48-4" href="#__codelineno-48-4"></a><span class="p">}</span><span class="w"> </span><span class="n">HashAlgorithm</span><span class="p">;</span>
+<a id="__codelineno-48-5" name="__codelineno-48-5" href="#__codelineno-48-5"></a>
+<a id="__codelineno-48-6" name="__codelineno-48-6" href="#__codelineno-48-6"></a><span class="k">enum</span><span class="w"> </span><span class="p">{</span><span class="n">anonymous</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span><span class="w"> </span><span class="n">rsa</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">dsa</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="n">ecdsa</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span><span class="w"> </span><span class="n">SM2</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="mi">255</span><span class="p">)}</span>
+<a id="__codelineno-48-7" name="__codelineno-48-7" href="#__codelineno-48-7"></a><span class="n">SignatureAlgorithm</span><span class="p">;</span>
+<a id="__codelineno-48-8" name="__codelineno-48-8" href="#__codelineno-48-8"></a>
+<a id="__codelineno-48-9" name="__codelineno-48-9" href="#__codelineno-48-9"></a><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-48-10" name="__codelineno-48-10" href="#__codelineno-48-10"></a><span class="w">    </span><span class="n">HashAlgorithm</span><span class="w"> </span><span class="n">hash</span><span class="p">;</span>
+<a id="__codelineno-48-11" name="__codelineno-48-11" href="#__codelineno-48-11"></a><span class="w">    </span><span class="n">SignatureAlgorithm</span><span class="w"> </span><span class="n">signature</span><span class="p">;</span>
+<a id="__codelineno-48-12" name="__codelineno-48-12" href="#__codelineno-48-12"></a><span class="p">}</span><span class="w"> </span><span class="n">SignatureAndHashAlgorithm</span><span class="p">;</span>
+<a id="__codelineno-48-13" name="__codelineno-48-13" href="#__codelineno-48-13"></a><span class="n">SignatureAndHashAlgorithm</span>
+<a id="__codelineno-48-14" name="__codelineno-48-14" href="#__codelineno-48-14"></a><span class="n">supported_signature_algorithms</span><span class="o">&lt;</span><span class="mf">2..2</span><span class="o">^</span><span class="mi">16-2</span><span class="o">&gt;</span><span class="p">;</span>
+</code></pre></div>
+<p>客户端在使用商用密码算法进行协商时,应发送SignatureAlgorithm扩展并指定HashAlgorithm为SM3,指定SignatrueAlgorithm为SM2。</p>
+<h3 id="a6-applicatoin-layer-protocol-negotiation">A.6 Applicatoin Layer Protocol Negotiation应用层协议协商<a class="headerlink" href="#a6-applicatoin-layer-protocol-negotiation" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a><span class="k">enum</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-49-2" name="__codelineno-49-2" href="#__codelineno-49-2"></a><span class="w">    </span><span class="n">application_layer_protocol_negotiation</span><span class="p">(</span><span class="mi">16</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="mi">65535</span><span class="p">)</span>
+<a id="__codelineno-49-3" name="__codelineno-49-3" href="#__codelineno-49-3"></a><span class="p">}</span><span class="w"> </span><span class="n">ExtensionType</span><span class="p">;</span>
+<a id="__codelineno-49-4" name="__codelineno-49-4" href="#__codelineno-49-4"></a>
+<a id="__codelineno-49-5" name="__codelineno-49-5" href="#__codelineno-49-5"></a><span class="n">opaque</span><span class="w"> </span><span class="n">ProtocolName</span><span class="o">&lt;</span><span class="mf">1..2</span><span class="o">^</span><span class="mi">8-1</span><span class="o">&gt;</span><span class="p">;</span>
+<a id="__codelineno-49-6" name="__codelineno-49-6" href="#__codelineno-49-6"></a>
+<a id="__codelineno-49-7" name="__codelineno-49-7" href="#__codelineno-49-7"></a><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-49-8" name="__codelineno-49-8" href="#__codelineno-49-8"></a><span class="w">    </span><span class="n">ProtocolName</span><span class="w"> </span><span class="n">protocol_name_list</span><span class="o">&lt;</span><span class="mf">2..2</span><span class="o">^</span><span class="mi">16-1</span><span class="o">&gt;</span>
+<a id="__codelineno-49-9" name="__codelineno-49-9" href="#__codelineno-49-9"></a><span class="p">}</span><span class="w"> </span><span class="n">ProtocolNameList</span><span class="p">;</span>
+</code></pre></div>
+<p>其中ProtocolName的定义和IANA保持一致:<a href="https://www.iana.org/assignments/tls-extension-type-values/tls-extensiontype-values.xhtml#alpn-protocol-ids">https://www.iana.org/assignments/tls-extension-type-values/tls-extensiontype-values.xhtml#alpn-protocol-ids</a>。</p>
+<h3 id="a7-client-id">A.7 Client ID客户端标识<a class="headerlink" href="#a7-client-id" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a><span class="n">opaque</span><span class="w"> </span><span class="n">ClientID</span><span class="o">&lt;</span><span class="mf">1..2</span><span class="o">^</span><span class="mi">16-1</span><span class="o">&gt;</span><span class="p">;</span>
+</code></pre></div>
+<p>客户端的ClientHello消息的CipherSuite包括IBSDH密钥交换算法时,需要发送ClientID扩展,指定客户端的标识信息。</p>
+<h2 id="_1">参考文献<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>[1] GB/T 15852.2—2012 信息技术 安全技术 消息鉴别码 第2部分:采用专用杂凑函数的机制</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate":null,"base":"../../../..","features":["navigation.tabs","navigation.tabs.sticky","navigation.indexes","search.highlight","search.suggest","content.code.copy"],"search":"../../../../assets/javascripts/workers/search.0ff0ccea966a6bf2.min.js","tags":null,"translations":{"clipboard.copied":"已复制","clipboard.copy":"复制","search.result.more.one":"在该页上还有 1 个符合条件的结果","search.result.more.other":"在该页上还有 # 个符合条件的结果","search.result.none":"没有找到符合条件的结果","search.result.one":"找到 1 个符合条件的结果","search.result.other":"# 个符合条件的结果","search.result.placeholder":"键入以开始搜索","search.result.term.missing":"缺少","select.version":"选择当前版本"},"version":null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.c21346df.min.js"></script>
+      
+        <script src="../../../../assets/vendor/katex/katex.min.js"></script>
+      
+        <script src="../../../../assets/javascripts/blue-topaz-maple.js"></script>
+      
+        <script src="../../../../assets/javascripts/page-navigation.js"></script>
+      
+        <script src="../../../../assets/javascripts/page-search.js"></script>
+      
+        <script src="../../../../assets/javascripts/search-tables.js"></script>
+      
+        <script src="../../../../assets/javascripts/search-notice.js"></script>
+      
+    
+  </body>
+</html>
