@@ -101,6 +101,8 @@ nav:
   - 密码算法:
       - 分类首页: algorithm/index.md
       - 数论补充: algorithm/数论补充/数论.md
+      - 流密码算法:
+          - ZUC算法: algorithm/流密码/ZUC/ZUC算法.md
       - 密码杂凑算法:
           - SM3算法: algorithm/密码杂凑算法/SM3/SM3密码杂凑算法.md
       - 消息鉴别码:
@@ -144,3 +146,4 @@ nav:
       - 笔记-陈博麟:
           - TLCP协议个人解析: notes/陈博麟/TLCP/TLCP协议详解.md
           - IPSEC协议个人解析: notes/陈博麟/IPSEC/IPSEC协议详解.md
+          - LaTeX公式查询表: notes/陈博麟/LaTeX.md
