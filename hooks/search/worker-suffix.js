@@ -101,7 +101,16 @@
     // Exact passage lookup is independent of token lookup. A complete source
     // fragment must survive even when the tokenizer cannot retrieve it.
     const combined = new Map(exactSearch(message.data).map(item => [item.location, item]));
-    const ordinary = await run({ ...message, data: splitScriptBoundaries(message.data) }, true);
+    const hexQuery = /^0x[0-9a-f]+$/i.test(message.data.trim()) ? message.data.trim().toLowerCase() : null;
+    // The tokenizer reduces 0x000 to 0. For explicit hex input, search the
+    // original hex tokens instead of collecting unrelated decimal zero hits.
+    const ordinary = hexQuery ? { type: 3, data: { items: [], suggest: [] } } :
+      await run({ ...message, data: splitScriptBoundaries(message.data) }, true);
+    if (hexQuery) {
+      for (const item of exactSearch(hexQuery, hexRanges)) {
+        if (!combined.has(item.location)) combined.set(item.location, rankHex(item, hexQuery));
+      }
+    }
     const append = (groups, reason) => {
       for (const item of groups.flat()) {
         if (item.score <= 0 || combined.get(item.location)?.matchKind === "exact") continue;

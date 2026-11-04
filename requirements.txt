@@ -1,2 +1,3 @@
-mkdocs-material>=9.6,<10
+# Material 9.8+ requires newer Python; keep one compatible line for Python 3.9+.
+mkdocs-material>=9.6,<9.8
 jieba>=0.42.1,<0.43

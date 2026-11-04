@@ -11,14 +11,32 @@ permissions:
   contents: read
 
 jobs:
-  check:
-    runs-on: ubuntu-latest
+  check-windows-launcher:
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        python-version: ["3.9", "3.12"]
     steps:
       - uses: actions/checkout@v4
 
       - uses: actions/setup-python@v5
         with:
-          python-version: "3.12"
+          python-version: ${{ matrix.python-version }}
+
+      - name: 检查 Windows 启动脚本
+        run: python -m unittest discover -s tests -p test_windows_launcher.py -v
+
+  check:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.9", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
 
       - uses: actions/setup-node@v4
         with:
@@ -48,7 +66,7 @@ jobs:
         run: node tests/search.test.cjs site-offline --offline
 
       - name: 保存离线包
-        if: github.event_name != 'pull_request'
+        if: github.event_name != 'pull_request' && matrix.python-version == '3.12'
         uses: actions/upload-artifact@v4
         with:
           name: crypto-assessment-wiki-offline
@@ -57,7 +75,7 @@ jobs:
 
   deploy:
     if: github.event_name != 'pull_request'
-    needs: check
+    needs: [check, check-windows-launcher]
     runs-on: ubuntu-latest
     permissions:
       contents: write
