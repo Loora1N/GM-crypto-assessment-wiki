@@ -14,6 +14,7 @@ jobs:
   check-windows-launcher:
     runs-on: windows-latest
     strategy:
+      fail-fast: false
       matrix:
         python-version: ["3.9", "3.12"]
     steps:

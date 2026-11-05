@@ -1,5 +1,6 @@
 """Run the release launcher under Windows PowerShell 5.1 and cmd.exe."""
 
+import ctypes
 import json
 import os
 from pathlib import Path
@@ -83,22 +84,50 @@ public class PythonFixture {
         env = {**self.env, "PATH": "", "WIKI_PYTHON": sys.executable}
         result = self.run_powershell("Find-WikiPython | ConvertTo-Json -Compress", env)
         self.assertEqual(result.returncode, 0, result.stderr)
-        self.assertEqual(Path(json.loads(result.stdout)["path"]), Path(sys.executable))
+        self.assertTrue(Path(json.loads(result.stdout)["path"]).samefile(sys.executable), result.stdout)
+
+    def check_install_discovery(self, registered, short_path=False):
+        local = self.workspace / ("registered" if registered else "local")
+        relative = Path("Programs/Python/Python312/python.exe")
+        installed = local / relative
+        installed.parent.mkdir(parents=True)
+        shutil.copyfile(self.fixture, installed)
+        if short_path:
+            # GitHub's Windows runners can expose TEMP as C:\Users\RUNNER~1.
+            # Exercise a real 8.3 alias without changing the machine's settings.
+            get_short_path = ctypes.WinDLL("kernel32", use_last_error=True).GetShortPathNameW
+            get_short_path.argtypes = (ctypes.c_wchar_p, ctypes.c_wchar_p, ctypes.c_uint32)
+            get_short_path.restype = ctypes.c_uint32
+            size = get_short_path(str(local), None, 0)
+            if not size:
+                raise ctypes.WinError(ctypes.get_last_error())
+            buffer = ctypes.create_unicode_buffer(size)
+            written = get_short_path(str(local), buffer, size)
+            if not written or written >= size:
+                raise ctypes.WinError(ctypes.get_last_error())
+            if Path(buffer.value) == local:
+                self.skipTest("The temporary volume does not provide 8.3 path aliases")
+            local = Path(buffer.value)
+            installed = local / relative
+        env = {**self.env, "PATH": "", "WIKI_PYTHON": "", "LOCALAPPDATA": str(local), "USERPROFILE": str(local), "ProgramFiles": str(local), "ProgramFiles(x86)": str(local), "ProgramData": str(local), "SystemDrive": str(local), "WIKI_TEST_REGISTERED": str(installed)}
+        registry = "$env:WIKI_TEST_REGISTERED" if registered else ""
+        # Model a PEP 514 registration without changing the real registry.
+        body = "function Get-WikiRegisteredPython { " + registry + " }\nFind-WikiPython | ConvertTo-Json -Compress"
+        result = self.run_powershell(body, env)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        # PowerShell can expand a short path while enumerating installations.
+        # Compare file identity, not two different spellings of the same path.
+        self.assertTrue(Path(json.loads(result.stdout)["path"]).samefile(installed), result.stdout)
 
     def test_registry_and_common_install_discovery_without_path(self):
         for registered in (True, False):
             with self.subTest(registered=registered):
-                local = self.workspace / ("registered" if registered else "local")
-                installed = local / "Programs/Python/Python312/python.exe"
-                installed.parent.mkdir(parents=True)
-                shutil.copyfile(self.fixture, installed)
-                env = {**self.env, "PATH": "", "WIKI_PYTHON": "", "LOCALAPPDATA": str(local), "USERPROFILE": str(local), "ProgramFiles": str(local), "ProgramFiles(x86)": str(local), "ProgramData": str(local), "SystemDrive": str(local), "WIKI_TEST_REGISTERED": str(installed)}
-                registry = "$env:WIKI_TEST_REGISTERED" if registered else ""
-                # Model a PEP 514 registration without changing the real registry.
-                body = "function Get-WikiRegisteredPython { " + registry + " }\nFind-WikiPython | ConvertTo-Json -Compress"
-                result = self.run_powershell(body, env)
-                self.assertEqual(result.returncode, 0, result.stderr)
-                self.assertEqual(Path(json.loads(result.stdout)["path"]), installed)
+                self.check_install_discovery(registered)
+
+    def test_discovery_accepts_windows_short_paths(self):
+        for registered in (True, False):
+            with self.subTest(registered=registered):
+                self.check_install_discovery(registered, short_path=True)
 
     def test_first_launch_and_reuse_with_lf_and_crlf(self):
         for newline in ("\n", "\r\n"):
