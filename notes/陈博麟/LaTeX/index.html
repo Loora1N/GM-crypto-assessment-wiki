@@ -1,0 +1,3795 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://loora1n.github.io/GM-crypto-assessment-wiki/notes/%E9%99%88%E5%8D%9A%E9%BA%9F/LaTeX/">
+      
+      
+        <link rel="prev" href="../IPSEC/IPSEC%E5%8D%8F%E8%AE%AE%E8%AF%A6%E8%A7%A3/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>LaTeX公式查询表 - 密评标准知识库</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+        <script src="../../../assets/vendor/iframe-worker/shim.js"></script>
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/vendor/katex/katex.min.css">
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/blue-topaz-maple.css">
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/page-search.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#latex" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="密评标准知识库" class="md-header__button md-logo" aria-label="密评标准知识库" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            密评标准知识库
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              LaTeX公式查询表
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="切换到深色主题"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换到深色主题" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="切换到浅色主题"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换到浅色主题" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../maintenance/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  使用手册
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../algorithm/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  密码算法
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../protocol/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  密码协议
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../product/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  密码产品
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../assessment/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  密码测评
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../standard/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  国标与行标
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  个人笔记
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+  
+  
+  
+    
+  
+  <aside class="md-sidebar md-sidebar--secondary topaz-toc" data-md-component="sidebar" data-md-type="toc" aria-label="文章目录">
+    <div class="md-sidebar__scrollwrap">
+      <div class="md-sidebar__inner">
+        <nav class="md-nav md-nav--secondary" aria-label="文章标题目录">
+          <div class="md-nav__title topaz-toc__title">
+            文章目录
+            <label class="topaz-toc__close" for="__drawer" title="收起文章目录">收起 ×</label>
+          </div>
+          
+            <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+              
+                <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        目录
+      
+    </span>
+  </a>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#1-typora" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Typora 公式基础
+      
+    </span>
+  </a>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 上下标、分数与根式
+      
+    </span>
+  </a>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 希腊字母
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 希腊字母">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 小写希腊字母
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 大写希腊字母
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 希腊字母变体
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 基础运算符
+      
+    </span>
+  </a>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 等号、不等号与关系符号
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 等号、不等号与关系符号">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 等号与近似关系
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 大小关系
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 集合包含关系
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 其他关系
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 箭头
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. 箭头">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 基础箭头
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 长箭头与双线箭头
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 带注释的箭头
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. 集合符号
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. 集合符号">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        常见集合表达式
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. 逻辑符号
+      
+    </span>
+  </a>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. 括号与定界符
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. 括号与定界符">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 常用括号
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 自动调整大小
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3 手动调整大小
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. 求和、连乘与极限
+      
+    </span>
+  </a>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. 微积分
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. 微积分">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.1 导数与微分
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.2 积分
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#113" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.3 向量微积分
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. 矩阵与线性代数
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12. 矩阵与线性代数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#121" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.1 矩阵环境
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#122" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.2 矩阵与向量常用记号
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. 多行公式与分段函数
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13. 多行公式与分段函数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#131" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.1 常用环境对照
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#132" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.2 分段函数模板
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#133" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.3 多行对齐模板
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#134" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.4 多行居中模板
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#135" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.5 数组模板
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#136" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.6 公式标签
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. 数学字体与装饰符号
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="14. 数学字体与装饰符号">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#141" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.1 数学字体
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#142" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.2 上划线、向量与装饰
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. 常用函数与算子
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="15. 常用函数与算子">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#151" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.1 三角函数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#152" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.2 双曲函数与常见函数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#153" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.3 常见算子
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16. 概率论与统计学
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="16. 概率论与统计学">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        常见统计公式
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        17. 数论、几何与物理
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="17. 数论、几何与物理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#171" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        17.1 数论与离散数学
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#172" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        17.2 几何与物理
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18. 空格与排版
+      
+    </span>
+  </a>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19. 常用公式模板
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="19. 常用公式模板">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        分段函数模板
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        矩阵模板
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        梯度向量模板
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#20-typora" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        20. Typora 使用提示
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="20. Typora 使用提示">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        建议优先掌握的命令
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+              
+            </ul>
+          
+        </nav>
+      </div>
+    </div>
+  </aside>
+
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="latex">LaTeX 数学公式速查表<a class="headerlink" href="#latex" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><strong>适用环境：</strong> Typora / MathJax 数学模式<br />
+<strong>阅读方式：</strong>
+按用途分区；每个分区独立成表，优先列出符号、可复制命令和用途。<br />
+<strong>提示：</strong> 命令请复制到数学环境中使用，例如 <code>$ \alpha $</code> 或
+<code>$$ \alpha $$</code>。表中反引号内的命令均使用单个反斜杠。</p>
+</blockquote>
+<h2 id="_1">目录<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="#1-typora">Typora 公式基础</a></li>
+<li><a href="#2">上下标、分数与根式</a></li>
+<li><a href="#3">希腊字母</a></li>
+<li><a href="#4">基础运算符</a></li>
+<li><a href="#5">等号、不等号与关系符号</a></li>
+<li><a href="#6">箭头</a></li>
+<li><a href="#7">集合符号</a></li>
+<li><a href="#8">逻辑符号</a></li>
+<li><a href="#9">括号与定界符</a></li>
+<li><a href="#10">求和、连乘与极限</a></li>
+<li><a href="#11">微积分</a></li>
+<li><a href="#12">矩阵与线性代数</a></li>
+<li><a href="#13">多行公式与分段函数</a></li>
+<li><a href="#14">数学字体与装饰符号</a></li>
+<li><a href="#15">常用函数与算子</a></li>
+<li><a href="#16">概率论与统计学</a></li>
+<li><a href="#17">数论、几何与物理</a></li>
+<li><a href="#18">空格与排版</a></li>
+<li><a href="#19">常用公式模板</a></li>
+<li><a href="#20-typora">Typora 使用提示</a></li>
+</ol>
+<hr />
+<h2 id="1-typora">1. Typora 公式基础<a class="headerlink" href="#1-typora" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>用途</th>
+<th>输入方式</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>行内公式</td>
+<td><code>$...$</code></td>
+<td><code>$a+b=c$</code></td>
+</tr>
+<tr>
+<td>独立公式</td>
+<td><code>$$...$$</code></td>
+<td><code>$$a+b=c$$</code></td>
+</tr>
+<tr>
+<td>行内公式（替代）</td>
+<td><code>\(...\)</code></td>
+<td><code>\(a+b=c\)</code></td>
+</tr>
+<tr>
+<td>独立公式（替代）</td>
+<td><code>\[...\]</code></td>
+<td><code>\[a+b=c\]</code></td>
+</tr>
+<tr>
+<td>公式内普通文字</td>
+<td><code>\text{...}</code></td>
+<td><code>\text{where }x&gt;0</code></td>
+</tr>
+<tr>
+<td>百分号字符</td>
+<td><code>\%</code></td>
+<td><code>50\%</code></td>
+</tr>
+<tr>
+<td>下划线字符</td>
+<td><code>\_</code></td>
+<td><code>file\_name</code></td>
+</tr>
+<tr>
+<td>花括号字符</td>
+<td><code>\{</code>、<code>\}</code></td>
+<td><code>\{1,2,3\}</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>基本规则</strong></p>
+<table>
+<thead>
+<tr>
+<th>规则</th>
+<th>正确写法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>多字符上标</td>
+<td><code>x^{n+1}</code></td>
+<td>上标内容用 <code>{}</code> 包起来</td>
+</tr>
+<tr>
+<td>多字符下标</td>
+<td><code>a_{ij}</code></td>
+<td>下标内容用 <code>{}</code> 包起来</td>
+</tr>
+<tr>
+<td>公式中插入文字</td>
+<td><code>\text{当 }x&gt;0</code></td>
+<td>普通文字使用 <code>\text{}</code></td>
+</tr>
+<tr>
+<td>微分符号</td>
+<td><code>\,\mathrm{d}x</code></td>
+<td>常用正体 d 表示微分</td>
+</tr>
+<tr>
+<td>公式中的空格</td>
+<td><code>\quad</code></td>
+<td>普通空格通常会被忽略</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2">2. 上下标、分数与根式<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>效果</th>
+<th>LaTeX 命令</th>
+<th>用途／说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上标</td>
+<td><code>x^2</code></td>
+<td>平方</td>
+</tr>
+<tr>
+<td>下标</td>
+<td><code>x_i</code></td>
+<td>下标</td>
+</tr>
+<tr>
+<td>多字符上标</td>
+<td><code>x^{10}</code></td>
+<td>多位指数</td>
+</tr>
+<tr>
+<td>多字符下标</td>
+<td><code>x_{ij}</code></td>
+<td>多字符索引</td>
+</tr>
+<tr>
+<td>分数</td>
+<td><code>\frac{a}{b}</code></td>
+<td>常规分数</td>
+</tr>
+<tr>
+<td>大分数</td>
+<td><code>\dfrac{a}{b}</code></td>
+<td>显示风格，通常更大</td>
+</tr>
+<tr>
+<td>小分数</td>
+<td><code>\tfrac{a}{b}</code></td>
+<td>文本风格，通常更紧凑</td>
+</tr>
+<tr>
+<td>平方根</td>
+<td><code>\sqrt{x}</code></td>
+<td>平方根</td>
+</tr>
+<tr>
+<td>n 次根</td>
+<td><code>\sqrt[n]{x}</code></td>
+<td>n 次方根</td>
+</tr>
+<tr>
+<td>组合数</td>
+<td><code>\binom{n}{k}</code></td>
+<td>二项式系数</td>
+</tr>
+<tr>
+<td>上方标注</td>
+<td><code>\overset{a}{=}</code></td>
+<td>在等号上方加标注</td>
+</tr>
+<tr>
+<td>下方标注</td>
+<td><code>\underset{n\to\infty}{\lim}</code></td>
+<td>在符号下方加标注</td>
+</tr>
+<tr>
+<td>上下标注</td>
+<td><code>\overset{a}{\underset{b}{=}}</code></td>
+<td>同时添加上下标注</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3">3. 希腊字母<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<h3 id="31">3.1 小写希腊字母<a class="headerlink" href="#31" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>命令</th>
+<th>符号</th>
+<th>命令</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>α</td>
+<td><code>\alpha</code></td>
+<td>β</td>
+<td><code>\beta</code></td>
+</tr>
+<tr>
+<td>γ</td>
+<td><code>\gamma</code></td>
+<td>δ</td>
+<td><code>\delta</code></td>
+</tr>
+<tr>
+<td>ε</td>
+<td><code>\epsilon</code></td>
+<td>ζ</td>
+<td><code>\zeta</code></td>
+</tr>
+<tr>
+<td>η</td>
+<td><code>\eta</code></td>
+<td>θ</td>
+<td><code>\theta</code></td>
+</tr>
+<tr>
+<td>ι</td>
+<td><code>\iota</code></td>
+<td>κ</td>
+<td><code>\kappa</code></td>
+</tr>
+<tr>
+<td>λ</td>
+<td><code>\lambda</code></td>
+<td>μ</td>
+<td><code>\mu</code></td>
+</tr>
+<tr>
+<td>ν</td>
+<td><code>\nu</code></td>
+<td>ξ</td>
+<td><code>\xi</code></td>
+</tr>
+<tr>
+<td>ο</td>
+<td><code>o</code>（直接输入）</td>
+<td>π</td>
+<td><code>\pi</code></td>
+</tr>
+<tr>
+<td>ρ</td>
+<td><code>\rho</code></td>
+<td>σ</td>
+<td><code>\sigma</code></td>
+</tr>
+<tr>
+<td>τ</td>
+<td><code>\tau</code></td>
+<td>υ</td>
+<td><code>\upsilon</code></td>
+</tr>
+<tr>
+<td>φ</td>
+<td><code>\phi</code></td>
+<td>χ</td>
+<td><code>\chi</code></td>
+</tr>
+<tr>
+<td>ψ</td>
+<td><code>\psi</code></td>
+<td>ω</td>
+<td><code>\omega</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="32">3.2 大写希腊字母<a class="headerlink" href="#32" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>命令</th>
+<th>符号</th>
+<th>命令</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Γ</td>
+<td><code>\Gamma</code></td>
+<td>Δ</td>
+<td><code>\Delta</code></td>
+</tr>
+<tr>
+<td>Θ</td>
+<td><code>\Theta</code></td>
+<td>Λ</td>
+<td><code>\Lambda</code></td>
+</tr>
+<tr>
+<td>Ξ</td>
+<td><code>\Xi</code></td>
+<td>Π</td>
+<td><code>\Pi</code></td>
+</tr>
+<tr>
+<td>Σ</td>
+<td><code>\Sigma</code></td>
+<td>Υ</td>
+<td><code>\Upsilon</code></td>
+</tr>
+<tr>
+<td>Φ</td>
+<td><code>\Phi</code></td>
+<td>Ψ</td>
+<td><code>\Psi</code></td>
+</tr>
+<tr>
+<td>Ω</td>
+<td><code>\Omega</code></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>大写
+Alpha、Beta、Epsilon、Zeta、Eta、Iota、Kappa、Mu、Nu、Omicron、Rho、Tau、Chi
+通常直接使用对应英文字母。</p>
+</blockquote>
+<h3 id="33">3.3 希腊字母变体<a class="headerlink" href="#33" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>命令</th>
+<th>符号</th>
+<th>命令</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ϵ</td>
+<td><code>\varepsilon</code></td>
+<td>ϑ</td>
+<td><code>\vartheta</code></td>
+</tr>
+<tr>
+<td>ϖ</td>
+<td><code>\varpi</code></td>
+<td>ϱ</td>
+<td><code>\varrho</code></td>
+</tr>
+<tr>
+<td>ς</td>
+<td><code>\varsigma</code></td>
+<td>ϕ</td>
+<td><code>\varphi</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="4">4. 基础运算符<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>命令</th>
+<th>含义／常见用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>+</td>
+<td><code>+</code></td>
+<td>加</td>
+</tr>
+<tr>
+<td>−</td>
+<td><code>-</code></td>
+<td>减</td>
+</tr>
+<tr>
+<td>±</td>
+<td><code>\pm</code></td>
+<td>正负</td>
+</tr>
+<tr>
+<td>∓</td>
+<td><code>\mp</code></td>
+<td>负正</td>
+</tr>
+<tr>
+<td>×</td>
+<td><code>\times</code></td>
+<td>乘</td>
+</tr>
+<tr>
+<td>⋅</td>
+<td><code>\cdot</code></td>
+<td>点乘、乘法</td>
+</tr>
+<tr>
+<td>÷</td>
+<td><code>\div</code></td>
+<td>除</td>
+</tr>
+<tr>
+<td>∗</td>
+<td><code>\ast</code></td>
+<td>星号运算</td>
+</tr>
+<tr>
+<td>∘</td>
+<td><code>\circ</code></td>
+<td>复合运算</td>
+</tr>
+<tr>
+<td>•</td>
+<td><code>\bullet</code></td>
+<td>实心点</td>
+</tr>
+<tr>
+<td>⊙</td>
+<td><code>\odot</code></td>
+<td>圆点乘</td>
+</tr>
+<tr>
+<td>⊗</td>
+<td><code>\otimes</code></td>
+<td>张量积等</td>
+</tr>
+<tr>
+<td>⊕</td>
+<td><code>\oplus</code></td>
+<td>直和、异或等</td>
+</tr>
+<tr>
+<td>⊖</td>
+<td><code>\ominus</code></td>
+<td>圆减</td>
+</tr>
+<tr>
+<td>⊘</td>
+<td><code>\oslash</code></td>
+<td>圆除</td>
+</tr>
+<tr>
+<td>⋄</td>
+<td><code>\diamond</code></td>
+<td>菱形运算</td>
+</tr>
+<tr>
+<td>∧</td>
+<td><code>\wedge</code></td>
+<td>逻辑与、楔积</td>
+</tr>
+<tr>
+<td>∨</td>
+<td><code>\vee</code></td>
+<td>逻辑或</td>
+</tr>
+<tr>
+<td>∩</td>
+<td><code>\cap</code></td>
+<td>交</td>
+</tr>
+<tr>
+<td>∪</td>
+<td><code>\cup</code></td>
+<td>并</td>
+</tr>
+<tr>
+<td>∖</td>
+<td><code>\setminus</code></td>
+<td>集合差</td>
+</tr>
+</tbody>
+</table>
+<h2 id="5">5. 等号、不等号与关系符号<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
+<h3 id="51">5.1 等号与近似关系<a class="headerlink" href="#51" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>命令</th>
+<th>含义／用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>=</td>
+<td><code>=</code></td>
+<td>等于</td>
+</tr>
+<tr>
+<td>≠</td>
+<td><code>\neq</code></td>
+<td>不等于</td>
+</tr>
+<tr>
+<td>≡</td>
+<td><code>\equiv</code></td>
+<td>恒等、同余</td>
+</tr>
+<tr>
+<td>≜</td>
+<td><code>\triangleq</code></td>
+<td>定义为</td>
+</tr>
+<tr>
+<td>≈</td>
+<td><code>\approx</code></td>
+<td>约等于</td>
+</tr>
+<tr>
+<td>≃</td>
+<td><code>\simeq</code></td>
+<td>相似、渐近相等（依语境）</td>
+</tr>
+<tr>
+<td>≅</td>
+<td><code>\cong</code></td>
+<td>全等、同构</td>
+</tr>
+<tr>
+<td>∼</td>
+<td><code>\sim</code></td>
+<td>相似、服从某分布</td>
+</tr>
+<tr>
+<td>∝</td>
+<td><code>\propto</code></td>
+<td>正比于</td>
+</tr>
+<tr>
+<td>≐</td>
+<td><code>\doteq</code></td>
+<td>点等号</td>
+</tr>
+<tr>
+<td>≔</td>
+<td><code>\coloneqq</code></td>
+<td>定义等号；需确认 MathJax 支持</td>
+</tr>
+</tbody>
+</table>
+<h3 id="52">5.2 大小关系<a class="headerlink" href="#52" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>命令</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\&lt;</td>
+<td><code>&lt;</code></td>
+<td>小于</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td><code>&gt;</code></td>
+<td>大于</td>
+</tr>
+<tr>
+<td>≤</td>
+<td><code>\leq</code> 或 <code>\le</code></td>
+<td>小于等于</td>
+</tr>
+<tr>
+<td>≥</td>
+<td><code>\geq</code> 或 <code>\ge</code></td>
+<td>大于等于</td>
+</tr>
+<tr>
+<td>≪</td>
+<td><code>\ll</code></td>
+<td>远小于</td>
+</tr>
+<tr>
+<td>≫</td>
+<td><code>\gg</code></td>
+<td>远大于</td>
+</tr>
+<tr>
+<td>≮</td>
+<td><code>\nless</code></td>
+<td>不小于</td>
+</tr>
+<tr>
+<td>≯</td>
+<td><code>\ngtr</code></td>
+<td>不大于</td>
+</tr>
+<tr>
+<td>≰</td>
+<td><code>\nleq</code></td>
+<td>不小于等于</td>
+</tr>
+<tr>
+<td>≱</td>
+<td><code>\ngeq</code></td>
+<td>不大于等于</td>
+</tr>
+</tbody>
+</table>
+<h3 id="53">5.3 集合包含关系<a class="headerlink" href="#53" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>命令</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>∈</td>
+<td><code>\in</code></td>
+<td>属于</td>
+</tr>
+<tr>
+<td>∉</td>
+<td><code>\notin</code></td>
+<td>不属于</td>
+</tr>
+<tr>
+<td>∋</td>
+<td><code>\ni</code></td>
+<td>反向属于</td>
+</tr>
+<tr>
+<td>⊂</td>
+<td><code>\subset</code></td>
+<td>子集符号；是否含等号依约定</td>
+</tr>
+<tr>
+<td>⊃</td>
+<td><code>\supset</code></td>
+<td>超集符号；是否含等号依约定</td>
+</tr>
+<tr>
+<td>⊆</td>
+<td><code>\subseteq</code></td>
+<td>子集（含等号）</td>
+</tr>
+<tr>
+<td>⊇</td>
+<td><code>\supseteq</code></td>
+<td>超集（含等号）</td>
+</tr>
+<tr>
+<td>⊊</td>
+<td><code>\subsetneq</code></td>
+<td>真子集</td>
+</tr>
+<tr>
+<td>⊋</td>
+<td><code>\supsetneq</code></td>
+<td>真超集</td>
+</tr>
+<tr>
+<td>⊄</td>
+<td><code>\nsubset</code></td>
+<td>非子集</td>
+</tr>
+<tr>
+<td>⊈</td>
+<td><code>\nsubseteq</code></td>
+<td>非子集关系</td>
+</tr>
+<tr>
+<td>⊅</td>
+<td><code>\nsupset</code></td>
+<td>非超集</td>
+</tr>
+<tr>
+<td>⊉</td>
+<td><code>\nsupseteq</code></td>
+<td>非超集关系</td>
+</tr>
+</tbody>
+</table>
+<h3 id="54">5.4 其他关系<a class="headerlink" href="#54" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>命令</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>∥</td>
+<td><code>\parallel</code></td>
+<td>平行</td>
+</tr>
+<tr>
+<td>∦</td>
+<td><code>\nparallel</code></td>
+<td>不平行</td>
+</tr>
+<tr>
+<td>⊥</td>
+<td><code>\perp</code></td>
+<td>垂直</td>
+</tr>
+<tr>
+<td>∣</td>
+<td><code>\mid</code></td>
+<td>整除、条件分隔</td>
+</tr>
+<tr>
+<td>∤</td>
+<td><code>\nmid</code></td>
+<td>不整除</td>
+</tr>
+<tr>
+<td>≺</td>
+<td><code>\prec</code></td>
+<td>先于</td>
+</tr>
+<tr>
+<td>≻</td>
+<td><code>\succ</code></td>
+<td>后于</td>
+</tr>
+<tr>
+<td>⪯</td>
+<td><code>\preceq</code></td>
+<td>先于或等于</td>
+</tr>
+<tr>
+<td>⪰</td>
+<td><code>\succeq</code></td>
+<td>后于或等于</td>
+</tr>
+<tr>
+<td>⊢</td>
+<td><code>\vdash</code></td>
+<td>语法推出</td>
+</tr>
+<tr>
+<td>⊨</td>
+<td><code>\models</code></td>
+<td>语义满足／蕴含</td>
+</tr>
+</tbody>
+</table>
+<h2 id="6">6. 箭头<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
+<h3 id="61">6.1 基础箭头<a class="headerlink" href="#61" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>命令</th>
+<th>符号</th>
+<th>命令</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>→</td>
+<td><code>\rightarrow</code></td>
+<td>←</td>
+<td><code>\leftarrow</code></td>
+</tr>
+<tr>
+<td>↑</td>
+<td><code>\uparrow</code></td>
+<td>↓</td>
+<td><code>\downarrow</code></td>
+</tr>
+<tr>
+<td>↔</td>
+<td><code>\leftrightarrow</code></td>
+<td>↕</td>
+<td><code>\updownarrow</code></td>
+</tr>
+<tr>
+<td>↗</td>
+<td><code>\nearrow</code></td>
+<td>↘</td>
+<td><code>\searrow</code></td>
+</tr>
+<tr>
+<td>↙</td>
+<td><code>\swarrow</code></td>
+<td>↖</td>
+<td><code>\nwarrow</code></td>
+</tr>
+<tr>
+<td>↦</td>
+<td><code>\mapsto</code></td>
+<td>↪</td>
+<td><code>\hookrightarrow</code></td>
+</tr>
+<tr>
+<td>↩</td>
+<td><code>\hookleftarrow</code></td>
+<td>↠</td>
+<td><code>\twoheadrightarrow</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="62">6.2 长箭头与双线箭头<a class="headerlink" href="#62" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>命令</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>⟶</td>
+<td><code>\longrightarrow</code></td>
+</tr>
+<tr>
+<td>⟵</td>
+<td><code>\longleftarrow</code></td>
+</tr>
+<tr>
+<td>⟷</td>
+<td><code>\longleftrightarrow</code></td>
+</tr>
+<tr>
+<td>⟹</td>
+<td><code>\Longrightarrow</code></td>
+</tr>
+<tr>
+<td>⟸</td>
+<td><code>\Longleftarrow</code></td>
+</tr>
+<tr>
+<td>⟺</td>
+<td><code>\Longleftrightarrow</code></td>
+</tr>
+<tr>
+<td>⇑</td>
+<td><code>\Uparrow</code></td>
+</tr>
+<tr>
+<td>⇓</td>
+<td><code>\Downarrow</code></td>
+</tr>
+<tr>
+<td>⇕</td>
+<td><code>\Updownarrow</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="63">6.3 带注释的箭头<a class="headerlink" href="#63" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>用途</th>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>右箭头上方注释</td>
+<td><code>\xrightarrow{f}</code></td>
+<td>注释写在箭头上方</td>
+</tr>
+<tr>
+<td>右箭头上下注释</td>
+<td><code>\xrightarrow[g]{f}</code></td>
+<td>上方 f、下方 g</td>
+</tr>
+<tr>
+<td>左箭头注释</td>
+<td><code>\xleftarrow{f}</code></td>
+<td>向左箭头</td>
+</tr>
+<tr>
+<td>双向箭头</td>
+<td><code>\xleftrightarrow{f}</code></td>
+<td>双向映射</td>
+</tr>
+<tr>
+<td>双线右箭头</td>
+<td><code>\xRightarrow{f}</code></td>
+<td>强调逻辑推出等</td>
+</tr>
+</tbody>
+</table>
+<h2 id="7">7. 集合符号<a class="headerlink" href="#7" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>命令</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>∅</td>
+<td><code>\emptyset</code></td>
+<td>空集</td>
+</tr>
+<tr>
+<td>∅</td>
+<td><code>\varnothing</code></td>
+<td>空集的另一种字形</td>
+</tr>
+<tr>
+<td>∪</td>
+<td><code>\cup</code></td>
+<td>并集</td>
+</tr>
+<tr>
+<td>∩</td>
+<td><code>\cap</code></td>
+<td>交集</td>
+</tr>
+<tr>
+<td>⋃</td>
+<td><code>\bigcup</code></td>
+<td>大并集</td>
+</tr>
+<tr>
+<td>⋂</td>
+<td><code>\bigcap</code></td>
+<td>大交集</td>
+</tr>
+<tr>
+<td>∖</td>
+<td><code>\setminus</code></td>
+<td>差集</td>
+</tr>
+<tr>
+<td>△</td>
+<td><code>\triangle</code></td>
+<td>三角形／对称差记号</td>
+</tr>
+<tr>
+<td>℘</td>
+<td><code>\wp</code></td>
+<td>幂集相关记号</td>
+</tr>
+<tr>
+<td>ℕ</td>
+<td><code>\mathbb{N}</code></td>
+<td>自然数集</td>
+</tr>
+<tr>
+<td>ℤ</td>
+<td><code>\mathbb{Z}</code></td>
+<td>整数集</td>
+</tr>
+<tr>
+<td>ℚ</td>
+<td><code>\mathbb{Q}</code></td>
+<td>有理数集</td>
+</tr>
+<tr>
+<td>ℝ</td>
+<td><code>\mathbb{R}</code></td>
+<td>实数集</td>
+</tr>
+<tr>
+<td>ℂ</td>
+<td><code>\mathbb{C}</code></td>
+<td>复数集</td>
+</tr>
+<tr>
+<td>ℙ</td>
+<td><code>\mathbb{P}</code></td>
+<td>常用于概率空间等记号</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_2">常见集合表达式<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>用途</th>
+<th>命令</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>列举集合</td>
+<td><code>A=\{1,2,3\}</code></td>
+</tr>
+<tr>
+<td>集合描述法</td>
+<td><code>A=\{x\mid x&gt;0\}</code></td>
+</tr>
+<tr>
+<td>补集</td>
+<td><code>A^c</code></td>
+</tr>
+<tr>
+<td>幂集</td>
+<td><code>\mathcal{P}(A)</code></td>
+</tr>
+<tr>
+<td>笛卡尔积</td>
+<td><code>A\times B</code></td>
+</tr>
+<tr>
+<td>对称差</td>
+<td><code>A\triangle B</code></td>
+</tr>
+<tr>
+<td>集合差</td>
+<td><code>A\setminus B</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="8">8. 逻辑符号<a class="headerlink" href="#8" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>命令</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>∀</td>
+<td><code>\forall</code></td>
+<td>任意、对于所有</td>
+</tr>
+<tr>
+<td>∃</td>
+<td><code>\exists</code></td>
+<td>存在</td>
+</tr>
+<tr>
+<td>∄</td>
+<td><code>\nexists</code></td>
+<td>不存在</td>
+</tr>
+<tr>
+<td>¬</td>
+<td><code>\neg</code></td>
+<td>非</td>
+</tr>
+<tr>
+<td>∧</td>
+<td><code>\land</code></td>
+<td>逻辑与</td>
+</tr>
+<tr>
+<td>∨</td>
+<td><code>\lor</code></td>
+<td>逻辑或</td>
+</tr>
+<tr>
+<td>⊕</td>
+<td><code>\oplus</code></td>
+<td>异或（依语境）</td>
+</tr>
+<tr>
+<td>⇒</td>
+<td><code>\Rightarrow</code></td>
+<td>推出</td>
+</tr>
+<tr>
+<td>⇔</td>
+<td><code>\Leftrightarrow</code></td>
+<td>当且仅当</td>
+</tr>
+<tr>
+<td>⊢</td>
+<td><code>\vdash</code></td>
+<td>语法推导</td>
+</tr>
+<tr>
+<td>⊨</td>
+<td><code>\models</code></td>
+<td>语义满足</td>
+</tr>
+<tr>
+<td>⊥</td>
+<td><code>\bot</code></td>
+<td>假、矛盾</td>
+</tr>
+<tr>
+<td>⊤</td>
+<td><code>\top</code></td>
+<td>真</td>
+</tr>
+<tr>
+<td>∴</td>
+<td><code>\therefore</code></td>
+<td>因此</td>
+</tr>
+<tr>
+<td>∵</td>
+<td><code>\because</code></td>
+<td>因为</td>
+</tr>
+</tbody>
+</table>
+<h2 id="9">9. 括号与定界符<a class="headerlink" href="#9" title="Permanent link">&para;</a></h2>
+<h3 id="91">9.1 常用括号<a class="headerlink" href="#91" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>效果</th>
+<th>命令</th>
+<th>常见用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>圆括号</td>
+<td><code>(x)</code></td>
+<td>普通分组</td>
+</tr>
+<tr>
+<td>方括号</td>
+<td><code>[x]</code></td>
+<td>分组、区间</td>
+</tr>
+<tr>
+<td>花括号</td>
+<td><code>\{x\}</code></td>
+<td>集合、分段函数</td>
+</tr>
+<tr>
+<td>尖括号</td>
+<td><code>\langle x,y\rangle</code></td>
+<td>内积</td>
+</tr>
+<tr>
+<td>向下取整</td>
+<td><code>\lfloor x\rfloor</code></td>
+<td>floor</td>
+</tr>
+<tr>
+<td>向上取整</td>
+<td><code>\lceil x\rceil</code></td>
+<td>ceiling</td>
+</tr>
+<tr>
+<td>绝对值</td>
+<td><code>\lvert x\rvert</code></td>
+<td>绝对值</td>
+</tr>
+<tr>
+<td>范数</td>
+<td><code>\lVert x\rVert</code></td>
+<td>范数</td>
+</tr>
+</tbody>
+</table>
+<h3 id="92">9.2 自动调整大小<a class="headerlink" href="#92" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>\left( ... \right)</code></td>
+<td>自动调整圆括号</td>
+</tr>
+<tr>
+<td><code>\left[ ... \right]</code></td>
+<td>自动调整方括号</td>
+</tr>
+<tr>
+<td><code>\left\{ ... \right\}</code></td>
+<td>自动调整花括号</td>
+</tr>
+<tr>
+<td><code>\left\langle ... \right\rangle</code></td>
+<td>自动调整尖括号</td>
+</tr>
+<tr>
+<td><code>\left\lvert ... \right\rvert</code></td>
+<td>自动调整绝对值竖线</td>
+</tr>
+<tr>
+<td><code>\left\lVert ... \right\rVert</code></td>
+<td>自动调整范数竖线</td>
+</tr>
+<tr>
+<td><code>\left.</code></td>
+<td>隐藏左侧定界符</td>
+</tr>
+<tr>
+<td><code>\right.</code></td>
+<td>隐藏右侧定界符</td>
+</tr>
+</tbody>
+</table>
+<h3 id="93">9.3 手动调整大小<a class="headerlink" href="#93" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>大小</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>\big</code></td>
+<td>较小</td>
+</tr>
+<tr>
+<td><code>\Big</code></td>
+<td>中等</td>
+</tr>
+<tr>
+<td><code>\bigg</code></td>
+<td>较大</td>
+</tr>
+<tr>
+<td><code>\Bigg</code></td>
+<td>更大</td>
+</tr>
+</tbody>
+</table>
+<h2 id="10">10. 求和、连乘与极限<a class="headerlink" href="#10" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>用途</th>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>求和</td>
+<td><code>\sum_{i=1}^{n}a_i</code></td>
+<td>从 i=1 加到 n</td>
+</tr>
+<tr>
+<td>连乘</td>
+<td><code>\prod_{i=1}^{n}a_i</code></td>
+<td>从 i=1 乘到 n</td>
+</tr>
+<tr>
+<td>大并集</td>
+<td><code>\bigcup_{i=1}^{n}A_i</code></td>
+<td>多个集合的并</td>
+</tr>
+<tr>
+<td>大交集</td>
+<td><code>\bigcap_{i=1}^{n}A_i</code></td>
+<td>多个集合的交</td>
+</tr>
+<tr>
+<td>极限</td>
+<td><code>\lim_{x\to a}f(x)</code></td>
+<td>x 趋近 a</td>
+</tr>
+<tr>
+<td>左极限</td>
+<td><code>\lim_{x\to a^-}f(x)</code></td>
+<td>从左侧趋近</td>
+</tr>
+<tr>
+<td>右极限</td>
+<td><code>\lim_{x\to a^+}f(x)</code></td>
+<td>从右侧趋近</td>
+</tr>
+<tr>
+<td>无穷远极限</td>
+<td><code>\lim_{x\to\infty}f(x)</code></td>
+<td>x 趋于无穷</td>
+</tr>
+<tr>
+<td>上极限</td>
+<td><code>\limsup_{n\to\infty}a_n</code></td>
+<td>lim sup</td>
+</tr>
+<tr>
+<td>下极限</td>
+<td><code>\liminf_{n\to\infty}a_n</code></td>
+<td>lim inf</td>
+</tr>
+<tr>
+<td>上确界</td>
+<td><code>\sup A</code></td>
+<td>最小上界</td>
+</tr>
+<tr>
+<td>下确界</td>
+<td><code>\inf A</code></td>
+<td>最大下界</td>
+</tr>
+<tr>
+<td>最大值</td>
+<td><code>\max_{x\in A}f(x)</code></td>
+<td>最大值</td>
+</tr>
+<tr>
+<td>最小值</td>
+<td><code>\min_{x\in A}f(x)</code></td>
+<td>最小值</td>
+</tr>
+</tbody>
+</table>
+<h2 id="11">11. 微积分<a class="headerlink" href="#11" title="Permanent link">&para;</a></h2>
+<h3 id="111">11.1 导数与微分<a class="headerlink" href="#111" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>用途</th>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>一阶导数</td>
+<td><code>f'(x)</code></td>
+<td>普通导数记号</td>
+</tr>
+<tr>
+<td>二阶导数</td>
+<td><code>f''(x)</code></td>
+<td>二阶导数</td>
+</tr>
+<tr>
+<td>n 阶导数</td>
+<td><code>f^{(n)}(x)</code></td>
+<td>n 阶导数</td>
+</tr>
+<tr>
+<td>导数</td>
+<td><code>\frac{dy}{dx}</code></td>
+<td>y 对 x 求导</td>
+</tr>
+<tr>
+<td>二阶导数</td>
+<td><code>\frac{d^2y}{dx^2}</code></td>
+<td>二阶导数</td>
+</tr>
+<tr>
+<td>n 阶导数</td>
+<td><code>\frac{d^ny}{dx^n}</code></td>
+<td>n 阶导数</td>
+</tr>
+<tr>
+<td>偏导数</td>
+<td><code>\frac{\partial f}{\partial x}</code></td>
+<td>对 x 求偏导</td>
+</tr>
+<tr>
+<td>二阶偏导</td>
+<td><code>\frac{\partial^2 f}{\partial x^2}</code></td>
+<td>二阶偏导</td>
+</tr>
+<tr>
+<td>混合偏导</td>
+<td><code>\frac{\partial^2 f}{\partial x\partial y}</code></td>
+<td>混合偏导</td>
+</tr>
+<tr>
+<td>全微分</td>
+<td><code>\mathrm{d}f</code></td>
+<td>全微分</td>
+</tr>
+<tr>
+<td>微分变量</td>
+<td><code>\mathrm{d}x</code></td>
+<td>微分 dx</td>
+</tr>
+</tbody>
+</table>
+<h3 id="112">11.2 积分<a class="headerlink" href="#112" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>用途</th>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>不定积分</td>
+<td><code>\int f(x)\,\mathrm{d}x</code></td>
+<td>不定积分</td>
+</tr>
+<tr>
+<td>定积分</td>
+<td><code>\int_a^b f(x)\,\mathrm{d}x</code></td>
+<td>从 a 到 b</td>
+</tr>
+<tr>
+<td>二重积分</td>
+<td><code>\iint_D f(x,y)\,\mathrm{d}A</code></td>
+<td>区域 D 上积分</td>
+</tr>
+<tr>
+<td>三重积分</td>
+<td><code>\iiint_V f(x,y,z)\,\mathrm{d}V</code></td>
+<td>体积积分</td>
+</tr>
+<tr>
+<td>曲线积分</td>
+<td><code>\int_C f\,\mathrm{d}s</code></td>
+<td>沿曲线积分</td>
+</tr>
+<tr>
+<td>曲面积分</td>
+<td><code>\iint_S f\,\mathrm{d}S</code></td>
+<td>曲面积分</td>
+</tr>
+<tr>
+<td>闭合曲线积分</td>
+<td><code>\oint_C f(z)\,\mathrm{d}z</code></td>
+<td>闭合路径积分</td>
+</tr>
+<tr>
+<td>四重积分</td>
+<td><code>\iiiint f\,\mathrm{d}V</code></td>
+<td>四重积分</td>
+</tr>
+</tbody>
+</table>
+<h3 id="113">11.3 向量微积分<a class="headerlink" href="#113" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>命令</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>∇</td>
+<td><code>\nabla</code></td>
+<td>Nabla 算子</td>
+</tr>
+<tr>
+<td>∇f</td>
+<td><code>\nabla f</code></td>
+<td>梯度</td>
+</tr>
+<tr>
+<td>∇·F</td>
+<td><code>\nabla\cdot\mathbf{F}</code></td>
+<td>散度</td>
+</tr>
+<tr>
+<td>∇×F</td>
+<td><code>\nabla\times\mathbf{F}</code></td>
+<td>旋度</td>
+</tr>
+<tr>
+<td>∇²f</td>
+<td><code>\nabla^2 f</code></td>
+<td>拉普拉斯算子</td>
+</tr>
+<tr>
+<td>∂</td>
+<td><code>\partial</code></td>
+<td>偏导符号</td>
+</tr>
+<tr>
+<td>Δ</td>
+<td><code>\Delta</code></td>
+<td>增量或拉普拉斯记号（依语境）</td>
+</tr>
+</tbody>
+</table>
+<h2 id="12">12. 矩阵与线性代数<a class="headerlink" href="#12" title="Permanent link">&para;</a></h2>
+<h3 id="121">12.1 矩阵环境<a class="headerlink" href="#121" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>环境</th>
+<th>命令结构</th>
+<th>显示形式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>普通矩阵</td>
+<td><code>\begin{matrix}...\end{matrix}</code></td>
+<td>无括号</td>
+</tr>
+<tr>
+<td>圆括号矩阵</td>
+<td><code>\begin{pmatrix}...\end{pmatrix}</code></td>
+<td><code>( )</code></td>
+</tr>
+<tr>
+<td>方括号矩阵</td>
+<td><code>\begin{bmatrix}...\end{bmatrix}</code></td>
+<td><code>[ ]</code></td>
+</tr>
+<tr>
+<td>花括号矩阵</td>
+<td><code>\begin{Bmatrix}...\end{Bmatrix}</code></td>
+<td><code>{ }</code></td>
+</tr>
+<tr>
+<td>行列式</td>
+<td><code>\begin{vmatrix}...\end{vmatrix}</code></td>
+<td><code>| |</code></td>
+</tr>
+<tr>
+<td>双竖线矩阵</td>
+<td><code>\begin{Vmatrix}...\end{Vmatrix}</code></td>
+<td><code>‖ ‖</code></td>
+</tr>
+<tr>
+<td>小型矩阵</td>
+<td><code>\begin{smallmatrix}...\end{smallmatrix}</code></td>
+<td>行内小矩阵</td>
+</tr>
+</tbody>
+</table>
+<p><strong>矩阵示例</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">\begin</span><span class="nb">{</span>bmatrix<span class="nb">}</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>a <span class="nb">&amp;</span> b <span class="k">\\</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>c <span class="nb">&amp;</span> d
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="k">\end</span><span class="nb">{</span>bmatrix<span class="nb">}</span>
+</code></pre></div>
+<h3 id="122">12.2 矩阵与向量常用记号<a class="headerlink" href="#122" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>用途</th>
+<th>命令</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>转置</td>
+<td><code>A^T</code></td>
+<td>转置矩阵</td>
+</tr>
+<tr>
+<td>逆矩阵</td>
+<td><code>A^{-1}</code></td>
+<td>逆矩阵</td>
+</tr>
+<tr>
+<td>共轭转置</td>
+<td><code>A^*</code></td>
+<td>共轭转置（依约定）</td>
+</tr>
+<tr>
+<td>行列式</td>
+<td><code>\det(A)</code></td>
+<td>行列式</td>
+</tr>
+<tr>
+<td>矩阵迹</td>
+<td><code>\operatorname{tr}(A)</code></td>
+<td>主对角线元素之和</td>
+</tr>
+<tr>
+<td>秩</td>
+<td><code>\operatorname{rank}(A)</code></td>
+<td>矩阵的秩</td>
+</tr>
+<tr>
+<td>核空间</td>
+<td><code>\ker(A)</code></td>
+<td>零空间</td>
+</tr>
+<tr>
+<td>像空间</td>
+<td><code>\operatorname{im}(A)</code></td>
+<td>值域／像</td>
+</tr>
+<tr>
+<td>维数</td>
+<td><code>\dim(V)</code></td>
+<td>空间维数</td>
+</tr>
+<tr>
+<td>单位矩阵</td>
+<td><code>I_n</code></td>
+<td>n 阶单位矩阵</td>
+</tr>
+<tr>
+<td>零矩阵</td>
+<td><code>O</code></td>
+<td>零矩阵</td>
+</tr>
+<tr>
+<td>粗体向量</td>
+<td><code>\mathbf{x}</code></td>
+<td>粗体向量</td>
+</tr>
+<tr>
+<td>向量箭头</td>
+<td><code>\vec{x}</code></td>
+<td>向量记号</td>
+</tr>
+<tr>
+<td>范数</td>
+<td><code>\lVert x\rVert</code></td>
+<td>向量或矩阵范数</td>
+</tr>
+<tr>
+<td>内积</td>
+<td><code>\langle x,y\rangle</code></td>
+<td>内积</td>
+</tr>
+<tr>
+<td>点积</td>
+<td><code>\mathbf{x}\cdot\mathbf{y}</code></td>
+<td>点积</td>
+</tr>
+<tr>
+<td>叉积</td>
+<td><code>\mathbf{x}\times\mathbf{y}</code></td>
+<td>叉积</td>
+</tr>
+</tbody>
+</table>
+<h2 id="13">13. 多行公式与分段函数<a class="headerlink" href="#13" title="Permanent link">&para;</a></h2>
+<h3 id="131">13.1 常用环境对照<a class="headerlink" href="#131" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>环境</th>
+<th>用途</th>
+<th>关键语法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cases</code></td>
+<td>分段函数</td>
+<td><code>&amp;</code> 分隔表达式和条件，<code>\\</code> 换行</td>
+</tr>
+<tr>
+<td><code>aligned</code></td>
+<td>多行公式按等号等位置对齐</td>
+<td><code>&amp;</code> 设置对齐点</td>
+</tr>
+<tr>
+<td><code>gathered</code></td>
+<td>多行居中排列</td>
+<td>每行用 <code>\\</code> 换行</td>
+</tr>
+<tr>
+<td><code>array</code></td>
+<td>自定义表格／数组</td>
+<td><code>{lcr}</code> 设置列对齐</td>
+</tr>
+<tr>
+<td><code>matrix</code></td>
+<td>无括号矩阵</td>
+<td><code>&amp;</code> 分列，<code>\\</code> 分行</td>
+</tr>
+<tr>
+<td><code>pmatrix</code></td>
+<td>圆括号矩阵</td>
+<td>同上</td>
+</tr>
+<tr>
+<td><code>bmatrix</code></td>
+<td>方括号矩阵</td>
+<td>同上</td>
+</tr>
+</tbody>
+</table>
+<h3 id="132">13.2 分段函数模板<a class="headerlink" href="#132" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>f(x)=
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">\begin</span><span class="nb">{</span>cases<span class="nb">}</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>x<span class="nb">^</span>2, <span class="nb">&amp;</span> x<span class="k">\geq</span> 0 <span class="k">\\</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>-x, <span class="nb">&amp;</span> x&lt;0
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="k">\end</span><span class="nb">{</span>cases<span class="nb">}</span>
+</code></pre></div>
+<h3 id="133">13.3 多行对齐模板<a class="headerlink" href="#133" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">\begin</span><span class="nb">{</span>aligned<span class="nb">}</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>a+b <span class="nb">&amp;</span>= c <span class="k">\\</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>x+y <span class="nb">&amp;</span>= z <span class="k">\\</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>m+n <span class="nb">&amp;</span>= p
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="k">\end</span><span class="nb">{</span>aligned<span class="nb">}</span>
+</code></pre></div>
+<h3 id="134">13.4 多行居中模板<a class="headerlink" href="#134" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">\begin</span><span class="nb">{</span>gathered<span class="nb">}</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>a+b=c <span class="k">\\</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>x+y=z
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="k">\end</span><span class="nb">{</span>gathered<span class="nb">}</span>
+</code></pre></div>
+<h3 id="135">13.5 数组模板<a class="headerlink" href="#135" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">\begin</span><span class="nb">{</span>array<span class="nb">}{</span>c|c<span class="nb">}</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>a <span class="nb">&amp;</span> b <span class="k">\\</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="k">\hline</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>c <span class="nb">&amp;</span> d
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="k">\end</span><span class="nb">{</span>array<span class="nb">}</span>
+</code></pre></div>
+<h3 id="136">13.6 公式标签<a class="headerlink" href="#136" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>用途</th>
+<th>命令</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>手动编号</td>
+<td><code>\tag{1}</code></td>
+</tr>
+<tr>
+<td>不编号</td>
+<td><code>\notag</code></td>
+</tr>
+<tr>
+<td>取消编号</td>
+<td><code>\nonumber</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="14">14. 数学字体与装饰符号<a class="headerlink" href="#14" title="Permanent link">&para;</a></h2>
+<h3 id="141">14.1 数学字体<a class="headerlink" href="#141" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>效果</th>
+<th>命令</th>
+<th>常见用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>粗体</td>
+<td><code>\mathbf{x}</code></td>
+<td>向量、矩阵</td>
+</tr>
+<tr>
+<td>数学粗体</td>
+<td><code>\boldsymbol{\alpha}</code></td>
+<td>希腊字母加粗</td>
+</tr>
+<tr>
+<td>黑板粗体</td>
+<td><code>\mathbb{R}</code></td>
+<td>数域、集合</td>
+</tr>
+<tr>
+<td>花体</td>
+<td><code>\mathcal{A}</code></td>
+<td>集合、空间</td>
+</tr>
+<tr>
+<td>哥特体</td>
+<td><code>\mathfrak{g}</code></td>
+<td>代数结构</td>
+</tr>
+<tr>
+<td>罗马正体</td>
+<td><code>\mathrm{d}</code></td>
+<td>微分符号</td>
+</tr>
+<tr>
+<td>等宽体</td>
+<td><code>\mathtt{ABC}</code></td>
+<td>等宽字符</td>
+</tr>
+<tr>
+<td>无衬线体</td>
+<td><code>\mathsf{ABC}</code></td>
+<td>无衬线字体</td>
+</tr>
+<tr>
+<td>斜体</td>
+<td><code>\mathit{ABC}</code></td>
+<td>数学斜体</td>
+</tr>
+<tr>
+<td>普通文本</td>
+<td><code>\text{where}</code></td>
+<td>公式中的文字</td>
+</tr>
+</tbody>
+</table>
+<h3 id="142">14.2 上划线、向量与装饰<a class="headerlink" href="#142" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>效果</th>
+<th>命令</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上划线</td>
+<td><code>\overline{x}</code></td>
+<td>平均值、闭包等</td>
+</tr>
+<tr>
+<td>短横线</td>
+<td><code>\bar{x}</code></td>
+<td>平均值、共轭等</td>
+</tr>
+<tr>
+<td>下划线</td>
+<td><code>\underline{x}</code></td>
+<td>下划线标记</td>
+</tr>
+<tr>
+<td>波浪线</td>
+<td><code>\tilde{x}</code></td>
+<td>估计量、变换量等</td>
+</tr>
+<tr>
+<td>宽波浪线</td>
+<td><code>\widetilde{xyz}</code></td>
+<td>多字符波浪线</td>
+</tr>
+<tr>
+<td>尖帽</td>
+<td><code>\hat{x}</code></td>
+<td>估计值、单位向量等</td>
+</tr>
+<tr>
+<td>宽尖帽</td>
+<td><code>\widehat{xyz}</code></td>
+<td>多字符尖帽</td>
+</tr>
+<tr>
+<td>向量箭头</td>
+<td><code>\vec{x}</code></td>
+<td>向量</td>
+</tr>
+<tr>
+<td>向右箭头</td>
+<td><code>\overrightarrow{AB}</code></td>
+<td>有向线段</td>
+</tr>
+<tr>
+<td>向左箭头</td>
+<td><code>\overleftarrow{AB}</code></td>
+<td>左向标记</td>
+</tr>
+<tr>
+<td>一阶时间导数</td>
+<td><code>\dot{x}</code></td>
+<td>对时间的一阶导数</td>
+</tr>
+<tr>
+<td>二阶时间导数</td>
+<td><code>\ddot{x}</code></td>
+<td>对时间的二阶导数</td>
+</tr>
+<tr>
+<td>上方大括号</td>
+<td><code>\overbrace{a+b+c}^{n}</code></td>
+<td>上方分组标注</td>
+</tr>
+<tr>
+<td>下方大括号</td>
+<td><code>\underbrace{a+b+c}_{n}</code></td>
+<td>下方分组标注</td>
+</tr>
+<tr>
+<td>上方标注</td>
+<td><code>\overset{文字}{x}</code></td>
+<td>上方说明</td>
+</tr>
+<tr>
+<td>下方标注</td>
+<td><code>\underset{文字}{x}</code></td>
+<td>下方说明</td>
+</tr>
+<tr>
+<td>圆环重音</td>
+<td><code>\mathring{x}</code></td>
+<td>圆环标记</td>
+</tr>
+<tr>
+<td>尖音符</td>
+<td><code>\acute{x}</code></td>
+<td>重音符</td>
+</tr>
+<tr>
+<td>抑音符</td>
+<td><code>\grave{x}</code></td>
+<td>重音符</td>
+</tr>
+<tr>
+<td>短音符</td>
+<td><code>\breve{x}</code></td>
+<td>短音符</td>
+</tr>
+<tr>
+<td>检查符</td>
+<td><code>\check{x}</code></td>
+<td>检查符</td>
+</tr>
+</tbody>
+</table>
+<h2 id="15">15. 常用函数与算子<a class="headerlink" href="#15" title="Permanent link">&para;</a></h2>
+<h3 id="151">15.1 三角函数<a class="headerlink" href="#151" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>命令</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>正弦</td>
+<td><code>\sin x</code></td>
+</tr>
+<tr>
+<td>余弦</td>
+<td><code>\cos x</code></td>
+</tr>
+<tr>
+<td>正切</td>
+<td><code>\tan x</code></td>
+</tr>
+<tr>
+<td>余切</td>
+<td><code>\cot x</code></td>
+</tr>
+<tr>
+<td>正割</td>
+<td><code>\sec x</code></td>
+</tr>
+<tr>
+<td>余割</td>
+<td><code>\csc x</code></td>
+</tr>
+<tr>
+<td>反正弦</td>
+<td><code>\arcsin x</code></td>
+</tr>
+<tr>
+<td>反余弦</td>
+<td><code>\arccos x</code></td>
+</tr>
+<tr>
+<td>反正切</td>
+<td><code>\arctan x</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="152">15.2 双曲函数与常见函数<a class="headerlink" href="#152" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>命令</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>双曲正弦</td>
+<td><code>\sinh x</code></td>
+</tr>
+<tr>
+<td>双曲余弦</td>
+<td><code>\cosh x</code></td>
+</tr>
+<tr>
+<td>双曲正切</td>
+<td><code>\tanh x</code></td>
+</tr>
+<tr>
+<td>双曲余切</td>
+<td><code>\coth x</code></td>
+</tr>
+<tr>
+<td>自然对数</td>
+<td><code>\ln x</code></td>
+</tr>
+<tr>
+<td>对数</td>
+<td><code>\log x</code></td>
+</tr>
+<tr>
+<td>指数函数</td>
+<td><code>\exp(x)</code></td>
+</tr>
+<tr>
+<td>绝对值</td>
+<td><code>\lvert x\rvert</code></td>
+</tr>
+<tr>
+<td>最大值</td>
+<td><code>\max(x,y)</code></td>
+</tr>
+<tr>
+<td>最小值</td>
+<td><code>\min(x,y)</code></td>
+</tr>
+<tr>
+<td>上取整</td>
+<td><code>\lceil x\rceil</code></td>
+</tr>
+<tr>
+<td>下取整</td>
+<td><code>\lfloor x\rfloor</code></td>
+</tr>
+<tr>
+<td>最大公约数</td>
+<td><code>\gcd(a,b)</code></td>
+</tr>
+<tr>
+<td>模运算</td>
+<td><code>a\bmod n</code></td>
+</tr>
+<tr>
+<td>模同余</td>
+<td><code>a\equiv b\pmod n</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="153">15.3 常见算子<a class="headerlink" href="#153" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>算子</th>
+<th>命令</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>极限</td>
+<td><code>\lim</code></td>
+<td>limit</td>
+</tr>
+<tr>
+<td>上确界</td>
+<td><code>\sup</code></td>
+<td>supremum</td>
+</tr>
+<tr>
+<td>下确界</td>
+<td><code>\inf</code></td>
+<td>infimum</td>
+</tr>
+<tr>
+<td>最大值</td>
+<td><code>\max</code></td>
+<td>maximum</td>
+</tr>
+<tr>
+<td>最小值</td>
+<td><code>\min</code></td>
+<td>minimum</td>
+</tr>
+<tr>
+<td>最大值点</td>
+<td><code>\operatorname{argmax}</code></td>
+<td>argmax</td>
+</tr>
+<tr>
+<td>最小值点</td>
+<td><code>\operatorname{argmin}</code></td>
+<td>argmin</td>
+</tr>
+<tr>
+<td>秩</td>
+<td><code>\operatorname{rank}</code></td>
+<td>rank</td>
+</tr>
+<tr>
+<td>迹</td>
+<td><code>\operatorname{tr}</code></td>
+<td>trace</td>
+</tr>
+<tr>
+<td>行列式</td>
+<td><code>\det</code></td>
+<td>determinant</td>
+</tr>
+<tr>
+<td>维数</td>
+<td><code>\dim</code></td>
+<td>dimension</td>
+</tr>
+<tr>
+<td>核</td>
+<td><code>\ker</code></td>
+<td>kernel</td>
+</tr>
+<tr>
+<td>像</td>
+<td><code>\operatorname{im}</code></td>
+<td>image</td>
+</tr>
+<tr>
+<td>张成空间</td>
+<td><code>\operatorname{span}</code></td>
+<td>span</td>
+</tr>
+<tr>
+<td>符号函数</td>
+<td><code>\operatorname{sgn}</code></td>
+<td>sign</td>
+</tr>
+<tr>
+<td>方差</td>
+<td><code>\operatorname{Var}</code></td>
+<td>variance</td>
+</tr>
+<tr>
+<td>协方差</td>
+<td><code>\operatorname{Cov}</code></td>
+<td>covariance</td>
+</tr>
+</tbody>
+</table>
+<h2 id="16">16. 概率论与统计学<a class="headerlink" href="#16" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>符号／用途</th>
+<th>命令</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>概率</td>
+<td><code>\Pr(A)</code></td>
+<td>事件 A 的概率</td>
+</tr>
+<tr>
+<td>期望</td>
+<td><code>\mathbb{E}[X]</code></td>
+<td>数学期望</td>
+</tr>
+<tr>
+<td>方差</td>
+<td><code>\operatorname{Var}(X)</code></td>
+<td>方差</td>
+</tr>
+<tr>
+<td>协方差</td>
+<td><code>\operatorname{Cov}(X,Y)</code></td>
+<td>协方差</td>
+</tr>
+<tr>
+<td>均值</td>
+<td><code>\mu</code></td>
+<td>均值参数</td>
+</tr>
+<tr>
+<td>标准差</td>
+<td><code>\sigma</code></td>
+<td>标准差参数</td>
+</tr>
+<tr>
+<td>方差参数</td>
+<td><code>\sigma^2</code></td>
+<td>方差</td>
+</tr>
+<tr>
+<td>正态分布</td>
+<td><code>X\sim\mathcal{N}(\mu,\sigma^2)</code></td>
+<td>正态分布</td>
+</tr>
+<tr>
+<td>条件概率</td>
+<td><code>P(A\mid B)</code></td>
+<td>给定 B 时 A 的概率</td>
+</tr>
+<tr>
+<td>独立</td>
+<td><code>X\perp Y</code></td>
+<td>独立（依语境）</td>
+</tr>
+<tr>
+<td>样本均值</td>
+<td><code>\bar{x}</code></td>
+<td>样本均值</td>
+</tr>
+<tr>
+<td>估计值</td>
+<td><code>\hat{x}</code></td>
+<td>估计值／估计量</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_3">常见统计公式<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>LaTeX 代码</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>样本均值</td>
+<td><code>\bar{x}=\frac{1}{n}\sum_{i=1}^{n}x_i</code></td>
+</tr>
+<tr>
+<td>样本方差（无偏估计）</td>
+<td><code>s^2=\frac{1}{n-1}\sum_{i=1}^{n}(x_i-\bar{x})^2</code></td>
+</tr>
+<tr>
+<td>贝叶斯公式</td>
+<td><code>P(A\mid B)=\frac{P(B\mid A)P(A)}{P(B)}</code></td>
+</tr>
+<tr>
+<td>条件期望</td>
+<td><code>\mathbb{E}[X\mid Y]</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="17">17. 数论、几何与物理<a class="headerlink" href="#17" title="Permanent link">&para;</a></h2>
+<h3 id="171">17.1 数论与离散数学<a class="headerlink" href="#171" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>符号／用途</th>
+<th>命令</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>整除</td>
+<td><code>a\mid b</code></td>
+<td>a 整除 b</td>
+</tr>
+<tr>
+<td>不整除</td>
+<td><code>a\nmid b</code></td>
+<td>a 不整除 b</td>
+</tr>
+<tr>
+<td>同余</td>
+<td><code>a\equiv b\pmod n</code></td>
+<td>模 n 同余</td>
+</tr>
+<tr>
+<td>最大公约数</td>
+<td><code>\gcd(a,b)</code></td>
+<td>GCD</td>
+</tr>
+<tr>
+<td>最小公倍数</td>
+<td><code>\operatorname{lcm}(a,b)</code></td>
+<td>LCM</td>
+</tr>
+<tr>
+<td>向下取整</td>
+<td><code>\lfloor x\rfloor</code></td>
+<td>floor</td>
+</tr>
+<tr>
+<td>向上取整</td>
+<td><code>\lceil x\rceil</code></td>
+<td>ceiling</td>
+</tr>
+<tr>
+<td>阿列夫</td>
+<td><code>\aleph</code></td>
+<td>基数记号</td>
+</tr>
+<tr>
+<td>无穷</td>
+<td><code>\infty</code></td>
+<td>无穷大</td>
+</tr>
+</tbody>
+</table>
+<h3 id="172">17.2 几何与物理<a class="headerlink" href="#172" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>命令</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>∠</td>
+<td><code>\angle</code></td>
+<td>角</td>
+</tr>
+<tr>
+<td>△</td>
+<td><code>\triangle</code></td>
+<td>三角形</td>
+</tr>
+<tr>
+<td>°</td>
+<td><code>^\circ</code></td>
+<td>角度</td>
+</tr>
+<tr>
+<td>′</td>
+<td><code>^\prime</code></td>
+<td>撇号</td>
+</tr>
+<tr>
+<td>″</td>
+<td><code>^{\prime\prime}</code></td>
+<td>双撇号</td>
+</tr>
+<tr>
+<td>ℏ</td>
+<td><code>\hbar</code></td>
+<td>约化普朗克常数</td>
+</tr>
+<tr>
+<td>ℓ</td>
+<td><code>\ell</code></td>
+<td>花体小写 l</td>
+</tr>
+<tr>
+<td>ℜ</td>
+<td><code>\Re</code></td>
+<td>实部</td>
+</tr>
+<tr>
+<td>ℑ</td>
+<td><code>\Im</code></td>
+<td>虚部</td>
+</tr>
+<tr>
+<td>†</td>
+<td><code>\dagger</code></td>
+<td>dagger 记号</td>
+</tr>
+<tr>
+<td>‡</td>
+<td><code>\ddagger</code></td>
+<td>double dagger 记号</td>
+</tr>
+</tbody>
+</table>
+<h2 id="18">18. 空格与排版<a class="headerlink" href="#18" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>间距效果</th>
+<th>常见用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>\!</code></td>
+<td>负薄空格</td>
+<td>缩小间距</td>
+</tr>
+<tr>
+<td><code>\,</code></td>
+<td>薄空格</td>
+<td>微分符号前后常用</td>
+</tr>
+<tr>
+<td><code>\:</code></td>
+<td>中等空格</td>
+<td>调整运算符间距</td>
+</tr>
+<tr>
+<td><code>\;</code></td>
+<td>较宽空格</td>
+<td>分隔表达式</td>
+</tr>
+<tr>
+<td><code>\quad</code></td>
+<td>一个较宽空格</td>
+<td>公式分隔</td>
+</tr>
+<tr>
+<td><code>\qquad</code></td>
+<td>两个较宽空格</td>
+<td>更宽分隔</td>
+</tr>
+<tr>
+<td><code>\phantom{x}</code></td>
+<td>隐形占位</td>
+<td>保留宽度和高度</td>
+</tr>
+<tr>
+<td><code>\hphantom{x}</code></td>
+<td>水平隐形占位</td>
+<td>只保留宽度</td>
+</tr>
+<tr>
+<td><code>\vphantom{x}</code></td>
+<td>垂直隐形占位</td>
+<td>只保留高度</td>
+</tr>
+</tbody>
+</table>
+<h2 id="19">19. 常用公式模板<a class="headerlink" href="#19" title="Permanent link">&para;</a></h2>
+<p>以下代码可复制到 Typora 的 <code>$$...$$</code> 数学块中。</p>
+<table>
+<thead>
+<tr>
+<th>公式名称</th>
+<th>LaTeX 代码</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>一元二次方程求根公式</td>
+<td><code>x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}</code></td>
+</tr>
+<tr>
+<td>欧拉公式</td>
+<td><code>e^{ix}=\cos x+i\sin x</code></td>
+</tr>
+<tr>
+<td>欧拉恒等式</td>
+<td><code>e^{i\pi}+1=0</code></td>
+</tr>
+<tr>
+<td>基本极限</td>
+<td><code>\lim_{x\to0}\frac{\sin x}{x}=1</code></td>
+</tr>
+<tr>
+<td>泰勒展开</td>
+<td><code>f(x)=\sum_{n=0}^{\infty}\frac{f^{(n)}(a)}{n!}(x-a)^n</code></td>
+</tr>
+<tr>
+<td>矩阵乘法元素</td>
+<td><code>c_{ij}=\sum_{k=1}^{n}a_{ik}b_{kj}</code></td>
+</tr>
+<tr>
+<td>贝叶斯公式</td>
+<td><code>P(A\mid B)=\frac{P(B\mid A)P(A)}{P(B)}</code></td>
+</tr>
+<tr>
+<td>柯西—施瓦茨不等式</td>
+<td><code>\left(\sum_{i=1}^{n}a_ib_i\right)^2\leq\left(\sum_{i=1}^{n}a_i^2\right)\left(\sum_{i=1}^{n}b_i^2\right)</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="_4">分段函数模板<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>f(x)=
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="k">\begin</span><span class="nb">{</span>cases<span class="nb">}</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>x<span class="nb">^</span>2, <span class="nb">&amp;</span> x<span class="k">\geq</span> 0 <span class="k">\\</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>-x, <span class="nb">&amp;</span> x&lt;0
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="k">\end</span><span class="nb">{</span>cases<span class="nb">}</span>
+</code></pre></div>
+<h3 id="_5">矩阵模板<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>A=
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="k">\begin</span><span class="nb">{</span>bmatrix<span class="nb">}</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>a <span class="nb">&amp;</span> b <span class="k">\\</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>c <span class="nb">&amp;</span> d
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="k">\end</span><span class="nb">{</span>bmatrix<span class="nb">}</span>
+</code></pre></div>
+<h3 id="_6">梯度向量模板<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">\nabla</span> f=
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="k">\begin</span><span class="nb">{</span>bmatrix<span class="nb">}</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="k">\frac</span><span class="nb">{</span><span class="k">\partial</span> f<span class="nb">}{</span><span class="k">\partial</span> x<span class="nb">_</span>1<span class="nb">}</span><span class="k">\\</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="k">\frac</span><span class="nb">{</span><span class="k">\partial</span> f<span class="nb">}{</span><span class="k">\partial</span> x<span class="nb">_</span>2<span class="nb">}</span><span class="k">\\</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="k">\vdots\\</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="k">\frac</span><span class="nb">{</span><span class="k">\partial</span> f<span class="nb">}{</span><span class="k">\partial</span> x<span class="nb">_</span>n<span class="nb">}</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="k">\end</span><span class="nb">{</span>bmatrix<span class="nb">}</span>
+</code></pre></div>
+<h2 id="20-typora">20. Typora 使用提示<a class="headerlink" href="#20-typora" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>情况</th>
+<th>建议</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>行内公式</td>
+<td>使用 <code>$...$</code></td>
+</tr>
+<tr>
+<td>独立公式</td>
+<td>使用 <code>$$...$$</code></td>
+</tr>
+<tr>
+<td>多字符上下标</td>
+<td>用 <code>{}</code> 包裹，如 <code>x_{ij}</code></td>
+</tr>
+<tr>
+<td>矩阵换行</td>
+<td>使用 <code>\\</code></td>
+</tr>
+<tr>
+<td>矩阵分列</td>
+<td>使用 <code>&amp;</code></td>
+</tr>
+<tr>
+<td>分段函数</td>
+<td>使用 <code>cases</code> 环境</td>
+</tr>
+<tr>
+<td>自动调整括号</td>
+<td>使用成对的 <code>\left</code> 和 <code>\right</code></td>
+</tr>
+<tr>
+<td>单侧括号</td>
+<td>另一侧用 <code>.</code> 隐藏，如 <code>\left.</code></td>
+</tr>
+<tr>
+<td>公式中的说明文字</td>
+<td>使用 <code>\text{...}</code></td>
+</tr>
+<tr>
+<td>微分符号</td>
+<td>推荐写作 <code>\,\mathrm{d}x</code></td>
+</tr>
+<tr>
+<td>命令无法渲染</td>
+<td>检查 MathJax 支持情况；部分命令依赖扩展宏包</td>
+</tr>
+<tr>
+<td>自动补全有候选但渲染失败</td>
+<td>候选列表不代表当前 MathJax 配置一定支持该命令</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_7">建议优先掌握的命令<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>类别</th>
+<th>优先记忆</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>基础结构</td>
+<td><code>\frac</code>、<code>\sqrt</code>、<code>^</code>、<code>_</code></td>
+</tr>
+<tr>
+<td>运算</td>
+<td><code>\sum</code>、<code>\prod</code>、<code>\int</code></td>
+</tr>
+<tr>
+<td>关系</td>
+<td><code>\equiv</code>、<code>\approx</code>、<code>\neq</code>、<code>\leq</code>、<code>\geq</code></td>
+</tr>
+<tr>
+<td>集合</td>
+<td><code>\in</code>、<code>\subseteq</code>、<code>\cup</code>、<code>\cap</code></td>
+</tr>
+<tr>
+<td>逻辑</td>
+<td><code>\forall</code>、<code>\exists</code>、<code>\Rightarrow</code>、<code>\Leftrightarrow</code></td>
+</tr>
+<tr>
+<td>矩阵</td>
+<td><code>pmatrix</code>、<code>bmatrix</code>、<code>vmatrix</code></td>
+</tr>
+<tr>
+<td>排版</td>
+<td><code>\left</code>、<code>\right</code>、<code>\text</code>、<code>\mathbb</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>使用建议：</strong> 将本文件放入 Typora
+笔记库。日常查询时先按目录定位分类，再从对应表格复制命令；高频命令可进一步整理为自动补全片段。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate":null,"base":"../../..","features":["navigation.tabs","navigation.tabs.sticky","navigation.indexes","search.highlight","search.suggest","content.code.copy"],"search":"../../../assets/javascripts/workers/search.908815da4c1bee56.min.js","tags":null,"translations":{"clipboard.copied":"已复制","clipboard.copy":"复制","search.result.more.one":"在该页上还有 1 个符合条件的结果","search.result.more.other":"在该页上还有 # 个符合条件的结果","search.result.none":"没有找到符合条件的结果","search.result.one":"找到 1 个符合条件的结果","search.result.other":"# 个符合条件的结果","search.result.placeholder":"键入以开始搜索","search.result.term.missing":"缺少","select.version":"选择当前版本"},"version":null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../assets/vendor/katex/katex.min.js"></script>
+      
+        <script src="../../../assets/javascripts/blue-topaz-maple.js"></script>
+      
+        <script src="../../../assets/javascripts/page-navigation.js"></script>
+      
+        <script src="../../../assets/javascripts/page-search.js"></script>
+      
+        <script src="../../../assets/javascripts/search-tables.js"></script>
+      
+        <script src="../../../assets/javascripts/search-notice.js"></script>
+      
+    
+  </body>
+</html>
