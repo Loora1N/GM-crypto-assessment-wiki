@@ -633,6 +633,54 @@ test(`built search: ${path.basename(site)}`, async (t) => {
     });
   }
 
+  await t.test('hex prefixes never become exact matches for ordinary zeros', async () => {
+    const hexQuery = await loadWorker(config, {
+      config: index.config,
+      docs: [
+        { location: 'plain.html', title: 'Ordinary zero', text: '<p>高位0出现的可能性</p><p>rk_0 MK_0</p>' },
+        { location: 'hex.html', title: 'Hex table', text: '<table><tbody><tr><td>value</td><td>0x00000401</td></tr></tbody></table>' },
+        { location: 'zero.html', title: 'Hex zero', text: '<p>0X00000000</p>' },
+        { location: 'inline.html', title: 'Inline hex', text: '<p>0x00<code>000402</code></p>' },
+        { location: 'invalid.html', title: 'Embedded value', text: '<p>abc0x0000 0x0000xyz</p>' },
+      ],
+    });
+    for (const term of ['0x000', '0x0000', '0X000']) {
+      const response = await hexQuery.response(term);
+      const hits = response.items.flat().filter(item => item.score > 0);
+      assert.equal(response.matchCounts.exact, 0, 'A hex prefix is not a complete literal value');
+      assert.deepEqual(Array.from(hits, item => item.location).sort(), ['hex.html', 'inline.html', 'zero.html']);
+      assert.ok(hits.every(item => item.matchKind === 'fuzzy'));
+      assert.ok(hits.every(item => marked(item.text).join('').toLowerCase().includes('0x000')), 'Highlight actual hexadecimal text, never a lone zero');
+    }
+    for (const term of ['0x401', '0X00000401']) {
+      const response = await hexQuery.response(term);
+      assert.deepEqual(Array.from(response.items.flat(), item => item.location), ['hex.html']);
+      assert.equal(response.matchCounts.exact, term.toLowerCase() === '0x401' ? 0 : 1);
+      assert.ok(marked(response.items[0][0].text).includes('0x00000401'));
+    }
+    const zero = await hexQuery.response('0x0');
+    assert.ok(!zero.items.flat().some(item => item.location === 'plain.html'));
+    const phrase = await loadWorker(config, { config: index.config, docs: [
+      { location: 'numeric.html', title: 'Plain', text: '<p>标识为0</p>' },
+      { location: 'value.html', title: 'Hex', text: '<p>标识为0x000</p>' },
+    ] });
+    const exact = (await phrase('标识为0x000')).filter(item => item.matchKind === 'exact');
+    assert.deepEqual(Array.from(exact, item => item.location), ['value.html']);
+    assert.ok(marked(exact[0].text).includes('标识为0x000'));
+  });
+
+  await t.test('real-index hex prefix results contain hexadecimal values', async () => {
+    for (const term of ['0x000', '0x0000']) {
+      const response = await query.response(term);
+      const hits = response.items.flat().filter(item => item.score > 0);
+      assert.ok(hits.length > 0);
+      for (const item of hits) {
+        const highlights = marked(item.title + item.text + (item.tags || []).join('')).join('').toLowerCase();
+        assert.ok(highlights.includes(term) || /0x0+\b/.test(highlights), `${term}: ${item.location} must highlight a hex prefix or equivalent hex zero`);
+      }
+    }
+  });
+
   await t.test('normalization preserves internal zeros and algorithm names', async () => {
     const boundaryQuery = await loadWorker(config, {
       config: index.config,
@@ -656,7 +704,10 @@ test(`built search: ${path.basename(site)}`, async (t) => {
     assert.equal((await boundaryQuery('41')).length, 0, 'Internal zeros must remain significant');
     assert.ok(!(await boundaryQuery('4')).some((item) => item.location === 'algorithm.html'), 'SM4 must remain a single algorithm token');
     assert.deepEqual(Array.from(await boundaryQuery('SM4'), (item) => item.location), ['algorithm.html']);
-    assert.deepEqual(Array.from(await boundaryQuery('0x0'), (item) => item.location), ['zero.html']);
+    assert.deepEqual(Array.from(await boundaryQuery('0x0'), (item) => item.location).sort(), ['internal.html', 'padded.html', 'zero.html'], 'A hex prefix may find longer hex values');
+    const zero = await boundaryQuery.response('0x00000000');
+    assert.deepEqual(Array.from(zero.items.flat(), item => item.location), ['zero.html']);
+    assert.equal(zero.matchCounts.exact, 1);
   });
 
   await t.test('standard prefixes split only at whole GMT/GBT boundaries', async () => {

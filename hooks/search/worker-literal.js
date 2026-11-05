@@ -4,7 +4,6 @@
     [/[\u200b-\u200d\ufeff]/g, ""],
     [/\s+/g, " "],
     [/(?<=\p{sc=Han}) | (?=\p{sc=Han})/gu, ""],
-    [/\b0x0*(?=[0-9a-f])/gi, ""],
     [/^ +| +$/g, ""]
   ];
 
@@ -27,7 +26,17 @@
     return ranges;
   }
 
-  function literalMarkup(html, phrase) {
+  // Hex spelling is significant for exact search. Only the related-results
+  // phase may equate padded values, and it must stay within actual hex tokens.
+  function hexRanges(text, phrase) {
+    const value = phrase.slice(2).replace(/^0+/, "") || "0";
+    return [...text.matchAll(/(?<![a-z0-9])0x[0-9a-f]+(?![a-z0-9])/g)]
+      .filter(match => match[0].startsWith(phrase) ||
+        (match[0].slice(2).replace(/^0+/, "") || "0") === value)
+      .map(match => [match.index, match.index + match[0].length]);
+  }
+
+  function literalMarkup(html, phrase, findRanges = literalRanges) {
     let text = "";
     let offsets = [];
     for (const token of html.matchAll(/<[^>]*>|&(?:#\d+|#x[a-f\d]+|[a-z]+);|[^<&]+|[<&]/gi)) {
@@ -55,7 +64,7 @@
       text = next;
       offsets = mapped;
     }
-    const ranges = literalRanges(text.toLowerCase(), phrase).map(([start, end]) =>
+    const ranges = findRanges(text.toLowerCase(), phrase).map(([start, end]) =>
       [offsets[start][0], offsets[end - 1][1]]);
     const terms = new Set();
     let output = "";
@@ -93,7 +102,7 @@
     return blocks.filter(block => block.includes("<mark>")).slice(0, 3).join("");
   }
 
-  function exactSearch(query) {
+  function exactSearch(query, findRanges = literalRanges) {
     const phrase = normalizeLiteral(query);
     // A copied passage can contain Lunr operators (e.g. "对c+s随机数").
     // Always scan it literally; query syntax belongs only to token lookup.
@@ -104,10 +113,10 @@
       if (!literalFields.has(document.location)) {
         literalFields.set(document.location, fields.map(field => normalizeLiteral(sourceText(field))));
       }
-      const matching = literalFields.get(document.location).map(field => literalRanges(field, phrase).length > 0);
+      const matching = literalFields.get(document.location).map(field => findRanges(field, phrase).length > 0);
       if (!matching.some(Boolean)) continue;
       const marked = fields.map((field, index) => matching[index]
-        ? literalMarkup(String(field || ""), phrase) : { html: field, terms: [] });
+        ? literalMarkup(String(field || ""), phrase, findRanges) : { html: field, terms: [] });
       const terms = marked.flatMap(field => field.terms).filter(Boolean);
       hits.push({ ...document, score: 1, matchKind: "exact",
         title: marked[0].html,

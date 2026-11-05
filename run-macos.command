@@ -15,8 +15,8 @@ fail() {
 }
 
 environment_error() {
-    fail '[错误] 项目 Python 环境无法使用，需要 Python 3.12 或更新版本。' \
-         '请先安装 Python 3.12；若 .venv 已存在，可将其重命名为 .venv-backup 后重新启动。' \
+    fail '[错误] 项目 Python 环境无法使用，需要 Python 3.9 或更新版本。' \
+         '请先安装 Python 3.9 或更新版本；若 .venv 已存在，可将其重命名为 .venv-backup 后重新启动。' \
          'Windows 和 macOS 的 .venv 不能共用，请在当前系统创建环境。'
 }
 
@@ -25,7 +25,10 @@ export PYTHONUTF8=1
 export PYTHONIOENCODING=utf-8
 unset OFFLINE
 # Finder launches may not include Python.org or Homebrew in PATH.
-export PATH="/Library/Frameworks/Python.framework/Versions/3.12/bin:/Library/Frameworks/Python.framework/Versions/Current/bin:/opt/homebrew/bin:/usr/local/bin:${PATH:-/usr/bin:/bin}"
+export PATH="/Library/Frameworks/Python.framework/Versions/Current/bin:/opt/homebrew/bin:/usr/local/bin:${PATH:-/usr/bin:/bin}"
+for python_bin in /Library/Frameworks/Python.framework/Versions/3.*/bin; do
+    [[ ! -d "$python_bin" ]] || PATH="$PATH:$python_bin"
+done
 
 printf '%s\n' '========================================' \
     '  密评标准知识库 - macOS 一键启动' \
@@ -41,15 +44,15 @@ if [[ ! -x "$venv_python" ]]; then
     [[ ! -e .venv ]] || environment_error
     printf '\n[1/3] 首次启动，正在寻找 Python...\n'
     bootstrap=''
-    for candidate in python3.12 python3; do
+    for candidate in python3 python3.14 python3.13 python3.12 python3.11 python3.10 python3.9; do
         if command -v "$candidate" >/dev/null 2>&1 && \
-           "$candidate" -c 'import sys; sys.exit(sys.version_info < (3, 12))' >/dev/null 2>&1; then
+           "$candidate" -c 'import sys; sys.exit(sys.version_info < (3, 9))' >/dev/null 2>&1; then
             bootstrap="$candidate"
             break
         fi
     done
     if [[ -z "$bootstrap" ]]; then
-        fail '[错误] 未找到 Python 3.12 或更新版本。' \
+        fail '[错误] 未找到 Python 3.9 或更新版本。' \
              '请从 https://www.python.org/downloads/macos/ 安装 Python，建议使用 3.12。' \
              '安装完成后，重新双击 run-macos.command。'
     fi
@@ -58,7 +61,7 @@ if [[ ! -x "$venv_python" ]]; then
 fi
 
 printf '\n[1/3] 检查项目 Python 环境...\n'
-"$venv_python" -c 'import sys; sys.exit(sys.version_info < (3, 12))' >/dev/null 2>&1 || environment_error
+"$venv_python" -c 'import sys; sys.exit(sys.version_info < (3, 9))' >/dev/null 2>&1 || environment_error
 
 printf '\n[2/3] 检查并安装依赖，首次安装需要联网，请稍候...\n'
 "$venv_python" -m pip install --disable-pip-version-check -r requirements.txt || \

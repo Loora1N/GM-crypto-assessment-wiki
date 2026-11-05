@@ -95,6 +95,21 @@
       b.score - a.score || a.location.localeCompare(b.location);
   }
 
+  function rankHex(item, query) {
+    const source = sourceDocs.get(item.location);
+    const meta = source?.searchMeta;
+    const matches = text => hexRanges(normalizeLiteral(sourceText(text)), query).length > 0;
+    const title = matches(source?.title);
+    const blocks = meta?.blocks || [{ kind: /<table\b/i.test(source?.text || "") ? "table" : "body", text: source?.text }];
+    const block = blocks.find(block => block.kind === "body" && matches(block.text)) ||
+      blocks.find(block => matches(block.text));
+    const tier = meta?.appendix ? 3 : title ? (item.location.includes("#") ? 1 : 0) : block?.kind === "body" ? 2 : 3;
+    return { ...item, matchKind: "fuzzy", matchReason: "partial",
+      matchRank: { tier, coverage: 1, headingLevel: meta?.headingLevel || 6,
+        field: meta?.appendix ? "appendix" : title ? (tier === 0 ? "title" : "heading") : block?.kind || "other" }
+    };
+  }
+
   function rankedGroups(items) {
     // One hit per group preserves global rank: regrouping by page would move a
     // low-ranked sibling ahead of stronger results belonging to another page.

@@ -26,9 +26,9 @@
 - 中文支持整词术语别名：消息鉴别码／消息认证码／MAC、杂凑／哈希／Hash。同义术语结果会补充在模糊匹配中，不覆盖精准结果。
 - 模糊结果按“文章标题 → 分级小标题 → 正文 → 表格／公式／附录”排序，附录下的子标题也按附录处理。同类结果优先展示命中不同查询分词更多的结果；正文按单个文段的命中词数比较，重复出现同一词不重复计数，也不跨段累加，并预览命中最多的文段。同分小标题优先层级更高者，再参考相关度。
 - 模糊结果去重后最多显示前 20 处，精准结果不受此限制。超出时会在列表末尾提示“模糊匹配结果总数xxx，数量较多只展示了xx”。模糊结果逐条显示，以免同篇文章的其他章节打乱全局排序。
-- 中英文、数字相邻的片段无需手动加空格，例如 `gcm模式下ctr计数器`。含符号的原文也会先按字面精准检索，例如 `对c+s随机数`，无需转义加号。精准结果按完整片段高亮；中文排版空格、英文大小写和十六进制前缀写法会规范化，分属不同段落或表格单元格的内容不会拼成精准结果。
+- 中英文、数字相邻的片段无需手动加空格，例如 `gcm模式下ctr计数器`。含符号的原文也会先按字面精准检索，例如 `对c+s随机数`，无需转义加号。精准结果按完整片段高亮，只规范化中文排版空格和英文大小写，保留十六进制的 `0x` 和前导零；分属不同段落或表格单元格的内容不会拼成精准结果。
 - 数值、十六进制、OID、标准编号、带数字的标识和短算法名称不做自动拼写纠错，避免把 `401` 变成 `402` 或把 `SM4` 变成其他算法。每个英文词最多容忍一次字符增删、替换或相邻字母交换。
-- 搜索 `401`、`0x401` 或 `0x00000401`，可找到 GMT0006-2023 的 **6.2.1 分组密码算法标识**，其中包含 `SGD_SM4_ECB`。十六进制值会忽略 `0x` 前缀和其后的前导零，大小写不影响搜索；中间的零仍然保留。
+- 搜索 `401`、`0x401` 或 `0x00000401`，可找到 GMT0006-2023 的 **6.2.1 分组密码算法标识**，其中包含 `SGD_SM4_ECB`。不同前导零写法的等价值归入模糊匹配，中间的零仍然保留。单独输入 `0x000`、`0x0000` 等十六进制前缀时，会查找以该前缀开头的十六进制值及等价的十六进制零，不会把正文中的普通 `0`、`rk_0` 标为命中。
 - 搜索 `0006` 或 `GMT0006` 可查找标准；搜索 `SGD_SM4`、`SM4`、`ECB` 可查找算法标识及其组成部分。点分 OID（如 `1.2.156.10197.1.104.1`）作为完整词保留。
 - 多个词默认匹配任一词。需要同时包含所有词时，使用引号，例如 `"SGD_SM4_ECB"` 或 `"SM4 ECB"`；这表示同时包含各词，不要求它们相邻。
 - 裸补零值（如 `00000401`）请加上 `0x`，或去掉前导零后搜索 `401`。中文支持正文片段检索；英文和数值保留词边界，前缀命中会列入模糊匹配。
@@ -50,29 +50,33 @@
 
 ### Windows / macOS 一键启动
 
-安装 **Python 3.12**，完整下载并解压项目后，按系统双击根目录的启动脚本即可。无需手动输入启动命令。
+安装 **Python 3.9 或更新版本**（含 3.9；新安装建议使用 3.12），完整下载并解压项目后，按系统双击根目录的启动脚本即可。无需手动输入启动命令。
 
 | 系统 | 启动脚本 | 准备工作 |
 | --- | --- | --- |
-| Windows | [`run-windows.bat`](run-windows.bat) | 安装 Python 时勾选 **Add python.exe to PATH** |
+| Windows | [`run-windows.bat`](run-windows.bat) | 保留同目录的 `run-windows.ps1`；自动查找 Python 启动器、PATH、注册表和常见安装目录，无需手动配置 PATH |
 | macOS | [`run-macos.command`](run-macos.command) | 安装 macOS 版 Python；脚本支持查找 Python.org 和 Homebrew 的常见安装位置 |
 
 - 首次启动会自动创建 `.venv` 并安装依赖，需要联网；以后会复用环境，只补装缺失或不满足版本要求的依赖。
 - 页面生成后会自动打开默认浏览器。请保留启动窗口，关闭窗口即可停止服务；保存文章后页面会自动更新。
 - 启动失败时窗口会保留错误信息。如果提示端口 `8000` 被占用，请关闭之前打开的启动窗口后重试。
-- Windows 和 macOS 的 `.venv` 不能共用。跨系统复制项目时不要携带 `.venv`，让脚本在当前系统重新创建环境。
+- 跨电脑或跨系统复制项目时不要携带 `.venv`，让脚本在当前电脑重新创建环境。已有环境不可用时会保留原文件，并提示先重命名为 `.venv-backup`。
+
+Windows 启动时会显示所选 Python 的完整路径和版本。如果装在自定义目录且未注册，可在 PowerShell 中执行 `$env:WIKI_PYTHON = 'D:\自定义目录\python.exe'` 后运行 `.\run-windows.bat`，无需修改全局 PATH。低于 3.9 的版本会显示实际版本并提示升级；脚本不会自动安装或替换系统 Python。
+
+`requirements.txt` 将 Material 限定在兼容 Python 3.9 的 9.6–9.7 系列，其余依赖由 pip 按当前 Python 版本选择兼容版本。Windows 和 macOS 启动脚本使用相同的最低版本要求；自动检查覆盖 Python 3.9 和 3.12。
 
 macOS 脚本在 Git 中保留执行权限。如果复制或解压后提示没有执行权限，可在终端输入 `chmod +x `（末尾留一个空格），将 `run-macos.command` 拖入终端并按回车，再重新双击脚本。
 
 ### 使用命令启动
 
-准备 **Git、Python 3.12** 和 Markdown 编辑器。以下命令用于 Windows PowerShell；已克隆仓库的同事进入现有项目目录，跳过克隆步骤。
+准备 **Git、Python 3.9 或更新版本** 和 Markdown 编辑器。以下命令用于 Windows PowerShell；已克隆仓库的同事进入现有项目目录，跳过克隆步骤。
 
 ```powershell
 git clone https://github.com/Loora1N/GM-crypto-assessment-wiki.git
 Set-Location .\GM-crypto-assessment-wiki
 
-py -3.12 -m venv .venv
+py -3 -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
 .\.venv\Scripts\python.exe -m mkdocs serve
 ```
@@ -91,6 +95,7 @@ py -3.12 -m venv .venv
 GM-crypto-assessment-wiki/
 ├── README.md                    # 仓库介绍与启动入口
 ├── run-windows.bat              # Windows 双击启动本地预览
+├── run-windows.ps1              # Windows 环境发现与启动逻辑
 ├── run-macos.command            # macOS 双击启动本地预览
 ├── mkdocs.yml                   # 网站配置、导航和 Markdown 扩展
 ├── requirements.txt             # Python 依赖
@@ -164,6 +169,8 @@ node tests/search.test.cjs site
 node tests/search.test.cjs site-offline --offline
 node --test tests/page-search.test.cjs
 .\.venv\Scripts\python.exe -m unittest discover -s tests -p test_search_tables.py -v
+# Windows 上检查发布启动脚本（无需联网）：
+.\.venv\Scripts\python.exe -m unittest discover -s tests -p test_windows_launcher.py -v
 ```
 
 检查直接运行构建产物中的 Material 搜索 worker，验证标识值、标准编号、算法名称、中文、OID、结果章节和高亮，以及离线索引与本地搜索资源。仅构建成功不能保证检索结果正确。浏览器验收时，搜索 `401` 并打开 **6.2.1 分组密码算法标识**，核对 `SGD_SM4_ECB` 对应的 `0x00000401`。
