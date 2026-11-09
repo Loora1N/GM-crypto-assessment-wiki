@@ -143,8 +143,13 @@ nav:
   - 个人笔记:
       - 分类首页: notes/index.md
       - 笔记-王彦: notes/王彦/笔记-王彦.md
+      - 笔记-陈仕长: notes/陈仕长/密评.md
+      - 笔记-张扬威:
+          - IPSEC协议个人笔记-张扬威: notes/张扬威/IPSEC.md
+          - TLCP协议个人笔记-张扬威: notes/张扬威/TLCP.md
+          - 解题总结-张扬威: notes/张扬威/解题总结.md
       - 笔记-陈博麟:
-          - TLCP协议个人解析: notes/陈博麟/TLCP/TLCP协议详解.md
-          - IPSEC协议个人解析: notes/陈博麟/IPSEC/IPSEC协议详解.md
+          - TLCP协议个人笔记-陈博麟: notes/陈博麟/TLCP/TLCP协议详解.md
+          - IPSEC协议个人笔记-陈博麟: notes/陈博麟/IPSEC/IPSEC协议详解.md
           - LaTeX公式查询表: notes/陈博麟/LaTeX.md
-          - 电子签章个人解析: notes/陈博麟/电子签章/电子签章.md
+          - 电子签章个人笔记-陈博麟: notes/陈博麟/电子签章/电子签章.md
