@@ -370,6 +370,10 @@ body, input, button, select, textarea {
 .md-typeset table:not([class]) tbody tr:hover { background: var(--bt-hover); }
 .md-typeset .md-typeset__table { display: block; }
 
+/* Let the FAQ comparison scroll horizontally before either edition becomes too narrow to read. */
+.md-typeset .faq-edition-comparison th:first-child { min-width: 0; width: 1%; white-space: nowrap; }
+.md-typeset .faq-edition-comparison th:nth-child(n+3) { min-width: 14rem; }
+
 /* Bound painting and hit testing on long standards pages to each table's
  * existing scroll container. Keep its real height for TOC and search offsets.
  * Containing the inner table would clip wide columns before they can scroll. */
