@@ -1,0 +1,1026 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://loora1n.github.io/GM-crypto-assessment-wiki/notes/%E5%BC%A0%E6%89%AC%E5%A8%81/%E8%A7%A3%E9%A2%98%E6%80%BB%E7%BB%93/">
+      
+      
+        <link rel="prev" href="../TLCP/">
+      
+      
+        <link rel="next" href="../../%E9%99%88%E5%8D%9A%E9%BA%9F/TLCP/TLCP%E5%8D%8F%E8%AE%AE%E8%AF%A6%E8%A7%A3/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>解题总结-张扬威 - 密评标准知识库</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+        <script src="../../../assets/vendor/iframe-worker/shim.js"></script>
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/vendor/katex/katex.min.css">
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/blue-topaz-maple.css">
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/page-search.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="密评标准知识库" class="md-header__button md-logo" aria-label="密评标准知识库" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            密评标准知识库
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              解题总结-张扬威
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="切换到深色主题"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换到深色主题" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="切换到浅色主题"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换到浅色主题" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../maintenance/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  使用手册
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../algorithm/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  密码算法
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../protocol/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  密码协议
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../product/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  密码产品
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../assessment/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  密码测评
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../standard/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  国标与行标
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  个人笔记
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+  
+  
+  
+  <aside class="md-sidebar md-sidebar--secondary topaz-toc" data-md-component="sidebar" data-md-type="toc" aria-label="文章目录">
+    <div class="md-sidebar__scrollwrap">
+      <div class="md-sidebar__inner">
+        <nav class="md-nav md-nav--secondary" aria-label="文章标题目录">
+          <div class="md-nav__title topaz-toc__title">
+            文章目录
+            <label class="topaz-toc__close" for="__drawer" title="收起文章目录">收起 ×</label>
+          </div>
+          
+            <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+              
+                <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        风险描述
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="风险描述">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        口令直接使用了杂凑而没有加盐的重要数据传输机密性
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#sm3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        使用sm3进行存储完整性保护
+      
+    </span>
+  </a>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#ecb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        使用ecb模式进行数据机密性保护
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="使用ecb模式进行数据机密性保护">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2024" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2024年第三题第一问
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#0051" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0051 对称密钥管理 密钥封装方式错误
+      
+    </span>
+  </a>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#0051-sm4cbc-iv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0051 对称密钥管理规定的sm4cbc iv初始值
+      
+    </span>
+  </a>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#0051-cbc-mac" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0051 对称密钥管理 完整性保护使用了cbc mac
+      
+    </span>
+  </a>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#openssl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        使用openssl进行密码保护
+      
+    </span>
+  </a>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#0091" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0091基于口令的密钥派生
+      
+    </span>
+  </a>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#sm4cbc-iv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SM4CBC 加密时 IV值
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SM4CBC 加密时 IV值">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2024_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2024年第一题
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#iv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        数据传输过程中密文及IV值没有进行完整性保护
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="数据传输过程中密文及IV值没有进行完整性保护">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2024_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2024年第一题
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#cbc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        存在CBC填充提示攻击
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="存在CBC填充提示攻击">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2024_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2024年第一题
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#hmacmac2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        hmac的mac值被截取了2字节
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="hmac的mac值被截取了2字节">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2024_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2024年第二题第三问
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        密钥没有在安全设备中产生
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="密钥没有在安全设备中产生">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2024-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2024年第八题-自己写的-产生和传输同时存在问题
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2024-ppt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2024年第八题-老师ppt
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        密钥在安全设备外明文传输
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="密钥在安全设备外明文传输">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2024-_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2024年第八题-自己写的-产生和传输同时存在问题
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2024-ppt_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2024年第八题-老师ppt
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        源代码中数据库连接操作没有使用密码技术并硬编码
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="源代码中数据库连接操作没有使用密码技术并硬编码">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2024_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2024年第九题
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        云需求场景下个租户没有进行合理的密钥隔离
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="云需求场景下个租户没有进行合理的密钥隔离">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2024_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2024年第九题
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        机密性保护和完整性保护密钥混用
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="机密性保护和完整性保护密钥混用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2024_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2024年第九题
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+              
+                <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        密钥存储和使用时没有进行完整性保护和校验
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="密钥存储和使用时没有进行完整性保护和校验">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2024_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2024年第九题
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+              
+            </ul>
+          
+        </nav>
+      </div>
+    </div>
+  </aside>
+
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>解题总结-张扬威</h1>
+
+<h2 id="_1">风险描述<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="_2">口令直接使用了杂凑而没有加盐的重要数据传输机密性<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>口令的重要数据传输机密性 风险评价：口令的传输机密性仅采用了sm3杂凑运算 相同明文运算后一定会得到相同的杂凑值 存在攻击者通过字典攻击爆破还原明文的可能性 无法保证重要数据的传输机密性 所以判断为高风险</p>
+<h2 id="sm3">使用sm3进行存储完整性保护<a class="headerlink" href="#sm3" title="Permanent link">&para;</a></h2>
+<p>来源于FAQ 第四版</p>
+<p>仅使用SM3算法实现数据存储完整性功能，在安全机制方面存在缺 陷。入侵者可在篡改数据后，重新进行SM3杂凑运算并覆盖原先的杂凑 值。因此，应判定为“不符合”</p>
+<p>因此建议使用合规的密码产品通过HMAC-SM3、基于SM4的MAC （参考GB/T 15852.1-2020《信息技术 安全技术 消息鉴别码 第1部分： 采用分组密码的机制》）或数字签名的方式实现数据存储的完整性。 </p>
+<h2 id="ecb">使用ecb模式进行数据机密性保护<a class="headerlink" href="#ecb" title="Permanent link">&para;</a></h2>
+<h3 id="2024">2024年第三题第一问<a class="headerlink" href="#2024" title="Permanent link">&para;</a></h3>
+<p>ECB工作模式可能存在的问题：分组密码的ECB工作模式，因其工作流程的原因，在使用同一密钥的情况下相同的明文分组会产生相同的密文分组，攻击者在获取部分明密文分组对后可推测其他密文信息，也不能抵抗对分组的重放、嵌入、删除等攻击。并且违反了GB/T 17964-2021信息安全技术 分组密码算法的工作模式中 对于超过一个分组长度的明文一般建议不使用ECB工作模式的要求如图1</p>
+<p>图1</p>
+<p><img alt="image-20261107114533878" src="../images/image-20261107114533878.png" /></p>
+<h2 id="0051">0051 对称密钥管理 密钥封装方式错误<a class="headerlink" href="#0051" title="Permanent link">&para;</a></h2>
+<p>来源 老师.pdf</p>
+<p>问题       :密钥封装方式不符合GM/T0051-2016《密码设备管理 对称密钥管理技术规范》标准要求，接收者接收后无法对密钥进行管理并保证正确使用</p>
+<p>改进建议:严格按照GM/T0051-2016《密码设备管理对称密钥管理技术规范》标准7.2.2进行分发密钥的封装。</p>
+<p><img alt="image-20261105092352403" src="../images/image-20261105092352403.png" /></p>
+<h2 id="0051-sm4cbc-iv">0051 对称密钥管理规定的sm4cbc iv初始值<a class="headerlink" href="#0051-sm4cbc-iv" title="Permanent link">&para;</a></h2>
+<p>在0051中要求 加密时应采用sm4算法 cbc模式 并且iv值需要为全0</p>
+<p>2025年第十八题</p>
+<p><img alt="image-20261105100206705" src="../images/image-20261105100206705.png" /></p>
+<p><img alt="image-20261105100059821" src="../images/image-20261105100059821.png" /></p>
+<h2 id="0051-cbc-mac">0051 对称密钥管理 完整性保护使用了cbc mac<a class="headerlink" href="#0051-cbc-mac" title="Permanent link">&para;</a></h2>
+<p>不确定对不对 但老师的意思好像是说 0051中规定了不能用cbc mac得用 hamc 具体依据不知道是不是下面的封装格式里的内容</p>
+<p><img alt="image-20261105105922832" src="../images/image-20261105105922832.png" /></p>
+<p><img alt="image-20261105110801132" src="../images/image-20261105110801132.png" /></p>
+<h2 id="openssl">使用openssl进行密码保护<a class="headerlink" href="#openssl" title="Permanent link">&para;</a></h2>
+<p>2025年第十八题</p>
+<p>问题：密码（加密，完整性）保护过程调用openssl软件库实现 未在合规的密码模块内实现 导致 密钥明文出现在密码设备之外 存在泄露风险</p>
+<p>改进建议：要用经过合法认证的密钥管理系统进行对称密钥管理 不能用openssl来实现密钥密码（加密，完整性）保护</p>
+<h2 id="0091">0091基于口令的密钥派生<a class="headerlink" href="#0091" title="Permanent link">&para;</a></h2>
+<p>盐值位不小于64比特 也就是8字节  迭代次数不小于1024次 但对特别重要的推荐10000000迭代次数</p>
+<p><img alt="image-20261105103442610" src="../images/image-20261105103442610.png" /></p>
+<p><img alt="image-20261105103521138" src="../images/image-20261105103521138.png" /></p>
+<h2 id="sm4cbc-iv">SM4CBC 加密时 IV值<a class="headerlink" href="#sm4cbc-iv" title="Permanent link">&para;</a></h2>
+<h3 id="2024_1">2024年第一题<a class="headerlink" href="#2024_1" title="Permanent link">&para;</a></h3>
+<p>安全风险：发送方IV值固定如图1在程序代码中没有随机产生 在相同密钥相同IV值的情况下 同明文加密的密文相同 存在明文信息泄露的风险 并且IV值固定不符合GB/T 17964-2021 信息安全技术 分组密码算法的工作模式 中CBC工作模式有关于IV的建议</p>
+<p>改进建议：通过合规的密码设备每次使用时随机生成IV值</p>
+<p>图1</p>
+<p><img alt="image-20261106172549906" src="../images/image-20261106172549906.png" /></p>
+<h2 id="iv">数据传输过程中密文及IV值没有进行完整性保护<a class="headerlink" href="#iv" title="Permanent link">&para;</a></h2>
+<h3 id="2024_2">2024年第一题<a class="headerlink" href="#2024_2" title="Permanent link">&para;</a></h3>
+<p>安全风险：在数据传输过程中密文及IV值没有进行完整性保护 如图1 可能会被攻击者篡改 无法保证数据的完整性及真实性 </p>
+<p>改进建议：对密文及IV值使用HMAC或者SM2签名进行完整性保护</p>
+<p>图1</p>
+<p><img alt="image-20261106180031435" src="../images/image-20261106180031435.png" /></p>
+<h2 id="cbc">存在CBC填充提示攻击<a class="headerlink" href="#cbc" title="Permanent link">&para;</a></h2>
+<h3 id="2024_3">2024年第一题<a class="headerlink" href="#2024_3" title="Permanent link">&para;</a></h3>
+<p>安全风险：服务端在检测到填充错误时会将填充错误信息返回至客户端如图1，该操作会导致CBC填充提示攻击，攻击者可利用相关提示信息对密文进行破解 威胁数据的保密性 </p>
+<p>改进建议：不应向客户端返回具体的填充错误信息。应结合完整性保护机制，只有在完整性校验通过后再进行解密 若校验失败则统一丢弃报文 避免暴露错误信息</p>
+<p>图1</p>
+<p><img alt="image-20261106180959848" src="../images/image-20261106180959848.png" /></p>
+<h2 id="hmacmac2">hmac的mac值被截取了2字节<a class="headerlink" href="#hmacmac2" title="Permanent link">&para;</a></h2>
+<h3 id="2024_4">2024年第二题第三问<a class="headerlink" href="#2024_4" title="Permanent link">&para;</a></h3>
+<p>安全风险：hmac的输出结果仅截取了2字节作为mac值如图1 2字节的mac值的抗伪造的安全强度仅为2^16 强度过低 攻击者可以轻易通过遍历的手段穷尽mac值可能性 数据的完整性保护无效 并且16位mac值违反GB/T 15852.2中对于HMAC的MAC值的长度m应不小于32位的要求 如图2</p>
+<p>改进建议：不应截断HMAC的输出值 应该使用完整的HMAC结果作为MAC值。若因特定业务的需要必须截断，其截断后的长度也必须符合相关国家标准。</p>
+<p>图1</p>
+<p><img alt="image-20261106185542623" src="../images/image-20261106185542623.png" /></p>
+<p>图2</p>
+<p><img alt="image-20261106185734787" src="../images/image-20261106185734787.png" /></p>
+<h2 id="_3">密钥没有在安全设备中产生<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="2024-">2024年第八题-自己写的-产生和传输同时存在问题<a class="headerlink" href="#2024-" title="Permanent link">&para;</a></h3>
+<p>安全风险1：密钥的产生是通过 generate_key函数取系统随机数的方式产生的如图1 没有调用合规的密码设备产生 密钥的产生过程没有得到安全认证 如果应用系统服务器出现故障或者被篡改，导致生成的密钥不随机 那么密钥有被预测的风险 并且违反了GB/T 39786-2021的要求 密钥在符合GB/T37092的密码产品 中产生是十分必要的 如图2</p>
+<p>改进建议1：密钥应该在合规的密码设备中产生 可以调用合规密码设备中的如SDF_GenerateKeyWithIPK_ECC和SDF_GenerateKeyWithKEK等接口 在密码设备内安全生成密钥并使用 并且在使用完成以后及时调用SDF_DestroyKey销毁会话密钥</p>
+<p>图1</p>
+<p><img alt="image-20261107144601372" src="../images/image-20261107144601372.png" /></p>
+<p>图2</p>
+<p><img alt="image-20261107144527238" src="../images/image-20261107144527238.png" /></p>
+<h3 id="2024-ppt">2024年第八题-老师ppt<a class="headerlink" href="#2024-ppt" title="Permanent link">&para;</a></h3>
+<p><img alt="image-20261107164048822" src="../images/image-20261107164048822.png" /></p>
+<h2 id="_4">密钥在安全设备外明文传输<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h3 id="2024-_1">2024年第八题-自己写的-产生和传输同时存在问题<a class="headerlink" href="#2024-_1" title="Permanent link">&para;</a></h3>
+<p>安全风险2：密钥的产生是通过 generate_key函数直接产生的明文密钥，并且产生后直接导入了服务器密码机中作为会话密码使用如图1，密钥明文出现在了系统中有泄露的安全风险，并且违反了GM/T 0030-2014 服务器密码机技术规范的要求 除公钥外,所有密钥均不能以明文形式出现在服务器密码机外如图2</p>
+<p>改进建议2：密钥不应该已明文的形式在应用系统中传输及使用，应该调用合规密码设备中的如SDF_GenerateKeyWithIPK_ECC和SDF_GenerateKeyWithKEK等接口 生成密钥 并在使用时通过对应的密钥句柄使用密钥 并且在使用完成以后及时调用SDF_DestroyKey销毁会话密钥</p>
+<p><img alt="image-20261107145651878" src="../images/image-20261107145651878.png" /></p>
+<p><img alt="image-20261107145705393" src="../images/image-20261107145705393.png" /></p>
+<h3 id="2024-ppt_1">2024年第八题-老师ppt<a class="headerlink" href="#2024-ppt_1" title="Permanent link">&para;</a></h3>
+<p><img alt="image-20261107164048822" src="../images/image-20261107164048822.png" /></p>
+<h2 id="_5">源代码中数据库连接操作没有使用密码技术并硬编码<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h3 id="2024_5">2024年第九题<a class="headerlink" href="#2024_5" title="Permanent link">&para;</a></h3>
+<p>安全风险1：数据库连接操作的身份鉴别方式为用户名+口令 未采用密码技术进行身份鉴别 且口令直接硬编码在源代码中如图1。一旦源代码或程序泄露，攻击者可直接连接数据库或者可通过逆向等手段获取口令值，导致数据库内存储的敏感信息面临被窃取或篡改的风险</p>
+<p>改进建议1：应该采用密码技术对数据库连接的操作进行保护，同时禁止在代码中硬编码如口令或密钥等信息。</p>
+<p>图1</p>
+<p><img alt="image-20261109104443589" src="../images/image-20261109104443589.png" /></p>
+<h2 id="_6">云需求场景下个租户没有进行合理的密钥隔离<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h3 id="2024_6">2024年第九题<a class="headerlink" href="#2024_6" title="Permanent link">&para;</a></h3>
+<p>安全风险1：从以下代码中的SQL查询语句中可以看SQL查询只查询了并获取了第一条记录如图1 导致各企业使用的密钥完全相同，未实现各企业用户的密钥隔离，并且如果某用户获取到了其他用户的数据可直接进行解密</p>
+<p>改进建议1：在调用get_key()函数时可以传入enterprise_id，在进行SQL 查询加入对enterprise_id字段的判断，确保不同企业用户获取各自的专属密钥，并且可以使用云服务器密码机，针对不同企业用户设置不同的虚拟密码机，由各企业用户管理和使用。</p>
+<p>图1</p>
+<p><img alt="image-20261109160650368" src="../images/image-20261109160650368.png" /></p>
+<h2 id="_7">机密性保护和完整性保护密钥混用<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h3 id="2024_7">2024年第九题<a class="headerlink" href="#2024_7" title="Permanent link">&para;</a></h3>
+<p>安全风险1：由下列程序代码可以看出如图1 在进行数据的机密性保护和完整性保护使用的密钥为同一个密钥，如果发生密钥泄露时机密性和完整性保护都会出现问题，并且不符合GB/T 39786-2021 信息安全技术信息系统 密码应用基本要求中对于密钥使用的要求 每个密钥一般只有单一的用途,明确用途并按用途正确使用是十分必要的。如图2</p>
+<p>改进建议1：应遵循密钥用途单一性原则。为每个企业用户分别生成独立的机密性保护密钥和完整性保护密钥，严禁一钥多用。</p>
+<p>图1</p>
+<p><img alt="image-20261109163621392" src="../images/image-20261109163621392.png" /></p>
+<p>图2</p>
+<p><img alt="image-20261109164007095" src="../images/image-20261109164007095.png" /></p>
+<h2 id="_8">密钥存储和使用时没有进行完整性保护和校验<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<h3 id="2024_8">2024年第九题<a class="headerlink" href="#2024_8" title="Permanent link">&para;</a></h3>
+<p>安全风险1：由下列代码可以看出如图1 密文密钥被直接存储在了数据库中没有进行完整性保护 读取使用时也并不存在完整性校验机制 导致如果数据库中的密钥被篡改，用户在使用时候无法发现。并且不符合GB/T 39786-2021 信息安全技术信息系统 密码应用基本要求中对于密钥存储的要求，密钥不以明文方式存储在密码产品外部是十分必要的,并采取严格的安全防护措施,防止密钥 被非授权的访问或篡改。如图2</p>
+<p>改进建议1：应在密钥存储时对密钥密文进行完整性保护，在从数据库中读取密钥时应对密钥密文做完整性校验。</p>
+<p>图1</p>
+<p><img alt="image-20261109165321084" src="../images/image-20261109165321084.png" /></p>
+<p>图2</p>
+<p><img alt="image-20261109165240717" src="../images/image-20261109165240717.png" /></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate":null,"base":"../../..","features":["navigation.tabs","navigation.tabs.sticky","navigation.indexes","search.highlight","search.suggest","content.code.copy"],"search":"../../../assets/javascripts/workers/search.908815da4c1bee56.min.js","tags":null,"translations":{"clipboard.copied":"已复制","clipboard.copy":"复制","search.result.more.one":"在该页上还有 1 个符合条件的结果","search.result.more.other":"在该页上还有 # 个符合条件的结果","search.result.none":"没有找到符合条件的结果","search.result.one":"找到 1 个符合条件的结果","search.result.other":"# 个符合条件的结果","search.result.placeholder":"键入以开始搜索","search.result.term.missing":"缺少","select.version":"选择当前版本"},"version":null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../assets/vendor/katex/katex.min.js"></script>
+      
+        <script src="../../../assets/javascripts/blue-topaz-maple.js"></script>
+      
+        <script src="../../../assets/javascripts/page-navigation.js"></script>
+      
+        <script src="../../../assets/javascripts/page-search.js"></script>
+      
+        <script src="../../../assets/javascripts/search-tables.js"></script>
+      
+        <script src="../../../assets/javascripts/search-notice.js"></script>
+      
+    
+  </body>
+</html>

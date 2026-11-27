@@ -1,0 +1,82 @@
+/* Article-only search, with its own controls and highlight ownership. */
+.topaz-page-search {
+  position: sticky;
+  top: 2.4rem;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: .4rem;
+  margin: 0 0 1.2rem;
+  padding: .5rem .6rem;
+  border: 1px solid var(--bt-border);
+  border-radius: .45rem;
+  background: var(--bt-panel);
+  box-shadow: var(--bt-shadow);
+  font-size: .65rem;
+  line-height: 1.4;
+}
+.topaz-page-search__label { color: var(--bt-link); font-weight: 700; white-space: nowrap; }
+.topaz-page-search input {
+  flex: 1 1 8rem;
+  width: 0;
+  min-width: 5rem;
+  min-height: 2.2rem;
+  padding: .35rem .5rem;
+  border: 1px solid var(--bt-border);
+  border-radius: .3rem;
+  background: var(--bt-bg);
+  color: var(--bt-text);
+  font: inherit;
+  appearance: none;
+}
+.topaz-page-search input::placeholder { color: var(--bt-muted); }
+.topaz-page-search input::-webkit-search-cancel-button { display: none; }
+.topaz-page-search__controls { display: flex; align-items: center; gap: .2rem; }
+.topaz-page-search__status { min-width: 6rem; color: var(--bt-muted); text-align: center; white-space: nowrap; }
+.topaz-page-search button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .15rem;
+  min-height: 2.2rem;
+  min-width: 2.2rem;
+  padding: .35rem;
+  border: 1px solid transparent;
+  border-radius: .3rem;
+  color: var(--bt-link);
+  background: transparent;
+  font: inherit;
+  white-space: nowrap;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+.topaz-page-search button:hover:not(:disabled) { background: var(--bt-hover); border-color: var(--bt-border); }
+.topaz-page-search button:disabled { opacity: .45; cursor: default; }
+.topaz-page-search__help { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.topaz-has-page-search [id] { scroll-margin-top: var(--topaz-page-search-offset, 7rem); }
+.md-typeset mark[data-page-search] {
+  padding: 0;
+  color: var(--bt-search-ink);
+  background: var(--bt-search-bg);
+  border-radius: 2px;
+  font: inherit;
+}
+.md-typeset mark[data-page-search].topaz-page-search__current {
+  color: var(--bt-bg);
+  background: var(--bt-link);
+  outline: 2px solid var(--bt-link);
+  outline-offset: 1px;
+}
+@media (max-width: 44.984375em) {
+  .topaz-page-search { padding: .4rem; gap: .25rem; }
+  .topaz-page-search input { font-size: 16px; }
+  .topaz-page-search__controls { flex: 1 0 100%; justify-content: flex-end; }
+  .topaz-page-search__status { flex: 1; text-align: left; min-width: 0; }
+}
+@media print {
+  .topaz-page-search { display: none; }
+  .md-typeset mark[data-page-search], .md-typeset mark[data-page-search].topaz-page-search__current {
+    background: transparent; color: inherit; outline: none;
+  }
+}
